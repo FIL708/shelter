@@ -9,8 +9,8 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "lint:client": "cd client && lint:staged",
-    "lint:server": "cd server && lint:staged",
+    "lint:client": "cd client && yarn lint:staged",
+    "lint:server": "cd server && yarn lint:staged",
     "lint": "yarn lint:client && yarn lint:server"
   }
 }
