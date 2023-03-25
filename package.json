@@ -1,0 +1,11 @@
+{
+  "name": "shelter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:FIL708/shelter.git",
+  "author": "FIL708 <filip.zebrowski4013@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^6.6.1"
+  }
+}
