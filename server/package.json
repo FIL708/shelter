@@ -22,6 +22,7 @@
     "pg": "^8.10.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.30.0",
+    "sequelize-cli": "^6.6.0",
     "sqlite3": "^5.1.6"
   },
   "devDependencies": {
@@ -34,7 +35,6 @@
     "eslint-plugin-prettier": "^4.2.1",
     "lint-staged": "^13.2.0",
     "nodemon": "^2.0.22",
-    "prettier": "^2.8.7",
-    "sequelize-cli": "^6.6.0"
+    "prettier": "^2.8.7"
   }
 }

@@ -1,0 +1,3 @@
+{
+    "databaseUrl": "sqlite://db/main.db"
+}
