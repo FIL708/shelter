@@ -1,0 +1,5 @@
+.header {
+  background-image: url('./assets/background.png');
+  background-size: cover;
+  padding: 20px 50px;
+}
