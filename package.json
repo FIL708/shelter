@@ -1,6 +1,7 @@
 {
   "name": "shelter",
   "version": "1.0.0",
+  "private": true,
   "repository": "git@github.com:FIL708/shelter.git",
   "author": "FIL708 <filip.zebrowski4013@gmail.com>",
   "license": "MIT",
@@ -9,6 +10,9 @@
   },
   "scripts": {
     "prepare": "husky install",
+    "install": "yarn install:client && yarn install:server",
+    "install:client":"cd client && yarn install",
+    "install:server":"cd server && yarn install",
     "lint:client": "cd client && yarn lint:staged",
     "lint:server": "cd server && yarn lint:staged",
     "lint": "yarn lint:client && yarn lint:server"
