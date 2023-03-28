@@ -1,14 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import {
-  Home,
-  Adoption,
-  Gallery,
-  Contact,
-  Signup,
-  Login,
-} from './pages/index.js';
+import { Home, Adoption, Gallery, Contact, Signup, Login, Test } from './pages';
 
 function App() {
   return (
@@ -21,6 +14,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
       </BrowserRouter>
     </React.StrictMode>
