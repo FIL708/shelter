@@ -1,3 +1,9 @@
+import { Page } from '../components';
+
 export default function Login() {
-  return <h1>Login</h1>;
+  return (
+    <Page>
+      <h1>Login</h1>
+    </Page>
+  );
 }

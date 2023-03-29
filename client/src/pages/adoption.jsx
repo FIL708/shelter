@@ -1,3 +1,9 @@
+import { Page } from '../components';
+
 export default function Adoption() {
-  return <h1>Adoption</h1>;
+  return (
+    <Page>
+      <h1>Adoption</h1>
+    </Page>
+  );
 }
