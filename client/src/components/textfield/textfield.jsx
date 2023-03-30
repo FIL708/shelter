@@ -9,13 +9,25 @@ export default function Textfield({
   required = false,
   value,
 }) {
-  const validationMessage = 'validation message';
+  const isValid = true;
+  let validationMessage = 'validation message';
+  let inputClassName;
+  let messageClassName;
+  if (isValid) {
+    inputClassName = 'textfield__input valid';
+    messageClassName = 'textfield__message valid';
+    validationMessage = 'Correct!';
+  } else if (!isValid) {
+    inputClassName = 'textfield__input invalid';
+    messageClassName = 'textfield__message invalid';
+    validationMessage = 'Error!';
+  }
   return (
     <label htmlFor={name} className="textfield__label">
       {label}
       <input
         type={type}
-        className="textfield__input"
+        className={inputClassName}
         id={name}
         name={name}
         placeholder={placeholder}
@@ -23,7 +35,7 @@ export default function Textfield({
         onChange={onChange}
         value={value}
       />
-      <strong className="textfield__message">{validationMessage}</strong>
+      <strong className={messageClassName}>{validationMessage}</strong>
     </label>
   );
 }

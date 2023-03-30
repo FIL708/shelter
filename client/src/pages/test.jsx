@@ -2,7 +2,7 @@ import { Page, Icon, Button, Textfield } from '../components';
 
 export default function Test() {
   const handleInput = (e) => {
-    console.log(e);
+    console.log(e.target.value);
   };
   const handelClick = (e) => {
     console.log(e);
@@ -22,6 +22,7 @@ export default function Test() {
         disabled
       />
       <Textfield
+        label="First Name"
         name="name"
         placeholder="Enter your name"
         onChange={(e) => handleInput(e)}
