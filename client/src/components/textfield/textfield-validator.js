@@ -1,4 +1,5 @@
 export default function TextfieldValidator(value, type) {
+  if (!value || !type) return null;
   if (type === 'email') {
     const regex =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -19,7 +20,9 @@ export default function TextfieldValidator(value, type) {
   }
   if (type === 'password') {
     const isValid = value.length >= 8;
-    const message = isValid ? 'Correct!' : 'Input need to be a number!';
+    const message = isValid
+      ? 'Correct!'
+      : 'Password need to contain at least 8 characters!';
     return { isValid, message };
   }
   return null;

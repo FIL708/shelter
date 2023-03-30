@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import { Page, Icon, Button, Textfield } from '../components';
 
 export default function Test() {
+  const [input, setInput] = useState('');
   const handleInput = (e) => {
-    console.log(e.target.value);
+    setInput(e.target.value);
   };
   const handelClick = (e) => {
     console.log(e);
@@ -26,6 +28,8 @@ export default function Test() {
         name="name"
         placeholder="Enter your name"
         onChange={(e) => handleInput(e)}
+        validation="emails"
+        value={input}
       />
     </Page>
   );
