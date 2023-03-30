@@ -8,7 +8,7 @@ export default function Textfield({
   label,
   placeholder,
   onChange,
-  required = false,
+  required = true,
   value,
   validation,
   toConfirm,
@@ -16,7 +16,7 @@ export default function Textfield({
   const [classNames, setClassNames] = useState({
     inputClassName: 'textfield__input',
     messageClassName: 'textfield__message',
-    message: '',
+    message: required ? 'reguired' : '',
   });
 
   const isValid = () => {
