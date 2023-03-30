@@ -1,4 +1,4 @@
-import { Page, Icon, Button } from '../components';
+import { Page, Icon,Button, Textfield } from '../components';
 
 export default function Test() {
   const handelClick = () => {
@@ -17,6 +17,7 @@ export default function Test() {
         iconFill="red"
         disabled
       />
+      <Textfield />
     </Page>
   );
 }
