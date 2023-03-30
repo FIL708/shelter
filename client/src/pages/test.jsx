@@ -1,13 +1,17 @@
-import { Page, Icon,Button, Textfield } from '../components';
+import { Page, Icon, Button, Textfield } from '../components';
 
 export default function Test() {
-  const handelClick = () => {
-    console.log('clicked!');
+  const handleInput = (e) => {
+    console.log(e);
   };
+  const handelClick = (e) => {
+    console.log(e);
+  };
+
   return (
     <Page>
       <h1>Test page</h1>
-      <Icon type="youtube" size="300px" fill="blue" />
+      <Icon type="option" size="50px" fill="pink" />
       <Button
         onClick={handelClick}
         text="Login"
@@ -17,7 +21,11 @@ export default function Test() {
         iconFill="red"
         disabled
       />
-      <Textfield />
+      <Textfield
+        name="name"
+        placeholder="Enter your name"
+        onChange={(e) => handleInput(e)}
+      />
     </Page>
   );
 }
