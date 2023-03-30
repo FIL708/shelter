@@ -28,7 +28,7 @@ export default function Test() {
         name="name"
         placeholder="Enter your name"
         onChange={(e) => handleInput(e)}
-        validation="emails"
+        validation="password"
         value={input}
       />
     </Page>

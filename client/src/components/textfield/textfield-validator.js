@@ -1,4 +1,4 @@
-export default function TextfieldValidator(value, type) {
+export default function TextfieldValidator(value, type, confirm) {
   if (!value || !type) return null;
   if (type === 'email') {
     const regex =
@@ -23,6 +23,11 @@ export default function TextfieldValidator(value, type) {
     const message = isValid
       ? 'Correct!'
       : 'Password need to contain at least 8 characters!';
+    return { isValid, message };
+  }
+  if (type === 'confirm') {
+    const isValid = String(value) === String(confirm);
+    const message = isValid ? 'Correct!' : 'Do not match!';
     return { isValid, message };
   }
   return null;

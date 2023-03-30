@@ -11,6 +11,7 @@ export default function Textfield({
   required = false,
   value,
   validation,
+  toConfirm,
 }) {
   const [classNames, setClassNames] = useState({
     inputClassName: 'textfield__input',
@@ -20,7 +21,7 @@ export default function Textfield({
 
   const isValid = () => {
     if (!value || !validation) return null;
-    const valid = TextfieldValidator(value, validation);
+    const valid = TextfieldValidator(value, validation, toConfirm);
 
     if (valid === null) {
       return null;
