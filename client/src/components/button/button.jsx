@@ -7,13 +7,13 @@ export default function Button({
   className,
   disabled = false,
   iconType,
-  fill,
-  size,
+  iconFill,
+  iconSize,
   text,
 }) {
   const buttonClassName = className ? `button ${className}` : 'button';
   const IconComponent = iconType ? (
-    <Icon fill={fill} size={size} type={iconType} />
+    <Icon fill={iconFill} size={iconSize} type={iconType} />
   ) : null;
   return (
     <button
