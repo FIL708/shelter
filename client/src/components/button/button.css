@@ -4,11 +4,17 @@
   border: none;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   color: var(--white);
   background-color: var(--blue);
   transition: 0.3s;
+  cursor: pointer;
 }
 .button:hover {
   background-color: var(--light-blue);
+}
+
+.button:disabled {
+  background-color: var(--light-grey);
+  cursor: not-allowed;
 }
