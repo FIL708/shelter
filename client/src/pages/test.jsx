@@ -8,7 +8,14 @@ export default function Test() {
     <Page>
       <h1>Test page</h1>
       <Icon type="option" size="50px" fill="pink" />
-      <Button onClick={handelClick} text="Button" />
+      <Button
+        onClick={handelClick}
+        text="Login"
+        className="outline"
+        iconType="register"
+        iconSize="18px"
+        iconFill="#FFF2F2"
+      />
     </Page>
   );
 }
