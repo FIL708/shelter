@@ -1,9 +1,9 @@
-import { Page } from '../components';
+import { Page, WelcomeSection } from '../components';
 
 export default function Home() {
   return (
     <Page>
-      <h1>Home</h1>
+      <WelcomeSection />
     </Page>
   );
 }
