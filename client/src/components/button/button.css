@@ -1,0 +1,48 @@
+.button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--white);
+  background-color: var(--blue);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--light-blue);
+}
+
+.button:disabled {
+  background-color: var(--light-grey);
+  cursor: not-allowed;
+}
+
+.button.outline {
+  background-color: transparent;
+  color: var(--blue);
+  border: 2px solid var(--blue);
+}
+
+.button.outline:hover {
+  background-color: var(--less-white);
+}
+
+.button.outline:disabled {
+  color: var(--light-grey);
+  border: 2px solid var(--light-grey);
+}
+
+.button.outline:disabled:hover {
+  background-color: transparent;
+}
+
+.button.only-icon {
+  padding: 8px;
+}
