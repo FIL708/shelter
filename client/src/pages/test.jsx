@@ -11,10 +11,11 @@ export default function Test() {
       <Button
         onClick={handelClick}
         text="Login"
-        className=""
+        className="outline"
         iconType="small-logo"
         iconSize="18px"
-        iconFill="#FFF2F2"
+        iconFill="red"
+        disabled
       />
     </Page>
   );

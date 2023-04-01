@@ -7,6 +7,7 @@
   border: none;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  font-weight: 700;
   letter-spacing: 2px;
   color: var(--white);
   background-color: var(--blue);
@@ -40,4 +41,8 @@
 
 .button.outline:disabled:hover {
   background-color: transparent;
+}
+
+.button.only-icon {
+  padding: 8px;
 }

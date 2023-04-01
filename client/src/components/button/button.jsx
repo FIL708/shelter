@@ -11,9 +11,19 @@ export default function Button({
   iconSize,
   text,
 }) {
-  const buttonClassName = className ? `button ${className}` : 'button';
+  const styleClassName = className ? `button ${className}` : 'button';
+  const onlyIconClassName = !text && iconType ? 'only-icon' : '';
+  const buttonClassName = `${styleClassName} ${onlyIconClassName}`;
+  let iconColor;
+  if (disabled && className === 'outline') {
+    iconColor = '#868686';
+  } else if (disabled && !className) {
+    iconColor = '#fff';
+  } else {
+    iconColor = iconFill;
+  }
   const IconComponent = iconType ? (
-    <Icon fill={iconFill} size={iconSize} type={iconType} />
+    <Icon fill={iconColor} size={iconSize} type={iconType} />
   ) : null;
   return (
     <button
