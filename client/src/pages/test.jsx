@@ -1,14 +1,18 @@
 import { useState } from 'react';
 import { Page, Icon, Button, Textfield } from '../components';
+import { inputValidator } from '../helpers';
 
 export default function Test() {
   const [input, setInput] = useState('');
+  // const [inputValidation, setInputValidation] = useState({})
   const handleInput = (e) => {
     setInput(e.target.value);
   };
   const handelClick = (e) => {
     console.log(e);
   };
+
+  const validationHandler = () => {};
 
   return (
     <Page>
@@ -28,8 +32,10 @@ export default function Test() {
         name="name"
         placeholder="Enter your name"
         onChange={(e) => handleInput(e)}
-        validation="password"
+        validation={inputValidator.email(input)}
         value={input}
+        onBlur={validationHandler}
+        // required
       />
     </Page>
   );

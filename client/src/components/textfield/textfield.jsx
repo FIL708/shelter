@@ -8,11 +8,13 @@ export default function Textfield({
   label,
   placeholder,
   onChange,
-  required = true,
   value,
   validation,
   toConfirm,
+  required,
 }) {
+  console.log(validation);
+
   const [classNames, setClassNames] = useState({
     inputClassName: 'textfield__input',
     messageClassName: 'textfield__message',
