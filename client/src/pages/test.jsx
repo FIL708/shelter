@@ -1,18 +1,29 @@
 import { useState } from 'react';
 import { Page, Icon, Button, Textfield } from '../components';
-import { inputValidator } from '../helpers';
+// import { inputValidator } from '../helpers';
 
 export default function Test() {
   const [input, setInput] = useState('');
-  // const [inputValidation, setInputValidation] = useState({})
-  const handleInput = (e) => {
-    setInput(e.target.value);
+  const [formValidation, setFormValidation] = useState({
+    name: { isValid: true, message: 'x' },
+  });
+  const handleInput = (event) => {
+    setInput(event.target.value);
   };
-  const handelClick = (e) => {
-    console.log(e);
+  const handelClick = (event) => {
+    console.log(event);
   };
 
-  const validationHandler = () => {};
+  const validationHandler = (event) => {
+    // const { value, name } = event.target;
+    console.log(event);
+
+    // setFormValidation((prev) => ({
+    //   ...prev,
+    //   [name]: validationObject,
+    // }));
+    setFormValidation({ name: { isValid: true, message: 'x' } });
+  };
 
   return (
     <Page>
@@ -31,10 +42,11 @@ export default function Test() {
         label="First Name"
         name="name"
         placeholder="Enter your name"
-        onChange={(e) => handleInput(e)}
-        validation={inputValidator.email(input)}
+        onChange={(event) => handleInput(event)}
+        onBlur={(event) => validationHandler(event)}
+        validation={formValidation.name}
+        validationType="email"
         value={input}
-        onBlur={validationHandler}
         // required
       />
     </Page>
