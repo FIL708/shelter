@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Page, Icon, Button, Textfield } from '../components';
+import { Page, Icon, Button, Textfield, Footer } from '../components';
 import { inputValidator } from '../helpers';
 
 export default function Test() {
@@ -43,6 +43,7 @@ export default function Test() {
         value={input}
         required
       />
+      <Footer />
     </Page>
   );
 }

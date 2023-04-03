@@ -4,3 +4,4 @@ export { default as Navbar } from './navbar/navbar.jsx';
 export { default as Icon } from './icon/icon.jsx';
 export { default as Button } from './button/button.jsx';
 export { default as Textfield } from './textfield/textfield.jsx';
+export { default as Footer } from './footer/footer.jsx';
