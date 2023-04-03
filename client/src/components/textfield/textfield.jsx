@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button } from '../index.js';
 
 import './textfield.css';
@@ -12,9 +13,12 @@ export default function Textfield({
   value,
   validation,
   required,
-  iconType,
-  iconFill,
 }) {
+  const [passwordVisible, setPasswordVisible] = useState('password');
+
+  const togglePasswordVisible = () =>
+    setPasswordVisible((prev) => (prev === 'password' ? 'text' : 'password'));
+
   let inputClassName;
   if (!validation || validation?.isValid === null) {
     inputClassName = 'textfield__label';
@@ -24,12 +28,15 @@ export default function Textfield({
     inputClassName = 'textfield__label invalid';
   }
 
+  const inputType = type === 'password' ? passwordVisible : type;
+  const iconType = passwordVisible === 'password' ? 'invisible' : 'visible';
+
   return (
     <label htmlFor={name} className={inputClassName}>
       {label}
       <input
         className="textfield__input"
-        type={type}
+        type={inputType}
         id={name}
         name={name}
         placeholder={placeholder}
@@ -39,12 +46,13 @@ export default function Textfield({
         onBlur={onBlur}
       />
 
-      {iconType ? (
+      {type === 'password' ? (
         <Button
           iconType={iconType}
           iconSize="20px"
-          iconFill={iconFill}
+          iconFill="#4B4B4B"
           className="textfield__button"
+          onClick={togglePasswordVisible}
         />
       ) : null}
 

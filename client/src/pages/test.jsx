@@ -34,7 +34,7 @@ export default function Test() {
 
       <Textfield
         type="password"
-        label="First Name"
+        label="Password"
         name="name"
         placeholder="Enter your name"
         onChange={(event) => handleInput(event)}
@@ -42,9 +42,6 @@ export default function Test() {
         validation={formValidation.name}
         value={input}
         required
-        iconType="small-logo"
-        iconSize="18px"
-        iconFill="red"
       />
     </Page>
   );
