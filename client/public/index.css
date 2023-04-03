@@ -1,15 +1,15 @@
 @import './fonts/index.css';
 
 :root {
-  --blue: #7286D3;
+  --blue: #7286d3;
   --light-blue: #96a4da;
-  --white: #FFF2F2;
-  --less-white: #E5E0FF;
+  --white: #fff2f2;
+  --less-white: #e5e0ff;
   --light-grey: #868686;
-  --grey: #4B4B4B;
-  --dark-grey: #2B2B2B;
-  --red: #9F3E3E;
-  --error: #D14E4E;
+  --grey: #4b4b4b;
+  --dark-grey: #2b2b2b;
+  --red: #9f3e3e;
+  --error: #d14e4e;
   --valid: #167230;
   --shadow-4: 0px 2px 4px 0px rgba(66, 68, 90, 0.14);
   --shadow-8: 0px 8px 10px 1px rgba(66, 68, 90, 0.14);
@@ -20,6 +20,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body,
@@ -35,9 +37,10 @@ dd {
   margin: 0;
 }
 
-ul[role='list'],
-ol[role='list'] {
+ul,
+ol {
   list-style: none;
+  
 }
 
 html:focus-within {

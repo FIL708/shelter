@@ -1,0 +1,11 @@
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-link__item {
+  gap: 10px;
+  white-space: pre-wrap;
+  list-style: none;
+}

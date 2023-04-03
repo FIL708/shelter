@@ -10,12 +10,18 @@ export default function ContactLink({ text, type, href }) {
   } else {
     linkHref = href;
   }
-  console.log(linkHref);
 
   return (
-    <li className="contact-item">
-      <Icon type={type} />
-      <a href={linkHref}>{text}</a>
+    <li className="contact-link">
+      <Icon type={type} size="15px" fill="#FFF2F2" />
+      <a
+        href={linkHref}
+        className="contact-link__item"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {text}
+      </a>
     </li>
   );
 }
