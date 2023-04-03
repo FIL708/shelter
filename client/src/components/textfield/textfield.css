@@ -1,0 +1,70 @@
+.textfield__label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  color: var(--dark-grey);
+  width: 100%;
+}
+
+.textfield__input {
+  all: unset;
+  padding: 10px 8px;
+  font-size: 16px;
+  border: 2px solid transparent;
+  border-bottom: 2px solid var(--blue);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.valid .textfield__input {
+  border-bottom: 2px solid var(--valid);
+}
+
+.invalid .textfield__input {
+  border-bottom: 2px solid var(--error);
+}
+
+.textfield__input:focus {
+  border: 2px solid var(--blue);
+  border-radius: 8px;
+}
+
+.valid .textfield__input:focus {
+  border: 2px solid var(--valid);
+}
+
+.invalid .textfield__input:focus {
+  border: 2px solid var(--error);
+}
+
+.textfield__input::placeholder {
+  color: var(--light-grey);
+}
+
+.textfield__message {
+  margin: 2px 0 0 10px;
+  color: var(--light-grey);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.valid .textfield__message {
+  color: var(--valid);
+}
+
+.invalid .textfield__message {
+  color: var(--error);
+}
+
+.textfield__button {
+  position: absolute;
+  right: 5px;
+  top: 30px;
+  background-color: transparent;
+}
+
+.textfield__button:hover {
+  background-color: transparent;
+  transform: scale(1.2);
+}

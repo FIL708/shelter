@@ -9,6 +9,7 @@ import { ReactComponent as Grid } from './icon__glyphs/grid.svg';
 import { ReactComponent as Heart } from './icon__glyphs/heart.svg';
 import { ReactComponent as Instagram } from './icon__glyphs/instagram.svg';
 import { ReactComponent as Invisible } from './icon__glyphs/invisible.svg';
+import { ReactComponent as Visible } from './icon__glyphs/visible.svg';
 import { ReactComponent as Linkedin } from './icon__glyphs/linkedin.svg';
 import { ReactComponent as List } from './icon__glyphs/list.svg';
 import { ReactComponent as Location } from './icon__glyphs/location.svg';
@@ -48,6 +49,8 @@ const chooseIcon = (type) => {
       return Instagram;
     case 'invisible':
       return Invisible;
+    case 'visible':
+      return Visible;
     case 'linkedin':
       return Linkedin;
     case 'list':

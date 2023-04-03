@@ -20,7 +20,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write 'src/**/*.{js,jsx,json,css,scss,md}'",
-    "lint:staged": "lint-staged"
+    "lint:staged": "lint-staged",
+    "fix": "yarn eslint --fix ."
   },
   "lint-staged": {
     "src/**/*.+(js|jsx)": [
