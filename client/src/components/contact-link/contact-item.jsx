@@ -1,7 +1,7 @@
 import { Icon } from '../index.js';
 import './contact-item.css';
 
-export default function ContactLink({ text, type, href }) {
+export default function ContactLink({ text, type, href, iconSize = '15px' }) {
   let linkHref;
   let targetOption = '';
   if (type === 'email') {
@@ -15,13 +15,13 @@ export default function ContactLink({ text, type, href }) {
 
   return (
     <li className="contact-link">
-      <Icon type={type} size="15px" fill="#FFF2F2" />
       <a
         href={linkHref}
         className="contact-link__item"
         target={targetOption}
         rel="noreferrer"
       >
+        <Icon type={type} size={iconSize} fill="#FFF2F2" />
         {text}
       </a>
     </li>

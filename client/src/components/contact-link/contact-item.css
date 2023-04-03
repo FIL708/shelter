@@ -1,8 +1,5 @@
 .contact-link {
   margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
   transition: 0.3s;
 }
 
@@ -11,6 +8,9 @@
 }
 
 .contact-link__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   white-space: pre-wrap;
   list-style: none;
 }
