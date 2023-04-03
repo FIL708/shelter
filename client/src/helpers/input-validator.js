@@ -1,5 +1,5 @@
 const inputValidator = (value, type, confirm) => {
-  if (!value || !type) return null;
+  if (!value || !type) return { isValid: null, message: null };
   if (type.includes('password')) {
     const isValid = value.length >= 8;
     const message = isValid
@@ -30,7 +30,7 @@ const inputValidator = (value, type, confirm) => {
     const message = isValid ? 'Correct!' : 'Do not match!';
     return { isValid, message };
   }
-  return null;
+  return { isValid: null, message: null };
 };
 
 export default inputValidator;

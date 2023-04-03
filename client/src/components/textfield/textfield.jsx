@@ -1,3 +1,5 @@
+import { Button } from '../index.js';
+
 import './textfield.css';
 
 export default function Textfield({
@@ -10,9 +12,11 @@ export default function Textfield({
   value,
   validation,
   required,
+  iconType,
+  iconFill,
 }) {
   let inputClassName;
-  if (!validation) {
+  if (!validation || validation?.isValid === null) {
     inputClassName = 'textfield__label';
   } else if (validation.isValid) {
     inputClassName = 'textfield__label valid';
@@ -24,6 +28,7 @@ export default function Textfield({
     <label htmlFor={name} className={inputClassName}>
       {label}
       <input
+        className="textfield__input"
         type={type}
         id={name}
         name={name}
@@ -33,7 +38,19 @@ export default function Textfield({
         value={value}
         onBlur={onBlur}
       />
-      {validation ? <strong>{validation.message}</strong> : null}
+
+      {iconType ? (
+        <Button
+          iconType={iconType}
+          iconSize="20px"
+          iconFill={iconFill}
+          className="textfield__button"
+        />
+      ) : null}
+
+      {validation?.message ? (
+        <strong className="textfield__message">{validation.message}</strong>
+      ) : null}
     </label>
   );
 }

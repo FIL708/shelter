@@ -25,22 +25,26 @@ export default function Test() {
       <Icon type="option" size="50px" fill="pink" />
       <Button
         onClick={handelClick}
-        text="Login"
         className="outline"
         iconType="small-logo"
         iconSize="18px"
         iconFill="red"
         disabled
       />
+
       <Textfield
+        type="password"
         label="First Name"
         name="name"
         placeholder="Enter your name"
         onChange={(event) => handleInput(event)}
-        onBlur={(event) => validationHandler(event, 'email')}
+        onBlur={(event) => validationHandler(event, 'password')}
         validation={formValidation.name}
         value={input}
-        // required
+        required
+        iconType="small-logo"
+        iconSize="18px"
+        iconFill="red"
       />
     </Page>
   );

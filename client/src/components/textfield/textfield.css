@@ -1,9 +1,10 @@
 .textfield__label {
+  position: relative;
   display: flex;
   flex-direction: column;
   font-family: 'Roboto', sans-serif;
   color: var(--dark-grey);
-  /* width: 100%; */
+  width: 100%;
 }
 
 .textfield__input {
@@ -16,11 +17,11 @@
   cursor: pointer;
 }
 
-.textfield__input.valid {
+.valid .textfield__input {
   border-bottom: 2px solid var(--valid);
 }
 
-.textfield__input.invalid {
+.invalid .textfield__input {
   border-bottom: 2px solid var(--error);
 }
 
@@ -29,14 +30,12 @@
   border-radius: 8px;
 }
 
-.textfield__input.valid:focus {
+.valid .textfield__input:focus {
   border: 2px solid var(--valid);
-  border-radius: 8px;
 }
 
-.textfield__input.invalid:focus {
+.invalid .textfield__input:focus {
   border: 2px solid var(--error);
-  border-radius: 8px;
 }
 
 .textfield__input::placeholder {
@@ -50,10 +49,22 @@
   font-weight: 400;
 }
 
-.textfield__message.valid {
+.valid .textfield__message {
   color: var(--valid);
 }
 
-.textfield__message.invalid {
+.invalid .textfield__message {
   color: var(--error);
+}
+
+.textfield__button {
+  position: absolute;
+  right: 5px;
+  top: 30px;
+  background-color: transparent;
+}
+
+.textfield__button:hover {
+  background-color: transparent;
+  transform: scale(1.2);
 }
