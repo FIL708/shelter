@@ -3,12 +3,14 @@ import './contact-item.css';
 
 export default function ContactLink({ text, type, href }) {
   let linkHref;
+  let targetOption = '';
   if (type === 'email') {
     linkHref = `mailto:${text}`;
   } else if (type === 'phone') {
     linkHref = `tel:${text}`;
   } else {
     linkHref = href;
+    targetOption = '_blank';
   }
 
   return (
@@ -17,7 +19,7 @@ export default function ContactLink({ text, type, href }) {
       <a
         href={linkHref}
         className="contact-link__item"
-        target="_blank"
+        target={targetOption}
         rel="noreferrer"
       >
         {text}
