@@ -5,9 +5,11 @@
   color: var(--white);
   font-family: 'Roboto', sans-serif;
 }
-.footer__logo:after {
-  content: '';
-  width: 80%;
+
+.footer__divider {
+  background-color: var(--blue);
   height: 3px;
-  color: var(--blue);
+  width: 80%;
+  border: none;
+  border-radius: 5px;
 }

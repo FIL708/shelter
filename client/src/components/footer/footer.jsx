@@ -5,6 +5,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <img src={logo} alt="shelter logo" className="footer__logo" />
+      <hr className="footer__divider" />
     </footer>
   );
 }
