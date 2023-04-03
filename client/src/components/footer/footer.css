@@ -14,3 +14,11 @@
   border: none;
   border-radius: 5px;
 }
+
+.footer__section-title {
+  text-align: center;
+  margin: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}

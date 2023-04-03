@@ -10,7 +10,7 @@ export default function Footer() {
       <hr className="footer__divider" />
       <FooterContactSection />
       <section>
-        <h2>Our mission:</h2>
+        <h2 className="footer__section-title">Our mission:</h2>
         <p>
           Rorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
           vulputate libero et velit interdum, ac aliquet odio mattis. Class
