@@ -11,8 +11,17 @@ export default function Textfield({
   validation,
   required,
 }) {
+  let inputClassName;
+  if (!validation) {
+    inputClassName = 'textfield__label';
+  } else if (validation.isValid) {
+    inputClassName = 'textfield__label valid';
+  } else {
+    inputClassName = 'textfield__label invalid';
+  }
+
   return (
-    <label htmlFor={name} className="textfield__label">
+    <label htmlFor={name} className={inputClassName}>
       {label}
       <input
         type={type}
@@ -24,7 +33,7 @@ export default function Textfield({
         value={value}
         onBlur={onBlur}
       />
-      <strong>{validation.message}</strong>
+      {validation ? <strong>{validation.message}</strong> : null}
     </label>
   );
 }

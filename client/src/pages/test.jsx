@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { Page, Icon, Button, Textfield } from '../components';
-// import { inputValidator } from '../helpers';
+import { inputValidator } from '../helpers';
 
 export default function Test() {
   const [input, setInput] = useState('');
-  const [formValidation, setFormValidation] = useState({
-    name: { isValid: true, message: 'x' },
-  });
+  const [formValidation, setFormValidation] = useState({});
   const handleInput = (event) => {
     setInput(event.target.value);
   };
@@ -14,15 +12,11 @@ export default function Test() {
     console.log(event);
   };
 
-  const validationHandler = (event) => {
-    // const { value, name } = event.target;
-    console.log(event);
-
-    // setFormValidation((prev) => ({
-    //   ...prev,
-    //   [name]: validationObject,
-    // }));
-    setFormValidation({ name: { isValid: true, message: 'x' } });
+  const validationHandler = (event, validationType, confirm) => {
+    const { value, name } = event.target;
+    const validationObject = inputValidator(value, validationType, confirm);
+    if (!validationObject) return;
+    setFormValidation((prev) => ({ ...prev, [name]: validationObject }));
   };
 
   return (
@@ -43,9 +37,8 @@ export default function Test() {
         name="name"
         placeholder="Enter your name"
         onChange={(event) => handleInput(event)}
-        onBlur={(event) => validationHandler(event)}
+        onBlur={(event) => validationHandler(event, 'email')}
         validation={formValidation.name}
-        validationType="email"
         value={input}
         // required
       />
