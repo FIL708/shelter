@@ -1,14 +1,22 @@
-import ContactLink from '../../contact-link/contact-item';
+import ContactLink from '../../contact-link/contact-item.jsx';
 import { Textfield, Button } from '../../index.js';
 import './footer__media-section.css';
 
 export default function FooterMediaSection() {
   return (
     <section className="footer__media-section">
-      <h2 className="footer__section-title">Newsletter:</h2>
-      <Textfield />
-      <Button />
-      <h2 className="footer__section-title">Follow us:</h2>
+      <h3 className="footer__section-title">Newsletter:</h3>
+      <div className="footer__media-section__newsletter">
+        <Textfield className="textfield__newsletter" />
+        <Button
+          iconType="send"
+          iconSize="18px"
+          iconFill="#fff2f2"
+          className="button__newsletter"
+        />
+      </div>
+
+      <h3 className="footer__section-title">Follow us:</h3>
       <ul className="footer__media-section__links">
         <ContactLink
           type="facebook"

@@ -68,3 +68,12 @@
   background-color: transparent;
   transform: scale(1.2);
 }
+
+.textfield__newsletter {
+  color: var(--white);
+}
+
+.textfield__newsletter .textfield__input:focus {
+  border-radius: 8px 0 0 8px;
+  border-right: none;
+}

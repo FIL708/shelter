@@ -5,7 +5,7 @@ import './footer__contact-section.css';
 export default function FooterContactSection() {
   return (
     <section className="footer__contact-section">
-      <h2 className="footer__contact-section_title">Contact:</h2>
+      <h3 className="footer__contact-section_title">Contact:</h3>
       <ul className="footer__contact-section_items">
         <ContactLink type="phone" text="+48 123 321 123" />
         <ContactLink type="email" text="helpmedude@example.com" />
