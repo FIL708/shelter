@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Textfield, Button } from '../index.js';
+import { Textfield, Button, AuthButtons } from '../index.js';
 import './login-form.css';
 
 export default function LoginForm({
@@ -40,6 +40,7 @@ export default function LoginForm({
           onClick={loginHandler}
         />
       </form>
+      <AuthButtons text="or login with:" />
       <span>asdas</span>
     </>
   );

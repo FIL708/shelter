@@ -8,3 +8,4 @@ export { default as Footer } from './footer/footer.jsx';
 export { default as ContactLink } from './contact-link/contact-item.jsx';
 export { default as Subtitle } from './subtitle/subtitle.jsx';
 export { default as LoginForm } from './login-form/login-form.jsx';
+export { default as AuthButtons } from './auth-buttons/auth-buttons.jsx';
