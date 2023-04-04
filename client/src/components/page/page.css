@@ -4,4 +4,5 @@
   align-items: center;
   gap: 50px;
   margin: 100px 0;
+  flex-grow: 1;
 }

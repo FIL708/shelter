@@ -43,6 +43,8 @@
 }
 
 .textfield__message {
+  position: absolute;
+  bottom: -20px;
   margin: 2px 0 0 10px;
   color: var(--light-grey);
   font-size: 13px;
@@ -67,4 +69,13 @@
 .textfield__button:hover {
   background-color: transparent;
   transform: scale(1.2);
+}
+
+.textfield__newsletter {
+  color: var(--white);
+}
+
+.textfield__newsletter .textfield__input:focus {
+  border-radius: 8px 0 0 8px;
+  border-right: none;
 }

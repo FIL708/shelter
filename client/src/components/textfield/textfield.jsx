@@ -7,6 +7,7 @@ export default function Textfield({
   name,
   type = 'text',
   label,
+  className,
   placeholder,
   onChange,
   onBlur,
@@ -21,11 +22,11 @@ export default function Textfield({
 
   let inputClassName;
   if (!validation || validation?.isValid === null) {
-    inputClassName = 'textfield__label';
+    inputClassName = `textfield__label ${className}`;
   } else if (validation.isValid) {
-    inputClassName = 'textfield__label valid';
+    inputClassName = `textfield__label valid ${className}`;
   } else {
-    inputClassName = 'textfield__label invalid';
+    inputClassName = `textfield__label invalid ${className}`;
   }
 
   const inputType = type === 'password' ? passwordVisible : type;
