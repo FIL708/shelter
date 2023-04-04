@@ -45,6 +45,12 @@
 
 .only-icon {
   padding: 8px;
+  background-color: transparent;
+}
+
+.only-icon:hover {
+  background-color: transparent;
+  transform: scale(1.2);
 }
 
 .button__newsletter {
