@@ -2,7 +2,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  font-family: 'Roboto', sans-serif;
   color: var(--dark-grey);
   width: 100%;
 }
