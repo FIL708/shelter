@@ -17,6 +17,16 @@ export default function Login() {
     const validationObject = inputValidator(value, type);
     setFormIsValid((prev) => ({ ...prev, [name]: validationObject }));
   };
+
+  const loginWithGoogle = () => {
+    console.log('google login');
+  };
+  const loginWithTwitter = () => {
+    console.log('twitter login');
+  };
+  const loginWithFacebook = () => {
+    console.log('facebook login');
+  };
   return (
     <Page>
       <h1>Login</h1>
@@ -26,6 +36,9 @@ export default function Login() {
         formData={formData}
         formIsValid={formIsValid}
         validationHandler={validationHandler}
+        loginWithGoogle={loginWithGoogle}
+        loginWithTwitter={loginWithTwitter}
+        loginWithFacebook={loginWithFacebook}
       />
     </Page>
   );

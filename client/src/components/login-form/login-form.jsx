@@ -8,6 +8,9 @@ export default function LoginForm({
   formData,
   validationHandler,
   formIsValid,
+  loginWithGoogle,
+  loginWithTwitter,
+  loginWithFacebook,
 }) {
   return (
     <>
@@ -40,7 +43,12 @@ export default function LoginForm({
           onClick={loginHandler}
         />
       </form>
-      <AuthButtons text="or login with:" />
+      <AuthButtons
+        text="or login with:"
+        loginWithGoogle={loginWithGoogle}
+        loginWithTwitter={loginWithTwitter}
+        loginWithFacebook={loginWithFacebook}
+      />
       <span>asdas</span>
     </>
   );
