@@ -11,10 +11,10 @@
 }
 
 .footer__divider {
-  margin: 30px 0;
+  margin: 30px auto;
   background-color: var(--blue);
   height: 3px;
-  width: 80%;
+  width: 60%;
   border: none;
   border-radius: 5px;
   flex-basis: 25%;
@@ -22,7 +22,8 @@
 
 .footer__content {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  gap: 30px;
 }
 
 .footer__section-title {
@@ -31,4 +32,12 @@
   font-family: 'Lato', sans-serif;
   font-size: 18px;
   font-weight: 400;
+}
+
+.footer__mission-section {
+  flex-basis: 30%;
+}
+
+.footer__description {
+  text-align: justify;
 }
