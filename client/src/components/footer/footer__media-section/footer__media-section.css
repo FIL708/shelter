@@ -1,3 +1,6 @@
+.footer__media-section {
+  width: 270px;
+}
 .footer__media-section__links {
   display: flex;
   gap: 30px;
@@ -5,4 +8,5 @@
 
 .footer__media-section__newsletter {
   display: flex;
+  margin-bottom: 20px;
 }

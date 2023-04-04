@@ -39,6 +39,11 @@ body {
   text-rendering: optimizeSpeed;
   background-color: var(--white);
 }
+body>div {
+  display: flex;
+  flex-direction: column;
+  min-height: inherit;
+}
 
 img,
 picture {
