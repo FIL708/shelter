@@ -62,7 +62,7 @@
 .textfield__button {
   position: absolute;
   right: 5px;
-  top: 30px;
+  bottom: 3px;
   background-color: transparent;
 }
 
