@@ -43,6 +43,8 @@
 }
 
 .textfield__message {
+  position: absolute;
+  bottom: -20px;
   margin: 2px 0 0 10px;
   color: var(--light-grey);
   font-size: 13px;

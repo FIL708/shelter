@@ -3,7 +3,13 @@ import FooterMediaSection from './footer__media-section/footer__media-section.js
 import './footer.css';
 import logo from './assets/logo.svg';
 
-export default function Footer(props) {
+export default function Footer({
+  handleNewsletterInput,
+  newsletterEmail,
+  handleNewsletterValidation,
+  newsletterValidation,
+  sendNewsLetter,
+}) {
   return (
     <footer className="footer">
       <img src={logo} alt="shelter logo" className="footer__logo" />
@@ -20,7 +26,13 @@ export default function Footer(props) {
             per conubia nostra, per inceptos himenaeos.
           </p>
         </section>
-        <FooterMediaSection {...props} />
+        <FooterMediaSection
+          handleNewsletterInput={handleNewsletterInput}
+          newsletterEmail={newsletterEmail}
+          handleNewsletterValidation={handleNewsletterValidation}
+          newsletterValidation={newsletterValidation}
+          sendNewsLetter={sendNewsLetter}
+        />
       </div>
     </footer>
   );

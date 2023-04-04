@@ -5,17 +5,24 @@ import './page.css';
 
 export default function Page({ children }) {
   const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [newsletterValidation, setNewsletterValidation] = useState({});
+  const [newsletterValidation, setNewsletterValidation] = useState({
+    isValid: null,
+    message: '',
+  });
 
   const handleNewsletterInput = (event) => {
     setNewsletterEmail(event.target.value);
   };
   const handleNewsletterValidation = (event, validationType) => {
-    const validationObject = inputValidator(event, validationType);
+    const validationObject = inputValidator(event.target.value, validationType);
     setNewsletterValidation(validationObject);
   };
   const sendNewsLetter = () => {
-    console.log(newsletterEmail);
+    if (newsletterValidation.isValid) {
+      console.log('Sending!');
+    } else {
+      console.log('Not sending');
+    }
   };
   return (
     <>
