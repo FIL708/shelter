@@ -1,5 +1,6 @@
-import './login-form.css';
+import { Link } from 'react-router-dom';
 import { Textfield, Button } from '../index.js';
+import './login-form.css';
 
 export default function LoginForm({
   loginHandler,
@@ -15,8 +16,8 @@ export default function LoginForm({
           name="email"
           label="Email"
           onChange={(event) => loginDataHandler(event)}
-          value={formData.email}
           onBlur={(event) => validationHandler(event, 'email')}
+          value={formData.email}
           validation={formIsValid.email}
         />
         <Textfield
@@ -24,10 +25,13 @@ export default function LoginForm({
           type="password"
           label="Password"
           onChange={(event) => loginDataHandler(event)}
-          value={formData.password}
           onBlur={(event) => validationHandler(event, 'password')}
+          value={formData.password}
           validation={formIsValid.password}
         />
+        <Link className="login-form__link" to="/">
+          Forgot password?
+        </Link>
         <Button
           text="Login"
           iconType="login"

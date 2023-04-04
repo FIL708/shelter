@@ -1,0 +1,16 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 60%;
+  max-width: 450px;
+}
+
+.login-form__link {
+  font-family: 'Roboto', sans-serif;
+  color: var(--blue);
+}
+
+.login-form__link:hover {
+  text-decoration: underline;
+}
