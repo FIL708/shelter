@@ -49,7 +49,12 @@ export default function LoginForm({
         loginWithTwitter={loginWithTwitter}
         loginWithFacebook={loginWithFacebook}
       />
-      <span>asdas</span>
+      <span>
+        Not a member?{' '}
+        <Link to="/signup" className="login-form__link">
+          Signup now!
+        </Link>
+      </span>
     </>
   );
 }
