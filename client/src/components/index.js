@@ -6,3 +6,4 @@ export { default as Button } from './button/button.jsx';
 export { default as Textfield } from './textfield/textfield.jsx';
 export { default as Footer } from './footer/footer.jsx';
 export { default as ContactLink } from './contact-link/contact-item.jsx';
+export { default as LocationMap } from './location-map/location-map.jsx';
