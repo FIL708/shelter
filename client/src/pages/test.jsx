@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Page, Icon, Button, Textfield, Footer } from '../components';
+import { Page, Icon, Button, Textfield, Footer, Subtitle } from '../components';
 import { inputValidator } from '../helpers';
 
 export default function Test() {
@@ -44,6 +44,7 @@ export default function Test() {
         required
       />
       <Footer />
+      <Subtitle text="Subtitle" />
     </Page>
   );
 }
