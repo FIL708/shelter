@@ -2,7 +2,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  font-family: 'Roboto', sans-serif;
   color: var(--dark-grey);
   width: 100%;
 }
@@ -62,7 +61,7 @@
 .textfield__button {
   position: absolute;
   right: 5px;
-  top: 30px;
+  bottom: 3px;
   background-color: transparent;
 }
 

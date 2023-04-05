@@ -1,0 +1,19 @@
+.auth-buttons {
+  color: var(--dark-grey);
+}
+
+.auth-buttons__text {
+  margin-bottom: 20px;
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+}
+
+.auth-buttons__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.login-form__register {
+  text-align: center;
+}
