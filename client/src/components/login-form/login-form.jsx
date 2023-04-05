@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Textfield, Button, AuthButtons } from '../index.js';
+import { Textfield, Button, AuthButtons, Subtitle } from '../index.js';
 import './login-form.css';
 
 export default function LoginForm({
@@ -14,6 +14,7 @@ export default function LoginForm({
 }) {
   return (
     <section className="login-form__section">
+      <Subtitle text="Login" main />
       <form className="login-form">
         <Textfield
           name="email"
