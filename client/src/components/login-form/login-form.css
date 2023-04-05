@@ -1,9 +1,19 @@
+.login-form__section {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  width: 60%;
+  max-width: 450px;
+  padding: 30px 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-12);
+}
+
 .login-form {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 60%;
-  max-width: 450px;
+  width: 100%;
 }
 
 .login-form__link {

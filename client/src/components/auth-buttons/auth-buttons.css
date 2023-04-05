@@ -11,5 +11,9 @@
 
 .auth-buttons__buttons {
   display: flex;
+  justify-content: center;
   gap: 50px;
+}
+.login-form__register {
+  text-align: center;
 }

@@ -13,7 +13,7 @@ export default function LoginForm({
   loginWithFacebook,
 }) {
   return (
-    <>
+    <section className="login-form__section">
       <form className="login-form">
         <Textfield
           name="email"
@@ -49,12 +49,12 @@ export default function LoginForm({
         loginWithTwitter={loginWithTwitter}
         loginWithFacebook={loginWithFacebook}
       />
-      <span>
+      <span className="login-form__register">
         Not a member?{' '}
         <Link to="/signup" className="login-form__link">
           Signup now!
         </Link>
       </span>
-    </>
+    </section>
   );
 }
