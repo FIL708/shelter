@@ -3,9 +3,9 @@ import './auth-buttons.css';
 
 export default function AuthButtons({
   text,
-  loginWithGoogle,
-  loginWithTwitter,
-  loginWithFacebook,
+  authWithGoogle,
+  authWithTwitter,
+  authWithFacebook,
 }) {
   return (
     <div className="auth-buttons">
@@ -14,17 +14,17 @@ export default function AuthButtons({
         <Button
           iconType="round-google"
           iconSize="35px"
-          onClick={loginWithGoogle}
+          onClick={authWithGoogle}
         />
         <Button
           iconType="round-twitter"
           iconSize="35px"
-          onClick={loginWithTwitter}
+          onClick={authWithTwitter}
         />
         <Button
           iconType="round-facebook"
           iconSize="35px"
-          onClick={loginWithFacebook}
+          onClick={authWithFacebook}
         />
       </div>
     </div>

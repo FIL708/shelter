@@ -18,6 +18,7 @@ export default function LoginForm({
       <form className="login-form">
         <Textfield
           name="email"
+          type="email"
           label="Email"
           onChange={(event) => loginDataHandler(event)}
           onBlur={(event) => validationHandler(event, 'email')}
