@@ -12,6 +12,7 @@ export default function Signup() {
 
   const registerHandler = () => {
     console.log(formData);
+    console.log(formIsValid);
   };
   const registerDataHandler = (event) => {
     const { name, value } = event.target;

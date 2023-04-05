@@ -12,6 +12,7 @@ export default function LoginForm({
   loginWithTwitter,
   loginWithFacebook,
 }) {
+  const disableButton = Object.values(formData).some((item) => !item);
   return (
     <section className="login-form__section">
       <Subtitle text="Login" main />
@@ -43,6 +44,7 @@ export default function LoginForm({
           iconFill="#fff2f2"
           iconSize="18px"
           onClick={loginHandler}
+          disabled={disableButton}
         />
       </form>
       <AuthButtons

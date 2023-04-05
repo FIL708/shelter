@@ -12,6 +12,8 @@ export default function SignupForm({
   registerWithTwitter,
   registerWithFacebook,
 }) {
+  const disableButton = Object.values(formData).some((item) => !item);
+
   return (
     <section className="signup-form__section">
       <Subtitle text="Register" main />
@@ -51,6 +53,7 @@ export default function SignupForm({
           iconFill="#fff2f2"
           iconSize="18px"
           onClick={registerHandler}
+          disabled={disableButton}
         />
       </form>
       <AuthButtons
@@ -61,7 +64,7 @@ export default function SignupForm({
       />
       <span className="signup-form__login">
         Already have a account{' '}
-        <Link to="/signup" className="signup-form__link">
+        <Link to="/login" className="signup-form__link">
           Signup now!
         </Link>
       </span>

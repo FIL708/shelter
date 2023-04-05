@@ -1,0 +1,29 @@
+.signup-form__section {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  width: 60%;
+  max-width: 450px;
+  padding: 30px 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-12);
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.signup-form__login {
+  text-align: center;
+}
+
+.signup-form__link {
+  color: var(--blue);
+}
+
+.signup-form__link:hover {
+  text-decoration: underline;
+}
