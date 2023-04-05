@@ -2,7 +2,17 @@ import { Button } from '../index.js';
 import PetCardPhoto from './pet-card-photo/pet-card-photo.jsx';
 import './pet-card.css';
 
-export default function PetCard({ url }) {
+export default function PetCard({ url, isFavourite }) {
+  let iconType;
+  let iconFill;
+
+  if (isFavourite) {
+    iconType = 'full-heart';
+    iconFill = '#9f3e3e';
+  } else {
+    iconType = 'heart';
+    iconFill = '#7286d3';
+  }
   return (
     <li className="pet-card">
       <PetCardPhoto url={url} />
@@ -20,9 +30,9 @@ export default function PetCard({ url }) {
         </strong>
         <Button
           className="pet-card__button"
-          iconType="heart"
+          iconType={iconType}
           iconSize="20px"
-          iconFill="#7286d3"
+          iconFill={iconFill}
         />
       </div>
     </li>
