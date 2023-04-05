@@ -1,0 +1,5 @@
+.pet-card-photo {
+  width: 280px;
+  height: 180px;
+  object-fit: cover;
+}

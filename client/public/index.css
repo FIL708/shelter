@@ -26,9 +26,9 @@
 }
 
 ul,
-ol {
+ol,
+li {
   list-style: none;
-  
 }
 
 html:focus-within {
@@ -40,7 +40,7 @@ body {
   text-rendering: optimizeSpeed;
   background-color: var(--white);
 }
-body>div {
+body > div {
   display: flex;
   flex-direction: column;
   min-height: inherit;
