@@ -5,13 +5,13 @@ import './pet-card.css';
 
 export default function PetCard({
   url,
-  isFavourite,
+  isFavorite,
   name,
   location,
   description,
   createdAt,
 }) {
-  const [isFav, setIsFav] = useState(isFavourite);
+  const [isFav, setIsFav] = useState(isFavorite);
 
   let iconType;
   let iconFill;
