@@ -9,4 +9,4 @@ export { default as ContactLink } from './contact-link/contact-item.jsx';
 export { default as Subtitle } from './subtitle/subtitle.jsx';
 export { default as LoginForm } from './login-form/login-form.jsx';
 export { default as AuthButtons } from './auth-buttons/auth-buttons.jsx';
-export { default as SignupForm } from './signup-form/signup-form.jsx';
+export { default as RegisterForm } from './register-form/register-form.jsx';

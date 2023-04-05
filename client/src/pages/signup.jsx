@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Page, SignupForm } from '../components';
+import { Page, RegisterForm } from '../components';
 import { inputValidator } from '../helpers';
 
 export default function Signup() {
@@ -35,7 +35,7 @@ export default function Signup() {
   };
   return (
     <Page>
-      <SignupForm
+      <RegisterForm
         registerHandler={registerHandler}
         registerDataHandler={registerDataHandler}
         formData={formData}

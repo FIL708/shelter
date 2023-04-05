@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { AuthButtons, Button, Subtitle, Textfield } from '../index.js';
-import './signup-form.css';
+import './register-form.css';
 
-export default function SignupForm({
+export default function RegisterForm({
   registerHandler,
   registerDataHandler,
   formData,
@@ -15,9 +15,9 @@ export default function SignupForm({
   const disableButton = Object.values(formData).some((item) => !item);
 
   return (
-    <section className="signup-form__section">
+    <section className="register-form__section">
       <Subtitle text="Register" main />
-      <form className="signup-form">
+      <form className="register-form">
         <Textfield
           name="email"
           type="email"
@@ -57,14 +57,14 @@ export default function SignupForm({
         />
       </form>
       <AuthButtons
-        text="or signup with:"
+        text="or sign up with:"
         authWithGoogle={registerWithGoogle}
         authWithTwitter={registerWithTwitter}
         authWithFacebook={registerWithFacebook}
       />
-      <span className="signup-form__login">
+      <span className="register-form__login">
         Already have a account{' '}
-        <Link to="/login" className="signup-form__link">
+        <Link to="/login" className="register-form__link">
           Signup now!
         </Link>
       </span>
