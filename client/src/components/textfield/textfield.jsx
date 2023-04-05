@@ -51,7 +51,7 @@ export default function Textfield({
         <Button
           iconType={iconType}
           iconSize="20px"
-          iconFill="#4B4B4B"
+          iconFill="#868686"
           className="textfield__button"
           onClick={togglePasswordVisible}
         />

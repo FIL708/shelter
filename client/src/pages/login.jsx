@@ -35,9 +35,9 @@ export default function Login() {
         formData={formData}
         formIsValid={formIsValid}
         validationHandler={validationHandler}
-        loginWithGoogle={loginWithGoogle}
-        loginWithTwitter={loginWithTwitter}
-        loginWithFacebook={loginWithFacebook}
+        authWithGoogle={loginWithGoogle}
+        authWithTwitter={loginWithTwitter}
+        authWithFacebook={loginWithFacebook}
       />
     </Page>
   );

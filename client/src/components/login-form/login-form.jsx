@@ -12,12 +12,14 @@ export default function LoginForm({
   loginWithTwitter,
   loginWithFacebook,
 }) {
+  const disableButton = Object.values(formData).some((item) => !item);
   return (
     <section className="login-form__section">
       <Subtitle text="Login" main />
       <form className="login-form">
         <Textfield
           name="email"
+          type="email"
           label="Email"
           onChange={(event) => loginDataHandler(event)}
           onBlur={(event) => validationHandler(event, 'email')}
@@ -42,6 +44,7 @@ export default function LoginForm({
           iconFill="#fff2f2"
           iconSize="18px"
           onClick={loginHandler}
+          disabled={disableButton}
         />
       </form>
       <AuthButtons

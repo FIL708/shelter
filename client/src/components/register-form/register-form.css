@@ -1,4 +1,4 @@
-.login-form__section {
+.register-form__section {
   display: flex;
   flex-direction: column;
   gap: 35px;
@@ -9,21 +9,21 @@
   box-shadow: var(--shadow-12);
 }
 
-.login-form {
+.register-form {
   display: flex;
   flex-direction: column;
   gap: 40px;
   width: 100%;
 }
 
-.login-form__link {
+.register-form__login {
+  text-align: center;
+}
+
+.register-form__link {
   color: var(--blue);
 }
 
-.login-form__link:hover {
+.register-form__link:hover {
   text-decoration: underline;
-}
-
-.login-form__register {
-  text-align: center;
 }
