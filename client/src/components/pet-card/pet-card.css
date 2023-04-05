@@ -25,6 +25,7 @@
   font-weight: 400;
   color: var(--grey);
 }
+
 .pet-card__divider {
   margin: 15px auto;
   background-color: var(--blue);
@@ -33,7 +34,7 @@
   border-radius: 5px;
 }
 
-.pet-car__disc {
+.pet-car__desc {
   margin-bottom: 25px;
   text-align: justify;
 }
@@ -43,6 +44,7 @@
   font-size: 13px;
   font-weight: 400;
 }
+
 .pet-card__date {
   margin-left: 20px;
   color: var(--blue);
