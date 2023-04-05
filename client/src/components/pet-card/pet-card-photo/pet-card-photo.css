@@ -1,0 +1,32 @@
+.pet-card__link {
+  position: relative;
+}
+
+.pet-card-photo {
+  width: 280px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.pet-card__hover-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgb(43, 43, 43, 0.6);
+  border-radius: 8px 8px 0 0;
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  font-size: 32px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+.pet-card__link:hover .pet-card__hover-text {
+  opacity: 1;
+}

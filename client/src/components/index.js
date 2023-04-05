@@ -10,3 +10,5 @@ export { default as Subtitle } from './subtitle/subtitle.jsx';
 export { default as LoginForm } from './login-form/login-form.jsx';
 export { default as AuthButtons } from './auth-buttons/auth-buttons.jsx';
 export { default as RegisterForm } from './register-form/register-form.jsx';
+export { default as PetCard } from './pet-card/pet-card.jsx';
+export { default as PetCardList } from './pet-card__list/pet-card__list.jsx';

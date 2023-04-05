@@ -1,0 +1,57 @@
+.pet-card {
+  max-width: 280px;
+  color: var(--dark-grey);
+  box-shadow: var(--shadow-4);
+  transition: 0.3s;
+}
+
+.pet-card:hover {
+  box-shadow: var(--shadow-8);
+}
+
+.pet-card__content {
+  position: relative;
+  margin: 10px 8px;
+}
+
+.pet-card__name {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.pet-car__location {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--grey);
+}
+
+.pet-card__divider {
+  margin: 15px auto;
+  background-color: var(--blue);
+  height: 2px;
+  border: none;
+  border-radius: 5px;
+}
+
+.pet-car__desc {
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+.pet-card__note {
+  width: 100%;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.pet-card__date {
+  margin-left: 20px;
+  color: var(--blue);
+}
+
+.pet-card__button {
+  position: absolute;
+  top: -5px;
+  right: 0;
+}
