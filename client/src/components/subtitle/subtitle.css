@@ -5,3 +5,6 @@
   letter-spacing: 2px;
   color: var(--blue);
 }
+.subtitle > * {
+  margin: 0 10px;
+}

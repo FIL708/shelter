@@ -44,7 +44,7 @@ export default function Test() {
         required
       />
       <Footer />
-      <Subtitle text="Subtitle" />
+      <Subtitle text="Subtitle" main />
     </Page>
   );
 }
