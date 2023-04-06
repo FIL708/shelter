@@ -1,0 +1,9 @@
+.radio-button__label {
+}
+
+.checked {
+  color: red;
+}
+.radio-button__input {
+  display: none;
+}

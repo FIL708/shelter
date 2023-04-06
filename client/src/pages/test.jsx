@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Page,
   Subtitle,
@@ -7,6 +8,11 @@ import {
 } from '../components';
 
 export default function Test() {
+  const [controlValues, setControlValues] = useState({ direction: 'left' });
+  const handleControlValues = (event) => {
+    const { name, value } = event.target;
+    setControlValues({ [name]: value });
+  };
   const pets = [
     {
       id: '1',
@@ -107,10 +113,25 @@ export default function Test() {
       url: 'https://www.mcgill.ca/oss/files/oss/styles/hd/public/cats-g365dbd748_1280.jpeg?itok=uu2EK-4K&timestamp=1655389542',
     },
   ];
+
   return (
     <Page>
       <Subtitle text="Test Page" main />
-      <RadioButton />
+      <fieldset>
+        <RadioButton
+          checked={controlValues.direction === 'left'}
+          value="left"
+          name="direction"
+          onChange={(event) => handleControlValues(event)}
+        />
+        <RadioButton
+          checked={controlValues.direction === 'right'}
+          value="right"
+          name="direction"
+          onChange={(event) => handleControlValues(event)}
+        />
+      </fieldset>
+
       <PetCardList pets={pets} />
       <GalleryCardList photos={photos} />
     </Page>
