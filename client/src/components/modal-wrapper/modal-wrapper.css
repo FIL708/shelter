@@ -8,8 +8,12 @@
   width: 100vw;
   height: 100vh;
   z-index: 3;
-  background-color: rgb(43, 43, 43, 0.6);
+  background-color: rgb(43, 43, 43, 0.7);
+  border: none;
 }
 
 .modal-wrapper__button {
+  position: fixed;
+  top: 50px;
+  right: 150px;
 }
