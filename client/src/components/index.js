@@ -15,3 +15,5 @@ export { default as PetCardList } from './pet-card__list/pet-card__list.jsx';
 export { default as GalleryCard } from './gallery-card/gallery-card.jsx';
 export { default as GalleryCardList } from './gallery-card__list/gallery-card__list.jsx';
 export { default as ModalWrapper } from './modal-wrapper/modal-wrapper.jsx';
+export { default as RadioButton } from './radio-button/radio-button.jsx';
+export { default as PetController } from './pet-controller/pet-controller.jsx';

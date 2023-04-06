@@ -78,3 +78,15 @@
   border-radius: 8px 0 0 8px;
   border-right: none;
 }
+.white-border {
+  width: 40px;
+  text-align: center;
+}
+.white-border .textfield__input {
+  padding: 8px 0;
+  border-bottom: 2px solid var(--white);
+  color: var(--white);
+}
+.white-border .textfield__input:focus {
+  border-color: var(--white);
+}

@@ -2,6 +2,7 @@
   max-width: 280px;
   color: var(--dark-grey);
   box-shadow: var(--shadow-4);
+  border-radius: 8px;
   transition: 0.3s;
 }
 
@@ -54,4 +55,13 @@
   position: absolute;
   top: -5px;
   right: 0;
+}
+.pet-card.list {
+  display: flex;
+  gap: 2;
+  max-width: 900px;
+}
+
+.list .pet-car__desc {
+  margin-bottom: 10px;
 }

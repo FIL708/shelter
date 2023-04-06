@@ -9,6 +9,10 @@
   border-radius: 8px 8px 0 0;
 }
 
+.list .pet-card-photo {
+  border-radius: 8px 0 0 8px;
+}
+
 .pet-card__hover-text {
   display: flex;
   justify-content: center;

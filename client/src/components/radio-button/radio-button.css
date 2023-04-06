@@ -1,0 +1,22 @@
+.radio-button__label {
+  display: inline-block;
+  padding: 8px 16px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  background-color: var(--blue);
+  border: 2px solid var(--white);
+  border-radius: 8px;
+  color: var(--white);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.radio-button__label.checked {
+  color: var(--blue);
+  background-color: var(--white);
+  box-shadow: var(--shadow-8);
+}
+
+.radio-button__input {
+  display: none;
+}
