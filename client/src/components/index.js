@@ -13,3 +13,4 @@ export { default as RegisterForm } from './register-form/register-form.jsx';
 export { default as PetCard } from './pet-card/pet-card.jsx';
 export { default as PetCardList } from './pet-card__list/pet-card__list.jsx';
 export { default as GalleryCard } from './gallery-card/gallery-card.jsx';
+export { default as ModalWrapper } from './modal-wrapper/modal-wrapper.jsx';

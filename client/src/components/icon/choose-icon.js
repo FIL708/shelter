@@ -24,6 +24,7 @@ import { ReactComponent as Send } from './icon__glyphs/send.svg';
 import { ReactComponent as SmallLogo } from './icon__glyphs/small-logo.svg';
 import { ReactComponent as Twitter } from './icon__glyphs/twitter.svg';
 import { ReactComponent as Youtube } from './icon__glyphs/yt.svg';
+import { ReactComponent as Exit } from './icon__glyphs/exit.svg';
 
 const chooseIcon = (type) => {
   switch (type) {
@@ -79,6 +80,8 @@ const chooseIcon = (type) => {
       return Twitter;
     case 'youtube':
       return Youtube;
+    case 'exit':
+      return Exit;
     default:
       return undefined;
   }
