@@ -1,0 +1,91 @@
+[
+  {
+    "id": "1",
+    "species": "cat",
+    "url": "https://d.newsweek.com/en/full/1920025/cat-its-mouth-open.jpg?w=1600&h=1600&q=88&f=b7a44663e082b8041129616b6b73328d",
+    "name": "Reksio",
+    "location": "Pcim, Poland",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur a ducimus iure accusamus recusandae opti...",
+    "isFavorite": true,
+    "createdAt": "20 march 2022"
+  },
+  {
+    "id": "2",
+    "url": "https://d.newsweek.com/en/full/1920025/cat-its-mouth-open.jpg?w=1600&h=1600&q=88&f=b7a44663e082b8041129616b6b73328d",
+    "name": "Reksio",
+    "location": "Pcim, Poland",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur a ducimus iure accusamus recusandae opti...",
+    "isFavorite": true,
+    "createdAt": "20 march 2022"
+  },
+  {
+    "id": "3",
+    "species": "cat",
+    "url": "https://d.newsweek.com/en/full/1920025/cat-its-mouth-open.jpg?w=1600&h=1600&q=88&f=b7a44663e082b8041129616b6b73328d",
+    "name": "Reksio",
+    "location": "Pcim, Poland",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur a ducimus iure accusamus recusandae opti...",
+    "isFavorite": true,
+    "createdAt": "20 march 2022"
+  },
+  {
+    "id": "4",
+    "species": "cat",
+    "url": "https://d.newsweek.com/en/full/1920025/cat-its-mouth-open.jpg?w=1600&h=1600&q=88&f=b7a44663e082b8041129616b6b73328d",
+    "name": "Reksio",
+    "location": "Pcim, Poland",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur a ducimus iure accusamus recusandae opti...",
+    "isFavorite": true,
+    "createdAt": "20 march 2022"
+  },
+  {
+    "id": "5",
+    "species": "cat",
+    "url": "https://d.newsweek.com/en/full/1920025/cat-its-mouth-open.jpg?w=1600&h=1600&q=88&f=b7a44663e082b8041129616b6b73328d",
+    "name": "Reksio",
+    "location": "Pcim, Poland",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur a ducimus iure accusamus recusandae opti...",
+    "isFavorite": true,
+    "createdAt": "20 march 2022"
+  },
+  {
+    "id": "6",
+    "species": "dog",
+    "url": "https://www.scotsman.com/webimg/b25lY21zOmRmYmExYzE4LTZhY2ItNDBkZS1iMTU1LWY4YTVlZWNmYTdkYzowOTcxZDZlOC00MDc1LTQzYzItOWEyOC00YjNlNzFiY2Y1YzI=.jpg?width=1200&enable=upscale",
+    "name": "Reksio",
+    "location": "Pcim, Poland",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur a ducimus iure accusamus recusandae opti...",
+    "isFavorite": true,
+    "createdAt": "20 march 2022"
+  },
+  {
+    "id": "7",
+    "species": "dog",
+    "url": "https://www.scotsman.com/webimg/b25lY21zOmRmYmExYzE4LTZhY2ItNDBkZS1iMTU1LWY4YTVlZWNmYTdkYzowOTcxZDZlOC00MDc1LTQzYzItOWEyOC00YjNlNzFiY2Y1YzI=.jpg?width=1200&enable=upscale",
+    "name": "Reksio",
+    "location": "Pcim, Poland",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur a ducimus iure accusamus recusandae opti...",
+    "isFavorite": true,
+    "createdAt": "20 march 2022"
+  },
+  {
+    "id": "8",
+    "species": "dog",
+    "url": "https://www.scotsman.com/webimg/b25lY21zOmRmYmExYzE4LTZhY2ItNDBkZS1iMTU1LWY4YTVlZWNmYTdkYzowOTcxZDZlOC00MDc1LTQzYzItOWEyOC00YjNlNzFiY2Y1YzI=.jpg?width=1200&enable=upscale",
+    "name": "Reksio",
+    "location": "Pcim, Poland",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur a ducimus iure accusamus recusandae opti...",
+    "isFavorite": true,
+    "createdAt": "20 march 2022"
+  },
+  {
+    "id": "9",
+    "species": "dog",
+    "url": "https://www.scotsman.com/webimg/b25lY21zOmRmYmExYzE4LTZhY2ItNDBkZS1iMTU1LWY4YTVlZWNmYTdkYzowOTcxZDZlOC00MDc1LTQzYzItOWEyOC00YjNlNzFiY2Y1YzI=.jpg?width=1200&enable=upscale",
+    "name": "Reksio",
+    "location": "Pcim, Poland",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur a ducimus iure accusamus recusandae opti...",
+    "isFavorite": true,
+    "createdAt": "20 march 2022"
+  }
+]

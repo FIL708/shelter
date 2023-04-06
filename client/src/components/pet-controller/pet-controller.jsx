@@ -39,8 +39,14 @@ export default function PetController({ values, onChange }) {
         />
       </fieldset>
       <fieldset name="elements-number" className="pet-controller__fieldset">
-        Pets per page:
-        <Textfield className="white-border" type="number" />
+        Pets / page:
+        <Textfield
+          className="white-border"
+          type="number"
+          value={values.numberOfPets}
+          name="numberOfPets"
+          onChange={onChange}
+        />
       </fieldset>
     </nav>
   );

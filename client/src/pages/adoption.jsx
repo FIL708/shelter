@@ -1,9 +1,20 @@
-import { Page } from '../components';
+import { useState } from 'react';
+import { Page, Subtitle, PetController } from '../components';
 
 export default function Adoption() {
+  const [controlValues, setControlValues] = useState({
+    mode: 'grid',
+    species: 'all',
+    numberOfPets: 9,
+  });
+  const handleControlValues = (event) => {
+    const { name, value } = event.target;
+    setControlValues((prev) => ({ ...prev, [name]: value }));
+  };
   return (
     <Page>
-      <h1>Adoption</h1>
+      <Subtitle text="Our Pets" main />
+      <PetController values={controlValues} onChange={handleControlValues} />
     </Page>
   );
 }
