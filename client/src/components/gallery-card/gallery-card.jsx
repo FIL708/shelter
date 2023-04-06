@@ -17,8 +17,11 @@ export default function GalleryCard({ url }) {
         onClick={toggleModalVision}
       >
         <img src={url} alt="pet gallery" className="gallery-card__photo" />
-        <p className="gallery-card__hover-text">Zooom!</p>
+        <p className="gallery-card__hover-text">Zooooom!</p>
       </button>
+      <Link to="/" className="gallery-card__link">
+        Go to details
+      </Link>
       <ModalWrapper
         isVisible={modalVision}
         toggleModalVision={toggleModalVision}
@@ -29,7 +32,6 @@ export default function GalleryCard({ url }) {
           className="gallery-card__preview-photo"
         />
       </ModalWrapper>
-      <Link to="/">Go to details</Link>
     </li>
   );
 }
