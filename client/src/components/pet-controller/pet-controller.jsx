@@ -1,10 +1,10 @@
-import { RadioButton } from '../index.js';
+import { RadioButton, Textfield } from '../index.js';
 import './pet-controller.css';
 
 export default function PetController({ values, onChange }) {
   return (
     <nav className="pet-controller">
-      <fieldset name="mode">
+      <fieldset name="mode" className="pet-controller__fieldset">
         <RadioButton
           name="mode"
           value="grid"
@@ -18,7 +18,7 @@ export default function PetController({ values, onChange }) {
           onChange={(event) => onChange(event)}
         />
       </fieldset>
-      <fieldset name="species">
+      <fieldset name="species" className="pet-controller__fieldset">
         <RadioButton
           name="species"
           value="dogs"
@@ -37,6 +37,10 @@ export default function PetController({ values, onChange }) {
           checked={values.species === 'all'}
           onChange={(event) => onChange(event)}
         />
+      </fieldset>
+      <fieldset name="elements-number" className="pet-controller__fieldset">
+        Pets per page:
+        <Textfield className="white-border" type="number" />
       </fieldset>
     </nav>
   );

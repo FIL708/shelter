@@ -4,13 +4,11 @@ import {
   Subtitle,
   PetCardList,
   GalleryCardList,
-  RadioButton,
   PetController,
 } from '../components';
 
 export default function Test() {
   const [controlValues, setControlValues] = useState({
-    direction: 'left',
     mode: 'grid',
     species: 'all',
   });
@@ -122,20 +120,6 @@ export default function Test() {
   return (
     <Page>
       <Subtitle text="Test Page" main />
-      <fieldset>
-        <RadioButton
-          checked={controlValues.direction === 'left'}
-          value="left"
-          name="direction"
-          onChange={(event) => handleControlValues(event)}
-        />
-        <RadioButton
-          checked={controlValues.direction === 'right'}
-          value="right"
-          name="direction"
-          onChange={(event) => handleControlValues(event)}
-        />
-      </fieldset>
       <PetController values={controlValues} onChange={handleControlValues} />
       <PetCardList pets={pets} />
       <GalleryCardList photos={photos} />

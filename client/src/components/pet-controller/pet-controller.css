@@ -1,8 +1,27 @@
 .pet-controller {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 12px;
   padding: 12px 20px;
+  max-width: 900px;
+  width: 80%;
   background-color: var(--blue);
   border-radius: 8px;
+}
+
+.pet-controller__fieldset {
+  display: flex;
+  align-items: center;
+  padding-right: 12px;
+  gap: 12px;
+  border-right: 2px solid var(--white);
+  color: var(--white);
+}
+.pet-controller__fieldset:last-child {
+  border: none;
+}
+.pet-controller__input .textfield__input {
+  width: 40px;
+  border-bottom: 2px solid var(--white);
 }
