@@ -1,4 +1,5 @@
 .radio-button__label {
+  display: inline-block;
   padding: 8px 16px;
   letter-spacing: 1px;
   text-transform: capitalize;

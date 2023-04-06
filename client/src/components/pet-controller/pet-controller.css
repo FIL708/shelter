@@ -1,4 +1,8 @@
 .pet-controller {
   display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 20px;
   background-color: var(--blue);
+  border-radius: 8px;
 }
