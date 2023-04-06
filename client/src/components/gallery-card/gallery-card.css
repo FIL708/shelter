@@ -1,3 +1,12 @@
+.gallery-card {
+  border-radius: 8px;
+  box-shadow: var(--shadow-4);
+  transition: 0.3s;
+}
+.gallery-card:hover {
+  box-shadow: var(--shadow-8);
+}
+
 .gallery-card__photo {
   width: 300px;
   height: 200px;
