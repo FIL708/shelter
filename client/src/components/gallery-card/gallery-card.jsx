@@ -9,7 +9,7 @@ export default function GalleryCard({ url }) {
         <img src={url} alt="pet gallery" className="gallery-item__photo" />
         <p className="gallery-card__hover-text">Zooom!</p>
       </button>
-      <Link to="/" />
+      <Link to="/">Go to details</Link>
     </li>
   );
 }
