@@ -9,6 +9,7 @@ export default function Adoption() {
     species: 'all',
     numberOfPets: 9,
   });
+
   useEffect(() => {
     if (controlValues.species === 'all') {
       setPetsData(pets);
@@ -17,12 +18,13 @@ export default function Adoption() {
     } else {
       setPetsData(pets.filter((pet) => pet.species === 'dog'));
     }
-    console.log(controlValues);
   }, [controlValues]);
+
   const handleControlValues = (event) => {
     const { name, value } = event.target;
     setControlValues((prev) => ({ ...prev, [name]: value }));
   };
+
   return (
     <Page>
       <Subtitle text="Our Pets" main />
