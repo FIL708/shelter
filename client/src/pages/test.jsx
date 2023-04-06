@@ -1,4 +1,10 @@
-import { Page, Subtitle, PetCardList, GalleryCardList } from '../components';
+import {
+  Page,
+  Subtitle,
+  PetCardList,
+  GalleryCardList,
+  RadioButton,
+} from '../components';
 
 export default function Test() {
   const pets = [
@@ -104,6 +110,7 @@ export default function Test() {
   return (
     <Page>
       <Subtitle text="Test Page" main />
+      <RadioButton />
       <PetCardList pets={pets} />
       <GalleryCardList photos={photos} />
     </Page>
