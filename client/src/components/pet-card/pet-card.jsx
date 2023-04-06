@@ -10,6 +10,7 @@ export default function PetCard({
   location,
   description,
   createdAt,
+  mode,
 }) {
   const [isFav, setIsFav] = useState(isFavorite);
 
@@ -26,9 +27,10 @@ export default function PetCard({
   const toggleFav = () => {
     setIsFav((prev) => !prev);
   };
+  const cardClassName = mode ? `pet-card ${mode}` : 'pet-card';
   return (
-    <li className="pet-card">
-      <PetCardPhoto url={url} />
+    <li className={cardClassName}>
+      <PetCardPhoto url={url} mode={mode} />
       <div className="pet-card__content">
         <h3 className="pet-card__name">{name}</h3>
         <h4 className="pet-car__location">{location}</h4>
