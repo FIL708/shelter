@@ -5,13 +5,18 @@ import {
   PetCardList,
   GalleryCardList,
   RadioButton,
+  PetController,
 } from '../components';
 
 export default function Test() {
-  const [controlValues, setControlValues] = useState({ direction: 'left' });
+  const [controlValues, setControlValues] = useState({
+    direction: 'left',
+    mode: 'grid',
+    species: 'all',
+  });
   const handleControlValues = (event) => {
     const { name, value } = event.target;
-    setControlValues({ [name]: value });
+    setControlValues((prev) => ({ ...prev, [name]: value }));
   };
   const pets = [
     {
@@ -131,7 +136,7 @@ export default function Test() {
           onChange={(event) => handleControlValues(event)}
         />
       </fieldset>
-
+      <PetController values={controlValues} onChange={handleControlValues} />
       <PetCardList pets={pets} />
       <GalleryCardList photos={photos} />
     </Page>
