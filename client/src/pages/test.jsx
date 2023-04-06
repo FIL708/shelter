@@ -1,4 +1,4 @@
-import { Page, Subtitle, PetCardList, GalleryItem } from '../components';
+import { Page, Subtitle, PetCardList, GalleryCard } from '../components';
 
 export default function Test() {
   const pets = [
@@ -67,7 +67,7 @@ export default function Test() {
     <Page>
       <Subtitle text="Test Page" main />
       <PetCardList pets={pets} />
-      <GalleryItem url="https://www.thesprucepets.com/thmb/y4YEErOurgco9QQO-zJ6Ld1yVkQ=/3000x0/filters:no_upscale():strip_icc()/english-dog-breeds-4788340-hero-14a64cf053ca40f78e5bd078b052d97f.jpg" />
+      <GalleryCard url="https://www.thesprucepets.com/thmb/y4YEErOurgco9QQO-zJ6Ld1yVkQ=/3000x0/filters:no_upscale():strip_icc()/english-dog-breeds-4788340-hero-14a64cf053ca40f78e5bd078b052d97f.jpg" />
     </Page>
   );
 }

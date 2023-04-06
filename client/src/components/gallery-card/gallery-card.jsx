@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
 
-import './gallery-item.css';
+import './gallery-card.css';
 
-export default function GalleryItem({ url }) {
+export default function GalleryCard({ url }) {
   return (
-    <ul className="gallery-item">
+    <li className="gallery-item">
       <button type="button" className="gallery-item__button">
         <img src={url} alt="pet gallery" className="gallery-item__photo" />
+        <p className="gallery-card__hover-text">Zooom!</p>
       </button>
       <Link to="/" />
-    </ul>
+    </li>
   );
 }
