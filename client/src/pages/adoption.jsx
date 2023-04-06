@@ -18,6 +18,7 @@ export default function Adoption() {
     } else {
       setPetsData(pets.filter((pet) => pet.species === 'dog'));
     }
+    console.log(controlValues);
   }, [controlValues]);
 
   const handleControlValues = (event) => {
@@ -29,7 +30,7 @@ export default function Adoption() {
     <Page>
       <Subtitle text="Our Pets" main />
       <PetController values={controlValues} onChange={handleControlValues} />
-      <PetCardList pets={petsData} />
+      <PetCardList pets={petsData} mode={controlValues.mode} />
     </Page>
   );
 }
