@@ -1,5 +1,12 @@
 import { useState } from 'react';
-import { Page, Subtitle, PetCard, Pagination, ErrorCard } from '../components';
+import {
+  Page,
+  Subtitle,
+  PetCard,
+  Pagination,
+  ErrorCard,
+  ScrollButton,
+} from '../components';
 
 export default function Test() {
   const [page, setPage] = useState(1);
@@ -23,6 +30,7 @@ export default function Test() {
       />
       <Pagination page={page} changePage={changePage} pages={pages} />
       <ErrorCard errorCode="404" errorMessage="Page not found!" />
+      <ScrollButton />
     </Page>
   );
 }
