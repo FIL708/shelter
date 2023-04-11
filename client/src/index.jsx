@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { Home, Adoption, Gallery, Contact, Signup, Login, Test } from './pages';
+import NotFound from './pages/not-found';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/test" element={<Test />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </React.StrictMode>

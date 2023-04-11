@@ -18,3 +18,4 @@ export { default as ModalWrapper } from './modal-wrapper/modal-wrapper.jsx';
 export { default as RadioButton } from './radio-button/radio-button.jsx';
 export { default as PetController } from './pet-controller/pet-controller.jsx';
 export { default as Pagination } from './pagination/pagination.jsx';
+export { default as ErrorCard } from './error-card/error-card.jsx';
