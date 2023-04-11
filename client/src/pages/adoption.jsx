@@ -28,6 +28,16 @@ export default function Adoption() {
 
   const handleControlValues = (event) => {
     const { name, value } = event.target;
+    if (name === 'numberOfPets') {
+      if (value < 3) {
+        setControlValues((prev) => ({ ...prev, [name]: 3 }));
+      } else if (value > 36) {
+        setControlValues((prev) => ({ ...prev, [name]: 36 }));
+      } else {
+        setControlValues((prev) => ({ ...prev, [name]: value }));
+      }
+      return;
+    }
     setControlValues((prev) => ({ ...prev, [name]: value }));
   };
 
