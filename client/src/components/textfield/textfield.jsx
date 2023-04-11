@@ -14,6 +14,8 @@ export default function Textfield({
   value,
   validation,
   required,
+  min,
+  max,
 }) {
   const [passwordVisible, setPasswordVisible] = useState('password');
 
@@ -45,6 +47,8 @@ export default function Textfield({
         onChange={onChange}
         value={value}
         onBlur={onBlur}
+        min={min}
+        max={max}
       />
 
       {type === 'password' ? (

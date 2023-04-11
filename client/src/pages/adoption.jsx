@@ -1,5 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Page, Subtitle, PetController, PetCardList } from '../components';
+import {
+  Page,
+  Subtitle,
+  PetController,
+  PetCardList,
+  Pagination,
+} from '../components';
 import pets from '../pets.json';
 
 export default function Adoption() {
@@ -18,7 +24,6 @@ export default function Adoption() {
     } else {
       setPetsData(pets.filter((pet) => pet.species === 'dog'));
     }
-    console.log(controlValues);
   }, [controlValues]);
 
   const handleControlValues = (event) => {
@@ -31,6 +36,7 @@ export default function Adoption() {
       <Subtitle text="Our Pets" main />
       <PetController values={controlValues} onChange={handleControlValues} />
       <PetCardList pets={petsData} mode={controlValues.mode} />
+      <Pagination />
     </Page>
   );
 }
