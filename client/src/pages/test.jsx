@@ -1,4 +1,4 @@
-import { Page, Subtitle, PetCard } from '../components';
+import { Page, Subtitle, PetCard, Pagination } from '../components';
 
 export default function Test() {
   return (
@@ -12,6 +12,7 @@ export default function Test() {
         createdAt="05 march 1995"
         mode="list"
       />
+      <Pagination />
     </Page>
   );
 }
