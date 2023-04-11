@@ -35,6 +35,7 @@ export default function Adoption() {
     if (value === page) return;
     if (value > dataChunks.length) return;
     setPage(value);
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   };
 
   const handleControlValues = (event) => {
