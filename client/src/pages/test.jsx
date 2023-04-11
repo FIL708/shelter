@@ -1,6 +1,15 @@
-import { Page, Subtitle, PetCard } from '../components';
+import { useState } from 'react';
+import { Page, Subtitle, PetCard, Pagination } from '../components';
 
 export default function Test() {
+  const [page, setPage] = useState(1);
+  const pages = 1;
+  const changePage = (value) => {
+    if (value <= 0) return;
+    if (value === page) return;
+    if (value > pages) return;
+    setPage(value);
+  };
   return (
     <Page>
       <Subtitle text="Test Page" main />
@@ -12,6 +21,7 @@ export default function Test() {
         createdAt="05 march 1995"
         mode="list"
       />
+      <Pagination page={page} changePage={changePage} pages={pages} />
     </Page>
   );
 }
