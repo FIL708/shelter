@@ -1,0 +1,6 @@
+.pagination__list {
+  display: flex;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background-color: var(--blue);
+}

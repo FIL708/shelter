@@ -1,6 +1,14 @@
+import { useState } from 'react';
 import { Page, Subtitle, PetCard, Pagination } from '../components';
 
 export default function Test() {
+  const [page, setPage] = useState(1);
+  const changePage = (value) => {
+    if (value <= 0) return;
+    if (value === page) return;
+    setPage(value);
+  };
+  const pages = 5;
   return (
     <Page>
       <Subtitle text="Test Page" main />
@@ -12,7 +20,7 @@ export default function Test() {
         createdAt="05 march 1995"
         mode="list"
       />
-      <Pagination />
+      <Pagination page={page} changePage={changePage} pages={pages} />
     </Page>
   );
 }
