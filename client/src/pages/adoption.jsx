@@ -56,7 +56,7 @@ export default function Adoption() {
     <Page>
       <Subtitle text="Our Pets" main />
       <PetController values={controlValues} onChange={handleControlValues} />
-      <PetCardList pets={dataChunks[page]} mode={controlValues.mode} />
+      <PetCardList pets={dataChunks[page - 1]} mode={controlValues.mode} />
       <Pagination
         changePage={changePage}
         page={page}
