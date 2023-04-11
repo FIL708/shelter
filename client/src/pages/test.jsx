@@ -3,12 +3,13 @@ import { Page, Subtitle, PetCard, Pagination } from '../components';
 
 export default function Test() {
   const [page, setPage] = useState(1);
+  const pages = 1;
   const changePage = (value) => {
     if (value <= 0) return;
     if (value === page) return;
+    if (value > pages) return;
     setPage(value);
   };
-  const pages = 10;
   return (
     <Page>
       <Subtitle text="Test Page" main />

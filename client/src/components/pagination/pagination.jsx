@@ -7,7 +7,6 @@ export default function Pagination({ page, pages, changePage }) {
 
   return (
     <nav className="pagination">
-      {`page: ${page} pages: ${pages}`}
       <ul className="pagination__list">
         <li className="pagination__list-item">
           <Button
