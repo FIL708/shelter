@@ -4,7 +4,6 @@ import './pagination.css';
 
 export default function Pagination({ page, pages, changePage }) {
   const visiblePages = getPages(page, pages);
-  console.log(visiblePages);
 
   return (
     <nav className="pagination">
@@ -18,62 +17,14 @@ export default function Pagination({ page, pages, changePage }) {
             }}
           />
         </li>
-        <li className="pagination__list-item">
+        {visiblePages.map((pageItem) => (
           <Button
-            text="1"
-            onClick={() => {
-              changePage(1);
-            }}
+            text={pageItem.value}
+            key={pageItem.value}
+            className={pageItem.current ? 'pagination__active-button' : null}
+            onClick={() => changePage(pageItem.value)}
           />
-        </li>
-        <li className="pagination__list-item">
-          <Button
-            text="2"
-            onClick={() => {
-              changePage(2);
-            }}
-          />
-        </li>
-        <li className="pagination__list-item">
-          <Button
-            text="3"
-            onClick={() => {
-              changePage(3);
-            }}
-          />
-        </li>
-        <li className="pagination__list-item">
-          <Button
-            text="4"
-            onClick={() => {
-              changePage(4);
-            }}
-          />
-        </li>
-        <li className="pagination__list-item">
-          <Button
-            text="5"
-            onClick={() => {
-              changePage(5);
-            }}
-          />
-        </li>
-        <li className="pagination__list-item">
-          <Button
-            text="6"
-            onClick={() => {
-              changePage(5);
-            }}
-          />
-        </li>
-        <li className="pagination__list-item">
-          <Button
-            text="7"
-            onClick={() => {
-              changePage(5);
-            }}
-          />
-        </li>
+        ))}
         <li className="pagination__list-item">
           <Button
             text=">"

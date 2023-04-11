@@ -9,7 +9,7 @@ export default function getPages(page, pages) {
       pagesArray.push({ value: index, current: page === index });
     }
   } else if (pages > 5 && page > 3 && page + 2 > pages) {
-    for (let index = pages - 5; index <= pages; index += 1) {
+    for (let index = pages - 4; index <= pages; index += 1) {
       pagesArray.push({ value: index, current: page === index });
     }
   } else if (pages > 5 && page > 3) {
