@@ -3,7 +3,7 @@ import { Page, Subtitle, PetCard, Pagination, ErrorCard } from '../components';
 
 export default function Test() {
   const [page, setPage] = useState(1);
-  const pages = 1;
+  const pages = 10;
   const changePage = (value) => {
     if (value <= 0) return;
     if (value === page) return;
