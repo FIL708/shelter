@@ -8,7 +8,7 @@ export default function Pagination({ page, pages, changePage }) {
 
   return (
     <nav className="pagination">
-      {page}
+      {`page: ${page} pages: ${pages}`}
       <ul className="pagination__list">
         <li className="pagination__list-item">
           <Button
@@ -53,6 +53,22 @@ export default function Pagination({ page, pages, changePage }) {
         <li className="pagination__list-item">
           <Button
             text="5"
+            onClick={() => {
+              changePage(5);
+            }}
+          />
+        </li>
+        <li className="pagination__list-item">
+          <Button
+            text="6"
+            onClick={() => {
+              changePage(5);
+            }}
+          />
+        </li>
+        <li className="pagination__list-item">
+          <Button
+            text="7"
             onClick={() => {
               changePage(5);
             }}

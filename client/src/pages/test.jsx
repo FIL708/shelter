@@ -8,7 +8,7 @@ export default function Test() {
     if (value === page) return;
     setPage(value);
   };
-  const pages = 5;
+  const pages = 3;
   return (
     <Page>
       <Subtitle text="Test Page" main />
