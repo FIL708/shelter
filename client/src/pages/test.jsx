@@ -6,13 +6,14 @@ import {
   Pagination,
   ErrorCard,
   ScrollButton,
+  GalleryController,
 } from '../components';
 import { useScrollToggle } from '../hooks';
 
 export default function Test() {
   const visible = useScrollToggle(200);
   console.log(visible);
-
+  const [filteringTag, setFilteringTag] = useState('all');
   const [page, setPage] = useState(1);
   const pages = 10;
   const changePage = (value) => {
@@ -21,6 +22,10 @@ export default function Test() {
     if (value > pages) return;
     setPage(value);
   };
+  const filterByTag = (event) => {
+    setFilteringTag(event.target.value);
+  };
+
   return (
     <Page>
       <Subtitle text="Test Page" main />
@@ -35,6 +40,7 @@ export default function Test() {
       <Pagination page={page} changePage={changePage} pages={pages} />
       <ErrorCard errorCode="404" errorMessage="Page not found!" />
       <ScrollButton />
+      <GalleryController onChange={filterByTag} value={filteringTag} />
     </Page>
   );
 }

@@ -20,3 +20,4 @@ export { default as PetController } from './pet-controller/pet-controller.jsx';
 export { default as Pagination } from './pagination/pagination.jsx';
 export { default as ErrorCard } from './error-card/error-card.jsx';
 export { default as ScrollButton } from './scroll-button/scroll-button.jsx';
+export { default as GalleryController } from './gallery-controller/gallery-controller.jsx';
