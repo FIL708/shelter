@@ -12,6 +12,7 @@
   "plugins": ["prettier"],
   "rules": {
     "import/extensions": "off",
-    "func-names": "off"
+    "func-names": "off",
+    "consistent-return": "off"
   }
 }
