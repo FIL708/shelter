@@ -7,8 +7,12 @@ import {
   ErrorCard,
   ScrollButton,
 } from '../components';
+import { useScrollToggle } from '../hooks';
 
 export default function Test() {
+  const visible = useScrollToggle(200);
+  console.log(visible);
+
   const [page, setPage] = useState(1);
   const pages = 10;
   const changePage = (value) => {
