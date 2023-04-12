@@ -3,13 +3,19 @@ import { Button } from '../index.js';
 import './scroll-button.css';
 
 export default function ScrollButton({ visible }) {
-  if (!visible) return null;
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  };
+  const scrollButtonClassName = visible
+    ? 'scroll-button'
+    : 'scroll-button inactive';
   return (
     <Button
       iconType="top-arrow"
       iconSize="30px"
       iconFill="#fff2f2"
-      className="scroll-button"
+      className={scrollButtonClassName}
+      onClick={scrollToTop}
     />
   );
 }
