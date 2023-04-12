@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "format": "prettier --write 'src/**/*.{js,jsx}'",
-    "start": "nodemon server.js",
+    "start": "nodemon src/server.js",
     "lint": "eslint .",
     "lint:staged": "lint-staged"
   },
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "express": "^4.18.2",
+    "helmet": "^6.1.5",
     "pg": "^8.10.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.30.0",

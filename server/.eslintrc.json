@@ -10,5 +10,9 @@
     "ecmaVersion": "latest"
   },
   "plugins": ["prettier"],
-  "rules": {}
+  "rules": {
+    "import/extensions": "off",
+    "func-names": "off",
+    "consistent-return": "off"
+  }
 }
