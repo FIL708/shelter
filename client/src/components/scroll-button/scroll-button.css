@@ -1,6 +1,6 @@
 .scroll-button {
   position: fixed;
-  bottom: 10%;
+  top: 10%;
   right: 2%;
   background-color: var(--blue);
 }
