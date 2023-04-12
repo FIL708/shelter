@@ -6,6 +6,7 @@ import {
   Pagination,
   ErrorCard,
   ScrollButton,
+  GalleryController,
 } from '../components';
 import { useScrollToggle } from '../hooks';
 
@@ -35,6 +36,7 @@ export default function Test() {
       <Pagination page={page} changePage={changePage} pages={pages} />
       <ErrorCard errorCode="404" errorMessage="Page not found!" />
       <ScrollButton />
+      <GalleryController />
     </Page>
   );
 }
