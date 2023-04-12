@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   GalleryCardList,
   Page,
@@ -17,6 +17,19 @@ export default function Gallery() {
   const isScrollButtonVisible = useScrollToggle(200);
   const [filteringTag, setFilteringTag] = useState('all');
   console.log(setPetPhotos);
+
+  useEffect(() => {
+    if (filteringTag === 'all') {
+      setPetPhotos(photos);
+    } else if (filteringTag === 'dogs') {
+      setPetPhotos(photos.filter((photo) => photo.tags.includes('dog')));
+    } else if (filteringTag === 'cats') {
+      setPetPhotos(photos.filter((photo) => photo.tags.includes('cat')));
+    } else if (filteringTag === 'events') {
+      setPetPhotos(photos.filter((photo) => photo.tags.includes('event')));
+    }
+  }, [filteringTag]);
+
   const photosChunks = getDataChunks(petPhotos, 12);
 
   const changePage = (value) => {
