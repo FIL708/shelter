@@ -5,9 +5,11 @@ import {
   PetController,
   PetCardList,
   Pagination,
+  ScrollButton,
 } from '../components';
 import pets from '../pets.json';
 import getDataChunks from '../helpers/get-data-chunks';
+import { useScrollToggle } from '../hooks';
 
 export default function Adoption() {
   const [petsData, setPetsData] = useState(pets);
@@ -17,6 +19,7 @@ export default function Adoption() {
     numberOfPets: 9,
   });
   const [page, setPage] = useState(1);
+  const isScrollButtonVisible = useScrollToggle(200);
 
   useEffect(() => {
     if (controlValues.species === 'all') {
@@ -63,6 +66,7 @@ export default function Adoption() {
         page={page}
         pages={dataChunks.length}
       />
+      <ScrollButton visible={isScrollButtonVisible} />
     </Page>
   );
 }

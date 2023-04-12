@@ -2,7 +2,8 @@ import { Button } from '../index.js';
 
 import './scroll-button.css';
 
-export default function ScrollButton() {
+export default function ScrollButton({ visible }) {
+  if (!visible) return null;
   return (
     <Button
       iconType="top-arrow"
