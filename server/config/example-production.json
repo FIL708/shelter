@@ -1,0 +1,3 @@
+{
+    "databaseUrl": "postgress://postgres:example@db:5432/shelter-database"
+}
