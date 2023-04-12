@@ -1,0 +1,14 @@
+.scroll-button {
+  position: fixed;
+  top: 50%;
+  right: 2%;
+  background-color: var(--blue);
+}
+
+.scroll-button:hover {
+  background-color: var(--light-blue);
+}
+
+.inactive {
+  right: -10%;
+}

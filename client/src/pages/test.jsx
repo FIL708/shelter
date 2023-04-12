@@ -1,7 +1,18 @@
 import { useState } from 'react';
-import { Page, Subtitle, PetCard, Pagination, ErrorCard } from '../components';
+import {
+  Page,
+  Subtitle,
+  PetCard,
+  Pagination,
+  ErrorCard,
+  ScrollButton,
+} from '../components';
+import { useScrollToggle } from '../hooks';
 
 export default function Test() {
+  const visible = useScrollToggle(200);
+  console.log(visible);
+
   const [page, setPage] = useState(1);
   const pages = 10;
   const changePage = (value) => {
@@ -23,6 +34,7 @@ export default function Test() {
       />
       <Pagination page={page} changePage={changePage} pages={pages} />
       <ErrorCard errorCode="404" errorMessage="Page not found!" />
+      <ScrollButton />
     </Page>
   );
 }
