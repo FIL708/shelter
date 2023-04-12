@@ -23,8 +23,7 @@ export default function Test() {
     setPage(value);
   };
   const filterByTag = (event) => {
-    console.log(event.target);
-    setFilteringTag('all');
+    setFilteringTag(event.target.value);
   };
 
   return (

@@ -5,6 +5,7 @@ import {
   Subtitle,
   Pagination,
   ScrollButton,
+  GalleryController,
 } from '../components';
 import photos from '../photos.json';
 import getDataChunks from '../helpers/get-data-chunks';
@@ -14,6 +15,7 @@ export default function Gallery() {
   const [petPhotos, setPetPhotos] = useState(photos);
   const [page, setPage] = useState(1);
   const isScrollButtonVisible = useScrollToggle(200);
+  const [filteringTag, setFilteringTag] = useState('all');
   console.log(setPetPhotos);
   const photosChunks = getDataChunks(petPhotos, 12);
 
@@ -24,10 +26,13 @@ export default function Gallery() {
     setPage(value);
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   };
-
+  const filterByTag = (event) => {
+    setFilteringTag(event.target.value);
+  };
   return (
     <Page>
       <Subtitle text="Gallery" main />
+      <GalleryController onChange={filterByTag} value={filteringTag} />
       <GalleryCardList photos={photosChunks[page - 1]} />
       <Pagination
         changePage={changePage}
