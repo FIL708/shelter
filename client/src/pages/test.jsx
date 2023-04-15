@@ -7,6 +7,7 @@ import {
   ErrorCard,
   ScrollButton,
   GalleryController,
+  Dropdown,
 } from '../components';
 import { useScrollToggle } from '../hooks';
 
@@ -41,6 +42,7 @@ export default function Test() {
       <ErrorCard errorCode="404" errorMessage="Page not found!" />
       <ScrollButton />
       <GalleryController onChange={filterByTag} value={filteringTag} />
+      <Dropdown />
     </Page>
   );
 }
