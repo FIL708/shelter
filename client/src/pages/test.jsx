@@ -52,7 +52,7 @@ export default function Test() {
         name="search_dropdown"
         values={['first-name', 'last-name', 'email', 'role']}
         label="search by"
-        placeholder="placeholder"
+        // placeholder="placeholder"
         value={dropdown}
         onChange={(event) => handleDropdown(event)}
       />
