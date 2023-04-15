@@ -16,6 +16,12 @@ export default function Test() {
   console.log(visible);
   const [filteringTag, setFilteringTag] = useState('all');
   const [page, setPage] = useState(1);
+  const [dropdown, setDropdown] = useState('');
+  const handleDropdown = (event) => {
+    const { value, name } = event.target;
+    console.log(value, name);
+    setDropdown(value);
+  };
   const pages = 10;
   const changePage = (value) => {
     if (value <= 0) return;
@@ -45,7 +51,10 @@ export default function Test() {
       <Dropdown
         name="search_dropdown"
         values={['first-name', 'last-name', 'email', 'role']}
-        label="serach by"
+        label="search by"
+        placeholder="placeholder"
+        value={dropdown}
+        onChange={(event) => handleDropdown(event)}
       />
     </Page>
   );
