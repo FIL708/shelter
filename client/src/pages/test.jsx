@@ -42,7 +42,11 @@ export default function Test() {
       <ErrorCard errorCode="404" errorMessage="Page not found!" />
       <ScrollButton />
       <GalleryController onChange={filterByTag} value={filteringTag} />
-      <Dropdown />
+      <Dropdown
+        name="search_dropdown"
+        values={['first-name', 'last-name', 'email', 'role']}
+        label="serach by"
+      />
     </Page>
   );
 }
