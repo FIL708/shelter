@@ -6,7 +6,7 @@ import food from './assets/food.png';
 
 export default function HomeGoalsSection() {
   return (
-    <section className="home__goals-section">
+    <ul className="home__goals-section">
       <HomeCard
         title="adoption"
         photo={adoptions}
@@ -25,6 +25,6 @@ export default function HomeGoalsSection() {
         text="Lorem ipsum dolor sit amet consectetur. Netus integer bibendum at pharetra leo nisl."
         vertical
       />
-    </section>
+    </ul>
   );
 }
