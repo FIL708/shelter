@@ -43,7 +43,8 @@
 }
 
 .gallery-card__preview-photo {
-  height: 80vh;
+  max-height: 70%;
+  object-fit: contain;
 }
 
 .gallery-card__link {
