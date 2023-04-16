@@ -1,0 +1,20 @@
+.home-card {
+  padding-bottom: 20px;
+  max-width: 260px;
+  text-align: center;
+  box-shadow: var(--shadow-4);
+}
+
+.home-card__photo {
+  width: 260px;
+  height: 280px;
+  margin-bottom: 30px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.home-card__text {
+  margin-top: 30px;
+  text-align: justify;
+  padding: 0 10px;
+}
