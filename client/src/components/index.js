@@ -23,3 +23,4 @@ export { default as ScrollButton } from './scroll-button/scroll-button.jsx';
 export { default as GalleryController } from './gallery-controller/gallery-controller.jsx';
 export { default as Dropdown } from './dropdown/dropdown.jsx';
 export { default as WelcomeSection } from './welcome-section/welcome-section.jsx';
+export { default as HomeCard } from './home-card/home-card.jsx';

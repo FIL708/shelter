@@ -8,9 +8,9 @@ import {
   ScrollButton,
   GalleryController,
   Dropdown,
+  HomeCard,
 } from '../components';
 import { useScrollToggle } from '../hooks';
-
 
 export default function Test() {
   const visible = useScrollToggle(200);
@@ -57,6 +57,7 @@ export default function Test() {
         value={dropdown}
         onChange={(event) => handleDropdown(event)}
       />
+      <HomeCard title="title" />
     </Page>
   );
 }
