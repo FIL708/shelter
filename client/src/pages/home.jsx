@@ -1,9 +1,10 @@
-import { Page, WelcomeSection } from '../components';
+import { Page, HomeWelcomeSection, HomeGoalsSection } from '../components';
 
 export default function Home() {
   return (
     <Page>
-      <WelcomeSection />
+      <HomeWelcomeSection />
+      <HomeGoalsSection />
     </Page>
   );
 }
