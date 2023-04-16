@@ -24,3 +24,4 @@ export { default as GalleryController } from './gallery-controller/gallery-contr
 export { default as Dropdown } from './dropdown/dropdown.jsx';
 export { default as WelcomeSection } from './welcome-section/welcome-section.jsx';
 export { default as HomeCard } from './home-card/home-card.jsx';
+export { default as HomeGoalsSection } from './home__goals-section/home__goals-section.jsx';

@@ -9,6 +9,7 @@ import {
   GalleryController,
   Dropdown,
   HomeCard,
+  HomeGoalsSection,
 } from '../components';
 import { useScrollToggle } from '../hooks';
 
@@ -63,6 +64,7 @@ export default function Test() {
         url="https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-08/220805-border-collie-play-mn-1100-82d2f1.jpg"
         vertical
       />
+      <HomeGoalsSection />
     </Page>
   );
 }
