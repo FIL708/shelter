@@ -6,7 +6,6 @@ export default function Dropdown({
   onChange,
   placeholder,
   label,
-  value,
 }) {
   return (
     <label htmlFor={name} className="dropdown__label">
@@ -16,10 +15,15 @@ export default function Dropdown({
         name={name}
         id={name}
         onChange={onChange}
-        value={value}
+        defaultValue={placeholder}
       >
         {placeholder ? (
-          <option className="dropdown__placeholder" value="" disabled selected>
+          <option
+            className="dropdown__placeholder"
+            value={placeholder}
+            disabled
+            hidden
+          >
             {placeholder}
           </option>
         ) : null}
