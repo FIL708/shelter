@@ -7,6 +7,7 @@ import {
   ErrorCard,
   ScrollButton,
   GalleryController,
+  Dropdown,
 } from '../components';
 import { useScrollToggle } from '../hooks';
 
@@ -15,6 +16,12 @@ export default function Test() {
   console.log(visible);
   const [filteringTag, setFilteringTag] = useState('all');
   const [page, setPage] = useState(1);
+  const [dropdown, setDropdown] = useState('');
+  const handleDropdown = (event) => {
+    const { value, name } = event.target;
+    console.log(value, name);
+    setDropdown(value);
+  };
   const pages = 10;
   const changePage = (value) => {
     if (value <= 0) return;
@@ -41,6 +48,14 @@ export default function Test() {
       <ErrorCard errorCode="404" errorMessage="Page not found!" />
       <ScrollButton />
       <GalleryController onChange={filterByTag} value={filteringTag} />
+      <Dropdown
+        name="search_dropdown"
+        values={['first-name', 'last-name', 'email', 'role']}
+        label="search by"
+        // placeholder="placeholder"
+        value={dropdown}
+        onChange={(event) => handleDropdown(event)}
+      />
     </Page>
   );
 }
