@@ -61,6 +61,7 @@ export default function Test() {
         title="title"
         text="Lorem ipsum dolor sit amet consectetur. Netus integer bibendum at pharetra leo nisl."
         url="https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-08/220805-border-collie-play-mn-1100-82d2f1.jpg"
+        horizontal
       />
     </Page>
   );

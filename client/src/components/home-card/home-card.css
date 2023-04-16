@@ -1,20 +1,21 @@
 .home-card {
-  padding-bottom: 20px;
-  max-width: 260px;
-  text-align: center;
+  display: flex;
+  align-items: center;
   box-shadow: var(--shadow-4);
+  border-radius: 20px 0 0 20px;
 }
 
 .home-card__photo {
-  width: 260px;
-  height: 280px;
-  margin-bottom: 30px;
+  width: 140px;
+  height: 140px;
+  margin-right: 50px;
   object-fit: cover;
-  border-radius: 8px 8px 0 0;
+  border-radius: 20px;
 }
-
+.home-card__content:first-child {
+  text-align: right;
+}
 .home-card__text {
-  margin-top: 30px;
   text-align: justify;
   padding: 0 10px;
 }
