@@ -4,6 +4,7 @@ import {
   Subtitle,
   HomeWelcomeSection,
   HomeGoalsSection,
+  HomeMissionSection,
 } from '../components';
 import { useScrollToggle } from '../hooks';
 
@@ -15,6 +16,7 @@ export default function Home() {
       <HomeWelcomeSection />
       <HomeGoalsSection />
       <Subtitle text="our mission" />
+      <HomeMissionSection />
       <ScrollButton visible={isScrollButtonVisible} />
     </Page>
   );
