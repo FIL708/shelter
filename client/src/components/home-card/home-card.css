@@ -1,6 +1,8 @@
 .home-card {
   display: flex;
   align-items: center;
+  width: 100%;
+  padding-right: 20px;
   box-shadow: var(--shadow-4);
   border-radius: 20px 0 0 20px;
 }
@@ -8,14 +10,32 @@
 .home-card__photo {
   width: 140px;
   height: 140px;
-  margin-right: 50px;
+  margin: 0 50px 0 0;
   object-fit: cover;
   border-radius: 20px;
 }
-.home-card__content:first-child {
-  text-align: right;
-}
+
 .home-card__text {
+  margin-top: 20px;
   text-align: justify;
+}
+
+.vertical {
+  flex-direction: column;
+  max-width: 260px;
+  padding: 0;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+}
+
+.vertical .home-card__photo {
+  width: 260px;
+  height: 240px;
+  border-radius: 20px 20px 0 0;
+  margin: 0 0 20px 0;
+}
+
+.vertical .home-card__text {
+  margin-bottom: 20px;
   padding: 0 10px;
 }
