@@ -1,8 +1,14 @@
 .user-navbar {
+  position: absolute;
+  top: 34px;
+  right: 0px;
+  /* transform-origin: center; */
   border: 2px solid var(--less-white);
-  color: var(--dark-grey);
   border-radius: 8px;
+  background-color: var(--white);
+  color: var(--dark-grey);
   box-shadow: var(--shadow-4);
+  z-index: 3;
 }
 
 .user-navbar__logout {

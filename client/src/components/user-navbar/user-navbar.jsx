@@ -2,8 +2,9 @@ import './user-navbar.css';
 
 import { NavLink } from 'react-router-dom';
 
-export default function UserNavbar({ userRole, logoutHandler }) {
-  if (!userRole) return false;
+export default function UserNavbar({ userRole, logoutHandler, visible }) {
+  if (!visible) return false;
+
   const userNavItems =
     userRole === 'admin'
       ? [
