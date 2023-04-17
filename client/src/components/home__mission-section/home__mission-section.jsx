@@ -10,8 +10,18 @@ export default function HomeMissionSection() {
   return (
     <ul className="home__mission-section">
       <HomeCard
+        photo={help}
+        title="help"
+        text="Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+      />
+      <HomeCard
         photo={care}
         title="care"
+        text="Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+      />
+      <HomeCard
+        photo={treat}
+        title="treat"
         text="Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
       />
       <HomeCard
@@ -21,17 +31,7 @@ export default function HomeMissionSection() {
       />
       <HomeCard
         photo={find}
-        title="find"
-        text="Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
-      />
-      <HomeCard
-        photo={help}
-        title="help"
-        text="Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
-      />
-      <HomeCard
-        photo={treat}
-        title="treat"
+        title="find new home"
         text="Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
       />
     </ul>

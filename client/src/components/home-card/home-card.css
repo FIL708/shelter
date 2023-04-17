@@ -13,7 +13,12 @@
   border-radius: 20px;
   box-shadow: var(--shadow-8);
 }
-
+.home-card__title {
+  color: var(--blue);
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
 .home-card__text {
   margin-top: 20px;
   text-align: justify;
