@@ -1,11 +1,12 @@
 .subtitle {
-  text-align: center;
+  text-transform: capitalize;
   font-size: 26px;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   letter-spacing: 2px;
   color: var(--blue);
 }
+
 .subtitle > * {
   margin: 0 10px;
 }

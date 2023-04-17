@@ -1,0 +1,8 @@
+.home__mission-section {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  max-width: 900px;
+  width: 90%;
+  margin-bottom: 50px;
+}
