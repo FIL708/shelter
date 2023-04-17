@@ -1,0 +1,17 @@
+.user-navbar {
+  border: 2px solid var(--less-white);
+  color: var(--dark-grey);
+}
+
+.user-navbar__logout {
+  all: unset;
+}
+
+.user-navbar__item {
+    padding: 12px 10px;
+  transition: 0.3s;
+}
+
+.user-navbar__item:hover {
+  background-color: var(--less-white);
+}

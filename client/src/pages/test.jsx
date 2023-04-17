@@ -10,6 +10,7 @@ import {
   Dropdown,
   HomeCard,
   HomeGoalsSection,
+  UserNavbar,
 } from '../components';
 import { useScrollToggle } from '../hooks';
 
@@ -65,6 +66,7 @@ export default function Test() {
         vertical
       />
       <HomeGoalsSection />
+      <UserNavbar userRole="user" />
     </Page>
   );
 }
