@@ -1,0 +1,29 @@
+.user-navbar {
+  border: 2px solid var(--less-white);
+  color: var(--dark-grey);
+  border-radius: 8px;
+  box-shadow: var(--shadow-4);
+}
+
+.user-navbar__logout {
+  all: unset;
+}
+
+.user-navbar__item {
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.user-navbar__item > * {
+  padding: 12px 10px;
+  display: block;
+  width: 100%;
+}
+
+.user-navbar__item > .active {
+  background-color: var(--less-white);
+}
+
+.user-navbar__item:hover {
+  background-color: var(--less-white);
+}

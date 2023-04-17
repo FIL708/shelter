@@ -10,6 +10,7 @@ import {
   Dropdown,
   HomeCard,
   HomeGoalsSection,
+  UserNavbar,
 } from '../components';
 import { useScrollToggle } from '../hooks';
 
@@ -33,6 +34,10 @@ export default function Test() {
   };
   const filterByTag = (event) => {
     setFilteringTag(event.target.value);
+  };
+
+  const logoutHandler = () => {
+    console.log('logout');
   };
 
   return (
@@ -65,6 +70,8 @@ export default function Test() {
         vertical
       />
       <HomeGoalsSection />
+      <UserNavbar userRole="user" />
+      <UserNavbar userRole="admin" logoutHandler={logoutHandler} />
     </Page>
   );
 }
