@@ -36,6 +36,10 @@ export default function Test() {
     setFilteringTag(event.target.value);
   };
 
+  const logoutHandler = () => {
+    console.log('logout');
+  };
+
   return (
     <Page>
       <Subtitle text="Test Page" main />
@@ -67,6 +71,7 @@ export default function Test() {
       />
       <HomeGoalsSection />
       <UserNavbar userRole="user" />
+      <UserNavbar userRole="admin" logoutHandler={logoutHandler} />
     </Page>
   );
 }

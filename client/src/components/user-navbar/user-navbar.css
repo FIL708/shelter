@@ -1,6 +1,7 @@
 .user-navbar {
   border: 2px solid var(--less-white);
   color: var(--dark-grey);
+  border-radius: 8px;
 }
 
 .user-navbar__logout {
@@ -8,8 +9,18 @@
 }
 
 .user-navbar__item {
-    padding: 12px 10px;
   transition: 0.3s;
+  cursor: pointer;
+}
+
+.user-navbar__item > * {
+  padding: 12px 10px;
+  display: block;
+  width: 100%;
+}
+
+.user-navbar__item > .active {
+  background-color: var(--less-white);
 }
 
 .user-navbar__item:hover {

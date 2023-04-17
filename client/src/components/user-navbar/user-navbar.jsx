@@ -1,13 +1,13 @@
 import './user-navbar.css';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-export default function UserNavbar({ userRole }) {
+export default function UserNavbar({ userRole, logoutHandler }) {
   if (!userRole) return false;
   const userNavItems =
     userRole === 'admin'
       ? [
-          { linkName: 'Users', link: '/users' },
+          { linkName: 'Users', link: '/test' },
           { linkName: 'Pets', link: '/pets' },
           { linkName: 'Messages', link: '/messages' },
           { linkName: 'My Profile', link: '/profile' },
@@ -18,17 +18,19 @@ export default function UserNavbar({ userRole }) {
           { linkName: 'My Profile', link: '/profile' },
         ];
 
-  console.log(userNavItems);
-
   return (
     <nav className="user-navbar">
       {userNavItems.map((item) => (
         <li className="user-navbar__item" key={item.linkName}>
-          <Link to={item.link}>{item.linkName}</Link>
+          <NavLink to={item.link}>{item.linkName}</NavLink>
         </li>
       ))}
       <li className="user-navbar__item">
-        <button type="button" className="user-navbar__logout">
+        <button
+          type="button"
+          className="user-navbar__logout"
+          onClick={logoutHandler}
+        >
           Logout
         </button>
       </li>
