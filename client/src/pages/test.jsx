@@ -11,6 +11,7 @@ import {
   HomeCard,
   HomeGoalsSection,
   UserNavbar,
+  UserLoggedBar,
 } from '../components';
 import { useScrollToggle } from '../hooks';
 
@@ -72,6 +73,7 @@ export default function Test() {
       <HomeGoalsSection />
       <UserNavbar userRole="user" />
       <UserNavbar userRole="admin" logoutHandler={logoutHandler} />
+      <UserLoggedBar />
     </Page>
   );
 }
