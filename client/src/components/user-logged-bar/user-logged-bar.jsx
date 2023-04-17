@@ -4,7 +4,6 @@ import './user-logged-bar.css';
 
 export default function UserLoggedBar({ photo, email, role, logoutHandler }) {
   const [isNavVisible, setIsNavVisible] = useState(false);
-  console.log(isNavVisible);
   const toggleNavVisibility = () => setIsNavVisible((prev) => !prev);
   return (
     <div className="user-logged-bar">
