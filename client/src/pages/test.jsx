@@ -4,20 +4,24 @@ import { Page, Subtitle, UsersFilter } from '../components';
 export default function Test() {
   const [filterValues, setFilterValues] = useState({
     usersNumber: 20,
-    sortBy: '',
+    sortBy: 'newest',
     search: '',
-    searchBy: '',
+    searchBy: 'first name',
   });
-  console.log(filterValues, setFilterValues);
 
   const filterHandler = (event) => {
     const { name, value } = event.target;
-    console.log(name, value);
+    console.log(filterValues);
+
+    setFilterValues((prev) => ({ ...prev, [name]: value }));
+  };
+  const clearForm = () => {
+    console.log(filterValues);
   };
   return (
     <Page>
       <Subtitle text="Test Page" main />
-      <UsersFilter onChange={filterHandler} />
+      <UsersFilter onChange={filterHandler} onClick={clearForm} />
     </Page>
   );
 }

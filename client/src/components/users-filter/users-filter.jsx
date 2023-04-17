@@ -1,7 +1,7 @@
 import { Dropdown, Textfield, Button } from '../index.js';
 import './users-filter.css';
 
-export default function UsersFilter({ onChange }) {
+export default function UsersFilter({ onChange, onClick }) {
   return (
     <form className="users-filter">
       <Dropdown
@@ -16,14 +16,14 @@ export default function UsersFilter({ onChange }) {
         values={['newest', 'oldest', 'role', 'A-Z', 'Z-A']}
         onChange={(event) => onChange(event)}
       />
-      <Textfield />
+      <Textfield name="search" onChange={(event) => onChange(event)} />
       <Dropdown
         label="Search by"
         name="searchBy"
         values={['first name', 'last name', 'email']}
         onChange={(event) => onChange(event)}
       />
-      <Button />
+      <Button onClick={onClick} />
     </form>
   );
 }
