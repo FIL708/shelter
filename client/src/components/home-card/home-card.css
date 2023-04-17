@@ -2,7 +2,6 @@
   display: flex;
   width: 100%;
   padding-right: 20px;
-
   border-radius: 20px 0 0 20px;
 }
 
@@ -12,6 +11,7 @@
   margin: 0 50px 0 0;
   object-fit: cover;
   border-radius: 20px;
+  box-shadow: var(--shadow-8);
 }
 
 .home-card__text {
@@ -25,7 +25,7 @@
   padding: 0;
   text-align: center;
   border-radius: 8px 8px 0 0;
-  box-shadow: var(--shadow-4);
+  box-shadow: var(--shadow-8);
 }
 
 .vertical .home-card__photo {
@@ -33,6 +33,7 @@
   height: 240px;
   border-radius: 20px 20px 0 0;
   margin: 0 0 20px 0;
+  box-shadow: none;
 }
 
 .vertical .home-card__text {
