@@ -16,7 +16,7 @@ export default function RegisterForm({
 
   return (
     <section className="register-form__section">
-      <Subtitle text="Register" main />
+      <Subtitle text="Join to us" main />
       <form className="register-form">
         <Textfield
           name="email"

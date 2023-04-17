@@ -27,3 +27,4 @@ export { default as HomeCard } from './home-card/home-card.jsx';
 export { default as HomeGoalsSection } from './home__goals-section/home__goals-section.jsx';
 export { default as HomeMissionSection } from './home__mission-section/home__mission-section.jsx';
 export { default as UserNavbar } from './user-navbar/user-navbar.jsx';
+export { default as UserLoggedBar } from './user-logged-bar/user-logged-bar.jsx';

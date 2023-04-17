@@ -1,0 +1,22 @@
+.user-logged-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--white);
+}
+
+.user-logged-bar__avatar {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.user-logged-bar__option-button {
+  background-color: var(--less-white);
+}
+
+.user-logged-bar__option-button:hover {
+  background-color: var(--less-white);
+}

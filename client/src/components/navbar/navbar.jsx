@@ -1,7 +1,11 @@
-import './navbar.css';
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { UserContext } from '../..';
+import { UserLoggedBar } from '..';
+import './navbar.css';
 
 export default function Navbar() {
+  const user = useContext(UserContext);
   return (
     <nav className="navbar">
       <NavLink className="navbar__link navbar__home" to="/test">
@@ -19,12 +23,19 @@ export default function Navbar() {
       <NavLink className="navbar__link navbar__contact" to="/contact">
         Contact
       </NavLink>
-      <NavLink className="navbar__link navbar__signup" to="/signup">
-        Signup
-      </NavLink>
-      <NavLink className="navbar__link navbar__login" to="/login">
-        Login
-      </NavLink>
+
+      {user ? (
+        <UserLoggedBar {...user} />
+      ) : (
+        <>
+          <NavLink className="navbar__link navbar__signup" to="/signup">
+            Signup
+          </NavLink>
+          <NavLink className="navbar__link navbar__login" to="/login">
+            Login
+          </NavLink>
+        </>
+      )}
     </nav>
   );
 }
