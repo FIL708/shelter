@@ -1,11 +1,7 @@
 import { Dropdown, Textfield, Button } from '../index.js';
 import './users-filter.css';
 
-export default function UsersFilter() {
-  const onChange = (event) => {
-    const { name, value } = event.target;
-    console.log(name, value);
-  };
+export default function UsersFilter({ onChange }) {
   return (
     <form className="users-filter">
       <Dropdown
