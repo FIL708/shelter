@@ -2,6 +2,7 @@
   border: 2px solid var(--less-white);
   color: var(--dark-grey);
   border-radius: 8px;
+  box-shadow: var(--shadow-4);
 }
 
 .user-navbar__logout {

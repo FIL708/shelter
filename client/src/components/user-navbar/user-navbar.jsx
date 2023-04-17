@@ -7,7 +7,7 @@ export default function UserNavbar({ userRole, logoutHandler }) {
   const userNavItems =
     userRole === 'admin'
       ? [
-          { linkName: 'Users', link: '/test' },
+          { linkName: 'Users', link: '/users' },
           { linkName: 'Pets', link: '/pets' },
           { linkName: 'Messages', link: '/messages' },
           { linkName: 'My Profile', link: '/profile' },
