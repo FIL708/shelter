@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import {
   Page,
   Subtitle,
@@ -13,6 +13,7 @@ import {
   UserNavbar,
   UserLoggedBar,
 } from '../components';
+import { UserContext } from '..';
 import { useScrollToggle } from '../hooks';
 
 export default function Test() {
@@ -26,6 +27,10 @@ export default function Test() {
     console.log(value, name);
     setDropdown(value);
   };
+
+  const user = useContext(UserContext);
+  console.log(user);
+
   const pages = 10;
   const changePage = (value) => {
     if (value <= 0) return;
