@@ -36,6 +36,26 @@ export default function UsersTable() {
             createdAt: '2023-03-28 07:19:53.602 +00:00',
           }}
         />
+        <UsersTableRecord
+          {...{
+            id: '1',
+            firstName: 'Joe',
+            lastName: 'Doe',
+            email: 'joedoe@example.com',
+            role: 'user',
+            createdAt: '2023-03-28 07:19:53.602 +00:00',
+          }}
+        />
+        <UsersTableRecord
+          {...{
+            id: '1',
+            firstName: 'Joe',
+            lastName: 'Doe',
+            email: 'joedoe@example.com',
+            role: 'user',
+            createdAt: '2023-03-28 07:19:53.602 +00:00',
+          }}
+        />
       </tbody>
     </table>
   );

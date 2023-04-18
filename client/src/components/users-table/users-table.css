@@ -3,16 +3,10 @@
   color: var(--dark-grey);
   border-spacing: 0;
 }
-.users-table__body:nth-child(even) {
-  background-color: var(--less-white);
-}
+
 .users-table__header-row > .users-table__item {
   text-align: left;
   border-bottom: 2px solid var(--blue);
   font-size: 20px;
   font-weight: 400;
-}
-
-tr {
-  /* background-color: var(--less-white) */
 }
