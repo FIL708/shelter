@@ -1,3 +1,4 @@
+import UsersTableRecord from './users-table__record';
 import './users-table.css';
 
 export default function UsersTable() {
@@ -12,6 +13,7 @@ export default function UsersTable() {
         <th className="users-table__row">Created at</th>
         <th className="users-table__row">Details</th>
       </tr>
+      <UsersTableRecord />
     </table>
   );
 }
