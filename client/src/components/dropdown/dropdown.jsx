@@ -1,12 +1,6 @@
 import './dropdown.css';
 
-export default function Dropdown({
-  name,
-  values,
-  onChange,
-  placeholder,
-  label,
-}) {
+export default function Dropdown({ name, options, onChange, label, value }) {
   return (
     <label htmlFor={name} className="dropdown__label">
       {label}
@@ -15,20 +9,9 @@ export default function Dropdown({
         name={name}
         id={name}
         onChange={onChange}
-        defaultValue={placeholder}
+        value={value}
       >
-        {placeholder ? (
-          <option
-            className="dropdown__placeholder"
-            value={placeholder}
-            disabled
-            hidden
-          >
-            {placeholder}
-          </option>
-        ) : null}
-
-        {values.map((option) => (
+        {options.map((option) => (
           <option className="dropdown__option" value={option} key={option}>
             {option}
           </option>

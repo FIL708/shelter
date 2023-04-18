@@ -1,21 +1,23 @@
 import { Dropdown, Textfield, Button } from '../index.js';
 import './users-filter.css';
 
-export default function UsersFilter({ onChange, onClick }) {
+export default function UsersFilter({ onChange, onClick, filter }) {
   return (
     <form className="users-filter">
       <fieldset className="users-filter__fieldset">
         <Dropdown
           label="Users per page"
           name="usersNumber"
-          values={[10, 15, 20, 30, 40]}
+          options={[10, 15, 20, 30, 40]}
           onChange={(event) => onChange(event)}
+          value={filter.usersNumber}
         />
         <Dropdown
           label="Sort by"
           name="sortBy"
-          values={['newest', 'oldest', 'role', 'A-Z', 'Z-A']}
+          options={['newest', 'oldest', 'role', 'A-Z', 'Z-A']}
           onChange={(event) => onChange(event)}
+          value={filter.sortBy}
         />
       </fieldset>
       <fieldset className="users-filter__fieldset">
@@ -23,12 +25,14 @@ export default function UsersFilter({ onChange, onClick }) {
           name="search"
           label="Search"
           onChange={(event) => onChange(event)}
+          value={filter.search}
         />
         <Dropdown
           label="Search by"
           name="searchBy"
-          values={['first name', 'last name', 'email']}
+          options={['first name', 'last name', 'email']}
           onChange={(event) => onChange(event)}
+          value={filter.searchBy}
         />
         <Button
           onClick={onClick}

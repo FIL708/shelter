@@ -2,10 +2,10 @@ import { UsersFilter } from '../index.js';
 import UsersTableRecord from './users-table__record/users-table__record.jsx';
 import './users-table.css';
 
-export default function UsersTable({ users }) {
+export default function UsersTable({ users, filter, changeFilter }) {
   return (
     <section className="users-table__section">
-      <UsersFilter />
+      <UsersFilter filter={filter} onChange={changeFilter} />
       <table className="users-table">
         <thead className="users-table__header">
           <tr className="users-table__header-row">
