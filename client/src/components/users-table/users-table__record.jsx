@@ -1,3 +1,5 @@
+import { getFormattedDate } from '../../helpers';
+
 export default function UsersTableRecord({
   id,
   firstName,
@@ -6,8 +8,7 @@ export default function UsersTableRecord({
   role,
   createdAt,
 }) {
-  console.log(id, firstName, lastName, email, role, createdAt);
-
+  const formattedDate = getFormattedDate(createdAt);
   return (
     <tr className="users-table__row">
       <td>{id}</td>
@@ -15,7 +16,7 @@ export default function UsersTableRecord({
       <td>{lastName}</td>
       <td>{email}</td>
       <td>{role}</td>
-      <td>{createdAt}</td>
+      <td>{formattedDate}</td>
     </tr>
   );
 }
