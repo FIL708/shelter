@@ -1,4 +1,4 @@
-import UsersTableRecord from './users-table__record';
+import UsersTableRecord from './users-table__record/users-table__record';
 import './users-table.css';
 
 export default function UsersTable() {
@@ -6,13 +6,13 @@ export default function UsersTable() {
     <table className="users-table">
       <thead>
         <tr className="users-table__row">
-          <th className="users-table__row">ID</th>
-          <th className="users-table__row">First Name</th>
-          <th className="users-table__row">Last Name</th>
-          <th className="users-table__row">Email</th>
-          <th className="users-table__row">Role</th>
-          <th className="users-table__row">Created at</th>
-          <th className="users-table__row">Details</th>
+          <th className="users-table__header">ID</th>
+          <th className="users-table__header">First Name</th>
+          <th className="users-table__header">Last Name</th>
+          <th className="users-table__header">Email</th>
+          <th className="users-table__header">Role</th>
+          <th className="users-table__header">Created at</th>
+          <th className="users-table__table__header">Details</th>
         </tr>
       </thead>
       <tbody>

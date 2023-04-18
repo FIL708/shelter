@@ -27,6 +27,7 @@ import { ReactComponent as Youtube } from './icon__glyphs/yt.svg';
 import { ReactComponent as Exit } from './icon__glyphs/exit.svg';
 import { ReactComponent as TopArrow } from './icon__glyphs/top-arrow.svg';
 import { ReactComponent as Clear } from './icon__glyphs/clear.svg';
+import { ReactComponent as UserLink } from './icon__glyphs/user-link.svg';
 
 const chooseIcon = (type) => {
   switch (type) {
@@ -88,6 +89,8 @@ const chooseIcon = (type) => {
       return TopArrow;
     case 'clear':
       return Clear;
+    case 'user-link':
+      return UserLink;
     default:
       return undefined;
   }
