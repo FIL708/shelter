@@ -4,7 +4,7 @@ import { Page, Subtitle, UsersFilter, UsersTable } from '../components';
 export default function Test() {
   const [filterValues, setFilterValues] = useState({
     usersNumber: 20,
-    sortBy: 'newest',
+    sortBy: '',
     search: '',
     searchBy: 'first name',
   });

@@ -18,6 +18,7 @@ export default function UsersFilter({ onChange, onClick, filter }) {
           options={['newest', 'oldest', 'role', 'A-Z', 'Z-A']}
           onChange={(event) => onChange(event)}
           value={filter.sortBy}
+          placeholder="-"
         />
       </fieldset>
       <fieldset className="users-filter__fieldset">
