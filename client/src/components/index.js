@@ -29,3 +29,4 @@ export { default as HomeMissionSection } from './home__mission-section/home__mis
 export { default as UserNavbar } from './user-navbar/user-navbar.jsx';
 export { default as UserLoggedBar } from './user-logged-bar/user-logged-bar.jsx';
 export { default as UsersFilter } from './users-filter/users-filter.jsx';
+export { default as UsersTable } from './users-table/users-table.jsx';

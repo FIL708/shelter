@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Page, Subtitle, UsersFilter } from '../components';
+import { Page, Subtitle, UsersFilter, UsersTable } from '../components';
 
 export default function Test() {
   const [filterValues, setFilterValues] = useState({
@@ -22,6 +22,7 @@ export default function Test() {
     <Page>
       <Subtitle text="Test Page" main />
       <UsersFilter onChange={filterHandler} onClick={clearForm} />
+      <UsersTable />
     </Page>
   );
 }
