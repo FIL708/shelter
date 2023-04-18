@@ -1,5 +1,11 @@
-.users-table {
+.users-table__section {
   width: 90%;
+  max-width: 1000px;
+}
+
+.users-table {
+  margin-top: 20px;
+  width: 100%;
   color: var(--dark-grey);
   border-spacing: 0;
 }
