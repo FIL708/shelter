@@ -24,6 +24,5 @@
   border: 2px solid transparent;
   border-bottom: 2px solid var(--blue);
   transition: 0.2s;
-  text-transform: capitalize;
   cursor: pointer;
 }
