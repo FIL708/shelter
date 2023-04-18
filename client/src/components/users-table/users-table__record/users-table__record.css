@@ -1,3 +1,18 @@
 .users-table__row:nth-child(even) {
   background-color: var(--less-white);
 }
+
+.users-table__row-item {
+  padding: 10px;
+}
+
+.users-table__link {
+  background-color: var(--blue);
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.users-table__link:hover {
+  opacity: 0.7;
+}

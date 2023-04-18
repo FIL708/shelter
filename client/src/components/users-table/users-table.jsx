@@ -6,13 +6,13 @@ export default function UsersTable() {
     <table className="users-table">
       <thead className="users-table__header">
         <tr className="users-table__header-row">
-          <th className="users-table__item">ID</th>
-          <th className="users-table__item">First Name</th>
-          <th className="users-table__item">Last Name</th>
-          <th className="users-table__item">Email</th>
-          <th className="users-table__item">Role</th>
-          <th className="users-table__item">Created at</th>
-          <th className="users-table__item">Details</th>
+          <th className="users-table__header-item">ID</th>
+          <th className="users-table__header-item">First Name</th>
+          <th className="users-table__header-item">Last Name</th>
+          <th className="users-table__header-item">Email</th>
+          <th className="users-table__header-item">Role</th>
+          <th className="users-table__header-item">Created at</th>
+          <th className="users-table__header-item">Details</th>
         </tr>
       </thead>
       <tbody className="users-table__body">
