@@ -12,13 +12,20 @@ export default function Users() {
     search: '',
     searchBy: 'first name',
   });
-  console.log(usersData, setUsersData);
+  console.log(filter);
 
   useEffect(() => {
-    if (filter.sortBy === 'newest')
+    if (filter.sortBy === 'newest') {
       setUsersData((prev) =>
-        prev.sort((a, b) => Date(a.createdAt) - Date(b.createdAt)),
+        prev.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)),
       );
+    } else if (filter.sortBy === 'oldest') {
+      setUsersData((prev) =>
+        prev.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)),
+      );
+    } else if (filter.sortBy === 'role') {
+      setUsersData((prev) => prev.sort((a, b) => b.role - a.role));
+    }
   }, [filter]);
 
   const dataChunks = getDataChunks(usersData, filter.usersNumber);
