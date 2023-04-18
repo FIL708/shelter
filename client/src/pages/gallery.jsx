@@ -8,7 +8,7 @@ import {
   GalleryController,
 } from '../components';
 import photos from '../photos.json';
-import getDataChunks from '../helpers/get-data-chunks';
+import { getDataChunks } from '../helpers';
 import { useScrollToggle } from '../hooks';
 
 export default function Gallery() {
