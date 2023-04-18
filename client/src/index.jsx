@@ -1,7 +1,16 @@
 import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import { Home, Adoption, Gallery, Contact, Signup, Login, Test } from './pages';
+import {
+  Home,
+  Adoption,
+  Gallery,
+  Contact,
+  Signup,
+  Login,
+  Test,
+  Users,
+} from './pages';
 import NotFound from './pages/not-found';
 
 export const UserContext = createContext();
@@ -23,6 +32,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/users" element={<Users />} />
           <Route path="/test" element={<Test />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
