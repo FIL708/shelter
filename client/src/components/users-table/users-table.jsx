@@ -2,7 +2,7 @@ import { UsersFilter } from '../index.js';
 import UsersTableRecord from './users-table__record/users-table__record.jsx';
 import './users-table.css';
 
-export default function UsersTable() {
+export default function UsersTable({ users }) {
   return (
     <section className="users-table__section">
       <UsersFilter />
@@ -19,46 +19,9 @@ export default function UsersTable() {
           </tr>
         </thead>
         <tbody className="users-table__body">
-          <UsersTableRecord
-            {...{
-              id: '1',
-              firstName: 'Joe',
-              lastName: 'Doe',
-              email: 'joedoe@example.com',
-              role: 'user',
-              createdAt: '2023-03-28 07:19:53.602 +00:00',
-            }}
-          />
-          <UsersTableRecord
-            {...{
-              id: '1',
-              firstName: 'Joe',
-              lastName: 'Doe',
-              email: 'joedoe@example.com',
-              role: 'user',
-              createdAt: '2023-03-28 07:19:53.602 +00:00',
-            }}
-          />
-          <UsersTableRecord
-            {...{
-              id: '1',
-              firstName: 'Joe',
-              lastName: 'Doe',
-              email: 'joedoe@example.com',
-              role: 'user',
-              createdAt: '2023-03-28 07:19:53.602 +00:00',
-            }}
-          />
-          <UsersTableRecord
-            {...{
-              id: '1',
-              firstName: 'Joe',
-              lastName: 'Doe',
-              email: 'joedoe@example.com',
-              role: 'user',
-              createdAt: '2023-03-28 07:19:53.602 +00:00',
-            }}
-          />
+          {users.map((user) => (
+            <UsersTableRecord key={user.id} {...user} />
+          ))}
         </tbody>
       </table>
     </section>
