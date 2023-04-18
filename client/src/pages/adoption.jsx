@@ -8,7 +8,7 @@ import {
   ScrollButton,
 } from '../components';
 import pets from '../pets.json';
-import getDataChunks from '../helpers/get-data-chunks';
+import { getDataChunks } from '../helpers';
 import { useScrollToggle } from '../hooks';
 
 export default function Adoption() {
