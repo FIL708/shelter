@@ -44,6 +44,7 @@ export default function Users() {
   };
 
   const changeFilter = (event) => {
+    setPage(1);
     const { name, value } = event.target;
     setFilter((prev) => ({ ...prev, [name]: value }));
   };
