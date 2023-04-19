@@ -5,6 +5,7 @@ import {
   UsersTable,
   Pagination,
   ScrollButton,
+  LoadingSpinner,
 } from '../components';
 import { getDataChunks, getFilteredUsers } from '../helpers';
 import { useFetch, useScrollToggle } from '../hooks';
@@ -65,12 +66,17 @@ export default function Users() {
   return (
     <Page>
       <Subtitle text="Users" main />
-      <UsersTable
-        users={dataChunks[page - 1]}
-        filter={filter}
-        changeFilter={changeFilter}
-        cleanFilter={cleanFilter}
-      />
+
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <UsersTable
+          users={dataChunks[page - 1]}
+          filter={filter}
+          changeFilter={changeFilter}
+          cleanFilter={cleanFilter}
+        />
+      )}
       <Pagination
         changePage={changePage}
         page={page}
