@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Page, Subtitle, UsersTable, Pagination } from '../components';
-import { getDataChunks } from '../helpers';
+import { getDataChunks, getSortedData } from '../helpers';
 import users from '../users.json';
 
 export default function Users() {
-  const [usersData, setUsersData] = useState(users);
+  const [usersData, setUsersData] = useState({
+    rawData: users,
+    sortedData: users,
+  });
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState({
     usersNumber: 20,
@@ -13,26 +16,14 @@ export default function Users() {
     searchBy: 'first name',
   });
 
-  //   useEffect(() => {
-  //     if (filter.sortBy === 'newest') {
-  //       const filteredData = usersData.sort(
-  //         (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
-  //       );
-  //       setUsersData(filteredData);
-  //     } else if (filter.sortBy === 'oldest') {
-  //       const filteredData = usersData.sort(
-  //         (a, b) => new Date(a.createdAt) - new Date(b.createdAt),
-  //       );
-  //       setUsersData(filteredData);
-  //     } else if (filter.sortBy === 'role') {
-  //       const filteredData = usersData.sort((a, b) =>
-  //         a.role.localeCompare(b.role),
-  //       );
-  //       setUsersData(filteredData);
-  //     }
-  //   }, [filter, usersData]);
+  useEffect(() => {
+    setUsersData((prev) => ({
+      ...prev,
+      sortedData: getSortedData(prev.rawData, filter.sortBy),
+    }));
+  }, [filter]);
 
-  const dataChunks = getDataChunks(usersData, filter.usersNumber);
+  const dataChunks = getDataChunks(usersData.sortedData, filter.usersNumber);
 
   const changePage = (value) => {
     if (value <= 0) return;
@@ -45,22 +36,10 @@ export default function Users() {
   const changeFilter = (event) => {
     const { name, value } = event.target;
     setFilter((prev) => ({ ...prev, [name]: value }));
-    if (filter.sortBy === 'newest') {
-      const filteredData = usersData.sort(
-        (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
-      );
-      setUsersData(filteredData);
-    } else if (filter.sortBy === 'oldest') {
-      const filteredData = usersData.sort(
-        (a, b) => new Date(a.createdAt) - new Date(b.createdAt),
-      );
-      setUsersData(filteredData);
-    } else if (filter.sortBy === 'role') {
-      const filteredData = usersData.sort((a, b) =>
-        a.role.localeCompare(b.role),
-      );
-      setUsersData(filteredData);
-    }
+  };
+
+  const cleanFilter = () => {
+    console.log('clean');
   };
 
   return (
@@ -73,6 +52,7 @@ export default function Users() {
       />
       <Pagination
         changePage={changePage}
+        cleanFilter={cleanFilter}
         page={page}
         pages={dataChunks.length}
       />
