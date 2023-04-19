@@ -6,6 +6,7 @@ import {
   Pagination,
   ScrollButton,
   GalleryController,
+  LoadingSpinner,
 } from '../components';
 import { getDataChunks } from '../helpers';
 import { useFetch, useScrollToggle } from '../hooks';
@@ -47,6 +48,7 @@ export default function Gallery() {
     <Page>
       <Subtitle text="Gallery" main />
       <GalleryController onChange={filterByTag} value={filteringTag} />
+      {isLoading ? <LoadingSpinner /> : false}
       <GalleryCardList photos={photosChunks[page - 1]} />
       <Pagination
         changePage={changePage}
