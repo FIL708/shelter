@@ -1,4 +1,4 @@
-import { Page, Subtitle } from '../components';
+import { Page, Subtitle, LoadingSpinner } from '../components';
 import useFetch from '../hooks/use-fetch';
 
 export default function Test() {
@@ -8,6 +8,7 @@ export default function Test() {
   return (
     <Page>
       <Subtitle text="Test Page" main />
+      <LoadingSpinner />
     </Page>
   );
 }

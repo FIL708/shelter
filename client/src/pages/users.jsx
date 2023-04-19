@@ -5,14 +5,14 @@ import {
   UsersTable,
   Pagination,
   ScrollButton,
+  LoadingSpinner,
+  ErrorCard,
 } from '../components';
 import { getDataChunks, getFilteredUsers } from '../helpers';
 import { useFetch, useScrollToggle } from '../hooks';
 
 export default function Users() {
   const [users, isLoading, error] = useFetch('/api/user');
-  console.log(isLoading, error);
-
   const [usersData, setUsersData] = useState({
     rawData: [],
     sortedData: [],
@@ -61,6 +61,21 @@ export default function Users() {
       sortedData: getFilteredUsers(prev.rawData, filter),
     }));
   };
+
+  if (isLoading || error)
+    return (
+      <Page>
+        <Subtitle text="Gallery" main />
+        {isLoading ? (
+          <LoadingSpinner />
+        ) : (
+          <ErrorCard
+            errorCode={error.status}
+            errorMessage="Something goes wrong!"
+          />
+        )}
+      </Page>
+    );
 
   return (
     <Page>

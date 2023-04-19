@@ -6,6 +6,8 @@ import {
   PetCardList,
   Pagination,
   ScrollButton,
+  LoadingSpinner,
+  ErrorCard,
 } from '../components';
 import { getDataChunks } from '../helpers';
 import { useScrollToggle, useFetch } from '../hooks';
@@ -20,7 +22,6 @@ export default function Adoption() {
   });
   const [page, setPage] = useState(1);
   const isScrollButtonVisible = useScrollToggle(200);
-  console.log(isLoading, error);
 
   useEffect(() => {
     if (controlValues.species === 'all') {
@@ -56,6 +57,21 @@ export default function Adoption() {
     }
     setControlValues((prev) => ({ ...prev, [name]: value }));
   };
+
+  if (isLoading || error)
+    return (
+      <Page>
+        <Subtitle text="Gallery" main />
+        {isLoading ? (
+          <LoadingSpinner />
+        ) : (
+          <ErrorCard
+            errorCode={error.status}
+            errorMessage="Something goes wrong!"
+          />
+        )}
+      </Page>
+    );
 
   return (
     <Page>
