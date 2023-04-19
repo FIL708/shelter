@@ -7,12 +7,12 @@ import {
   Pagination,
   ScrollButton,
 } from '../components';
-import pets from '../pets.json';
 import { getDataChunks } from '../helpers';
-import { useScrollToggle } from '../hooks';
+import { useScrollToggle, useFetch } from '../hooks';
 
 export default function Adoption() {
-  const [petsData, setPetsData] = useState(pets);
+  const [pets, isLoading, error] = useFetch('/api/adoption');
+  const [petsData, setPetsData] = useState([]);
   const [controlValues, setControlValues] = useState({
     mode: 'grid',
     species: 'all',
@@ -29,8 +29,9 @@ export default function Adoption() {
     } else {
       setPetsData(pets.filter((pet) => pet.species === 'dog'));
     }
-  }, [controlValues]);
+  }, [controlValues, pets]);
 
+  if (!petsData || isLoading || error) return null;
   const dataChunks = getDataChunks(petsData, controlValues.numberOfPets);
 
   const changePage = (value) => {
