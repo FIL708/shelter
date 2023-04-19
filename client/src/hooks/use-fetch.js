@@ -8,9 +8,9 @@ export default function useFetch(url) {
   const makeRequest = async () => {
     try {
       setIsLoading(true);
-
       const res = await fetch(url);
       const data = await res.json();
+
       setResponse(data);
     } catch (err) {
       setError(err);
