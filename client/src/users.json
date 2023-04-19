@@ -1,8 +1,8 @@
 [
   {
     "id": "1",
-    "firstName": "Joe",
-    "lastName": "Doe",
+    "firstName": "Adam",
+    "lastName": "Ankins",
     "email": "joedoe@example.com",
     "role": "admin",
     "createdAt": "2023-03-22 07:19:53.602 +00:00"
@@ -153,8 +153,8 @@
   },
   {
     "id": "20",
-    "firstName": "Joe",
-    "lastName": "Doe",
+    "firstName": "Ben",
+    "lastName": "Stifler",
     "email": "joedoe@example.com",
     "role": "admin",
     "createdAt": "2023-03-28 07:19:53.602 +00:00"

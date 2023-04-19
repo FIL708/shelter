@@ -6,7 +6,7 @@ import {
   Pagination,
   ScrollButton,
 } from '../components';
-import { getDataChunks, getSortedData } from '../helpers';
+import { getDataChunks, getFilteredUsers } from '../helpers';
 import { useScrollToggle } from '../hooks';
 import users from '../users.json';
 
@@ -27,7 +27,7 @@ export default function Users() {
   useEffect(() => {
     setUsersData((prev) => ({
       ...prev,
-      sortedData: getSortedData(prev.rawData, filter.sortBy),
+      sortedData: getFilteredUsers(prev.rawData, filter),
     }));
   }, [filter]);
 
@@ -55,7 +55,7 @@ export default function Users() {
     });
     setUsersData((prev) => ({
       ...prev,
-      sortedData: getSortedData(prev.rawData, 'index'),
+      sortedData: getFilteredUsers(prev.rawData, filter),
     }));
   };
 
