@@ -5,6 +5,8 @@ import './pagination.css';
 export default function Pagination({ page, pages, changePage }) {
   const visiblePages = getPages(page, pages);
 
+  if (!pages) return false;
+
   return (
     <nav className="pagination">
       <ul className="pagination__list">
