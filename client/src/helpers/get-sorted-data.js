@@ -14,6 +14,9 @@ export default function getSortedData(data, filter) {
   if (filter === 'Z-A') {
     return data.sort((a, b) => b.lastName.localeCompare(a.lastName));
   }
+  if (filter === 'index') {
+    return data.sort((a, b) => a.id - b.id);
+  }
 
   return data;
 }

@@ -15,6 +15,7 @@ export default function Users() {
     search: '',
     searchBy: 'first name',
   });
+  console.log(users);
 
   useEffect(() => {
     setUsersData((prev) => ({
@@ -39,7 +40,16 @@ export default function Users() {
   };
 
   const cleanFilter = () => {
-    console.log('clean');
+    setFilter({
+      usersNumber: 20,
+      sortBy: '',
+      search: '',
+      searchBy: 'first name',
+    });
+    setUsersData({
+      rawData: users,
+      sortedData: users,
+    });
   };
 
   return (
