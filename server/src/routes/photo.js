@@ -5,7 +5,7 @@ const getAllPhotos = (req, res) => {
   try {
     res.status(200).json(photos);
   } catch (error) {
-    res.status(500).json({ message: 'error', error });
+    res.status(500).json({ error });
   }
 };
 

@@ -5,7 +5,7 @@ const getAllAdoptions = (req, res) => {
   try {
     res.status(200).json(pets);
   } catch (error) {
-    res.status(500).json({ message: 'error', error });
+    res.status(500).json({ error });
   }
 };
 const getOneAdoption = (req, res) => {
@@ -16,7 +16,7 @@ const getOneAdoption = (req, res) => {
     }
     res.status(200).json(adoption);
   } catch (error) {
-    res.status(500).json({ message: 'error', error });
+    res.status(500).json({ error });
   }
 };
 
