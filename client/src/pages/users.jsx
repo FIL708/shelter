@@ -13,8 +13,6 @@ import { useFetch, useScrollToggle } from '../hooks';
 
 export default function Users() {
   const [users, isLoading, error] = useFetch('/api/user');
-  console.log(isLoading, error);
-
   const [usersData, setUsersData] = useState({
     rawData: [],
     sortedData: [],
