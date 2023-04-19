@@ -7,13 +7,15 @@ import {
   ScrollButton,
 } from '../components';
 import { getDataChunks, getFilteredUsers } from '../helpers';
-import { useScrollToggle } from '../hooks';
-import users from '../users.json';
+import { useFetch, useScrollToggle } from '../hooks';
 
 export default function Users() {
+  const [users, isLoading, error] = useFetch('/api/user');
+  console.log(isLoading, error);
+
   const [usersData, setUsersData] = useState({
-    rawData: users,
-    sortedData: users,
+    rawData: [],
+    sortedData: [],
   });
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState({
@@ -26,10 +28,10 @@ export default function Users() {
 
   useEffect(() => {
     setUsersData((prev) => ({
-      ...prev,
+      rawData: users,
       sortedData: getFilteredUsers(prev.rawData, filter),
     }));
-  }, [filter]);
+  }, [filter, users]);
 
   const dataChunks = getDataChunks(usersData.sortedData, filter.usersNumber);
 

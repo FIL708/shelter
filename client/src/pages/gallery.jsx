@@ -7,7 +7,6 @@ import {
   ScrollButton,
   GalleryController,
 } from '../components';
-// import photos from '../photos.json';
 import { getDataChunks } from '../helpers';
 import { useFetch, useScrollToggle } from '../hooks';
 
