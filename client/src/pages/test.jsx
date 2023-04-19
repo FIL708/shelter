@@ -1,24 +1,6 @@
-import { useState } from 'react';
-import { Page, Subtitle, UsersFilter, UsersTable } from '../components';
+import { Page, Subtitle, UsersTable } from '../components';
 
 export default function Test() {
-  const [filterValues, setFilterValues] = useState({
-    usersNumber: 20,
-    sortBy: '',
-    search: '',
-    searchBy: 'first name',
-  });
-
-  const filterHandler = (event) => {
-    const { name, value } = event.target;
-    console.log(filterValues);
-
-    setFilterValues((prev) => ({ ...prev, [name]: value }));
-  };
-  const clearForm = () => {
-    console.log(filterValues);
-  };
-
   const users = [
     {
       id: '1',
@@ -57,7 +39,6 @@ export default function Test() {
   return (
     <Page>
       <Subtitle text="Test Page" main />
-      <UsersFilter onChange={filterHandler} onClick={clearForm} />
       <UsersTable users={users} />
     </Page>
   );
