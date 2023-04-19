@@ -28,11 +28,16 @@ export default function UsersTable({
           </tr>
         </thead>
         <tbody className="users-table__body">
-          {users.map((user) => (
-            <UsersTableRecord key={user.id} {...user} />
-          ))}
+          {users
+            ? users.map((user) => <UsersTableRecord key={user.id} {...user} />)
+            : false}
         </tbody>
       </table>
+      {!users ? (
+        <p className="users__table_no-users">Users not found!</p>
+      ) : (
+        false
+      )}
     </section>
   );
 }
