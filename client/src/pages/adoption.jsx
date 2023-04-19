@@ -20,6 +20,7 @@ export default function Adoption() {
   });
   const [page, setPage] = useState(1);
   const isScrollButtonVisible = useScrollToggle(200);
+  console.log(isLoading, error);
 
   useEffect(() => {
     if (controlValues.species === 'all') {
@@ -31,7 +32,6 @@ export default function Adoption() {
     }
   }, [controlValues, pets]);
 
-  if (!petsData || isLoading || error) return null;
   const dataChunks = getDataChunks(petsData, controlValues.numberOfPets);
 
   const changePage = (value) => {
