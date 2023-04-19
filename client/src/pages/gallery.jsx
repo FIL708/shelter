@@ -7,18 +7,19 @@ import {
   ScrollButton,
   GalleryController,
 } from '../components';
-import photos from '../photos.json';
 import { getDataChunks } from '../helpers';
-import { useScrollToggle } from '../hooks';
+import { useFetch, useScrollToggle } from '../hooks';
 
 export default function Gallery() {
-  const [petPhotos, setPetPhotos] = useState(photos);
+  const [photos, isLoading, error] = useFetch('/api/photo');
+  const [petPhotos, setPetPhotos] = useState([]);
   const [page, setPage] = useState(1);
   const isScrollButtonVisible = useScrollToggle(200);
   const [filteringTag, setFilteringTag] = useState('all');
-  console.log(setPetPhotos);
+  console.log(photos, isLoading, error);
 
   useEffect(() => {
+    setPage(1);
     if (filteringTag === 'all') {
       setPetPhotos(photos);
     } else if (filteringTag === 'dogs') {
@@ -28,7 +29,7 @@ export default function Gallery() {
     } else if (filteringTag === 'events') {
       setPetPhotos(photos.filter((photo) => photo.tags.includes('event')));
     }
-  }, [filteringTag]);
+  }, [filteringTag, photos]);
 
   const photosChunks = getDataChunks(petPhotos, 12);
 
