@@ -1,6 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Page, Subtitle, UsersTable, Pagination } from '../components';
+import {
+  Page,
+  Subtitle,
+  UsersTable,
+  Pagination,
+  ScrollButton,
+} from '../components';
 import { getDataChunks, getSortedData } from '../helpers';
+import { useScrollToggle } from '../hooks';
 import users from '../users.json';
 
 export default function Users() {
@@ -15,7 +22,7 @@ export default function Users() {
     search: '',
     searchBy: 'first name',
   });
-  console.log(usersData.rawData);
+  const isScrollButtonVisible = useScrollToggle(200);
 
   useEffect(() => {
     setUsersData((prev) => ({
@@ -66,6 +73,7 @@ export default function Users() {
         page={page}
         pages={dataChunks.length}
       />
+      <ScrollButton visible={isScrollButtonVisible} />
     </Page>
   );
 }
