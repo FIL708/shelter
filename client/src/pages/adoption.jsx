@@ -58,11 +58,18 @@ export default function Adoption() {
     setControlValues((prev) => ({ ...prev, [name]: value }));
   };
 
+  if (isLoading)
+    return (
+      <Page>
+        <Subtitle text="Our Pets" main />
+        <LoadingSpinner />
+      </Page>
+    );
+
   return (
     <Page>
       <Subtitle text="Our Pets" main />
       <PetController values={controlValues} onChange={handleControlValues} />
-      {isLoading ? <LoadingSpinner /> : false}
       <PetCardList pets={dataChunks[page - 1]} mode={controlValues.mode} />
       <Pagination
         changePage={changePage}

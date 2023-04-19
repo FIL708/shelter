@@ -44,6 +44,15 @@ export default function Gallery() {
   const filterByTag = (event) => {
     setFilteringTag(event.target.value);
   };
+
+  if (isLoading)
+    return (
+      <Page>
+        <Subtitle text="Gallery" main />
+        <LoadingSpinner />
+      </Page>
+    );
+
   return (
     <Page>
       <Subtitle text="Gallery" main />

@@ -63,20 +63,23 @@ export default function Users() {
     }));
   };
 
+  if (isLoading)
+    return (
+      <Page>
+        <Subtitle text="Users" main />
+        <LoadingSpinner />
+      </Page>
+    );
+
   return (
     <Page>
       <Subtitle text="Users" main />
-
-      {isLoading ? (
-        <LoadingSpinner />
-      ) : (
-        <UsersTable
-          users={dataChunks[page - 1]}
-          filter={filter}
-          changeFilter={changeFilter}
-          cleanFilter={cleanFilter}
-        />
-      )}
+      <UsersTable
+        users={dataChunks[page - 1]}
+        filter={filter}
+        changeFilter={changeFilter}
+        cleanFilter={cleanFilter}
+      />
       <Pagination
         changePage={changePage}
         page={page}
