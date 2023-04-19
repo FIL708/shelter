@@ -6,6 +6,7 @@ import {
   PetCardList,
   Pagination,
   ScrollButton,
+  LoadingSpinner,
 } from '../components';
 import { getDataChunks } from '../helpers';
 import { useScrollToggle, useFetch } from '../hooks';
@@ -61,6 +62,7 @@ export default function Adoption() {
     <Page>
       <Subtitle text="Our Pets" main />
       <PetController values={controlValues} onChange={handleControlValues} />
+      {isLoading ? <LoadingSpinner /> : false}
       <PetCardList pets={dataChunks[page - 1]} mode={controlValues.mode} />
       <Pagination
         changePage={changePage}
