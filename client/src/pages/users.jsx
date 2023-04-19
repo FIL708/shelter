@@ -6,6 +6,7 @@ import {
   Pagination,
   ScrollButton,
   LoadingSpinner,
+  ErrorCard,
 } from '../components';
 import { getDataChunks, getFilteredUsers } from '../helpers';
 import { useFetch, useScrollToggle } from '../hooks';
@@ -63,11 +64,18 @@ export default function Users() {
     }));
   };
 
-  if (isLoading)
+  if (isLoading || error)
     return (
       <Page>
-        <Subtitle text="Users" main />
-        <LoadingSpinner />
+        <Subtitle text="Gallery" main />
+        {isLoading ? (
+          <LoadingSpinner />
+        ) : (
+          <ErrorCard
+            errorCode={error.status}
+            errorMessage="Something goes wrong!"
+          />
+        )}
       </Page>
     );
 

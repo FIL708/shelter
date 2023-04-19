@@ -7,6 +7,7 @@ import {
   ScrollButton,
   GalleryController,
   LoadingSpinner,
+  ErrorCard,
 } from '../components';
 import { getDataChunks } from '../helpers';
 import { useFetch, useScrollToggle } from '../hooks';
@@ -17,7 +18,6 @@ export default function Gallery() {
   const [page, setPage] = useState(1);
   const isScrollButtonVisible = useScrollToggle(200);
   const [filteringTag, setFilteringTag] = useState('all');
-  console.log(photos, isLoading, error);
 
   useEffect(() => {
     setPage(1);
@@ -45,11 +45,18 @@ export default function Gallery() {
     setFilteringTag(event.target.value);
   };
 
-  if (isLoading)
+  if (isLoading || error)
     return (
       <Page>
         <Subtitle text="Gallery" main />
-        <LoadingSpinner />
+        {isLoading ? (
+          <LoadingSpinner />
+        ) : (
+          <ErrorCard
+            errorCode={error.status}
+            errorMessage="Something goes wrong!"
+          />
+        )}
       </Page>
     );
 

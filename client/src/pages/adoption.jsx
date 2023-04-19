@@ -7,6 +7,7 @@ import {
   Pagination,
   ScrollButton,
   LoadingSpinner,
+  ErrorCard,
 } from '../components';
 import { getDataChunks } from '../helpers';
 import { useScrollToggle, useFetch } from '../hooks';
@@ -58,11 +59,18 @@ export default function Adoption() {
     setControlValues((prev) => ({ ...prev, [name]: value }));
   };
 
-  if (isLoading)
+  if (isLoading || error)
     return (
       <Page>
-        <Subtitle text="Our Pets" main />
-        <LoadingSpinner />
+        <Subtitle text="Gallery" main />
+        {isLoading ? (
+          <LoadingSpinner />
+        ) : (
+          <ErrorCard
+            errorCode={error.status}
+            errorMessage="Something goes wrong!"
+          />
+        )}
       </Page>
     );
 
