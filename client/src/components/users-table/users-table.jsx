@@ -2,10 +2,19 @@ import { UsersFilter } from '../index.js';
 import UsersTableRecord from './users-table__record/users-table__record.jsx';
 import './users-table.css';
 
-export default function UsersTable({ users }) {
+export default function UsersTable({
+  users,
+  filter,
+  changeFilter,
+  cleanFilter,
+}) {
   return (
     <section className="users-table__section">
-      <UsersFilter />
+      <UsersFilter
+        filter={filter}
+        changeFilter={changeFilter}
+        cleanFilter={cleanFilter}
+      />
       <table className="users-table">
         <thead className="users-table__header">
           <tr className="users-table__header-row">
@@ -19,11 +28,16 @@ export default function UsersTable({ users }) {
           </tr>
         </thead>
         <tbody className="users-table__body">
-          {users.map((user) => (
-            <UsersTableRecord key={user.id} {...user} />
-          ))}
+          {users
+            ? users.map((user) => <UsersTableRecord key={user.id} {...user} />)
+            : false}
         </tbody>
       </table>
+      {!users ? (
+        <p className="users__table_no-users">Users not found!</p>
+      ) : (
+        false
+      )}
     </section>
   );
 }

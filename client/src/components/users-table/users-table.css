@@ -17,3 +17,10 @@
   font-weight: 400;
   padding: 5px 10px;
 }
+
+.users__table_no-users {
+  color: var(--grey);
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
