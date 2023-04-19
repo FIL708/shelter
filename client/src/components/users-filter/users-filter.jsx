@@ -1,7 +1,7 @@
 import { Dropdown, Textfield, Button } from '../index.js';
 import './users-filter.css';
 
-export default function UsersFilter({ onChange, onClick, filter }) {
+export default function UsersFilter({ changeFilter, cleanFilter, filter }) {
   return (
     <form className="users-filter">
       <fieldset className="users-filter__fieldset">
@@ -9,14 +9,14 @@ export default function UsersFilter({ onChange, onClick, filter }) {
           label="Users per page"
           name="usersNumber"
           options={[10, 15, 20, 30, 40]}
-          onChange={(event) => onChange(event)}
+          onChange={(event) => changeFilter(event)}
           value={filter.usersNumber}
         />
         <Dropdown
           label="Sort by"
           name="sortBy"
           options={['newest', 'oldest', 'role', 'A-Z', 'Z-A']}
-          onChange={(event) => onChange(event)}
+          onChange={(event) => changeFilter(event)}
           value={filter.sortBy}
           placeholder="-"
         />
@@ -25,18 +25,18 @@ export default function UsersFilter({ onChange, onClick, filter }) {
         <Textfield
           name="search"
           label="Search"
-          onChange={(event) => onChange(event)}
+          onChange={(event) => changeFilter(event)}
           value={filter.search}
         />
         <Dropdown
           label="Search by"
           name="searchBy"
           options={['first name', 'last name', 'email']}
-          onChange={(event) => onChange(event)}
+          onChange={(event) => changeFilter(event)}
           value={filter.searchBy}
         />
         <Button
-          onClick={onClick}
+          onClick={cleanFilter}
           iconType="clear"
           iconSize="20px"
           className="users-filter__clear-button"

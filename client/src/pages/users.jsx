@@ -49,10 +49,10 @@ export default function Users() {
         users={dataChunks[page - 1]}
         filter={filter}
         changeFilter={changeFilter}
+        cleanFilter={cleanFilter}
       />
       <Pagination
         changePage={changePage}
-        cleanFilter={cleanFilter}
         page={page}
         pages={dataChunks.length}
       />
