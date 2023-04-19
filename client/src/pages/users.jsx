@@ -15,7 +15,7 @@ export default function Users() {
     search: '',
     searchBy: 'first name',
   });
-  console.log(users);
+  console.log(usersData.rawData);
 
   useEffect(() => {
     setUsersData((prev) => ({
@@ -46,10 +46,10 @@ export default function Users() {
       search: '',
       searchBy: 'first name',
     });
-    setUsersData({
-      rawData: users,
-      sortedData: users,
-    });
+    setUsersData((prev) => ({
+      ...prev,
+      sortedData: getSortedData(prev.rawData, 'index'),
+    }));
   };
 
   return (
