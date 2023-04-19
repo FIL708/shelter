@@ -9,4 +9,4 @@ const getAllUsers = (req, res) => {
   }
 };
 
-module.export = Router().get('/', getAllUsers);
+module.exports = Router().get('/', getAllUsers);

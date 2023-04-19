@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "format": "prettier --write 'src/**/*.{js,jsx}'",
-    "start": "SET NODE_ENV=development && nodemon src/server.js",
+    "start": "nodemon src/server.js",
     "lint": "eslint .",
     "lint:staged": "lint-staged"
   },
