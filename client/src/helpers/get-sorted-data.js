@@ -8,6 +8,12 @@ export default function getSortedData(data, filter) {
   if (filter === 'role') {
     return data.sort((a, b) => a.role.localeCompare(b.role));
   }
+  if (filter === 'A-Z') {
+    return data.sort((a, b) => a.lastName.localeCompare(b.lastName));
+  }
+  if (filter === 'Z-A') {
+    return data.sort((a, b) => b.lastName.localeCompare(a.lastName));
+  }
 
   return data;
 }
