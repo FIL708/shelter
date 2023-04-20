@@ -10,13 +10,22 @@
   },
   "scripts": {
     "prepare": "husky install",
+
     "install": "yarn install:client && yarn install:server",
     "install:client":"cd client && yarn install",
     "install:server":"cd server && yarn install",
+
+    "prestart": "yarn db:migrate",
     "start:client": "cd client && yarn start",
     "start:server": "cd server && yarn start",
+
     "lint:client": "cd client && yarn lint:staged",
     "lint:server": "cd server && yarn lint:staged",
-    "lint": "yarn lint:client && yarn lint:server"
+    "lint": "yarn lint:client && yarn lint:server",
+
+    "build": "cd client && yarn build",
+
+    "db:migrate":"cd server && yarn db:migrate",
+    "db:seed":"cd server && yarn db:seed"
   }
 }
