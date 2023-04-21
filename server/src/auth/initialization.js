@@ -9,18 +9,18 @@ function passportInitialization() {
 
   const authUser = async (email, password, done) => {
     const user = await User.findOne({ where: { email } });
-    if (!user) return done(null, false, user);
+    if (!user) return done(null, false);
 
     if (user.password === password) {
       return done(null, user);
     }
-    return done(null, false, user);
+    return done(null, false);
   };
 
   passport.use(new LocalStrategy({ usernameField: 'email' }), authUser);
 
   passport.serializeUser((user, done) => done(null, user));
-  passport.deSerializeUser((user, done) => done(null, user));
+  passport.deserializeUser((user, done) => done(null, user));
 
   const sessionMiddleware = session({
     secret: '',
