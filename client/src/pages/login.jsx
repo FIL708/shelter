@@ -14,7 +14,8 @@ export default function Login() {
         body: JSON.stringify(formData),
         headers: { 'Content-Type': 'application/json' },
       });
-      console.log(res);
+      const data = await res.json();
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
