@@ -5,8 +5,19 @@ import { Page, LoginForm } from '../components';
 export default function Login() {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [formIsValid, setFormIsValid] = useState({});
-  const loginHandler = () => {
-    console.log(formData);
+  console.log(formData);
+
+  const loginHandler = async () => {
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
   };
   const loginDataHandler = (event) => {
     const { name, value } = event.target;

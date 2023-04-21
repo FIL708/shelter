@@ -8,8 +8,6 @@ const sessionSecret = config.get('session');
 
 function passportInitialization() {
   const authUser = async (email, password, done) => {
-    console.log(email, password);
-
     const user = await User.findOne({ where: { email } });
     if (!user) return done(null, false);
 
