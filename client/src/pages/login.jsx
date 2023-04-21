@@ -9,17 +9,16 @@ export default function Login() {
 
   const loginHandler = async () => {
     try {
-      const res = await fetch('/api/auth/login', {
+      await fetch('/api/auth/login', {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: { 'Content-Type': 'application/json' },
       });
-      const data = await res.json();
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
   };
+
   const loginDataHandler = (event) => {
     const { name, value } = event.target;
     setFormData((prev) => ({ ...prev, [name]: value }));

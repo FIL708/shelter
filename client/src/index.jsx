@@ -37,6 +37,9 @@ function App() {
 }
 
 async function main() {
+  const config = await fetch('/api/status').then((res) => res.json());
+  console.log(config);
+
   const root = document.createElement('div');
   document.querySelector('body').appendChild(root);
   ReactDOM.createRoot(root).render(
