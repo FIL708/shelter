@@ -4,6 +4,7 @@ const config = require('config');
 const { localStrategy } = require('./strategies.js');
 
 const sessionSecret = config.get('session');
+console.log(sessionSecret.key);
 
 function passportInitialization() {
   passport.use(localStrategy);
