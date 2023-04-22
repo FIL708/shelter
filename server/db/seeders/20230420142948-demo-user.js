@@ -7,9 +7,10 @@ module.exports = {
         firstName: 'Filip',
         lastName: 'Zebrowski',
         email: 'filip.zebrowski4013@gmail.com',
-        password: "admin4013",
+        password:
+          '$2b$10$0ceY9JU6gNkU/aXa8Gr8hejCAAXTK8MPUGTFBppj..D6pawA2fBMu',
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       },
     ]);
   },

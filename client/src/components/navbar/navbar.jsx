@@ -5,7 +5,8 @@ import { UserLoggedBar } from '..';
 import './navbar.css';
 
 export default function Navbar() {
-  const user = useContext(UserContext);
+  const { user } = useContext(UserContext);
+
   return (
     <nav className="navbar">
       <NavLink className="navbar__link navbar__home" to="/test">
