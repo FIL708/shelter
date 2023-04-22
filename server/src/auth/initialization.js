@@ -1,28 +1,12 @@
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const config = require('config');
-const { User } = require('../models');
+const { localStrategy } = require('./strategies.js');
 
 const sessionSecret = config.get('session');
 
 function passportInitialization() {
-  const authUser = async (email, password, done) => {
-    try {
-      const user = await User.findOne({ where: { email } });
-
-      if (!user) return done(null, false);
-
-      if (user.password === password) {
-        return done(null, user);
-      }
-      return done(null, false);
-    } catch (error) {
-      return done(error);
-    }
-  };
-
-  passport.use(new LocalStrategy({ usernameField: 'email' }, authUser));
+  passport.use(localStrategy);
 
   passport.serializeUser((user, done) => done(null, user));
   passport.deserializeUser((user, done) => done(null, user));
