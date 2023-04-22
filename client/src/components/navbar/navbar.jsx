@@ -6,6 +6,8 @@ import './navbar.css';
 
 export default function Navbar() {
   const { user, serverUrl } = useContext(UserContext);
+  console.log(user, serverUrl);
+
   const logoutHandler = () => {
     window.open(`${serverUrl}/api/auth/logout`, '_self');
   };
