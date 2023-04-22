@@ -5,7 +5,10 @@ import { UserLoggedBar } from '..';
 import './navbar.css';
 
 export default function Navbar() {
-  const { user } = useContext(UserContext);
+  const { user, serverUrl } = useContext(UserContext);
+  const logoutHandler = () => {
+    window.open(`${serverUrl}/api/auth/logout`, '_self');
+  };
 
   return (
     <nav className="navbar">
@@ -26,7 +29,7 @@ export default function Navbar() {
       </NavLink>
 
       {user ? (
-        <UserLoggedBar {...user} />
+        <UserLoggedBar {...user} logoutHandler={logoutHandler} />
       ) : (
         <>
           <NavLink className="navbar__link navbar__signup" to="/signup">

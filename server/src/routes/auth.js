@@ -1,11 +1,20 @@
 const { Router } = require('express');
 const passport = require('passport');
 const bcrypt = require('bcrypt');
+const config = require('config');
 const { User } = require('../models');
+
+const clientUrl = config.get('clientUrl');
 
 module.exports = Router()
   .post('/login', passport.authenticate('local'), (req, res) => {
     res.status(200).json({ message: 'Success!' });
+  })
+  .get('/logout', (req, res, next) => {
+    req.logout((error) => {
+      if (error) return next(error);
+      return res.redirect(`${clientUrl}/`);
+    });
   })
   .post('/register', async (req, res) => {
     try {

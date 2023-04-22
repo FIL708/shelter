@@ -1,3 +1,5 @@
 {
-    "databaseUrl": "sqlite://db/main.db"
+    "databaseUrl": "sqlite://db/main.db",
+    "clientUrl": "http://localhost:3000",
+    "serverUrl": "http://localhost:3500"
 }
