@@ -12,6 +12,8 @@ export default function Login() {
       body: JSON.stringify(formData),
       headers: { 'Content-Type': 'application/json' },
     });
+    console.log(res);
+
     if (res.status === 401) {
       console.log(res);
     }

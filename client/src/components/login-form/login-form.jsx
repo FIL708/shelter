@@ -11,8 +11,12 @@ export default function LoginForm({
   loginWithGoogle,
   loginWithTwitter,
   loginWithFacebook,
+  errorMessage,
 }) {
   const disableButton = Object.values(formData).some((item) => !item);
+  const messageErrorClassName = errorMessage
+    ? 'login-form__error-message visible'
+    : 'login-form__error-message';
   return (
     <section className="login-form__section">
       <Subtitle text="Login" main />
@@ -47,6 +51,7 @@ export default function LoginForm({
           disabled={disableButton}
         />
       </form>
+      <p className={messageErrorClassName}>Invalid email or password!</p>
       <AuthButtons
         text="or login with:"
         loginWithGoogle={loginWithGoogle}

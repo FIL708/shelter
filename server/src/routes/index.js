@@ -10,4 +10,7 @@ module.exports = Router()
   .use('/adoption', adoption)
   .use('/photo', photo)
   .use('/user', user)
-  .use('/auth', auth);
+  .use('/auth', auth)
+  .post('/test', (req, res) => {
+    res.send('test');
+  });
