@@ -8,14 +8,18 @@ const sessionSecret = config.get('session');
 
 function passportInitialization() {
   const authUser = async (email, password, done) => {
-    const user = await User.findOne({ where: { email } });
+    try {
+      const user = await User.findOne({ where: { email } });
 
-    if (!user) return done(null, false, { message: 'User not found!' });
+      if (!user) return done(null, false, { message: 'User not found!' });
 
-    if (user.password === password) {
-      return done(null, user);
+      if (user.password === password) {
+        return done(null, user);
+      }
+      return done(null, false, { message: 'Invalid password!' });
+    } catch (error) {
+      return done(error);
     }
-    return done(null, false, { message: 'Invalid password!' });
   };
 
   passport.use(new LocalStrategy({ usernameField: 'email' }, authUser));
