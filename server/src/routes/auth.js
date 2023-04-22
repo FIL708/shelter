@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const passport = require('passport');
+const bcrypt = require('bcrypt');
 const { User } = require('../models');
 
 module.exports = Router()
@@ -17,8 +18,8 @@ module.exports = Router()
       if (userFounded) {
         return res.status(409).json({ message: 'Account already exists' });
       }
-
-      await User.create({ email, password });
+      const hashedPassword = await bcrypt.hash(password, 10);
+      await User.create({ email, password: hashedPassword });
       res
         .status(200)
         .json({ message: 'Account has been successfully created' });
