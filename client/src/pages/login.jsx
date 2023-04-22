@@ -5,17 +5,15 @@ import { Page, LoginForm } from '../components';
 export default function Login() {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [formIsValid, setFormIsValid] = useState({});
-  console.log(formData);
 
   const loginHandler = async () => {
-    try {
-      await fetch('/api/auth/login', {
-        method: 'POST',
-        body: JSON.stringify(formData),
-        headers: { 'Content-Type': 'application/json' },
-      });
-    } catch (error) {
-      console.log(error);
+    const res = await fetch('/api/auth/login', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    if (res.status === 401) {
+      console.log(res);
     }
   };
 

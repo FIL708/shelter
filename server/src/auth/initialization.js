@@ -11,12 +11,12 @@ function passportInitialization() {
     try {
       const user = await User.findOne({ where: { email } });
 
-      if (!user) return done(null, false, { message: 'User not found!' });
+      if (!user) return done(null, false);
 
       if (user.password === password) {
         return done(null, user);
       }
-      return done(null, false, { message: 'Invalid password!' });
+      return done(null, false);
     } catch (error) {
       return done(error);
     }
@@ -29,10 +29,8 @@ function passportInitialization() {
 
   const sessionMiddleware = session({
     secret: sessionSecret.key,
-    name: 'session',
     saveUninitialized: false,
     resave: false,
-    cookie: {},
   });
 
   const authMiddleware = passport.initialize();
