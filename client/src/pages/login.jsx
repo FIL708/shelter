@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { inputValidator } from '../helpers';
 import { Page, LoginForm } from '../components';
 
 export default function Login() {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [formIsValid, setFormIsValid] = useState({});
+  const [message, setMessage] = useState(null);
+  const navigate = useNavigate();
 
   const loginHandler = async () => {
     const res = await fetch('/api/auth/login', {
@@ -14,8 +17,11 @@ export default function Login() {
     });
     console.log(res);
 
-    if (res.status === 401) {
-      console.log(res);
+    if (res.status === 200) {
+      setMessage(null);
+      navigate('/');
+    } else if (res.status === 401) {
+      setMessage('Incorrect email or password');
     }
   };
 
@@ -49,6 +55,7 @@ export default function Login() {
         authWithGoogle={loginWithGoogle}
         authWithTwitter={loginWithTwitter}
         authWithFacebook={loginWithFacebook}
+        message={message}
       />
     </Page>
   );
