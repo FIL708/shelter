@@ -8,7 +8,7 @@ const clientUrl = config.get('clientUrl');
 
 module.exports = Router()
   .post('/login', passport.authenticate('local'), (req, res) => {
-    res.status(200).json({ message: 'Success!' });
+    res.status(200).redirect(`${clientUrl}/`);
   })
   .get('/logout', (req, res, next) => {
     req.logout((error) => {
