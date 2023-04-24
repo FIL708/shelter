@@ -1,8 +1,14 @@
 const LocalStrategy = require('passport-local').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const bcrypt = require('bcrypt');
+const config = require('config');
 const { User } = require('../models');
 
-const authUser = async (email, password, done) => {
+const serverUrl = config.get('serverUrl');
+const googleClientID = config.get('googleClientID');
+const googleClientSecret = config.get('googleClientSecret');
+
+const localAuth = async (email, password, done) => {
   try {
     const user = await User.findOne({ where: { email } });
     const isValidPassword = await bcrypt.compare(password, user.password);
@@ -17,6 +23,20 @@ const authUser = async (email, password, done) => {
   }
 };
 
-const localStrategy = new LocalStrategy({ usernameField: 'email' }, authUser);
+const googleAuth = (accessToken, refreshToken, profile, done) => {
+  console.log(profile);
+  return done(null, '');
+};
 
-module.exports = { localStrategy };
+const localStrategy = new LocalStrategy({ usernameField: 'email' }, localAuth);
+
+const googleStrategy = new GoogleStrategy(
+  {
+    clientID: googleClientID,
+    clientSecret: googleClientSecret,
+    callbackURL: `${serverUrl}/api/auth/google/callback`,
+  },
+  googleAuth,
+);
+
+module.exports = { localStrategy, googleStrategy };

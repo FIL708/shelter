@@ -35,4 +35,12 @@ module.exports = Router()
     } catch (error) {
       return res.status(500).json({ message: 'Something goes wrong', error });
     }
-  });
+  })
+  .get('/auth/google', passport.authenticate('google', { scope: ['profile'] }))
+  .get(
+    '/auth/google/redirect',
+    passport.authenticate('google', {
+      successRedirect: `${clientUrl}/`,
+      failureRedirect: `${clientUrl}/signup`,
+    }),
+  );

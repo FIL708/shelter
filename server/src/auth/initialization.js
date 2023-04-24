@@ -3,7 +3,7 @@ const session = require('express-session');
 const config = require('config');
 const { localStrategy } = require('./strategies.js');
 
-const sessionSecret = config.get('session');
+const sessionKey = config.get('sessionKey');
 
 function passportInitialization() {
   passport.use(localStrategy);
@@ -12,7 +12,7 @@ function passportInitialization() {
   passport.deserializeUser((user, done) => done(null, user));
 
   const sessionMiddleware = session({
-    secret: sessionSecret.key,
+    secret: sessionKey,
     saveUninitialized: false,
     resave: false,
   });
