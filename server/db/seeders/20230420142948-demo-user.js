@@ -9,6 +9,8 @@ module.exports = {
         email: 'filip.zebrowski4013@gmail.com',
         password:
           '$2b$10$0ceY9JU6gNkU/aXa8Gr8hejCAAXTK8MPUGTFBppj..D6pawA2fBMu',
+        avatar:
+          'https://lh3.googleusercontent.com/a/AGNmyxYxkm7PS_WLiv2WW2IklYdph4eT-w98DMyPdVM=s96-c',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
