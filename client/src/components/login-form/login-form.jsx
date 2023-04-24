@@ -13,7 +13,10 @@ export default function LoginForm({
   loginWithFacebook,
   message,
 }) {
-  const disableButton = Object.values(formData).some((item) => !item);
+  const disableButton =
+    Object.values(formData).some((item) => !item) ||
+    Object.values(formIsValid).some((item) => !item.isValid);
+
   const messageErrorClassName = message
     ? 'login-form__error-message visible'
     : 'login-form__error-message';
