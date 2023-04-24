@@ -8,16 +8,20 @@ export default function Login() {
   const [message, setMessage] = useState(null);
 
   const loginHandler = async () => {
-    const res = await fetch('/api/auth/login', {
-      method: 'POST',
-      body: JSON.stringify(formData),
-      headers: { 'Content-Type': 'application/json' },
-    });
-    if (res.status === 200) {
-      setMessage(null);
-      window.open(res.url, '_self');
-    } else if (res.status === 401) {
-      setMessage('Incorrect email or password');
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (res.status === 200) {
+        setMessage(null);
+        window.open(res.url, '_self');
+      } else if (res.status === 401) {
+        setMessage('Incorrect email or password');
+      }
+    } catch (error) {
+      console.log(error.response);
     }
   };
 

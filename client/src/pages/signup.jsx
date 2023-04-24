@@ -10,9 +10,23 @@ export default function Signup() {
   });
   const [formIsValid, setFormIsValid] = useState({});
 
-  const registerHandler = () => {
-    console.log(formData);
-    console.log(formIsValid);
+  const registerHandler = async () => {
+    try {
+      const response = await fetch('/api/auth/register', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const { message } = await response.json();
+      console.log(message);
+
+      if (!response.ok) {
+        throw new Error({ message, status: response.status });
+      }
+    } catch (error) {
+      console.log(error.message);
+      console.log(error);
+    }
   };
   const registerDataHandler = (event) => {
     const { name, value } = event.target;
