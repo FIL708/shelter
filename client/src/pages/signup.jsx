@@ -10,9 +10,10 @@ export default function Signup() {
     confirm: '',
   });
   const [formIsValid, setFormIsValid] = useState({});
-  const [message, setMessage] = useState(null);
+  const [message, setMessage] = useState({ text: '', type: '' });
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+
   const registerHandler = async () => {
     try {
       const res = await fetch('/api/auth/register', {
@@ -22,8 +23,11 @@ export default function Signup() {
       });
 
       if (res.status === 200) {
-        setMessage(null);
-        navigate('/login');
+        setMessage({
+          text: 'Account has been successfully created',
+          type: 'success',
+        });
+        setTimeout(() => navigate('/login'), 2000);
       } else if (res.status === 409) {
         setMessage('Account already exists');
       } else if (res.status === '422') {
@@ -43,7 +47,7 @@ export default function Signup() {
     setFormIsValid((prev) => ({ ...prev, [name]: validationObject }));
   };
 
-  const registerWithGoogle = () => {
+  const registerWithGoogle = async () => {
     console.log('google register');
   };
   const registerWithTwitter = () => {

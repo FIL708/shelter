@@ -17,9 +17,9 @@ export default function RegisterForm({
     Object.values(formData).some((item) => !item) ||
     Object.values(formIsValid).some((item) => !item.isValid);
 
-  const messageErrorClassName = message
-    ? 'login-form__error-message visible'
-    : 'login-form__error-message';
+  const messageErrorClassName = message.text
+    ? `login-form__error-message visible ${message.type}`
+    : `login-form__error-message`;
   return (
     <section className="register-form__section">
       <Subtitle text="Join to us" main />
@@ -61,7 +61,7 @@ export default function RegisterForm({
           onClick={registerHandler}
           disabled={disableButton}
         />
-        <p className={messageErrorClassName}>{message}</p>
+        <p className={messageErrorClassName}>{message.text}</p>
       </form>
       <AuthButtons
         text="or sign up with:"

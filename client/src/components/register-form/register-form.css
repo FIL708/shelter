@@ -43,3 +43,7 @@
 .login-form__error-message.visible {
   opacity: 1;
 }
+
+.login-form__error-message.success {
+  background-color: var(--valid);
+}
