@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Page, RegisterForm, ErrorCard } from '../components';
 import { inputValidator } from '../helpers';
+import { UserContext } from '..';
 
 export default function Signup() {
+  const { serverUrl } = useContext(UserContext);
+  console.log(serverUrl);
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -48,7 +52,7 @@ export default function Signup() {
   };
 
   const registerWithGoogle = async () => {
-    console.log('google register');
+    window.open(`${serverUrl}/api/auth/google`, '_self');
   };
   const registerWithTwitter = () => {
     console.log('twitter register');

@@ -36,9 +36,9 @@ module.exports = Router()
       return res.status(500).json({ message: 'Something goes wrong', error });
     }
   })
-  .get('/auth/google', passport.authenticate('google', { scope: ['profile'] }))
+  .get('/google', passport.authenticate('google', { scope: ['profile'] }))
   .get(
-    '/auth/google/redirect',
+    '/google/redirect',
     passport.authenticate('google', {
       successRedirect: `${clientUrl}/`,
       failureRedirect: `${clientUrl}/signup`,
