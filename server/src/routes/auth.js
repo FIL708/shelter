@@ -36,7 +36,12 @@ module.exports = Router()
       return res.status(500).json({ message: 'Something goes wrong', error });
     }
   })
-  .get('/google', passport.authenticate('google', { scope: ['profile'] }))
+  .get(
+    '/google',
+    passport.authenticate('google', {
+      scope: ['https://www.googleapis.com/auth/userinfo.email'],
+    }),
+  )
   .get(
     '/google/redirect',
     passport.authenticate('google', {
@@ -44,3 +49,30 @@ module.exports = Router()
       failureRedirect: `${clientUrl}/signup`,
     }),
   );
+// {
+//   id: '110787709402385527106',
+//   displayName: 'Filip Zebrowski',
+//   name: { familyName: 'Zebrowski', givenName: 'Filip' },
+//   photos: [
+//     {
+//       value: 'https://lh3.googleusercontent.com/a/AGNmyxYxkm7PS_WLiv2WW2IklYdph4eT-w98DMyPdVM=s96-c'
+//     }
+//   ],
+//   provider: 'google',
+//   _raw: '{\n' +
+//     '  "sub": "110787709402385527106",\n' +
+//     '  "name": "Filip Zebrowski",\n' +
+//     '  "given_name": "Filip",\n' +
+//     '  "family_name": "Zebrowski",\n' +
+//     '  "picture": "https://lh3.googleusercontent.com/a/AGNmyxYxkm7PS_WLiv2WW2IklYdph4eT-w98DMyPdVM\\u003ds96-c",\n' +
+//     '  "locale": "pl"\n' +
+//     '}',
+//   _json: {
+//     sub: '110787709402385527106',
+//     name: 'Filip Zebrowski',
+//     given_name: 'Filip',
+//     family_name: 'Zebrowski',
+//     picture: 'https://lh3.googleusercontent.com/a/AGNmyxYxkm7PS_WLiv2WW2IklYdph4eT-w98DMyPdVM=s96-c',
+//     locale: 'pl'
+//   }
+// }
