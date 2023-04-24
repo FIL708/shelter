@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Page, RegisterForm } from '../components';
 import { inputValidator } from '../helpers';
 
@@ -9,22 +10,25 @@ export default function Signup() {
     confirm: '',
   });
   const [formIsValid, setFormIsValid] = useState({});
-
+  const [message, setMessage] = useState(null);
+  const navigate = useNavigate();
   const registerHandler = async () => {
     try {
-      const response = await fetch('/api/auth/register', {
+      const res = await fetch('/api/auth/register', {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: { 'Content-Type': 'application/json' },
       });
-      const { message } = await response.json();
-      console.log(message);
 
-      if (!response.ok) {
-        throw new Error({ message, status: response.status });
+      if (res.status === 200) {
+        setMessage(null);
+        navigate('/login');
+      } else if (res.status === 409) {
+        setMessage('Account already exists');
+      } else if (res.status === '422') {
+        setMessage('Unprocessable entity');
       }
     } catch (error) {
-      console.log(error.message);
       console.log(error);
     }
   };
@@ -58,7 +62,7 @@ export default function Signup() {
         registerWithGoogle={registerWithGoogle}
         registerWithTwitter={registerWithTwitter}
         registerWithFacebook={registerWithFacebook}
-        message="asdasd"
+        message={message}
       />
     </Page>
   );
