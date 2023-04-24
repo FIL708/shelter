@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Page, RegisterForm } from '../components';
+import { Page, RegisterForm, ErrorCard } from '../components';
 import { inputValidator } from '../helpers';
 
 export default function Signup() {
@@ -11,6 +11,7 @@ export default function Signup() {
   });
   const [formIsValid, setFormIsValid] = useState({});
   const [message, setMessage] = useState(null);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
   const registerHandler = async () => {
     try {
@@ -28,8 +29,8 @@ export default function Signup() {
       } else if (res.status === '422') {
         setMessage('Unprocessable entity');
       }
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      setError(err);
     }
   };
   const registerDataHandler = (event) => {
@@ -53,17 +54,21 @@ export default function Signup() {
   };
   return (
     <Page>
-      <RegisterForm
-        registerHandler={registerHandler}
-        registerDataHandler={registerDataHandler}
-        formData={formData}
-        formIsValid={formIsValid}
-        validationHandler={validationHandler}
-        registerWithGoogle={registerWithGoogle}
-        registerWithTwitter={registerWithTwitter}
-        registerWithFacebook={registerWithFacebook}
-        message={message}
-      />
+      {error ? (
+        <ErrorCard errorCode="500" errorMessage={error} />
+      ) : (
+        <RegisterForm
+          registerHandler={registerHandler}
+          registerDataHandler={registerDataHandler}
+          formData={formData}
+          formIsValid={formIsValid}
+          validationHandler={validationHandler}
+          registerWithGoogle={registerWithGoogle}
+          registerWithTwitter={registerWithTwitter}
+          registerWithFacebook={registerWithFacebook}
+          message={message}
+        />
+      )}
     </Page>
   );
 }
