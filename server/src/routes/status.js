@@ -1,7 +1,14 @@
+const config = require('config');
+
+const serverUrl = config.get('serverUrl');
+
 module.exports = function (req, res) {
-  try {
-    return res.status(200).json({ message: 'success' });
-  } catch (error) {
-    return res.status(500).json({ error });
+  if (req.session.passport) {
+    return res.status(200).json({
+      status: 'Authenticated',
+      user: req.session.passport.user,
+      serverUrl,
+    });
   }
+  return res.status(200).json({ status: 'Not authenticated', serverUrl });
 };

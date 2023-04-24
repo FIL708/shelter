@@ -1,13 +1,31 @@
 import { useState } from 'react';
 import { inputValidator } from '../helpers';
-import { Page, LoginForm } from '../components';
+import { Page, LoginForm, ErrorCard } from '../components';
 
 export default function Login() {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [formIsValid, setFormIsValid] = useState({});
-  const loginHandler = () => {
-    console.log(formData);
+  const [message, setMessage] = useState(null);
+  const [error, setError] = useState(null);
+
+  const loginHandler = async () => {
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (res.status === 200) {
+        setMessage(null);
+        window.open(res.url, '_self');
+      } else if (res.status === 401) {
+        setMessage('Incorrect email or password');
+      }
+    } catch (err) {
+      setError(err);
+    }
   };
+
   const loginDataHandler = (event) => {
     const { name, value } = event.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -29,16 +47,21 @@ export default function Login() {
   };
   return (
     <Page>
-      <LoginForm
-        loginHandler={loginHandler}
-        loginDataHandler={loginDataHandler}
-        formData={formData}
-        formIsValid={formIsValid}
-        validationHandler={validationHandler}
-        authWithGoogle={loginWithGoogle}
-        authWithTwitter={loginWithTwitter}
-        authWithFacebook={loginWithFacebook}
-      />
+      {error ? (
+        <ErrorCard errorCode="500" errorMessage={error} />
+      ) : (
+        <LoginForm
+          loginHandler={loginHandler}
+          loginDataHandler={loginDataHandler}
+          formData={formData}
+          formIsValid={formIsValid}
+          validationHandler={validationHandler}
+          authWithGoogle={loginWithGoogle}
+          authWithTwitter={loginWithTwitter}
+          authWithFacebook={loginWithFacebook}
+          message={message}
+        />
+      )}
     </Page>
   );
 }

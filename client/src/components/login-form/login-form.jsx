@@ -11,8 +11,15 @@ export default function LoginForm({
   loginWithGoogle,
   loginWithTwitter,
   loginWithFacebook,
+  message,
 }) {
-  const disableButton = Object.values(formData).some((item) => !item);
+  const disableButton =
+    Object.values(formData).some((item) => !item) ||
+    Object.values(formIsValid).some((item) => !item.isValid);
+
+  const messageClassName = message
+    ? 'login-form__message visible'
+    : 'login-form__message';
   return (
     <section className="login-form__section">
       <Subtitle text="Login" main />
@@ -47,6 +54,7 @@ export default function LoginForm({
           disabled={disableButton}
         />
       </form>
+      <p className={messageClassName}>{message}</p>
       <AuthButtons
         text="or login with:"
         loginWithGoogle={loginWithGoogle}
