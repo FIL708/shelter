@@ -11,9 +11,12 @@ export default function RegisterForm({
   registerWithGoogle,
   registerWithTwitter,
   registerWithFacebook,
+  message,
 }) {
   const disableButton = Object.values(formData).some((item) => !item);
-
+  const messageErrorClassName = message
+    ? 'login-form__error-message visible'
+    : 'login-form__error-message';
   return (
     <section className="register-form__section">
       <Subtitle text="Join to us" main />
@@ -55,6 +58,7 @@ export default function RegisterForm({
           onClick={registerHandler}
           disabled={disableButton}
         />
+        <p className={messageErrorClassName}>{message}</p>
       </form>
       <AuthButtons
         text="or sign up with:"

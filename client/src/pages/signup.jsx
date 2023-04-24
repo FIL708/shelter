@@ -58,6 +58,7 @@ export default function Signup() {
         registerWithGoogle={registerWithGoogle}
         registerWithTwitter={registerWithTwitter}
         registerWithFacebook={registerWithFacebook}
+        message="asdasd"
       />
     </Page>
   );
