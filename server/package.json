@@ -27,6 +27,7 @@
     "config": "^3.3.9",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "generate-password": "^1.7.0",
     "helmet": "^6.1.5",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
