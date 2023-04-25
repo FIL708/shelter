@@ -35,4 +35,25 @@ module.exports = Router()
     } catch (error) {
       return res.status(500).json({ message: 'Something goes wrong', error });
     }
-  });
+  })
+  .get(
+    '/google',
+    passport.authenticate('google', {
+      scope: ['https://www.googleapis.com/auth/userinfo.email'],
+    }),
+  )
+  .get(
+    '/google/redirect',
+    passport.authenticate('google', {
+      successRedirect: `${clientUrl}/`,
+      failureRedirect: `${clientUrl}/signup`,
+    }),
+  )
+  .get('/facebook', passport.authenticate('facebook', { scope: ['email'] }))
+  .get(
+    '/facebook/redirect',
+    passport.authenticate('facebook', {
+      successRedirect: `${clientUrl}/`,
+      failureRedirect: `${clientUrl}/signup`,
+    }),
+  );

@@ -8,9 +8,9 @@ export default function LoginForm({
   formData,
   validationHandler,
   formIsValid,
-  loginWithGoogle,
-  loginWithTwitter,
-  loginWithFacebook,
+  authWithGoogle,
+  authWithTwitter,
+  authWithFacebook,
   message,
 }) {
   const disableButton =
@@ -56,10 +56,10 @@ export default function LoginForm({
       </form>
       <p className={messageClassName}>{message}</p>
       <AuthButtons
-        text="or login with:"
-        loginWithGoogle={loginWithGoogle}
-        loginWithTwitter={loginWithTwitter}
-        loginWithFacebook={loginWithFacebook}
+        text="or sign in with:"
+        authWithGoogle={authWithGoogle}
+        authWithTwitter={authWithTwitter}
+        authWithFacebook={authWithFacebook}
       />
       <span className="login-form__register">
         Not a member?{' '}

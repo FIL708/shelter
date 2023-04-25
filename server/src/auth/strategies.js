@@ -1,8 +1,18 @@
 const LocalStrategy = require('passport-local').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 const bcrypt = require('bcrypt');
+const passwordGenerator = require('generate-password');
+const config = require('config');
 const { User } = require('../models');
 
-const authUser = async (email, password, done) => {
+const serverUrl = config.get('serverUrl');
+const googleClientID = config.get('googleClientID');
+const googleClientSecret = config.get('googleClientSecret');
+const facebookID = config.get('facebookID');
+const facebookSecret = config.get('facebookSecret');
+
+const localVerify = async (email, password, done) => {
   try {
     const user = await User.findOne({ where: { email } });
     const isValidPassword = await bcrypt.compare(password, user.password);
@@ -17,6 +27,56 @@ const authUser = async (email, password, done) => {
   }
 };
 
-const localStrategy = new LocalStrategy({ usernameField: 'email' }, authUser);
+const socialVerify = async (accessToken, refreshToken, profile, done) => {
+  try {
+    const email = profile.emails[0].value;
+    const avatar = profile.photos[0].value;
 
-module.exports = { localStrategy };
+    const user = await User.findOne({ where: { email } });
+    if (!user) {
+      const password = passwordGenerator.generate({
+        length: 12,
+        numbers: true,
+      });
+      const hashedPassword = await bcrypt.hash(password, 10);
+      console.log(`Sending mail with password to user: ${password}`);
+
+      const newUser = await User.create({
+        email,
+        avatar,
+        password: hashedPassword,
+      });
+      return done(false, newUser);
+    }
+
+    return done(false, user);
+  } catch (error) {
+    return done(error);
+  }
+};
+
+const localStrategy = new LocalStrategy(
+  { usernameField: 'email' },
+  localVerify,
+);
+
+const googleStrategy = new GoogleStrategy(
+  {
+    clientID: googleClientID,
+    clientSecret: googleClientSecret,
+    callbackURL: `${serverUrl}/api/auth/google/redirect`,
+  },
+  socialVerify,
+);
+
+const facebookStrategy = new FacebookStrategy(
+  {
+    clientID: facebookID,
+    clientSecret: facebookSecret,
+    callbackURL: `${serverUrl}/api/auth/facebook/redirect`,
+    profileFields: ['email', 'photos'],
+  },
+  socialVerify,
+);
+
+module.exports = { localStrategy, googleStrategy, facebookStrategy };

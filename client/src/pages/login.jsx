@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { inputValidator } from '../helpers';
 import { Page, LoginForm, ErrorCard } from '../components';
+import { UserContext } from '..';
 
 export default function Login() {
+  const { serverUrl } = useContext(UserContext);
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [formIsValid, setFormIsValid] = useState({});
   const [message, setMessage] = useState(null);
@@ -37,13 +39,13 @@ export default function Login() {
   };
 
   const loginWithGoogle = () => {
-    console.log('google login');
+    window.open(`${serverUrl}/api/auth/google`, '_self');
   };
   const loginWithTwitter = () => {
     console.log('twitter login');
   };
   const loginWithFacebook = () => {
-    console.log('facebook login');
+    window.open(`${serverUrl}/api/auth/facebook`, '_self');
   };
   return (
     <Page>
