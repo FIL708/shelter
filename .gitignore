@@ -3,6 +3,9 @@
 #db
 server/db/main.db
 
+#secrets
+server/config/default.json
+
 # dependencies
 */node_modules
 node_modules
