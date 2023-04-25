@@ -64,7 +64,7 @@ export default function RegisterForm({
         <p className={messageClassName}>{message.text}</p>
       </form>
       <AuthButtons
-        text="or sign up with:"
+        text="or sign in with:"
         authWithGoogle={registerWithGoogle}
         authWithTwitter={registerWithTwitter}
         authWithFacebook={registerWithFacebook}

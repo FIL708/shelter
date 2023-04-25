@@ -56,7 +56,7 @@ export default function LoginForm({
       </form>
       <p className={messageClassName}>{message}</p>
       <AuthButtons
-        text="or login with:"
+        text="or sign in with:"
         loginWithGoogle={loginWithGoogle}
         loginWithTwitter={loginWithTwitter}
         loginWithFacebook={loginWithFacebook}
