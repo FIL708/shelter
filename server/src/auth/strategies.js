@@ -1,5 +1,6 @@
 const LocalStrategy = require('passport-local').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 const bcrypt = require('bcrypt');
 const passwordGenerator = require('generate-password');
 const config = require('config');
@@ -8,6 +9,8 @@ const { User } = require('../models');
 const serverUrl = config.get('serverUrl');
 const googleClientID = config.get('googleClientID');
 const googleClientSecret = config.get('googleClientSecret');
+const facebookID = config.get('facebookID');
+const facebookSecret = config.get('facebookSecret');
 
 const localVerify = async (email, password, done) => {
   try {
@@ -24,7 +27,7 @@ const localVerify = async (email, password, done) => {
   }
 };
 
-const googleVerify = async (accessToken, refreshToken, profile, done) => {
+const socialVerify = async (accessToken, refreshToken, profile, done) => {
   try {
     const email = profile.emails[0].value;
     const avatar = profile.photos[0].value;
@@ -63,7 +66,17 @@ const googleStrategy = new GoogleStrategy(
     clientSecret: googleClientSecret,
     callbackURL: `${serverUrl}/api/auth/google/redirect`,
   },
-  googleVerify,
+  socialVerify,
 );
 
-module.exports = { localStrategy, googleStrategy };
+const facebookStrategy = new FacebookStrategy(
+  {
+    clientID: facebookID,
+    clientSecret: facebookSecret,
+    callbackURL: `${serverUrl}/api/auth/facebook/redirect`,
+    profileFields: ['email', 'photos'],
+  },
+  socialVerify,
+);
+
+module.exports = { localStrategy, googleStrategy, facebookStrategy };

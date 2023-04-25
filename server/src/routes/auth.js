@@ -48,4 +48,12 @@ module.exports = Router()
       successRedirect: `${clientUrl}/`,
       failureRedirect: `${clientUrl}/signup`,
     }),
+  )
+  .get('/facebook', passport.authenticate('facebook', { scope: ['email'] }))
+  .get(
+    '/facebook/redirect',
+    passport.authenticate('facebook', {
+      successRedirect: `${clientUrl}/`,
+      failureRedirect: `${clientUrl}/signup`,
+    }),
   );

@@ -1,13 +1,18 @@
 const passport = require('passport');
 const session = require('express-session');
 const config = require('config');
-const { localStrategy, googleStrategy } = require('./strategies.js');
+const {
+  localStrategy,
+  googleStrategy,
+  facebookStrategy,
+} = require('./strategies.js');
 
 const sessionKey = config.get('sessionKey');
 
 function passportInitialization() {
   passport.use(localStrategy);
   passport.use(googleStrategy);
+  passport.use(facebookStrategy);
 
   passport.serializeUser((user, done) => done(null, user));
   passport.deserializeUser((user, done) => done(null, user));
