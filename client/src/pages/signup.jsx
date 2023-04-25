@@ -6,8 +6,6 @@ import { UserContext } from '..';
 
 export default function Signup() {
   const { serverUrl } = useContext(UserContext);
-  console.log(serverUrl);
-
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -51,14 +49,14 @@ export default function Signup() {
     setFormIsValid((prev) => ({ ...prev, [name]: validationObject }));
   };
 
-  const registerWithGoogle = async () => {
+  const registerWithGoogle = () => {
     window.open(`${serverUrl}/api/auth/google`, '_self');
   };
   const registerWithTwitter = () => {
     console.log('twitter register');
   };
   const registerWithFacebook = () => {
-    console.log('facebook register');
+    window.open(`${serverUrl}/api/auth/facebook`, '_self');
   };
   return (
     <Page>
