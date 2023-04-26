@@ -17,3 +17,7 @@
   width: 50vw;
   object-fit: cover;
 }
+
+.pet-gallery__button.right {
+  transform: rotate(180deg);
+}
