@@ -10,8 +10,10 @@ export default function Adoption() {
   ];
   return (
     <Page>
-      <Subtitle text="Adoption ID:123" />
+      <Subtitle main text="Adoption ID:123" />
       <PetGallery gallery={gallery} />
+      <Subtitle text="About Me" />
+      <Subtitle text="What people think about me" />
     </Page>
   );
 }
