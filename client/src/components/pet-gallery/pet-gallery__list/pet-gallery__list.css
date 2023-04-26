@@ -17,10 +17,17 @@
 }
 
 .pet-gallery__list-item.main-photo {
-  border: 3px solid var(--blue);
+  opacity: 0.5;
 }
 
 .pet-gallery__list-item__photo {
   height: 100%;
   object-fit: cover;
+}
+
+.pet-gallery__list-item__button {
+  all: unset;
+  display: block;
+  height: 100%;
+  cursor: pointer;
 }
