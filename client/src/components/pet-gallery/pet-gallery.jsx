@@ -4,7 +4,9 @@ import './pet-gallery.css';
 
 export default function PetGallery({ gallery }) {
   const [mainPhoto, setMainPhoto] = useState(gallery[0]);
-  console.log(setMainPhoto);
+  console.log(mainPhoto);
+
+  const setPhotoAsMain = (url) => setMainPhoto(url);
 
   return (
     <section className="pet-gallery">
@@ -15,7 +17,11 @@ export default function PetGallery({ gallery }) {
           className="pet-gallery__main-photo"
         />
       </div>
-      <PetGalleryList gallery={gallery} main={mainPhoto} />
+      <PetGalleryList
+        gallery={gallery}
+        main={mainPhoto}
+        setPhotoAsMain={setPhotoAsMain}
+      />
     </section>
   );
 }
