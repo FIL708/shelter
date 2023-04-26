@@ -31,3 +31,4 @@ export { default as UserLoggedBar } from './user-logged-bar/user-logged-bar.jsx'
 export { default as UsersFilter } from './users-filter/users-filter.jsx';
 export { default as UsersTable } from './users-table/users-table.jsx';
 export { default as LoadingSpinner } from './loading-spinner/loading-spinner.jsx';
+export { default as PetGallery } from './pet-gallery/pet-gallery.jsx';
