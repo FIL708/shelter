@@ -1,0 +1,31 @@
+.pet-gallery__list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 50vw;
+}
+
+.pet-gallery__list-item {
+  flex-basis: 20%;
+  transition: 0.3s;
+}
+
+.pet-gallery__list-item:hover {
+  opacity: 0.7;
+}
+
+.pet-gallery__list-item.main-photo {
+  opacity: 0.5;
+}
+
+.pet-gallery__list-item__photo {
+  height: 100%;
+  object-fit: cover;
+}
+
+.pet-gallery__list-item__button {
+  all: unset;
+  display: block;
+  height: 100%;
+  cursor: pointer;
+}

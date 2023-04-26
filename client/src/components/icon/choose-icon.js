@@ -1,4 +1,5 @@
-import { ReactComponent as Arrow } from './icon__glyphs/arrow.svg';
+import { ReactComponent as ArrowLeft } from './icon__glyphs/arrow-left.svg';
+import { ReactComponent as ArrowRight } from './icon__glyphs/arrow-right.svg';
 import { ReactComponent as Cat } from './icon__glyphs/cat.svg';
 import { ReactComponent as Dog } from './icon__glyphs/dog.svg';
 import { ReactComponent as Email } from './icon__glyphs/email.svg';
@@ -31,8 +32,10 @@ import { ReactComponent as UserLink } from './icon__glyphs/user-link.svg';
 
 const chooseIcon = (type) => {
   switch (type) {
-    case 'arrow':
-      return Arrow;
+    case 'arrow-left':
+      return ArrowLeft;
+    case 'arrow-right':
+      return ArrowRight;
     case 'cat':
       return Cat;
     case 'dog':

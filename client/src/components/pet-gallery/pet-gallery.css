@@ -1,0 +1,23 @@
+.pet-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.pet-gallery__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pet-gallery__main-photo {
+  height: 30vw;
+  width: 50vw;
+  object-fit: cover;
+}
+
+.pet-gallery__button.right {
+  transform: rotate(180deg);
+}
