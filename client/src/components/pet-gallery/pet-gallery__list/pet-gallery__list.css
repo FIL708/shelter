@@ -1,0 +1,17 @@
+.pet-gallery__list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 70%;
+  max-width: 800px;
+}
+
+.pet-gallery__list-item {
+  flex-basis: 25%;
+  max-height: 85px;
+}
+
+.pet-gallery__list-item__photo {
+  height: 100%;
+  object-fit: cover;
+}
