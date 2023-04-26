@@ -1,6 +1,8 @@
-import { Page, Subtitle, PetGallery } from '../components';
+import { Page, Subtitle, PetGallery, ScrollButton } from '../components';
+import { useScrollToggle } from '../hooks';
 
 export default function Adoption() {
+  const isScrollButtonVisible = useScrollToggle(200);
   const gallery = [
     'https://media.os.fressnapf.com/cms/2020/07/ratgeber_hund_rasse_portraits_australian_cattle_dog_1200x527.jpg?t=seoimg_937',
     'https://www.sbb.ch/content/dam/internet/sharedimages/personen/GA-Hund.jpg/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg',
@@ -10,10 +12,11 @@ export default function Adoption() {
   ];
   return (
     <Page>
-      <Subtitle main text="Adoption ID:123" />
+      <Subtitle main text="Adoption no. 1123" />
       <PetGallery gallery={gallery} />
-      <Subtitle text="About Me" />
+      <Subtitle text="Something About Me" />
       <Subtitle text="What people think about me" />
+      <ScrollButton visible={isScrollButtonVisible} />
     </Page>
   );
 }
