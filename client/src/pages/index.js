@@ -1,4 +1,5 @@
 export { default as Home } from './home.jsx';
+export { default as Adoptions } from './adoptions.jsx';
 export { default as Adoption } from './adoption.jsx';
 export { default as Gallery } from './gallery.jsx';
 export { default as Contact } from './contact.jsx';
