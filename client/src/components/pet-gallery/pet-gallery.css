@@ -1,0 +1,8 @@
+.pet-gallery {
+  width: 100%;
+  max-width: 1000px;
+}
+.pet-gallery__main-photo {
+  width: 70%;
+  max-width: 800px;
+}
