@@ -1,28 +1,25 @@
 'use strict';
+
 const { Model } = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
+
+module.exports = (sequelize, { INTEGER, STRING, TEXT, DATE }) => {
   class Adoption extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
       // define association here
     }
   }
   Adoption.init(
     {
-      name: DataTypes.STRING,
-      description: DataTypes.TEXT,
-      shortDescription: DataTypes.STRING,
-      likes: DataTypes.INTEGER,
-      views: DataTypes.INTEGER,
-      species: DataTypes.STRING,
+      name: STRING,
+      description: TEXT,
+      shortDescription: STRING,
+      likes: INTEGER,
+      views: INTEGER,
+      species: STRING,
     },
     {
       sequelize,
-      modelName: 'Adoption',
+      modelName: 'adoption',
     },
   );
   return Adoption;
