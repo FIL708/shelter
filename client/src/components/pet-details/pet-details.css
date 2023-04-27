@@ -1,0 +1,21 @@
+.pet-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pet-details__name {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 10px;
+  color: var(--blue);
+  font-family: 'Lato', sans-serif;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+
+.pet-details__address {
+  margin-left: 65px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}

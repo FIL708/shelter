@@ -20,29 +20,35 @@ export default function PetDetails({ data }) {
   };
   return (
     <section className="pet-details">
-      <div>
-        <Icon type={data.species} size="40px" fill="#7286d3" />
-        <p className="pet-details__name">{data.name}</p>
-        <p>{`${data.address.city}, ${data.address.country}`}</p>
-      </div>
-      <div>
-        <p>
+      <ul className="pet-details__data-list">
+        <li className="pet-details__name">
+          <Icon type={data.species} size="40px" fill="#7286d3" />
+          {data.name}
+        </li>
+        <li className="pet-details__address">
+          {`${data.address.city}, ${data.address.country}`}
+        </li>
+      </ul>
+
+      <ul className="pet-details__data-list">
+        <li className="pet-details__list-item">
           views: <span>{data.views}</span>
-        </p>
-        <p>
+        </li>
+        <li className="pet-details__list-item">
           likes: <span>{data.likes}</span>
-        </p>
-        <Button
-          className="pet-details__button"
-          iconType={iconType}
-          iconSize="25px"
-          iconFill={iconFill}
-          onClick={toggleFav}
-        />
-        <p>
+        </li>
+        <li className="pet-details__list-item">
           looking for a home: <span>{data.createdAt}</span>
-        </p>
-      </div>
+        </li>
+      </ul>
+
+      <Button
+        className="pet-details__button"
+        iconType={iconType}
+        iconSize="25px"
+        iconFill={iconFill}
+        onClick={toggleFav}
+      />
     </section>
   );
 }

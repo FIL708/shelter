@@ -39,6 +39,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   background-color: var(--white);
+  color: var(--dark-grey);
 }
 body > div {
   display: flex;
