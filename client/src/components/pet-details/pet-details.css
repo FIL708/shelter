@@ -1,5 +1,6 @@
 .pet-details {
-  width: 50vw;
+  width: 65vw;
+  max-width: 1000px;
   display: flex;
   justify-content: space-between;
 }
@@ -19,6 +20,7 @@
 .pet-details__list-item:last-of-type .pet-details__list-item__data {
   margin-left: 15px;
 }
+
 .pet-details__name {
   display: flex;
   gap: 25px;

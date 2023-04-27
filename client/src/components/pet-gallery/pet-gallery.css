@@ -15,7 +15,8 @@
 
 .pet-gallery__main-photo {
   height: 30vw;
-  width: 50vw;
+  width: 65vw;
+  max-width: 1000px;
   object-fit: cover;
 }
 
