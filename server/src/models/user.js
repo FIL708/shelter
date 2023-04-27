@@ -1,10 +1,11 @@
 'use strict';
 
 const { Model } = require('sequelize');
+
 module.exports = (sequelize, { STRING, DATE }) => {
   class User extends Model {
     static associate(models) {
-      User.belongsTo(models.Address);
+      User.belongsTo(models.Address, { foreignKey: 'addressID' });
     }
   }
   User.init(

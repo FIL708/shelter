@@ -20,6 +20,10 @@ module.exports = {
       },
       email: {
         type: STRING,
+        unique: true,
+        validate: {
+          isEmail: true,
+        },
       },
       phone: {
         type: STRING,
