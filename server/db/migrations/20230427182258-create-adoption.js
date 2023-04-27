@@ -1,43 +1,50 @@
 'use strict';
 
 module.exports = {
-  async up(queryInterface, {INTEGER, STRING, TEXT,DATE}) {
+  async up(queryInterface, { INTEGER, STRING, TEXT, DATE }) {
     await queryInterface.createTable('Adoptions', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: INTEGER
+        type: INTEGER,
       },
       name: {
-        type: STRING
+        type: STRING,
       },
       description: {
-        type: TEXT
+        type: TEXT,
       },
       shortDescription: {
-        type: STRING
+        type: STRING,
       },
       likes: {
-        type: INTEGER
+        type: INTEGER,
       },
       views: {
-        type: INTEGER
+        type: INTEGER,
       },
       species: {
-        type: STRING
+        type: STRING,
       },
       createdAt: {
         allowNull: false,
-        type: DATE
+        type: DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: DATE
-      }
+        type: DATE,
+      },
+      addressID: {
+        type: INTEGER,
+        references: {
+          model: 'Address',
+          key: 'id',
+        },
+      },
     });
   },
   async down(queryInterface) {
     await queryInterface.dropTable('Adoptions');
-  }
+  },
 };

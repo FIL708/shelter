@@ -2,10 +2,10 @@
 
 const { Model } = require('sequelize');
 
-module.exports = (sequelize, { INTEGER, STRING, TEXT, DATE }) => {
+module.exports = (sequelize, { INTEGER, STRING, TEXT }) => {
   class Adoption extends Model {
     static associate(models) {
-      // define association here
+      Adoption.belongsTo(models.Address, { foreignKey: 'addressID' });
     }
   }
   Adoption.init(

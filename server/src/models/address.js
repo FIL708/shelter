@@ -6,6 +6,7 @@ module.exports = (sequelize, { STRING }) => {
   class Address extends Model {
     static associate(models) {
       Address.hasMany(models.User, { foreignKey: 'addressID' });
+      Address.hasMany(models.Adoption, { foreignKey: 'addressID' });
     }
   }
   Address.init(
