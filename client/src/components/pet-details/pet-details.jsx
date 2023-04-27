@@ -1,8 +1,14 @@
 import { useState } from 'react';
 import { Button, Icon } from '../index.js';
+import { getFormattedDate } from '../../helpers';
 import './pet-details.css';
 
 export default function PetDetails({ data }) {
+  const formattedDate = getFormattedDate(data.createdAt, {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  });
   const [isFav, setIsFav] = useState(data.isFavorite);
 
   let iconType;
@@ -41,7 +47,7 @@ export default function PetDetails({ data }) {
         </li>
         <li className="pet-details__list-item">
           looking for a home:{' '}
-          <span className="pet-details__list-item__data">{data.createdAt}</span>
+          <span className="pet-details__list-item__data">{formattedDate}</span>
         </li>
         <Button
           className="pet-details__button"
