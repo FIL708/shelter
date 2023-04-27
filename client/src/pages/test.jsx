@@ -1,4 +1,10 @@
-import { Page, Subtitle, LoadingSpinner, PetGallery } from '../components';
+import {
+  Page,
+  Subtitle,
+  LoadingSpinner,
+  PetGallery,
+  PetDetails,
+} from '../components';
 
 export default function Test() {
   const gallery = [
@@ -8,12 +14,19 @@ export default function Test() {
     'https://chico.ca.us/sites/main/files/imagecache/lightbox/main-images/dog_license.jpg',
     'https://live-production.wcms.abc-cdn.net.au/7c3fcd8375709868e6577df7769af974?impolicy=wcms_crop_resize&cropH=1080&cropW=1920&xPos=0&yPos=76&width=862&height=485',
   ];
-
+  const pet = {
+    address: { city: 'Olsztyn', country: 'Poland' },
+    name: 'Reks',
+    views: 2137,
+    likes: 2137,
+    createdAt: '2023-04-24 17:32:36.188 +00:00',
+  };
   return (
     <Page>
       <Subtitle text="Test Page" main />
       <LoadingSpinner />
       <PetGallery gallery={gallery} />
+      <PetDetails data={pet} />
     </Page>
   );
 }
