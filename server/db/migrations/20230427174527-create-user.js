@@ -21,14 +21,14 @@ module.exports = {
       email: {
         type: STRING,
         unique: true,
-        validate: {
-          isEmail: true,
-        },
       },
       phone: {
         type: STRING,
       },
       password: {
+        type: STRING,
+      },
+      avatar: {
         type: STRING,
       },
       birthday: {

@@ -13,8 +13,15 @@ module.exports = (sequelize, { STRING, DATE }) => {
       firstName: STRING,
       lastName: STRING,
       role: STRING,
-      email: STRING,
+      email: {
+        type: STRING,
+        unique: true,
+        validate: {
+          isEmail: true,
+        },
+      },
       phone: STRING,
+      avatar: { type: STRING, validate: { isUrl: true } },
       password: STRING,
       birthday: DATE,
     },
