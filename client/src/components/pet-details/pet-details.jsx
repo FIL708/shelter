@@ -32,23 +32,25 @@ export default function PetDetails({ data }) {
 
       <ul className="pet-details__data-list">
         <li className="pet-details__list-item">
-          views: <span>{data.views}</span>
+          views:{' '}
+          <span className="pet-details__list-item__data">{data.views}</span>
         </li>
         <li className="pet-details__list-item">
-          likes: <span>{data.likes}</span>
+          likes:{' '}
+          <span className="pet-details__list-item__data">{data.likes}</span>
         </li>
         <li className="pet-details__list-item">
-          looking for a home: <span>{data.createdAt}</span>
+          looking for a home:{' '}
+          <span className="pet-details__list-item__data">{data.createdAt}</span>
         </li>
+        <Button
+          className="pet-details__button"
+          iconType={iconType}
+          iconSize="25px"
+          iconFill={iconFill}
+          onClick={toggleFav}
+        />
       </ul>
-
-      <Button
-        className="pet-details__button"
-        iconType={iconType}
-        iconSize="25px"
-        iconFill={iconFill}
-        onClick={toggleFav}
-      />
     </section>
   );
 }

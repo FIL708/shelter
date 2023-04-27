@@ -4,6 +4,21 @@
   justify-content: space-around;
 }
 
+.pet-details__data-list {
+  position: relative;
+}
+
+.pet-details__list-item {
+  margin-bottom: 5px;
+}
+
+.pet-details__list-item:last-of-type {
+  margin-top: 15px;
+}
+
+.pet-details__list-item:last-of-type .pet-details__list-item__data {
+  margin-left: 15px;
+}
 .pet-details__name {
   display: flex;
   gap: 25px;
@@ -18,4 +33,14 @@
   margin-left: 65px;
   letter-spacing: 1px;
   word-spacing: 2px;
+}
+
+.pet-details__list-item__data {
+  color: var(--blue);
+}
+
+.pet-details__button {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
