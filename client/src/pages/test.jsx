@@ -20,6 +20,8 @@ export default function Test() {
     views: 2137,
     likes: 2137,
     createdAt: '2023-04-24 17:32:36.188 +00:00',
+    species: 'dog',
+    isFavorite: false,
   };
   return (
     <Page>
