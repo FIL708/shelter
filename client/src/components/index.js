@@ -33,3 +33,4 @@ export { default as UsersTable } from './users-table/users-table.jsx';
 export { default as LoadingSpinner } from './loading-spinner/loading-spinner.jsx';
 export { default as PetGallery } from './pet-gallery/pet-gallery.jsx';
 export { default as PetDetails } from './pet-details/pet-details.jsx';
+export { default as PetDescription } from './pet-description/pet-description.jsx';
