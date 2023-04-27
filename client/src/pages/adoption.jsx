@@ -1,7 +1,10 @@
+import { useParams } from 'react-router-dom';
 import { Page, Subtitle, PetGallery, ScrollButton } from '../components';
 import { useScrollToggle } from '../hooks';
 
 export default function Adoption() {
+  const { id } = useParams();
+
   const isScrollButtonVisible = useScrollToggle(200);
   const gallery = [
     'https://media.os.fressnapf.com/cms/2020/07/ratgeber_hund_rasse_portraits_australian_cattle_dog_1200x527.jpg?t=seoimg_937',
@@ -12,7 +15,7 @@ export default function Adoption() {
   ];
   return (
     <Page>
-      <Subtitle main text="Adoption no. 1123" />
+      <Subtitle main text={`Adoption no. ${id}`} />
       <PetGallery gallery={gallery} />
       <Subtitle text="Something About Me" />
       <Subtitle text="What people think about me" />
