@@ -1,7 +1,12 @@
 .pet-description {
+  margin-bottom: 50px;
   width: 70%;
-  font-size: 22px;
+}
+
+.pet-description__paragraph {
+  margin-bottom: 10px;
+  font-size: 20px;
   text-align: justify;
-  text-indent: 20px;
+  text-indent: 35px;
   line-height: 28px;
 }
