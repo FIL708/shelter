@@ -1,7 +1,7 @@
 'use strict';
 
 const { Model } = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, { STRING, DATE }) => {
   class User extends Model {
     static associate(models) {
       User.belongsTo(models.Address);
@@ -9,13 +9,13 @@ module.exports = (sequelize, DataTypes) => {
   }
   User.init(
     {
-      firstName: DataTypes.STRING,
-      lastName: DataTypes.STRING,
-      role: DataTypes.STRING,
-      email: DataTypes.STRING,
-      phone: DataTypes.STRING,
-      password: DataTypes.STRING,
-      birthday: DataTypes.DATE,
+      firstName: STRING,
+      lastName: STRING,
+      role: STRING,
+      email: STRING,
+      phone: STRING,
+      password: STRING,
+      birthday: DATE,
     },
     {
       sequelize,

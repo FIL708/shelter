@@ -1,27 +1,27 @@
 'use strict';
 
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up(queryInterface, { INTEGER, STRING, DATE }) {
     await queryInterface.createTable('Addresses', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: INTEGER
       },
       city: {
-        type: Sequelize.STRING
+        type: STRING
       },
       country: {
-        type: Sequelize.STRING
+        type: STRING
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: DATE
       }
     });
   },
