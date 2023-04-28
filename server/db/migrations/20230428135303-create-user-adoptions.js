@@ -2,7 +2,7 @@
 
 module.exports = {
   async up(queryInterface, { INTEGER, DATE }) {
-    await queryInterface.createTable('users_adoptions', {
+    await queryInterface.createTable('user_adoptions', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -30,6 +30,6 @@ module.exports = {
     });
   },
   async down(queryInterface) {
-    await queryInterface.dropTable('users_adoptions');
+    await queryInterface.dropTable('user_adoptions');
   },
 };
