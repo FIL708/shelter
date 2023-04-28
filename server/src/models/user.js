@@ -8,6 +8,10 @@ module.exports = (sequelize, { STRING, DATE }) => {
       console.log(models);
 
       User.belongsTo(models.address, { foreignKey: 'addressID' });
+      User.belongsToMany(models.adoption, {
+        through: 'user_adoptions',
+        foreignKey: 'userID',
+      });
     }
   }
   User.init(

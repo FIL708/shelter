@@ -6,6 +6,10 @@ module.exports = (sequelize, { INTEGER, STRING, TEXT }) => {
   class Adoption extends Model {
     static associate(models) {
       Adoption.belongsTo(models.address, { foreignKey: 'addressID' });
+      Adoption.belongsToMany(models.user, {
+        through: 'user_adoptions',
+        foreignKey: 'adoptionID',
+      });
     }
   }
   Adoption.init(
