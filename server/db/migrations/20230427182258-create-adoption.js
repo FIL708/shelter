@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   async up(queryInterface, { INTEGER, STRING, TEXT, DATE }) {
     await queryInterface.createTable('Adoptions', {
