@@ -26,6 +26,8 @@ IN PROGRESS
 <br>
 `yarn start:server`
 ## Database:
+**development**: SQLite  **production**: PostgreSQL
+<br>
 `yarn db:migrate`
 <br>
 `yarn db:seed`
