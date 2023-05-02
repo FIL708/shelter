@@ -9,6 +9,7 @@ module.exports = {
           '$2b$10$0ceY9JU6gNkU/aXa8Gr8hejCAAXTK8MPUGTFBppj..D6pawA2fBMu',
         role: 'admin',
         phone: '123123123',
+        addressID: 2,
         avatar:
           'https://lh3.googleusercontent.com/a/AGNmyxYxkm7PS_WLiv2WW2IklYdph4eT-w98DMyPdVM=s96-c',
         createdAt: new Date(),
