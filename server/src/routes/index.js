@@ -13,16 +13,10 @@ module.exports = Router()
   .use('/user', user)
   .use('/auth', auth)
   .post('/test', async (req, res) => {
-    // const { password } = req.body;
-    // console.log(req.body);
-    // const hash = await bcrypt.hash(password, 10);
-    // console.log();
+    const { password } = req.body;
+    console.log(req.body);
+    const hash = await bcrypt.hash(password, 10);
+    console.log();
 
-    // return res.send(hash);
-    const ress = await bcrypt.compare(
-      'admin4013',
-      '$2b$10$0ceY9JU6gNkU/aXa8Gr8hejCAAXTK8MPUGTFBppj..D6pawA2fBMu',
-    );
-    console.log(ress);
-    res.end();
+    return res.send(hash);
   });
