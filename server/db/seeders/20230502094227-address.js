@@ -1,6 +1,6 @@
 module.exports = {
   async up(queryInterface) {
-    return queryInterface.bulkInsert('address', [
+    return queryInterface.bulkInsert('Addresses', [
       {
         city: 'Warsaw',
         country: 'Poland',
@@ -17,6 +17,6 @@ module.exports = {
   },
 
   async down(queryInterface) {
-    queryInterface.bulkDelete('address', null, {});
+    queryInterface.bulkDelete('Addresses', null, {});
   },
 };
