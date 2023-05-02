@@ -1,6 +1,6 @@
 module.exports = {
   async up(queryInterface, { INTEGER, STRING }) {
-    await queryInterface.createTable('Addresses', {
+    await queryInterface.createTable('addresses', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -16,6 +16,6 @@ module.exports = {
     });
   },
   async down(queryInterface) {
-    await queryInterface.dropTable('Addresses');
+    await queryInterface.dropTable('addresses');
   },
 };

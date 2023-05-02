@@ -16,7 +16,7 @@ module.exports = {
       adoptionID: {
         type: INTEGER,
         references: {
-          model: 'adoption',
+          model: 'Adoptions',
           key: 'id',
         },
       },

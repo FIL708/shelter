@@ -1,6 +1,6 @@
 module.exports = {
   async up(queryInterface) {
-    await queryInterface.bulkInsert('Users', [
+    return queryInterface.bulkInsert('Users', [
       {
         firstName: 'Filip',
         lastName: 'Zebrowski',
@@ -11,7 +11,6 @@ module.exports = {
         phone: '123123123',
         avatar:
           'https://lh3.googleusercontent.com/a/AGNmyxYxkm7PS_WLiv2WW2IklYdph4eT-w98DMyPdVM=s96-c',
-        addressID: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -19,6 +18,6 @@ module.exports = {
   },
 
   async down(queryInterface) {
-    await queryInterface.bulkDelete('Users', null, {});
+    queryInterface.bulkDelete('Users', null, {});
   },
 };

@@ -9,12 +9,12 @@ module.exports = {
       },
       tagID: {
         type: INTEGER,
-        references: { model: 'tag', key: 'id' },
+        references: { model: 'Tags', key: 'id' },
         onDelete: 'CASCADE',
       },
       photoID: {
         type: INTEGER,
-        references: { model: 'photo', key: 'id' },
+        references: { model: 'Photos', key: 'id' },
         onDelete: 'CASCADE',
       },
       createdAt: {

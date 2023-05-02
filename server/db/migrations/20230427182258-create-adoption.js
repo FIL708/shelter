@@ -36,7 +36,7 @@ module.exports = {
       addressID: {
         type: INTEGER,
         references: {
-          model: 'address',
+          model: 'Addresses',
           key: 'id',
         },
       },
