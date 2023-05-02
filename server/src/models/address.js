@@ -14,6 +14,7 @@ module.exports = (sequelize, { STRING }) => {
     },
     {
       sequelize,
+      timestamps: false,
       modelName: 'address',
     },
   );
