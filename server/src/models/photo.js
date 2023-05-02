@@ -3,7 +3,7 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, { STRING, INTEGER }) => {
   class Photo extends Model {
     static associate(models) {
-      // define association here
+      Photo.belongsTo(models.user, { foreignKey: 'photoID' });
     }
   }
   Photo.init(
