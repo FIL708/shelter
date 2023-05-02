@@ -12,7 +12,7 @@ module.exports = (sequelize, { STRING }) => {
   }
   Photo.init(
     {
-      url: STRING,
+      url: { type: STRING, validate: { isUrl: true } },
     },
     {
       sequelize,
