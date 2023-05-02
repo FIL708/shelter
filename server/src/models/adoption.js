@@ -21,6 +21,7 @@ module.exports = (sequelize, { INTEGER, STRING, TEXT }) => {
     },
     {
       sequelize,
+      paranoid: true,
       modelName: 'adoption',
     },
   );
