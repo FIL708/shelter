@@ -1,31 +1,33 @@
-'use strict';
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up(queryInterface, { INTEGER, DATE }) {
     await queryInterface.createTable('photo_tags', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: INTEGER,
       },
       tagID: {
-        type: Sequelize.INTEGER
+        type: INTEGER,
+        references: { model: 'tag', key: 'id' },
+        onDelete: 'CASCADE',
       },
       photoID: {
-        type: Sequelize.INTEGER
+        type: INTEGER,
+        references: { model: 'photo', key: 'id' },
+        onDelete: 'CASCADE',
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: DATE,
+      },
     });
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     await queryInterface.dropTable('photo_tags');
-  }
+  },
 };
