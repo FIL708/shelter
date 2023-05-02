@@ -1,6 +1,6 @@
 const { Model } = require('sequelize');
 
-module.exports = (sequelize, { STRING, INTEGER }) => {
+module.exports = (sequelize, { STRING }) => {
   class Photo extends Model {
     static associate(models) {
       Photo.belongsTo(models.user, { foreignKey: 'photoID' });
@@ -9,8 +9,6 @@ module.exports = (sequelize, { STRING, INTEGER }) => {
   Photo.init(
     {
       url: STRING,
-      tagID: INTEGER,
-      adoptionID: INTEGER,
     },
     {
       sequelize,

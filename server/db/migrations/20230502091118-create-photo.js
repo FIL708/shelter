@@ -15,6 +15,10 @@ module.exports = {
       },
       adoptionID: {
         type: INTEGER,
+        references: {
+          model: 'adoption',
+          key: 'id',
+        },
       },
       createdAt: {
         allowNull: false,
