@@ -1,17 +1,13 @@
-'use strict';
 const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
-  class photo_tags extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+  class PhotoTags extends Model {
     static associate(models) {
-      // define association here
+      PhotoTags.belongsTo(models.photo, { foreignKey: 'photoID' });
+      PhotoTags.belongsTo(models.tag, { foreignKey: 'tagID' });
     }
   }
-  photo_tags.init(
+  PhotoTags.init(
     {
       tagID: DataTypes.INTEGER,
       photoID: DataTypes.INTEGER,
@@ -21,5 +17,5 @@ module.exports = (sequelize, DataTypes) => {
       modelName: 'photo_tags',
     },
   );
-  return photo_tags;
+  return PhotoTags;
 };
