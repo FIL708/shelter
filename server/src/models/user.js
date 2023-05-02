@@ -1,26 +1,36 @@
-'use strict';
 const { Model } = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
+
+module.exports = (sequelize, { STRING, DATE }) => {
   class User extends Model {
-    static associate(models) {}
+    static associate(models) {
+      User.belongsTo(models.address, { foreignKey: 'addressID' });
+      User.belongsToMany(models.adoption, {
+        through: 'user_adoptions',
+        foreignKey: 'userID',
+      });
+    }
   }
   User.init(
     {
-      firstName: { type: DataTypes.STRING },
-      lastName: { type: DataTypes.STRING },
+      firstName: STRING,
+      lastName: STRING,
+      role: STRING,
       email: {
-        type: DataTypes.STRING,
+        type: STRING,
         unique: true,
         validate: {
           isEmail: true,
         },
       },
-      password: { type: DataTypes.STRING },
-      avatar: { type: DataTypes.STRING },
+      phone: STRING,
+      avatar: { type: STRING, validate: { isUrl: true } },
+      password: STRING,
+      birthday: DATE,
     },
     {
       sequelize,
-      modelName: 'User',
+      paranoid: true,
+      modelName: 'user',
     },
   );
   return User;
