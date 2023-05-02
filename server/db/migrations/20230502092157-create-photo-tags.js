@@ -1,5 +1,5 @@
 module.exports = {
-  async up(queryInterface, { INTEGER, DATE }) {
+  async up(queryInterface, { INTEGER }) {
     await queryInterface.createTable('photo_tags', {
       id: {
         allowNull: false,
@@ -16,14 +16,6 @@ module.exports = {
         type: INTEGER,
         references: { model: 'Photos', key: 'id' },
         onDelete: 'CASCADE',
-      },
-      createdAt: {
-        allowNull: false,
-        type: DATE,
-      },
-      updatedAt: {
-        allowNull: false,
-        type: DATE,
       },
     });
   },

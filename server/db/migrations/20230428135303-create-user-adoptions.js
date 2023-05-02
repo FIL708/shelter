@@ -1,5 +1,5 @@
 module.exports = {
-  async up(queryInterface, { INTEGER, DATE }) {
+  async up(queryInterface, { INTEGER }) {
     await queryInterface.createTable('user_adoptions', {
       id: {
         allowNull: false,
@@ -9,21 +9,13 @@ module.exports = {
       },
       userID: {
         type: INTEGER,
-        references: { model: 'user', key: 'id' },
+        references: { model: 'Users', key: 'id' },
         onDelete: 'CASCADE',
       },
       adoptionID: {
         type: INTEGER,
-        references: { model: 'adoption', key: 'id' },
+        references: { model: 'Adoptions', key: 'id' },
         onDelete: 'CASCADE',
-      },
-      createdAt: {
-        allowNull: false,
-        type: DATE,
-      },
-      updatedAt: {
-        allowNull: false,
-        type: DATE,
       },
     });
   },

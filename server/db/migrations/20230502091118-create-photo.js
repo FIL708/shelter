@@ -1,5 +1,5 @@
 module.exports = {
-  async up(queryInterface, { INTEGER, STRING, DATE }) {
+  async up(queryInterface, { INTEGER, STRING }) {
     await queryInterface.createTable('Photos', {
       id: {
         allowNull: false,
@@ -10,23 +10,12 @@ module.exports = {
       url: {
         type: STRING,
       },
-      tagID: {
-        type: INTEGER,
-      },
       adoptionID: {
         type: INTEGER,
         references: {
           model: 'Adoptions',
           key: 'id',
         },
-      },
-      createdAt: {
-        allowNull: false,
-        type: DATE,
-      },
-      updatedAt: {
-        allowNull: false,
-        type: DATE,
       },
     });
   },

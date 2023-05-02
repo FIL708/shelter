@@ -1,5 +1,5 @@
 module.exports = {
-  async up(queryInterface, { INTEGER, STRING, DATE }) {
+  async up(queryInterface, { INTEGER, STRING }) {
     await queryInterface.createTable('Tags', {
       id: {
         allowNull: false,
@@ -9,14 +9,6 @@ module.exports = {
       },
       name: {
         type: STRING,
-      },
-      createdAt: {
-        allowNull: false,
-        type: DATE,
-      },
-      updatedAt: {
-        allowNull: false,
-        type: DATE,
       },
     });
   },
