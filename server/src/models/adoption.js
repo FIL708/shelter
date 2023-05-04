@@ -3,9 +3,9 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, { INTEGER, STRING, TEXT }) => {
   class Adoption extends Model {
     static associate(models) {
-      Adoption.hasMany(models.photo);
-      Adoption.belongsTo(models.address, { foreignKey: 'addressId' });
-      Adoption.belongsToMany(models.user, {
+      Adoption.hasMany(models.Photo, { foreignKey: 'photoId' });
+      Adoption.belongsTo(models.Address, { foreignKey: 'addressId' });
+      Adoption.belongsToMany(models.User, {
         through: 'user_adoptions',
         foreignKey: 'adoptionId',
       });
@@ -23,7 +23,7 @@ module.exports = (sequelize, { INTEGER, STRING, TEXT }) => {
     {
       sequelize,
       paranoid: true,
-      modelName: 'adoption',
+      modelName: 'Adoption',
     },
   );
   return Adoption;
