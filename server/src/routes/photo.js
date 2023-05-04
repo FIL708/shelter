@@ -1,12 +1,16 @@
 const { Router } = require('express');
-const photos = require('../photos.json');
+const { photo } = require('../models');
 
-const getAllPhotos = (req, res) => {
-  try {
-    res.status(200).json(photos);
-  } catch (error) {
-    res.status(500).json({ error });
+const getAllPhotos = async (req, res) => {
+  console.log(photo);
+
+  const photos = await photo.findAll();
+  console.log(photos);
+
+  if (!photos) {
+    return res.status(404).json({ message: 'Photos not found' });
   }
+  res.status(200).json(photos);
 };
 
 module.exports = Router().get('/', getAllPhotos);
