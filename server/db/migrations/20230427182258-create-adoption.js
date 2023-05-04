@@ -33,7 +33,7 @@ module.exports = {
         allowNull: false,
         type: DATE,
       },
-      addressID: {
+      addressId: {
         type: INTEGER,
         references: {
           model: 'Addresses',

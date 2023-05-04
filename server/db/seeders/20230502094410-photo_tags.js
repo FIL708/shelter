@@ -1,16 +1,16 @@
 module.exports = {
   async up(queryInterface) {
     return queryInterface.bulkInsert('photo_tags', [
-      { photoID: 1, tagID: 1 },
-      { photoID: 6, tagID: 1 },
-      { photoID: 11, tagID: 1 },
-      { photoID: 16, tagID: 1 },
-      { photoID: 21, tagID: 1 },
-      { photoID: 26, tagID: 1 },
-      { photoID: 31, tagID: 1 },
-      { photoID: 36, tagID: 1 },
-      { photoID: 41, tagID: 1 },
-      { photoID: 46, tagID: 1 },
+      { photoId: 1, tagId: 1 },
+      { photoId: 6, tagId: 1 },
+      { photoId: 11, tagId: 1 },
+      { photoId: 16, tagId: 1 },
+      { photoId: 21, tagId: 1 },
+      { photoId: 26, tagId: 1 },
+      { photoId: 31, tagId: 1 },
+      { photoId: 36, tagId: 1 },
+      { photoId: 41, tagId: 1 },
+      { photoId: 46, tagId: 1 },
     ]);
   },
 

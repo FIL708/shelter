@@ -3,10 +3,10 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, { STRING, DATE }) => {
   class User extends Model {
     static associate(models) {
-      User.belongsTo(models.address, { foreignKey: 'addressID' });
+      User.belongsTo(models.address, { foreignKey: 'addressId' });
       User.belongsToMany(models.adoption, {
         through: 'user_adoptions',
-        foreignKey: 'userID',
+        foreignKey: 'userId',
       });
     }
   }

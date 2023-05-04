@@ -4,10 +4,10 @@ module.exports = (sequelize, { INTEGER, STRING, TEXT }) => {
   class Adoption extends Model {
     static associate(models) {
       Adoption.hasMany(models.photo);
-      Adoption.belongsTo(models.address, { foreignKey: 'addressID' });
+      Adoption.belongsTo(models.address, { foreignKey: 'addressId' });
       Adoption.belongsToMany(models.user, {
         through: 'user_adoptions',
-        foreignKey: 'adoptionID',
+        foreignKey: 'adoptionId',
       });
     }
   }
