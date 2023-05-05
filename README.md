@@ -22,14 +22,29 @@ IN PROGRESS
 <br>
 `yarn install`
 ## Running ( development ):
+Create `default.json` file in ./server/config folder with:
+```
+{
+    "port": 3500,
+    "sessionKey": "YOUR SESSION KEY",
+    "googleClientID": "YOUR GOOGLE CLIENT ID",
+    "googleClientSecret":"YOUR GOOGLE CLIENT SECRET",
+    "facebookID":"YOUR FACEBOOK ID",
+    "facebookSecret": "YOUR FACEBOOK SECRET"
+}
+```
+<br>
+
 `yarn start:client`
 <br>
 `yarn start:server`
+
 ## Database:
 **development**: SQLite  **production**: PostgreSQL
 <br>
 `yarn db:migrate`
 <br>
 `yarn db:seed`
+
 ## Running ( Docker ):
 IN PROGRESS
