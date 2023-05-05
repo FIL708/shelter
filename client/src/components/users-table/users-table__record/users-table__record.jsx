@@ -11,7 +11,7 @@ export default function UsersTableRecord({
   role,
   createdAt,
 }) {
-  const formattedDate = getFormattedDate(createdAt);
+  const formattedDate = getFormattedDate(createdAt, 'full');
   return (
     <tr className="users-table__row">
       <td className="users-table__row-item">{id}</td>

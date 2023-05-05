@@ -4,7 +4,7 @@ import { ModalWrapper } from '../index.js';
 
 import './gallery-card.css';
 
-export default function GalleryCard({ url }) {
+export default function GalleryCard({ url, id }) {
   const [modalVision, setModalVision] = useState(false);
   const toggleModalVision = () => {
     setModalVision((prev) => !prev);
@@ -19,7 +19,7 @@ export default function GalleryCard({ url }) {
         <img src={url} alt="pet gallery" className="gallery-card__photo" />
         <p className="gallery-card__hover-text">Zooooom!</p>
       </button>
-      <Link to="/" className="gallery-card__link">
+      <Link to={`/adoption/${id}`} className="gallery-card__link">
         Go to details
       </Link>
       <ModalWrapper
