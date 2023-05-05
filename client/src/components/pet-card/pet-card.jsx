@@ -4,7 +4,7 @@ import PetCardPhoto from './pet-card-photo/pet-card-photo.jsx';
 import './pet-card.css';
 
 export default function PetCard({
-  url,
+  photos,
   isFavorite,
   name,
   address,
@@ -30,7 +30,7 @@ export default function PetCard({
   const cardClassName = mode ? `pet-card ${mode}` : 'pet-card';
   return (
     <li className={cardClassName}>
-      <PetCardPhoto url={url} mode={mode} />
+      <PetCardPhoto url={photos[0].url} mode={mode} />
       <div className="pet-card__content">
         <h3 className="pet-card__name">{name}</h3>
         <h4 className="pet-car__location">{`${address.city}, ${address.country}`}</h4>
