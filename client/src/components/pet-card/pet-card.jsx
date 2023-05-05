@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from '../index.js';
+import { getFormattedDate } from '../../helpers';
 import PetCardPhoto from './pet-card-photo/pet-card-photo.jsx';
 import './pet-card.css';
 
@@ -28,6 +29,7 @@ export default function PetCard({
     setIsFav((prev) => !prev);
   };
   const cardClassName = mode ? `pet-card ${mode}` : 'pet-card';
+  const formattedDate = getFormattedDate(createdAt);
   return (
     <li className={cardClassName}>
       <PetCardPhoto url={photos[0].url} mode={mode} />
@@ -38,7 +40,7 @@ export default function PetCard({
         <p className="pet-car__desc">{shortDescription}</p>
         <strong className="pet-card__note">
           looking for a home:{' '}
-          <span className="pet-card__date">{createdAt}</span>
+          <span className="pet-card__date">{formattedDate}</span>
         </strong>
         <Button
           className="pet-card__button"
