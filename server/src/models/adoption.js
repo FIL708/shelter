@@ -7,7 +7,10 @@ module.exports = (sequelize, { INTEGER, STRING, TEXT }) => {
         foreignKey: 'adoptionId',
         as: 'photos',
       });
-      Adoption.belongsTo(models.Address, { foreignKey: 'addressId' });
+      Adoption.belongsTo(models.Address, {
+        foreignKey: 'addressId',
+        as: 'address',
+      });
       Adoption.belongsToMany(models.User, {
         through: models.user_adoptions,
         foreignKey: 'adoptionId',
