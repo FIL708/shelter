@@ -14,7 +14,10 @@ const facebookSecret = config.get('facebookSecret');
 
 const localVerify = async (email, password, done) => {
   try {
-    const user = await User.findOne({ where: { email } });
+    const user = await User.findOne({
+      attributes: { exclude: ['userId'] },
+      where: { email },
+    });
     const isValidPassword = await bcrypt.compare(password, user.password);
 
     if (user && password && isValidPassword) {

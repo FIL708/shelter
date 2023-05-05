@@ -18,7 +18,6 @@ export default function Gallery() {
   const [page, setPage] = useState(1);
   const isScrollButtonVisible = useScrollToggle(200);
   const [filteringTag, setFilteringTag] = useState('all');
-  console.log(photos);
 
   useEffect(() => {
     setPage(1);
