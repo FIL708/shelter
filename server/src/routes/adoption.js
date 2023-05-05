@@ -5,7 +5,13 @@ const getAllAdoptions = async (req, res) => {
   try {
     const adoptions = await Adoption.findAll({
       attributes: {
-        exclude: ['adoptionId', 'addressId', 'updatedAt', 'deletedAt'],
+        exclude: [
+          'adoptionId',
+          'addressId',
+          'updatedAt',
+          'deletedAt',
+          'description',
+        ],
       },
       include: [
         { model: Address, as: 'address' },
@@ -40,7 +46,13 @@ const getOneAdoption = async (req, res) => {
   try {
     const adoption = await Adoption.findByPk(id, {
       attributes: {
-        exclude: ['adoptionId', 'addressId', 'updatedAt', 'deletedAt'],
+        exclude: [
+          'adoptionId',
+          'addressId',
+          'updatedAt',
+          'deletedAt',
+          'shortDescription',
+        ],
       },
       include: [
         { model: Address, as: 'address' },

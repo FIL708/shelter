@@ -8,7 +8,7 @@ export default function PetCard({
   isFavorite,
   name,
   location,
-  description,
+  shortDescription,
   createdAt,
   mode,
 }) {
@@ -35,7 +35,7 @@ export default function PetCard({
         <h3 className="pet-card__name">{name}</h3>
         <h4 className="pet-car__location">{location}</h4>
         <hr className="pet-card__divider" />
-        <p className="pet-car__desc">{description}</p>
+        <p className="pet-car__desc">{shortDescription}</p>
         <strong className="pet-card__note">
           looking for a home:{' '}
           <span className="pet-card__date">{createdAt}</span>
