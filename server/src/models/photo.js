@@ -7,6 +7,7 @@ module.exports = (sequelize, { STRING }) => {
       Photo.belongsToMany(models.Tag, {
         through: 'photo_tags',
         foreignKey: 'photoId',
+        as: 'tags',
       });
     }
   }
