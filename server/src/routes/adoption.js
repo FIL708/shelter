@@ -1,11 +1,26 @@
 const { Router } = require('express');
-const { Adoption, Photo } = require('../models');
+const { Adoption, Photo, Tag } = require('../models');
 
 const getAllAdoptions = async (req, res) => {
   try {
     const adoptions = await Adoption.findAll({
       attributes: { exclude: ['adoptionId'] },
-      include: [{ model: Photo, as: 'photos' }],
+      include: [
+        {
+          model: Photo,
+          as: 'photos',
+          attributes: ['url'],
+          include: {
+            model: Tag,
+            as: 'tags',
+            attributes: [],
+            where: { name: 'main' },
+            through: {
+              attributes: [],
+            },
+          },
+        },
+      ],
     });
 
     if (!adoptions) {
