@@ -22,7 +22,6 @@ export default function Adoption() {
   });
   const [page, setPage] = useState(1);
   const isScrollButtonVisible = useScrollToggle(200);
-  console.log(pets);
 
   useEffect(() => {
     if (controlValues.species === 'all') {

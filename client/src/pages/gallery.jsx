@@ -18,17 +18,26 @@ export default function Gallery() {
   const [page, setPage] = useState(1);
   const isScrollButtonVisible = useScrollToggle(200);
   const [filteringTag, setFilteringTag] = useState('all');
+  console.log(photos);
 
   useEffect(() => {
     setPage(1);
     if (filteringTag === 'all') {
       setPetPhotos(photos);
     } else if (filteringTag === 'dogs') {
-      setPetPhotos(photos.filter((photo) => photo.tags.includes('dog')));
+      setPetPhotos(
+        photos.filter((photo) => photo.tags.some((tag) => tag.name === 'dog')),
+      );
     } else if (filteringTag === 'cats') {
-      setPetPhotos(photos.filter((photo) => photo.tags.includes('cat')));
+      setPetPhotos(
+        photos.filter((photo) => photo.tags.some((tag) => tag.name === 'cat')),
+      );
     } else if (filteringTag === 'events') {
-      setPetPhotos(photos.filter((photo) => photo.tags.includes('event')));
+      setPetPhotos(
+        photos.filter((photo) =>
+          photo.tags.some((tag) => tag.name === 'event'),
+        ),
+      );
     }
   }, [filteringTag, photos]);
 
