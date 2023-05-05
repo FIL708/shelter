@@ -3,10 +3,13 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, { STRING, DATE }) => {
   class User extends Model {
     static associate(models) {
-      User.belongsTo(models.address, { foreignKey: 'addressID' });
-      User.belongsToMany(models.adoption, {
-        through: 'user_adoptions',
-        foreignKey: 'userID',
+      User.belongsTo(models.Address, {
+        foreignKey: 'addressId',
+        as: 'address',
+      });
+      User.belongsToMany(models.Adoption, {
+        through: models.user_adoptions,
+        foreignKey: 'userId',
       });
     }
   }
@@ -30,7 +33,7 @@ module.exports = (sequelize, { STRING, DATE }) => {
     {
       sequelize,
       paranoid: true,
-      modelName: 'user',
+      modelName: 'User',
     },
   );
   return User;

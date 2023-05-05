@@ -1,22 +1,36 @@
 const { Router } = require('express');
-const pets = require('../pets.json');
+const { Adoption, Photo } = require('../models');
 
-const getAllAdoptions = (req, res) => {
+const getAllAdoptions = async (req, res) => {
   try {
-    res.status(200).json(pets);
+    const adoptions = await Adoption.findAll({
+      attributes: { exclude: ['adoptionId'] },
+      include: [{ model: Photo, as: 'photos' }],
+    });
+
+    if (!adoptions) {
+      return res.status(404).json({ message: 'Adoptions not found' });
+    }
+
+    return res.status(200).json(adoptions);
   } catch (error) {
-    res.status(500).json({ error });
+    return res.status(500).json({ error });
   }
 };
-const getOneAdoption = (req, res) => {
+const getOneAdoption = async (req, res) => {
+  const { id } = req.params;
   try {
-    const [adoption] = pets.filter((pet) => pet.id === req.params.id);
+    const adoption = await Adoption.findByPk(id, {
+      attributes: { exclude: ['adoptionId'] },
+      include: [{ model: Photo, as: 'photos' }],
+    });
+
     if (!adoption) {
-      return res.status(404).json({ message: 'Adoption not found!' });
+      return res.status(404).json({ message: 'Adoption not found' });
     }
-    res.status(200).json(adoption);
+    return res.status(200).json(adoption);
   } catch (error) {
-    res.status(500).json({ error });
+    return res.status(500).json({ error });
   }
 };
 

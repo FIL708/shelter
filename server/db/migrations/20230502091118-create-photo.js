@@ -10,7 +10,7 @@ module.exports = {
       url: {
         type: STRING,
       },
-      adoptionID: {
+      adoptionId: {
         type: INTEGER,
         references: {
           model: 'Adoptions',

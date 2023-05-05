@@ -3,9 +3,9 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, { STRING }) => {
   class Tag extends Model {
     static associate(models) {
-      Tag.belongsToMany(models.photo, {
-        through: 'photo_tags',
-        foreignKey: 'tagID',
+      Tag.belongsToMany(models.Photo, {
+        through: models.photo_tags,
+        foreignKey: 'tagId',
       });
     }
   }
@@ -16,7 +16,7 @@ module.exports = (sequelize, { STRING }) => {
     {
       sequelize,
       timestamps: false,
-      modelName: 'tag',
+      modelName: 'Tag',
     },
   );
   return Tag;

@@ -3,8 +3,8 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, { STRING }) => {
   class Address extends Model {
     static associate(models) {
-      Address.hasMany(models.user);
-      Address.hasMany(models.adoption);
+      Address.hasMany(models.User, { foreignKey: 'userId' });
+      Address.hasMany(models.Adoption, { foreignKey: 'adoptionId' });
     }
   }
   Address.init(
@@ -15,7 +15,7 @@ module.exports = (sequelize, { STRING }) => {
     {
       sequelize,
       timestamps: false,
-      modelName: 'address',
+      modelName: 'Address',
     },
   );
   return Address;

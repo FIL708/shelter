@@ -1,11 +1,27 @@
 const { Router } = require('express');
-const photos = require('../photos.json');
+const { Photo, Tag } = require('../models');
 
-const getAllPhotos = (req, res) => {
+const getAllPhotos = async (req, res) => {
   try {
+    const photos = await Photo.findAll({
+      attributes: { exclude: ['photoId'] },
+      include: [
+        {
+          model: Tag,
+          as: 'tags',
+          attributes: ['name'],
+          through: {
+            attributes: [],
+          },
+        },
+      ],
+    });
+    if (!photos) {
+      return res.status(404).json({ message: 'Photos not found' });
+    }
     res.status(200).json(photos);
   } catch (error) {
-    res.status(500).json({ error });
+    return res.status(500).json({ error });
   }
 };
 

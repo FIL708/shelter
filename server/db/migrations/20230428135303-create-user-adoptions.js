@@ -7,12 +7,12 @@ module.exports = {
         primaryKey: true,
         type: INTEGER,
       },
-      userID: {
+      userId: {
         type: INTEGER,
         references: { model: 'Users', key: 'id' },
         onDelete: 'CASCADE',
       },
-      adoptionID: {
+      adoptionId: {
         type: INTEGER,
         references: { model: 'Adoptions', key: 'id' },
         onDelete: 'CASCADE',
