@@ -6,7 +6,7 @@ export default function GalleryCardList({ photos }) {
   return (
     <ul className="gallery-card__list">
       {photos.map((photo) => (
-        <GalleryCard url={photo.url} key={photo.id} />
+        <GalleryCard url={photo.url} key={photo.id} id={photo.id} />
       ))}
     </ul>
   );
