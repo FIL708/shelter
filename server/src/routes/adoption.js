@@ -1,11 +1,14 @@
 const { Router } = require('express');
-const { Adoption, Photo, Tag } = require('../models');
+const { Adoption, Photo, Tag, Address } = require('../models');
 
 const getAllAdoptions = async (req, res) => {
   try {
     const adoptions = await Adoption.findAll({
-      attributes: { exclude: ['adoptionId'] },
+      attributes: {
+        exclude: ['adoptionId', 'addressId', 'updatedAt', 'deletedAt'],
+      },
       include: [
+        { model: Address, as: 'address' },
         {
           model: Photo,
           as: 'photos',
@@ -36,8 +39,13 @@ const getOneAdoption = async (req, res) => {
   const { id } = req.params;
   try {
     const adoption = await Adoption.findByPk(id, {
-      attributes: { exclude: ['adoptionId'] },
-      include: [{ model: Photo, as: 'photos' }],
+      attributes: {
+        exclude: ['adoptionId', 'addressId', 'updatedAt', 'deletedAt'],
+      },
+      include: [
+        { model: Address, as: 'address' },
+        { model: Photo, as: 'photos' },
+      ],
     });
 
     if (!adoption) {
