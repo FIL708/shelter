@@ -7,7 +7,7 @@ export default function PetCard({
   url,
   isFavorite,
   name,
-  location,
+  address,
   shortDescription,
   createdAt,
   mode,
@@ -33,7 +33,7 @@ export default function PetCard({
       <PetCardPhoto url={url} mode={mode} />
       <div className="pet-card__content">
         <h3 className="pet-card__name">{name}</h3>
-        <h4 className="pet-car__location">{location}</h4>
+        <h4 className="pet-car__location">{`${address.city}, ${address.country}`}</h4>
         <hr className="pet-card__divider" />
         <p className="pet-car__desc">{shortDescription}</p>
         <strong className="pet-card__note">
