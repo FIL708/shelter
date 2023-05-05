@@ -5,7 +5,7 @@ module.exports = (sequelize, { STRING }) => {
     static associate(models) {
       Photo.belongsTo(models.Adoption, { foreignKey: 'adoptionId' });
       Photo.belongsToMany(models.Tag, {
-        through: 'photo_tags',
+        through: models.photo_tags,
         foreignKey: 'photoId',
         as: 'tags',
       });

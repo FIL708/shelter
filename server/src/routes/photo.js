@@ -4,7 +4,7 @@ const { Photo, Tag } = require('../models');
 const getAllPhotos = async (req, res) => {
   try {
     const photos = await Photo.findAll({
-      attributes: ['id', 'url', 'adoptionId'],
+      attributes: { exclude: ['photoId'] },
       include: [
         {
           model: Tag,

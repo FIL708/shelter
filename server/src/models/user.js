@@ -5,7 +5,7 @@ module.exports = (sequelize, { STRING, DATE }) => {
     static associate(models) {
       User.belongsTo(models.Address, { foreignKey: 'addressId' });
       User.belongsToMany(models.Adoption, {
-        through: 'user_adoptions',
+        through: models.user_adoptions,
         foreignKey: 'userId',
       });
     }
