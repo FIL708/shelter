@@ -4,8 +4,7 @@ import { getFormattedDate } from '../../helpers';
 import './pet-details.css';
 
 export default function PetDetails({ data }) {
-  if (!data) return false;
-  const [isFav, setIsFav] = useState(data.isFavorite);
+  const [isFav, setIsFav] = useState(data?.isFavorite || false);
 
   const formattedDate = getFormattedDate(data.createdAt, {
     day: '2-digit',
