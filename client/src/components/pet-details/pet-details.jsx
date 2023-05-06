@@ -4,6 +4,8 @@ import { getFormattedDate } from '../../helpers';
 import './pet-details.css';
 
 export default function PetDetails({ data }) {
+  console.log(data);
+
   const formattedDate = getFormattedDate(data.createdAt, {
     day: '2-digit',
     month: 'long',
@@ -24,6 +26,7 @@ export default function PetDetails({ data }) {
   const toggleFav = () => {
     setIsFav((prev) => !prev);
   };
+  if (!data) return false;
   return (
     <section className="pet-details">
       <ul className="pet-details__data-list">
