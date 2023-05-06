@@ -25,6 +25,13 @@ module.exports = {
           key: 'id',
         },
       },
+      userId: {
+        type: INTEGER,
+        references: {
+          model: 'Users',
+          key: 'id',
+        },
+      },
     });
   },
   async down(queryInterface) {
