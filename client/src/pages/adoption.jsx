@@ -19,7 +19,7 @@ export default function Adoption() {
   if (isLoading || error)
     return (
       <Page>
-        <Subtitle text="Gallery" main />
+        <Subtitle text={`Adoption No. ${id}`} main />
         {isLoading ? (
           <LoadingSpinner />
         ) : (
