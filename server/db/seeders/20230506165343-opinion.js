@@ -22,7 +22,6 @@ module.exports = {
         userId: 2,
         adoptionId: 1,
       },
-
       {
         body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet.',
         createdAt: new Date(),
@@ -44,7 +43,6 @@ module.exports = {
         userId: 2,
         adoptionId: 2,
       },
-
       {
         body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet.',
         createdAt: new Date(),
@@ -66,7 +64,6 @@ module.exports = {
         userId: 2,
         adoptionId: 3,
       },
-
       {
         body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet.',
         createdAt: new Date(),
@@ -88,7 +85,6 @@ module.exports = {
         userId: 2,
         adoptionId: 4,
       },
-
       {
         body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet.',
         createdAt: new Date(),
@@ -107,10 +103,9 @@ module.exports = {
         body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet.',
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 6,
+        userId: 2,
         adoptionId: 5,
       },
-
       {
         body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet.',
         createdAt: new Date(),
@@ -153,7 +148,6 @@ module.exports = {
         userId: 2,
         adoptionId: 7,
       },
-
       {
         body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet.',
         createdAt: new Date(),
@@ -175,7 +169,6 @@ module.exports = {
         userId: 2,
         adoptionId: 8,
       },
-
       {
         body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet.',
         createdAt: new Date(),
@@ -197,7 +190,6 @@ module.exports = {
         userId: 2,
         adoptionId: 9,
       },
-
       {
         body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet.',
         createdAt: new Date(),
