@@ -69,10 +69,7 @@ export default function Users() {
         {isLoading ? (
           <LoadingSpinner />
         ) : (
-          <ErrorCard
-            errorCode={error.status}
-            errorMessage="Something goes wrong!"
-          />
+          <ErrorCard errorCode={error.status} errorMessage={error.message} />
         )}
       </Page>
     );

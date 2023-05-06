@@ -23,7 +23,7 @@ export default function Adoption() {
         {isLoading ? (
           <LoadingSpinner />
         ) : (
-          <ErrorCard errorCode="404" errorMessage={error.message} />
+          <ErrorCard errorCode={error.status} errorMessage={error.message} />
         )}
       </Page>
     );

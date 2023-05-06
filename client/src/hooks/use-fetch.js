@@ -12,7 +12,7 @@ export default function useFetch(url) {
       const data = await res.json();
       if (!res.ok) {
         setResponse(false);
-        setError(data);
+        setError({ ...data, status: res.status });
       } else {
         setResponse(data);
         setError(null);
