@@ -7,6 +7,7 @@ module.exports = (sequelize, { INTEGER, STRING, TEXT }) => {
         foreignKey: 'adoptionId',
         as: 'photos',
       });
+      Adoption.hasMany(models.Opinion, { foreignKey: 'adoptionId' });
       Adoption.belongsTo(models.Address, {
         foreignKey: 'addressId',
         as: 'address',
