@@ -60,10 +60,7 @@ export default function Gallery() {
         {isLoading ? (
           <LoadingSpinner />
         ) : (
-          <ErrorCard
-            errorCode={error.status}
-            errorMessage="Something goes wrong!"
-          />
+          <ErrorCard errorCode={error.status} errorMessage={error.status} />
         )}
       </Page>
     );

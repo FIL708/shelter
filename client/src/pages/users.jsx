@@ -65,7 +65,7 @@ export default function Users() {
   if (isLoading || error)
     return (
       <Page>
-        <Subtitle text="Gallery" main />
+        <Subtitle text="Users" main />
         {isLoading ? (
           <LoadingSpinner />
         ) : (

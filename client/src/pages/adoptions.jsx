@@ -61,14 +61,11 @@ export default function Adoption() {
   if (isLoading || error)
     return (
       <Page>
-        <Subtitle text="Gallery" main />
+        <Subtitle text="Our Pets" main />
         {isLoading ? (
           <LoadingSpinner />
         ) : (
-          <ErrorCard
-            errorCode={error.status}
-            errorMessage="Something goes wrong!"
-          />
+          <ErrorCard errorCode={error.status} errorMessage={error.message} />
         )}
       </Page>
     );
