@@ -3,27 +3,28 @@ import { Button } from '../index.js';
 import PetGalleryList from './pet-gallery__list/pet-gallery__list.jsx';
 import './pet-gallery.css';
 
-export default function PetGallery({ gallery, photos }) {
+export default function PetGallery({ photos }) {
   const [mainPhoto, setMainPhoto] = useState(photos[0].url);
 
   const setPhotoAsMain = (url) => setMainPhoto(url);
 
   const setNextPhoto = () => {
     const index = photos.findIndex((photo) => photo.url === mainPhoto);
-    console.log(index);
 
-    // if (index + 2 > gallery.length) {
-    //   setMainPhoto(gallery[0]);
-    // } else {
-    //   setMainPhoto(gallery[index + 1]);
-    // }
-  };
-  const setPreviousPhoto = () => {
-    const index = gallery.indexOf(mainPhoto);
-    if (index - 1 < 0) {
-      setMainPhoto(gallery[gallery.length - 1]);
+    if (index + 2 > photos.length) {
+      setMainPhoto(photos[0].url);
     } else {
-      setMainPhoto(gallery[index - 1]);
+      setMainPhoto(photos[index + 1].url);
+    }
+  };
+
+  const setPreviousPhoto = () => {
+    const index = photos.findIndex((photo) => photo.url === mainPhoto);
+
+    if (index - 1 < 0) {
+      setMainPhoto(photos[photos.length - 1].url);
+    } else {
+      setMainPhoto(photos[index - 1].url);
     }
   };
 
