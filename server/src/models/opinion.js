@@ -1,6 +1,6 @@
 const { Model } = require('sequelize');
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, { STRING }) => {
   class Opinion extends Model {
     static associate(models) {
       Opinion.belongsTo(models.Adoption, { foreignKey: 'adoptionId' });
@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Opinion.init(
     {
-      body: DataTypes.STRING,
+      body: STRING,
     },
     {
       sequelize,
