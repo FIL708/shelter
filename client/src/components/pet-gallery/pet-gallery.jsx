@@ -9,12 +9,14 @@ export default function PetGallery({ gallery, photos }) {
   const setPhotoAsMain = (url) => setMainPhoto(url);
 
   const setNextPhoto = () => {
-    const index = gallery.indexOf(mainPhoto);
-    if (index + 2 > gallery.length) {
-      setMainPhoto(gallery[0]);
-    } else {
-      setMainPhoto(gallery[index + 1]);
-    }
+    const index = photos.findIndex((photo) => photo.url === mainPhoto);
+    console.log(index);
+
+    // if (index + 2 > gallery.length) {
+    //   setMainPhoto(gallery[0]);
+    // } else {
+    //   setMainPhoto(gallery[index + 1]);
+    // }
   };
   const setPreviousPhoto = () => {
     const index = gallery.indexOf(mainPhoto);
