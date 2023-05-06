@@ -6,6 +6,7 @@ import {
   ScrollButton,
   PetDetails,
   PetDescription,
+  OpinionsList,
   LoadingSpinner,
   ErrorCard,
 } from '../components';
@@ -36,6 +37,7 @@ export default function Adoption() {
       <Subtitle text="Something About Me" />
       <PetDescription text={pet.description} />
       <Subtitle text="What people think about me" />
+      <OpinionsList opinions={pet.opinions} />
       <ScrollButton visible={isScrollButtonVisible} />
     </Page>
   );
