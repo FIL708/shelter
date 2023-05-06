@@ -5,7 +5,7 @@ export default function PetGalleryList({ gallery, main, setPhotoAsMain }) {
     <ul className="pet-gallery__list">
       {gallery.map((photo) => {
         const className =
-          photo === main
+          photo.url === main
             ? 'pet-gallery__list-item main-photo'
             : 'pet-gallery__list-item';
 
@@ -14,10 +14,10 @@ export default function PetGalleryList({ gallery, main, setPhotoAsMain }) {
             <button
               type="button"
               className="pet-gallery__list-item__button"
-              onClick={() => setPhotoAsMain(photo)}
+              onClick={() => setPhotoAsMain(photo.url)}
             >
               <img
-                src={photo}
+                src={photo.url}
                 alt="pet gallery list item"
                 className="pet-gallery__list-item__photo"
               />

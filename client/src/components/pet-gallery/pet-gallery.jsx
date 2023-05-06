@@ -3,8 +3,10 @@ import { Button } from '../index.js';
 import PetGalleryList from './pet-gallery__list/pet-gallery__list.jsx';
 import './pet-gallery.css';
 
-export default function PetGallery({ gallery }) {
-  const [mainPhoto, setMainPhoto] = useState(gallery[0]);
+export default function PetGallery({ gallery, photos }) {
+  console.log(photos);
+
+  const [mainPhoto, setMainPhoto] = useState(photos[0].url);
 
   const setPhotoAsMain = (url) => setMainPhoto(url);
 
@@ -47,7 +49,7 @@ export default function PetGallery({ gallery }) {
         />
       </div>
       <PetGalleryList
-        gallery={gallery}
+        gallery={photos}
         main={mainPhoto}
         setPhotoAsMain={setPhotoAsMain}
       />

@@ -32,7 +32,7 @@ export default function Adoption() {
       ) : (
         <>
           <PetDetails data={pet} />
-          <PetGallery gallery={gallery} new={pet.photos} />
+          <PetGallery gallery={gallery} photos={pet.photos} />
           <Subtitle text="Something About Me" />
           <PetDescription text={pet.description} />
           <Subtitle text="What people think about me" />
