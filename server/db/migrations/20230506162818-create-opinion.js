@@ -18,6 +18,13 @@ module.exports = {
         allowNull: false,
         type: DATE,
       },
+      adoptionId: {
+        type: INTEGER,
+        references: {
+          model: 'Adoptions',
+          key: 'id',
+        },
+      },
     });
   },
   async down(queryInterface) {
