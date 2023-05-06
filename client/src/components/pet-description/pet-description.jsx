@@ -1,6 +1,7 @@
 import './pet-description.css';
 
 export default function PetDescription({ text }) {
+  if (!text) return false;
   const paragraphArray = text.split('\n');
   return (
     <section className="pet-description">

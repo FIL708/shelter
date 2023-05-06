@@ -4,14 +4,14 @@ import { getFormattedDate } from '../../helpers';
 import './pet-details.css';
 
 export default function PetDetails({ data }) {
-  console.log(data);
+  if (!data) return false;
+  const [isFav, setIsFav] = useState(data.isFavorite);
 
   const formattedDate = getFormattedDate(data.createdAt, {
     day: '2-digit',
     month: 'long',
     year: 'numeric',
   });
-  const [isFav, setIsFav] = useState(data.isFavorite);
 
   let iconType;
   let iconFill;
@@ -26,7 +26,7 @@ export default function PetDetails({ data }) {
   const toggleFav = () => {
     setIsFav((prev) => !prev);
   };
-  if (!data) return false;
+
   return (
     <section className="pet-details">
       <ul className="pet-details__data-list">
