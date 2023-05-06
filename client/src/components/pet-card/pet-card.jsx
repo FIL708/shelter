@@ -6,11 +6,7 @@ import './pet-card.css';
 
 export default function PetCard({
   id,
-<<<<<<< HEAD
   photos,
-=======
-  url,
->>>>>>> 70b6d95 (fix layout)
   isFavorite,
   name,
   address,
