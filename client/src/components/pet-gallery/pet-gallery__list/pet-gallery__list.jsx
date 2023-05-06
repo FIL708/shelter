@@ -10,7 +10,7 @@ export default function PetGalleryList({ gallery, main, setPhotoAsMain }) {
             : 'pet-gallery__list-item';
 
         return (
-          <li className={className} key={photo}>
+          <li className={className} key={photo.id}>
             <button
               type="button"
               className="pet-gallery__list-item__button"
