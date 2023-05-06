@@ -10,8 +10,13 @@ export default function useFetch(url) {
       setIsLoading(true);
       const res = await fetch(url);
       const data = await res.json();
-      setResponse(data);
-      setError(null);
+      if (!res.ok) {
+        setResponse(false);
+        setError(data);
+      } else {
+        setResponse(data);
+        setError(null);
+      }
     } catch (err) {
       setError(err);
     } finally {

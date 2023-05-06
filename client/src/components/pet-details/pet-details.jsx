@@ -6,6 +6,8 @@ import './pet-details.css';
 export default function PetDetails({ data }) {
   const [isFav, setIsFav] = useState(data?.isFavorite || false);
 
+  if (!data) return false;
+
   const formattedDate = getFormattedDate(data.createdAt, {
     day: '2-digit',
     month: 'long',

@@ -4,6 +4,8 @@ import PetGalleryList from './pet-gallery__list/pet-gallery__list.jsx';
 import './pet-gallery.css';
 
 export default function PetGallery({ photos }) {
+  if (!photos) return false;
+
   const [mainPhoto, setMainPhoto] = useState(photos[0].url);
 
   const setPhotoAsMain = (url) => setMainPhoto(url);
