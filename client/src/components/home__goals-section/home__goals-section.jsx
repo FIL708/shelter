@@ -10,19 +10,19 @@ export default function HomeGoalsSection() {
       <HomeCard
         title="adoption"
         photo={adoptions}
-        text="Lorem ipsum dolor sit amet consectetur. Netus integer bibendum at pharetra leo nisl."
+        text="Adopting a pet means providing a loving home to an animal in need and gaining a loyal companion for life."
         vertical
       />
       <HomeCard
         title="donations"
         photo={donations}
-        text="Lorem ipsum dolor sit amet consectetur. Netus integer bibendum at pharetra leo nisl."
+        text="Your generous donations enable us to continue providing the highest level of care and support to our furry friends."
         vertical
       />
       <HomeCard
         title="food"
         photo={food}
-        text="Lorem ipsum dolor sit amet consectetur. Netus integer bibendum at pharetra leo nisl."
+        text="Donating pet food ensures that our furry friends receive the proper nutrition they need while in our care."
         vertical
       />
     </ul>

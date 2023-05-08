@@ -28,6 +28,9 @@ module.exports = (sequelize, { INTEGER, STRING, TEXT }) => {
       shortDescription: STRING,
       likes: INTEGER,
       views: INTEGER,
+      gender: STRING,
+      age: INTEGER,
+      weight: INTEGER,
       species: STRING,
     },
     {

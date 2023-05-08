@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
+  max-width: 900px;
+  width: 85%;
 }
 .home__welcome-section__logo {
   margin-bottom: 50px;
@@ -12,7 +14,10 @@
 
 .home__welcome-section__note {
   margin-top: 20px;
-  width: 40%;
   font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  text-indent: 35px;
   text-align: justify;
 }

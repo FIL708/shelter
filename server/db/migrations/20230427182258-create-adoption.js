@@ -25,6 +25,15 @@ module.exports = {
       species: {
         type: STRING,
       },
+      gender: {
+        type: STRING,
+      },
+      age: {
+        type: INTEGER
+      },
+      weight: {
+        type: INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: DATE,
