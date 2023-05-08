@@ -8,11 +8,7 @@ export default function PetDetails({ data }) {
 
   if (!data) return false;
 
-  const formattedDate = getFormattedDate(data.createdAt, {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
-  });
+  const formattedDate = getFormattedDate(data.createdAt);
 
   let iconType;
   let iconFill;
