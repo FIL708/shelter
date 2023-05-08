@@ -1,7 +1,7 @@
 .button {
   display: flex;
-  gap: 10px;
   justify-content: center;
+  gap: 10px;
   padding: 8px 16px;
   border-radius: 8px;
   border: none;
@@ -24,6 +24,7 @@
 }
 
 .button.outline {
+  width: 100%;
   background-color: transparent;
   color: var(--blue);
   border: 2px solid var(--blue);
@@ -57,4 +58,9 @@
 }
 .pagination__active-button {
   border: 1px solid var(--white);
+}
+
+.button.red {
+  color: var(--red);
+  border: 2px solid var(--red);
 }
