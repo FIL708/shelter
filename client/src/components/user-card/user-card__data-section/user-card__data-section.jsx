@@ -1,9 +1,14 @@
+import { Icon } from '../../index.js';
 import './user-card__data-section.css';
 
 export default function UserCardDataSection({ userData }) {
+  const iconType = userData.role === 'admin' ? 'admin' : 'user';
   return (
     <div className="user-card__data-section">
-      <strong className="user-card__data-section__name">{`${userData.firstName} ${userData.lastName}`}</strong>
+      <strong className="user-card__data-section__name">
+        <Icon type={iconType} size="25px" fill="#868686" />
+        {`${userData.firstName} ${userData.lastName}`}
+      </strong>
       <div className="user-card__data-section__lists">
         <ul className="user-card__data-section__list">
           <li className="user-card__data-section__label">Email:</li>

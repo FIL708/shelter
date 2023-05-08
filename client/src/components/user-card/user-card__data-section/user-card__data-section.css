@@ -3,6 +3,9 @@
 }
 
 .user-card__data-section__name {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   font-size: 26px;
   font-family: 'Lato', sans-serif;
 }
