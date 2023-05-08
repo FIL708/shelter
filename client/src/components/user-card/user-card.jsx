@@ -1,6 +1,6 @@
 import './user-card.css';
 import UserCardControl from './user-card___control/user-card___control.jsx';
-import UserCardDataSection from './user-card__data-section/user-card__data-section.jsx';
+import UserCardData from './user-card__data/user-card__data.jsx';
 
 export default function UserCard({ userData }) {
   return (
@@ -10,7 +10,7 @@ export default function UserCard({ userData }) {
         avatar={userData.avatar}
         role={userData.role}
       />
-      <UserCardDataSection userData={userData} />
+      <UserCardData userData={userData} />
     </section>
   );
 }
