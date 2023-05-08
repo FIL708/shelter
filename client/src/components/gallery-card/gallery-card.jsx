@@ -19,7 +19,7 @@ export default function GalleryCard({ url, id }) {
         <img src={url} alt="pet gallery" className="gallery-card__photo" />
         <p className="gallery-card__hover-text">Zooooom!</p>
       </button>
-      <Link to={`/adoption/${id}`} className="gallery-card__link">
+      <Link to={`/adoptions/${id}`} className="gallery-card__link">
         Go to details
       </Link>
       <ModalWrapper
