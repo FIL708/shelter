@@ -2,6 +2,7 @@ import { Page, Subtitle, UserCard } from '../components';
 
 export default function Test() {
   const user = {
+    id: '123',
     firstName: 'Filip',
     lastName: 'Zebrowski',
     role: 'admin',
