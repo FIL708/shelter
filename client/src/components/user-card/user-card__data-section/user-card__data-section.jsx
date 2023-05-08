@@ -7,7 +7,7 @@ export default function UserCardDataSection({ userData }) {
       <div className="user-card__data-section__lists">
         <ul className="user-card__data-section__list">
           <li className="user-card__data-section__label">Email:</li>
-          <li className="user-card__data-section__label">Phone number</li>
+          <li className="user-card__data-section__label">Phone number:</li>
           <li className="user-card__data-section__label">City:</li>
           <li className="user-card__data-section__label">Country:</li>
           <li className="user-card__data-section__label">Birthday:</li>
