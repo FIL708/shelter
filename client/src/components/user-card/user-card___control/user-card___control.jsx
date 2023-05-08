@@ -1,7 +1,14 @@
 import { Button } from '../../index.js';
 import './user-card___control.css';
 
-export default function UserCardControl({ userId, avatar, role }) {
+export default function UserCardControl({
+  userId,
+  avatar,
+  role,
+  deleteAccount,
+  updateProfile,
+  changePassword,
+}) {
   const userRole =
     role === 'admin' ? `Admin ID: ${userId}` : `User ID: ${userId}`;
   return (
@@ -12,9 +19,21 @@ export default function UserCardControl({ userId, avatar, role }) {
         className="user-card__control__avatar"
       />
       <span className="user-card__control__id">{userRole}</span>
-      <Button text="Change password" className="outline" />
-      <Button text="Update profile" className="outline" />
-      <Button text="Delete account" className="outline red" />
+      <Button
+        text="Change password"
+        className="outline"
+        onClick={changePassword}
+      />
+      <Button
+        text="Update profile"
+        className="outline"
+        onClick={updateProfile}
+      />
+      <Button
+        text="Delete account"
+        className="outline red"
+        onClick={deleteAccount}
+      />
     </div>
   );
 }

@@ -12,6 +12,16 @@ export default function User() {
   const { id } = useParams();
   const [user, isLoading, error] = useFetch(`/api/user/${id}`);
 
+  const deleteAccount = () => {
+    console.log('delete');
+  };
+  const updateProfile = () => {
+    console.log('update');
+  };
+  const changePassword = () => {
+    console.log('change password');
+  };
+
   if (isLoading || error)
     return (
       <Page>
@@ -26,7 +36,12 @@ export default function User() {
   return (
     <Page>
       <Subtitle text="Profile" main />
-      <UserCard userData={user} />
+      <UserCard
+        userData={user}
+        deleteAccount={deleteAccount}
+        updateProfile={updateProfile}
+        changePassword={changePassword}
+      />
     </Page>
   );
 }
