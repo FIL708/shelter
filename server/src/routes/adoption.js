@@ -72,9 +72,12 @@ const getOneAdoption = async (req, res) => {
     if (!adoption) {
       return res.status(404).json({ message: 'Adoption not found' });
     }
+
     return res.status(200).json(adoption);
   } catch (error) {
     return res.status(500).json({ error });
+  } finally {
+    await Adoption.increment('views', { where: { id } });
   }
 };
 
