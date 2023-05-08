@@ -1,0 +1,9 @@
+.user-card {
+  max-width: 900px;
+  padding: 40px 30px;
+  width: 80%;
+  display: flex;
+  gap: 70px;
+  flex-wrap: wrap;
+  justify-content: center;
+}

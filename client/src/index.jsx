@@ -11,6 +11,7 @@ import {
   Login,
   Test,
   Users,
+  User,
 } from './pages';
 import NotFound from './pages/not-found';
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/users/:id" element={<User />} />
           <Route path="/test" element={<Test />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,36 +1,23 @@
-import { Page, Subtitle, OpinionsList } from '../components';
+import { Page, Subtitle, UserCard } from '../components';
 
 export default function Test() {
-  const array = [
-    {
-      id: 1,
-      body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet. ',
-      user: { firstName: 'John', lastName: 'Smith' },
-      createdAt: '2023-05-06 14:14:00.606 +00:00',
-    },
-    {
-      id: 2,
-      body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet. ',
-      user: { firstName: 'John', lastName: 'Smith' },
-      createdAt: '2023-05-06 14:14:00.606 +00:00',
-    },
-    {
-      id: 3,
-      body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet. ',
-      user: { firstName: 'John', lastName: 'Smith' },
-      createdAt: '2023-05-06 14:14:00.606 +00:00',
-    },
-    {
-      id: 4,
-      body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet. ',
-      user: { firstName: 'John', lastName: 'Smith' },
-      createdAt: '2023-05-06 14:14:00.606 +00:00',
-    },
-  ];
+  const user = {
+    id: '123',
+    email: 'example.user@example.com',
+    firstName: 'Filip',
+    lastName: 'Zebrowski',
+    role: 'admin',
+    createdAt: '2023-05-06 17:18:01.651 +00:00',
+    phone: '123 123 123',
+    address: { city: 'Wroclaw', country: 'Poland' },
+    avatar:
+      'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+    birthday: '1995-05-06 17:18:01.651 +00:00',
+  };
   return (
     <Page>
       <Subtitle text="Test Page" main />
-      <OpinionsList opinions={array} />
+      <UserCard userData={user} />
     </Page>
   );
 }

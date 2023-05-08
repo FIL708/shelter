@@ -29,6 +29,8 @@ import { ReactComponent as Exit } from './icon__glyphs/exit.svg';
 import { ReactComponent as TopArrow } from './icon__glyphs/top-arrow.svg';
 import { ReactComponent as Clear } from './icon__glyphs/clear.svg';
 import { ReactComponent as UserLink } from './icon__glyphs/user-link.svg';
+import { ReactComponent as User } from './icon__glyphs/user.svg';
+import { ReactComponent as Admin } from './icon__glyphs/admin.svg';
 
 const chooseIcon = (type) => {
   switch (type) {
@@ -94,6 +96,10 @@ const chooseIcon = (type) => {
       return Clear;
     case 'user-link':
       return UserLink;
+    case 'user':
+      return User;
+    case 'admin':
+      return Admin;
     default:
       return undefined;
   }
