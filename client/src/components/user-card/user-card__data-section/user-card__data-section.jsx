@@ -1,8 +1,13 @@
 import { Icon } from '../../index.js';
+import { getFormattedDate } from '../../../helpers';
 import './user-card__data-section.css';
 
 export default function UserCardDataSection({ userData }) {
   const iconType = userData.role === 'admin' ? 'admin' : 'user';
+  const formattedBirthday = userData.birthday
+    ? getFormattedDate(userData.birthday)
+    : '-';
+  const formattedCreatedAt = getFormattedDate(userData.createdAt);
   return (
     <div className="user-card__data-section">
       <strong className="user-card__data-section__name">
@@ -20,16 +25,18 @@ export default function UserCardDataSection({ userData }) {
         </ul>
         <ul className="user-card__data-section__list">
           <li className="user-card__data-section__data">{userData.email}</li>
-          <li className="user-card__data-section__data">{userData.phone}</li>
           <li className="user-card__data-section__data">
-            {userData.address.city}
+            {userData.phone || '-'}
           </li>
           <li className="user-card__data-section__data">
-            {userData.address.country}
+            {userData.address.city || '-'}
           </li>
-          <li className="user-card__data-section__data">{userData.birthday}</li>
           <li className="user-card__data-section__data">
-            {userData.createdAt}
+            {userData.address.country || '-'}
+          </li>
+          <li className="user-card__data-section__data">{formattedBirthday}</li>
+          <li className="user-card__data-section__data">
+            {formattedCreatedAt}
           </li>
         </ul>
       </div>
