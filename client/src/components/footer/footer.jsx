@@ -19,11 +19,11 @@ export default function Footer({
         <section className="footer__mission-section">
           <h2 className="footer__section-title">Our mission:</h2>
           <p className="footer__description">
-            Rorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            vulputate libero et velit interdum, ac aliquet odio mattis. Class
-            aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent
-            per conubia nostra, per inceptos himenaeos.
+            At HelpMeDude!, we believe that every pet deserves a second chance
+            at happiness, and that is why our main mission is to connect
+            homeless pets with loving families who will provide them with a safe
+            and nurturing environment. We are dedicated to improving the lives
+            of these furry friends
           </p>
         </section>
         <FooterMediaSection
