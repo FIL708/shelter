@@ -3,6 +3,7 @@ import { Page, Subtitle, UserCard } from '../components';
 export default function Test() {
   const user = {
     id: '123',
+    email: 'example.user@example.com',
     firstName: 'Filip',
     lastName: 'Zebrowski',
     role: 'admin',

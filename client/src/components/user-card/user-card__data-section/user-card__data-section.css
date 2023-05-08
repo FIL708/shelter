@@ -1,0 +1,25 @@
+.user-card__data-section {
+  width: 100%;
+}
+
+.user-card__data-section__name {
+  margin-bottom: 50px;
+  font-size: 26px;
+  font-family: 'Lato', sans-serif;
+}
+
+.user-card__data-section__lists {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-card__data-section__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 22px;
+}
+
+.user-card__data-section__label {
+  color: var(--blue);
+}

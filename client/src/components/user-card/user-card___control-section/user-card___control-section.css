@@ -1,12 +1,13 @@
 .user-card__control-section {
   display: flex;
+  width: 200px;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
 
 .user-card__control-section__avatar {
-  width: 200px;
+  width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 8px;

@@ -12,7 +12,7 @@ export default function UserCard({ userData }) {
         avatar={userData.avatar}
         role={userData.role}
       />
-      <UserCardDataSection />
+      <UserCardDataSection userData={userData} />
     </section>
   );
 }
