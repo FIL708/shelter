@@ -1,0 +1,17 @@
+.opinions-list__item {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: var(--shadow-4);
+}
+
+.opinions-list__item-header {
+  margin-bottom: 22px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--blue);
+}
+
+.opinions-list__item-date {
+  color: var(--light-grey);
+}

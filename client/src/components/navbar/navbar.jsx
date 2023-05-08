@@ -19,8 +19,8 @@ export default function Navbar() {
       <NavLink className="navbar__link navbar__home" to="/">
         Home
       </NavLink>
-      <NavLink className="navbar__link navbar__adoption" to="/adoption">
-        Adoption
+      <NavLink className="navbar__link navbar__adoption" to="/adoptions">
+        Adoptions
       </NavLink>
       <NavLink className="navbar__link navbar__gallery" to="/gallery">
         Gallery

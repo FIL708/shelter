@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import {
   Home,
+  Adoptions,
   Adoption,
   Gallery,
   Contact,
@@ -21,7 +22,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/adoption" element={<Adoption />} />
+          <Route path="/adoptions" element={<Adoptions />} />
+          <Route path="/adoptions/:id" element={<Adoption />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/signup" element={<Signup />} />

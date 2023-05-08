@@ -1,19 +1,36 @@
-import { Page, Subtitle, LoadingSpinner, PetGallery } from '../components';
+import { Page, Subtitle, OpinionsList } from '../components';
 
 export default function Test() {
-  const gallery = [
-    'https://media.os.fressnapf.com/cms/2020/07/ratgeber_hund_rasse_portraits_australian_cattle_dog_1200x527.jpg?t=seoimg_937',
-    'https://www.sbb.ch/content/dam/internet/sharedimages/personen/GA-Hund.jpg/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg',
-    'https://www.purina.co.uk/sites/default/files/2020-11/11%20English%20and%20British%20Dog%20BreedsTEASER.jpeg',
-    'https://chico.ca.us/sites/main/files/imagecache/lightbox/main-images/dog_license.jpg',
-    'https://live-production.wcms.abc-cdn.net.au/7c3fcd8375709868e6577df7769af974?impolicy=wcms_crop_resize&cropH=1080&cropW=1920&xPos=0&yPos=76&width=862&height=485',
+  const array = [
+    {
+      id: 1,
+      body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet. ',
+      user: { firstName: 'John', lastName: 'Smith' },
+      createdAt: '2023-05-06 14:14:00.606 +00:00',
+    },
+    {
+      id: 2,
+      body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet. ',
+      user: { firstName: 'John', lastName: 'Smith' },
+      createdAt: '2023-05-06 14:14:00.606 +00:00',
+    },
+    {
+      id: 3,
+      body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet. ',
+      user: { firstName: 'John', lastName: 'Smith' },
+      createdAt: '2023-05-06 14:14:00.606 +00:00',
+    },
+    {
+      id: 4,
+      body: 'Lorem ipsum dolor sit amet consectetur. Neque eleifend turpis consequat in amet ipsum amet. Neque eleifend turpis consequat in amet ipsum amet. ',
+      user: { firstName: 'John', lastName: 'Smith' },
+      createdAt: '2023-05-06 14:14:00.606 +00:00',
+    },
   ];
-
   return (
     <Page>
       <Subtitle text="Test Page" main />
-      <LoadingSpinner />
-      <PetGallery gallery={gallery} />
+      <OpinionsList opinions={array} />
     </Page>
   );
 }

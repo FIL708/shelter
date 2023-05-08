@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  width: 50vw;
+  width: 65vw;
+  max-width: 1000px;
 }
 
 .pet-gallery__list-item {

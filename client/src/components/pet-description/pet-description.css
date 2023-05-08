@@ -1,0 +1,13 @@
+.pet-description {
+  margin-bottom: 50px;
+  width: 65vw;
+  max-width: 1000px;
+}
+
+.pet-description__paragraph {
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-align: justify;
+  text-indent: 35px;
+  line-height: 28px;
+}

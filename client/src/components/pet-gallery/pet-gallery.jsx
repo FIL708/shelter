@@ -3,25 +3,30 @@ import { Button } from '../index.js';
 import PetGalleryList from './pet-gallery__list/pet-gallery__list.jsx';
 import './pet-gallery.css';
 
-export default function PetGallery({ gallery }) {
-  const [mainPhoto, setMainPhoto] = useState(gallery[0]);
+export default function PetGallery({ photos }) {
+  if (!photos) return false;
+
+  const [mainPhoto, setMainPhoto] = useState(photos[0].url);
 
   const setPhotoAsMain = (url) => setMainPhoto(url);
 
   const setNextPhoto = () => {
-    const index = gallery.indexOf(mainPhoto);
-    if (index + 2 > gallery.length) {
-      setMainPhoto(gallery[0]);
+    const index = photos.findIndex((photo) => photo.url === mainPhoto);
+
+    if (index + 2 > photos.length) {
+      setMainPhoto(photos[0].url);
     } else {
-      setMainPhoto(gallery[index + 1]);
+      setMainPhoto(photos[index + 1].url);
     }
   };
+
   const setPreviousPhoto = () => {
-    const index = gallery.indexOf(mainPhoto);
+    const index = photos.findIndex((photo) => photo.url === mainPhoto);
+
     if (index - 1 < 0) {
-      setMainPhoto(gallery[gallery.length - 1]);
+      setMainPhoto(photos[photos.length - 1].url);
     } else {
-      setMainPhoto(gallery[index - 1]);
+      setMainPhoto(photos[index - 1].url);
     }
   };
 
@@ -47,7 +52,7 @@ export default function PetGallery({ gallery }) {
         />
       </div>
       <PetGalleryList
-        gallery={gallery}
+        gallery={photos}
         main={mainPhoto}
         setPhotoAsMain={setPhotoAsMain}
       />

@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { Adoption, Photo, Tag, Address } = require('../models');
+const { Adoption, Photo, Tag, Address, Opinion, User } = require('../models');
 
 const getAllAdoptions = async (req, res) => {
   try {
@@ -57,15 +57,27 @@ const getOneAdoption = async (req, res) => {
       include: [
         { model: Address, as: 'address' },
         { model: Photo, as: 'photos' },
+        {
+          model: Opinion,
+          as: 'opinions',
+          include: {
+            model: User,
+            as: 'user',
+            attributes: ['firstName', 'lastName'],
+          },
+        },
       ],
     });
 
     if (!adoption) {
       return res.status(404).json({ message: 'Adoption not found' });
     }
+
     return res.status(200).json(adoption);
   } catch (error) {
     return res.status(500).json({ error });
+  } finally {
+    await Adoption.increment('views', { where: { id } });
   }
 };
 
