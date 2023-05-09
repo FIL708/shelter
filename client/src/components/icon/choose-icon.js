@@ -31,6 +31,8 @@ import { ReactComponent as Clear } from './icon__glyphs/clear.svg';
 import { ReactComponent as UserLink } from './icon__glyphs/user-link.svg';
 import { ReactComponent as User } from './icon__glyphs/user.svg';
 import { ReactComponent as Admin } from './icon__glyphs/admin.svg';
+import { ReactComponent as Female } from './icon__glyphs/female.svg';
+import { ReactComponent as Male } from './icon__glyphs/male.svg';
 
 const chooseIcon = (type) => {
   switch (type) {
@@ -100,6 +102,10 @@ const chooseIcon = (type) => {
       return User;
     case 'admin':
       return Admin;
+    case 'female':
+      return Female;
+    case 'male':
+      return Male;
     default:
       return undefined;
   }

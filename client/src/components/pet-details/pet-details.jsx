@@ -23,40 +23,50 @@ export default function PetDetails({ data }) {
   const toggleFav = () => {
     setIsFav((prev) => !prev);
   };
-
+  const genderIconColor = data.gender === 'male' ? '#00ABD8' : '#FF80ED';
   return (
     <section className="pet-details">
       <ul className="pet-details__data-list">
         <li className="pet-details__name">
           <Icon type={data.species} size="40px" fill="#7286d3" />
           {data.name}
+          <Icon size="25px" type={data.gender} fill={genderIconColor} />
         </li>
         <li className="pet-details__address">
           {`${data.address.city}, ${data.address.country}`}
         </li>
       </ul>
 
-      <ul className="pet-details__data-list">
-        <li className="pet-details__list-item">
+      <ul className="pet-details__data-grid">
+        <li className="pet-details__list-grid-item">
+          age:{' '}
+          <span className="pet-details__list-item__data">{`${data.age} years`}</span>
+        </li>
+        <li className="pet-details__list-grid-item">
+          weight:{' '}
+          <span className="pet-details__list-item__data">{`${data.weight} kg`}</span>
+        </li>
+        <li className="pet-details__list-grid-item">
           views:{' '}
           <span className="pet-details__list-item__data">{data.views}</span>
         </li>
-        <li className="pet-details__list-item">
+        <li className="pet-details__list-grid-item">
           likes:{' '}
           <span className="pet-details__list-item__data">{data.likes}</span>
         </li>
-        <li className="pet-details__list-item">
-          looking for a home:{' '}
-          <span className="pet-details__list-item__data">{formattedDate}</span>
-        </li>
-        <Button
-          className="pet-details__button"
-          iconType={iconType}
-          iconSize="25px"
-          iconFill={iconFill}
-          onClick={toggleFav}
-        />
       </ul>
+      <strong className="pet-details__date">
+        looking for a home:{' '}
+        <span className="pet-details__list-item__data">{formattedDate}</span>
+      </strong>
+
+      <Button
+        className="pet-details__button"
+        iconType={iconType}
+        iconSize="25px"
+        iconFill={iconFill}
+        onClick={toggleFav}
+      />
     </section>
   );
 }

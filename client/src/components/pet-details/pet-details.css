@@ -3,14 +3,28 @@
   max-width: 1000px;
   display: flex;
   justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
 }
 
 .pet-details__data-list {
   position: relative;
 }
+.pet-details__data-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 10px;
+}
 
 .pet-details__list-item {
   margin-bottom: 5px;
+}
+
+.pet-details__list-grid-item {
+  flex-basis: 40%;
 }
 
 .pet-details__list-item:last-of-type {
@@ -23,6 +37,7 @@
 
 .pet-details__name {
   display: flex;
+  align-items: center;
   gap: 25px;
   margin-bottom: 10px;
   color: var(--blue);
@@ -45,4 +60,8 @@
   position: absolute;
   right: 0;
   top: 0;
+}
+
+.pet-details__date {
+  font-weight: 400;
 }
