@@ -8,7 +8,14 @@ const PORT = config.get('port');
 
 express()
   .use(express.json())
-  .use(helmet())
+  .use(
+    helmet.contentSecurityPolicy({
+      useDefaults: true,
+      directives: {
+        'img-src': ["'self'", 'https: data:'],
+      },
+    }),
+  )
   .use(authInit())
   .use('/api', routes)
   .use('/', express.static('./public'))
