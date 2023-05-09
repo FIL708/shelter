@@ -2,7 +2,7 @@ version: '3.3'
 services:
   app:
     build: .
-    container_name: help-me-dude
+    container_name: shelter
     depends_on:
       - database
     ports:
@@ -16,7 +16,7 @@ services:
     restart: always
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=testpassword
+      - POSTGRES_PASSWORD=test123
       - POSTGRES_DB=hmd_database
     ports:
       - 5432:5432

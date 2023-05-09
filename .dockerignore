@@ -1,2 +1,6 @@
 node_modules
+./client/.eslintignore
+./client/.eslintrc.json
+./server/.eslintignore
+./server/.eslintrc.json
 ./server/public/index.html

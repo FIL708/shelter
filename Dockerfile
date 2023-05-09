@@ -14,7 +14,7 @@ RUN yarn build
 
 COPY server ./server
 
-RUN yarn install:server --production\
+RUN yarn install:server --production
 
 RUN mv -v ./client/build/* ./server/public/
 
