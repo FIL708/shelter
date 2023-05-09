@@ -4,24 +4,24 @@ services:
     build: .
     container_name: shelter
     depends_on:
-      - database
+      - db
     ports:
       - 8000:3500
     volumes:
       - ./server/config/example-production.json:/app/server/config/production.json
   
-  database:
+  db:
     image: postgres:15.2-alpine
-    container_name: database
+    container_name: db
     restart: always
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=test123
-      - POSTGRES_DB=hmd_database
+      - POSTGRES_DB=database
     ports:
       - 5432:5432
     volumes:
-      - hmd_data:/var/lib/postgressql/hmd_database
+      - hmd_data:/var/lib/postgressql/database
 
 volumes:
  hmd_data: {}

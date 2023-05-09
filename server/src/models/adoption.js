@@ -25,7 +25,7 @@ module.exports = (sequelize, { INTEGER, STRING, TEXT }) => {
     {
       name: STRING,
       description: TEXT,
-      shortDescription: STRING,
+      shortDescription: TEXT,
       likes: INTEGER,
       views: INTEGER,
       gender: STRING,

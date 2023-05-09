@@ -14,7 +14,7 @@ module.exports = {
         type: TEXT,
       },
       shortDescription: {
-        type: STRING,
+        type: TEXT,
       },
       likes: {
         type: INTEGER,

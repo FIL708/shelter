@@ -1,6 +1,6 @@
 const { Model } = require('sequelize');
 
-module.exports = (sequelize, { STRING }) => {
+module.exports = (sequelize, { TEXT }) => {
   class Photo extends Model {
     static associate(models) {
       Photo.belongsTo(models.Adoption, { foreignKey: 'adoptionId' });
@@ -13,7 +13,7 @@ module.exports = (sequelize, { STRING }) => {
   }
   Photo.init(
     {
-      url: { type: STRING, validate: { isUrl: true } },
+      url: { type: TEXT, validate: { isUrl: true } },
     },
     {
       sequelize,

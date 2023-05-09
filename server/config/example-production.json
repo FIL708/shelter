@@ -1,5 +1,5 @@
 {
-    "databaseUrl": "postgres://postgres:testpassword@db:5432/hmd_database",
+    "databaseUrl": "postgres://postgres:test123@db:5432/database",
     "clientUrl": "http://localhost:8000",
     "serverUrl": "http://localhost:8000"
 }
