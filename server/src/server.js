@@ -11,4 +11,5 @@ express()
   .use(helmet())
   .use(authInit())
   .use('/api', routes)
+  .use('/', express.static('./public'))
   .listen(PORT, () => console.log(`Server started at: ${PORT}`));
