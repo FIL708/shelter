@@ -1,0 +1,27 @@
+version: '3.3'
+services:
+  app:
+    build: .
+    container_name: help-me-dude
+    depends_on:
+      - database
+    ports:
+      - 8000:3500
+    volumes:
+      - ./server/config/example-production.json:/app/server/config/production.json
+  
+  database:
+    image: postgres:15.2-alpine
+    container_name: database
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=testpassword
+      - POSTGRES_DB=hmd_database
+    ports:
+      - 5432:5432
+    volumes:
+      - hmd_data:/var/lib/postgressql/hmd_database
+
+volumes:
+ hmd_data: {}

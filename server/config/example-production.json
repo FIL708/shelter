@@ -1,3 +1,5 @@
 {
-    "databaseUrl": "postgress://postgres:example@db:5432/shelter-database"
+    "databaseUrl": "postgres://postgres:testpassword@db:5432/hmd_database",
+    "clientUrl": "http://localhost:8000",
+    "serverUrl": "http://localhost:8000"
 }
