@@ -5,7 +5,6 @@ import './pet-details.css';
 
 export default function PetDetails({ data }) {
   const [isFav, setIsFav] = useState(data?.isFavorite || false);
-  console.log(data);
 
   if (!data) return false;
 

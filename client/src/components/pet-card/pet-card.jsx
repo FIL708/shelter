@@ -27,7 +27,7 @@ export default function PetCard({
     favIconType = 'heart';
     favIconFill = '#7286d3';
   }
-  const genderIconColor = gender === 'male' ? '#7286d3' : '#FF80ED';
+  const genderIconColor = gender === 'male' ? '#00ABD8' : '#FF80ED';
 
   const toggleFav = () => {
     setIsFav((prev) => !prev);
