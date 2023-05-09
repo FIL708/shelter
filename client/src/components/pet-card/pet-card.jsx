@@ -12,9 +12,11 @@ export default function PetCard({
   address,
   shortDescription,
   createdAt,
+  gender,
   mode,
 }) {
   const [isFav, setIsFav] = useState(isFavorite);
+  console.log(gender);
 
   let iconType;
   let iconFill;
