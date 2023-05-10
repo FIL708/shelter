@@ -18,6 +18,10 @@ const localVerify = async (email, password, done) => {
       attributes: { exclude: ['userId'] },
       where: { email },
     });
+    if (!user || !password) {
+      return done(null, false, user);
+    }
+
     const isValidPassword = await bcrypt.compare(password, user.password);
 
     if (user && password && isValidPassword) {
