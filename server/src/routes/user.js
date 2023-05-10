@@ -4,7 +4,7 @@ const { User, Address } = require('../models');
 const getAllUsers = async (req, res) => {
   try {
     const users = await User.findAll({
-      attributes: { exclude: ['userId', 'password'] },
+      attributes: { exclude: ['password'] },
     });
 
     if (!users) {
@@ -21,7 +21,7 @@ const getOneUser = async (req, res) => {
   const { id } = req.params;
   try {
     const user = await User.findByPk(id, {
-      attributes: { exclude: ['userId', 'password', 'addressId'] },
+      attributes: { exclude: ['password', 'addressId'] },
       include: { model: Address, as: 'address' },
     });
 
