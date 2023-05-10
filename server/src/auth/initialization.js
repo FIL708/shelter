@@ -23,6 +23,7 @@ function passportInitialization() {
     saveUninitialized: false,
     resave: false,
     store: new JsonStore(),
+    cookie: {},
   });
 
   const authMiddleware = passport.initialize();

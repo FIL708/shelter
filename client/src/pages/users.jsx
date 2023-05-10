@@ -17,6 +17,8 @@ export default function Users() {
     rawData: [],
     sortedData: [],
   });
+  console.log(users);
+
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState({
     usersNumber: 20,
