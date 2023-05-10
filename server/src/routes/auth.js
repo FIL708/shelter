@@ -7,9 +7,9 @@ const { User } = require('../models');
 const clientUrl = config.get('clientUrl');
 
 module.exports = Router()
-  .post('/login', passport.authenticate('local'), (req, res) => {
-    res.status(200).redirect(`${clientUrl}/`);
-  })
+  .post('/login', passport.authenticate('local'), (req, res) =>
+    res.status(200).redirect(`${clientUrl}/`),
+  )
   .get('/logout', (req, res, next) => {
     req.logout((error) => {
       if (error) return next(error);

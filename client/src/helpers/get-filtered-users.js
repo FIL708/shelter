@@ -1,4 +1,6 @@
 export default function getSortedData(data, filter) {
+  if (!filter.sortBy && !filter.searchBy) return data;
+
   let newData = [...data];
 
   if (filter.sortBy === 'newest') {
