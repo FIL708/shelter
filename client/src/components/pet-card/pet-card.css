@@ -12,7 +12,7 @@
 
 .pet-card__content {
   position: relative;
-  margin: 10px 8px;
+  margin: 10px 12px;
 }
 
 .pet-card__name {
@@ -24,7 +24,7 @@
   margin-right: 5px;
 }
 
-.pet-car__location {
+.pet-card__location {
   font-size: 16px;
   font-weight: 400;
   word-spacing: 4px;
@@ -39,13 +39,13 @@
   border-radius: 5px;
 }
 
-.pet-car__desc {
+.pet-card__desc {
   margin-bottom: 25px;
   text-align: justify;
 }
 
 .pet-card__note {
-  width: 100%;
+  display: block;
   font-size: 13px;
   font-weight: 400;
 }
@@ -60,12 +60,26 @@
   top: -5px;
   right: 0;
 }
+
+.grid .pet-card__desc {
+  height: 80px;
+}
+
 .pet-card.list {
   display: flex;
   gap: 2;
+  width: 100%;
   max-width: 900px;
 }
 
-.list .pet-car__desc {
+.list .pet-card__content {
+  width: 80%;
+}
+
+.list .pet-card__note {
+  text-align: end;
+}
+
+.list .pet-card__desc {
   margin-bottom: 10px;
 }

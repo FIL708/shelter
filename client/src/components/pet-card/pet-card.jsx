@@ -32,6 +32,7 @@ export default function PetCard({
   const toggleFav = () => {
     setIsFav((prev) => !prev);
   };
+
   const cardClassName = mode ? `pet-card ${mode}` : 'pet-card';
   const formattedDate = getFormattedDate(createdAt);
   return (
@@ -42,9 +43,9 @@ export default function PetCard({
           <Icon size="18px" type={gender} fill={genderIconColor} />
           {name}
         </h3>
-        <h4 className="pet-car__location">{`${address.city}, ${address.country}`}</h4>
+        <h4 className="pet-card__location">{`${address.city}, ${address.country}`}</h4>
         <hr className="pet-card__divider" />
-        <p className="pet-car__desc">{shortDescription}</p>
+        <p className="pet-card__desc">{shortDescription}</p>
         <strong className="pet-card__note">
           looking for a home:{' '}
           <span className="pet-card__date">{formattedDate}</span>
