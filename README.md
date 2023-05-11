@@ -51,6 +51,6 @@ For running in production:
 <br>
 `docker-compose up`
 <br>
-For add example data run in container terminal:
+To add example data run in container terminal:
 <br>
 `yarn db:seed`
