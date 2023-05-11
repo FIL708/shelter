@@ -22,6 +22,16 @@ services:
       - 5432:5432
     volumes:
       - hmd_data:/var/lib/postgressql/database
+  
+  pgadmin:
+        image: dpage/pgadmin4
+        environment:
+            PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
+            PGADMIN_DEFAULT_PASSWORD: "admin4013"
+        ports:
+            - "16543:80"
+        depends_on:
+            - db
 
 volumes:
  hmd_data: {}
