@@ -42,10 +42,12 @@
 .pet-car__desc {
   margin-bottom: 25px;
   text-align: justify;
+  height: 80px;
 }
 
 .pet-card__note {
-  width: 100%;
+  display: block;
+  margin-bottom: auto;
   font-size: 13px;
   font-weight: 400;
 }
