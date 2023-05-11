@@ -13,10 +13,8 @@ import { useFetch, useScrollToggle } from '../hooks';
 
 export default function Users() {
   const [users, isLoading, error] = useFetch('/api/user');
-  const [usersData, setUsersData] = useState({
-    rawData: [],
-    sortedData: [],
-  });
+  const [usersData, setUsersData] = useState([]);
+
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState({
     usersNumber: 20,
@@ -27,13 +25,10 @@ export default function Users() {
   const isScrollButtonVisible = useScrollToggle(200);
 
   useEffect(() => {
-    setUsersData((prev) => ({
-      rawData: users,
-      sortedData: getFilteredUsers(prev.rawData, filter),
-    }));
+    setUsersData(getFilteredUsers(users, filter));
   }, [filter, users]);
 
-  const dataChunks = getDataChunks(usersData.sortedData, filter.usersNumber);
+  const dataChunks = getDataChunks(usersData, filter.usersNumber);
 
   const changePage = (value) => {
     if (value <= 0) return;
@@ -56,10 +51,6 @@ export default function Users() {
       search: '',
       searchBy: 'first name',
     });
-    setUsersData((prev) => ({
-      ...prev,
-      sortedData: getFilteredUsers(prev.rawData, filter),
-    }));
   };
 
   if (isLoading || error)

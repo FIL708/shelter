@@ -17,6 +17,7 @@ export default function Login() {
         body: JSON.stringify(formData),
         headers: { 'Content-Type': 'application/json' },
       });
+
       if (res.status === 200) {
         setMessage(null);
         window.open(res.url, '_self');

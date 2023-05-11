@@ -1,6 +1,6 @@
 import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes, HashRouter } from 'react-router-dom';
 import {
   Home,
   Adoptions,
@@ -20,7 +20,7 @@ export const UserContext = createContext();
 function App() {
   return (
     <React.StrictMode>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/adoptions" element={<Adoptions />} />
@@ -34,7 +34,7 @@ function App() {
           <Route path="/test" element={<Test />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </React.StrictMode>
   );
 }

@@ -1,5 +1,6 @@
 const { join } = require('path');
 const config = require('config');
+
 const database = config.get('databaseUrl');
 
 function parseSQLite(string) {

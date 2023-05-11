@@ -18,6 +18,7 @@
     "prestart": "yarn db:migrate",
     "start:client": "cd client && yarn start",
     "start:server": "cd server && yarn start",
+    "start:production": "cd server && yarn production",
 
     "lint:client": "cd client && yarn lint:staged",
     "lint:server": "cd server && yarn lint:staged",

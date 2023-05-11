@@ -47,4 +47,10 @@ Create `default.json` file in ./server/config folder with:
 `yarn db:seed`
 
 ## Running ( Docker ):
-IN PROGRESS
+For running in production:
+<br>
+`docker-compose up`
+<br>
+To add example data run in container terminal:
+<br>
+`yarn db:seed`

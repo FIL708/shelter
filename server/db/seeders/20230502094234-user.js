@@ -11,7 +11,7 @@ module.exports = {
         phone: '123123123',
         addressId: 2,
         avatar:
-          'https://lh3.googleusercontent.com/a/AGNmyxYxkm7PS_WLiv2WW2IklYdph4eT-w98DMyPdVM=s96-c',
+          'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
         createdAt: new Date(),
         updatedAt: new Date(),
       },

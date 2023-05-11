@@ -1,0 +1,37 @@
+version: '3.3'
+services:
+  app:
+    build: .
+    container_name: shelter
+    depends_on:
+      - db
+    ports:
+      - 8000:3500
+    volumes:
+      - ./server/config/example-production.json:/app/server/config/production.json
+  
+  db:
+    image: postgres:15.2-alpine
+    container_name: db
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=test123
+      - POSTGRES_DB=database
+    ports:
+      - 5432:5432
+    volumes:
+      - hmd_data:/var/lib/postgressql/database
+  
+  pgadmin:
+        image: dpage/pgadmin4
+        environment:
+            PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
+            PGADMIN_DEFAULT_PASSWORD: "admin4013"
+        ports:
+            - "16543:80"
+        depends_on:
+            - db
+
+volumes:
+ hmd_data: {}

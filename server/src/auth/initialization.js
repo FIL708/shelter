@@ -1,5 +1,6 @@
 const passport = require('passport');
 const session = require('express-session');
+const JsonStore = require('express-session-json')(session);
 const config = require('config');
 const {
   localStrategy,
@@ -21,6 +22,8 @@ function passportInitialization() {
     secret: sessionKey,
     saveUninitialized: false,
     resave: false,
+    store: new JsonStore(),
+    cookie: {},
   });
 
   const authMiddleware = passport.initialize();

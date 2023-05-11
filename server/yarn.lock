@@ -1409,6 +1409,11 @@ execa@^7.0.0:
     signal-exit "^3.0.7"
     strip-final-newline "^3.0.0"
 
+express-session-json@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/express-session-json/-/express-session-json-0.0.8.tgz#0e699f2568cd7c68d90dbaf42e8d775adb930bf0"
+  integrity sha512-bKXfziys30k/qt4d19daczI4XEWoqU+PDXeJwabtVEV8FNUWi8GPd6g/flnyMXCVd1bD4xWerHrWKg1K/C4G+w==
+
 express-session@^1.17.3:
   version "1.17.3"
   resolved "https://registry.yarnpkg.com/express-session/-/express-session-1.17.3.tgz#14b997a15ed43e5949cb1d073725675dd2777f36"
