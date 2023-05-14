@@ -63,7 +63,7 @@ const getOneAdoption = async (req, res) => {
 
     return res.status(200).json(adoption);
   } catch (error) {
-    return res.status(500).json({ error });
+    return res.status(500).json({ message: 'Something goes wrong', error });
   } finally {
     await Adoption.increment('views', { where: { id } });
   }

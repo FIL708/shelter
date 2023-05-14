@@ -5,6 +5,7 @@ const adoption = require('./adoption.js');
 const photo = require('./photo.js');
 const user = require('./user.js');
 const auth = require('./auth.js');
+const sendEmail = require('../utils/send-email.js');
 
 module.exports = Router()
   .get('/status', status)
@@ -12,6 +13,15 @@ module.exports = Router()
   .use('/photo', photo)
   .use('/user', user)
   .use('/auth', auth)
+  .get('/test', async (req, res) => {
+    try {
+      await sendEmail({});
+
+      return res.status(200);
+    } catch (error) {
+      return res.status(500).json('error');
+    }
+  })
   .post('/test', async (req, res) => {
     const { password } = req.body;
     console.log(req.body);

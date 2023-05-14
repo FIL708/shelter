@@ -13,7 +13,7 @@ const getAllUsers = async (req, res) => {
 
     return res.status(200).json(users);
   } catch (error) {
-    res.status(500).json({ error });
+    return res.status(500).json({ message: 'Something goes wrong', error });
   }
 };
 
@@ -31,7 +31,7 @@ const getOneUser = async (req, res) => {
 
     return res.status(200).json(user);
   } catch (error) {
-    res.status(500).json({ error });
+    return res.status(500).json({ message: 'Something goes wrong', error });
   }
 };
 
