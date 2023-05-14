@@ -3,18 +3,17 @@ const config = require('config');
 
 const smtpSettings = config.get('smtp');
 
-module.exports = async function sendEmail(email, body) {
+module.exports = async function sendEmail({ email, body, subject }) {
+  const transporter = nodemailer.createTransport(smtpSettings);
   try {
-    const transporter = nodemailer.createTransport(smtpSettings);
-    const info = transporter.sendMail({
-      from: 'HelpMeDude! - Shelter',
+    const mail = await transporter.sendMail({
+      from: '"HelpMeDude! - Shelter" <helpmedude@shelter.com>',
       to: email,
-      subject: 'Test subject',
-      text: body,
+      subject: subject || 'HelpMeDude! - Shelter',
+      html: `<h1>${body}</h1>`,
     });
-
-    console.log(info);
+    return mail;
   } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
 };
