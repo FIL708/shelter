@@ -8,7 +8,7 @@ const smtpSettings = config.get('smtp');
 const viewPath = path.resolve(__dirname, '../emails/');
 const partialsPath = path.resolve(__dirname, '../emails/partials');
 
-module.exports = async function sendEmail({ to, subject }) {
+module.exports = async function sendEmail({ to, subject, template, context }) {
   const transporter = nodemailer.createTransport(smtpSettings);
 
   transporter.use(
@@ -30,8 +30,8 @@ module.exports = async function sendEmail({ to, subject }) {
       from: '"HelpMeDude! - Shelter" <helpmedude@shelter.com>',
       to,
       subject: subject || 'HelpMeDude! - Shelter',
-      template: 'password',
-      context: { name: 'John' },
+      template,
+      context,
     });
     return mail;
   } catch (error) {
