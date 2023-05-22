@@ -31,6 +31,17 @@ Create `default.json` file in ./server/config folder with:
     "googleClientSecret":"YOUR GOOGLE CLIENT SECRET",
     "facebookID":"YOUR FACEBOOK ID",
     "facebookSecret": "YOUR FACEBOOK SECRET"
+    
+    <!-- For testing emails -->
+    "smtp": {
+        "host": "smtp.ethereal.email",
+        "port": 587,
+        "secure": false,
+        "auth": {
+          "user": "marques.becker8@ethereal.email",
+          "pass": "VpnzUF55wFAZGgKurW"
+        }
+    }
 }
 ```
 <br>
