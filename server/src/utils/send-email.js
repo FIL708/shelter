@@ -1,11 +1,14 @@
+const path = require('path');
 const nodemailer = require('nodemailer');
 const hbs = require('nodemailer-express-handlebars');
-
 const config = require('config');
 
 const smtpSettings = config.get('smtp');
 
-module.exports = async function sendEmail({ email, body, subject }) {
+const viewPath = path.resolve(__dirname, '../emails/');
+const partialsPath = path.resolve(__dirname, '../emails/partials');
+
+module.exports = async function sendEmail({ to, subject }) {
   const transporter = nodemailer.createTransport(smtpSettings);
 
   transporter.use(
@@ -13,11 +16,11 @@ module.exports = async function sendEmail({ email, body, subject }) {
     hbs({
       viewEngine: {
         extname: '.hbs',
-        layoutsDir: '../templates/',
+        layoutsDir: viewPath,
         defaultLayout: false,
-        partialsDir: '../templates/partials/',
+        partialsDir: partialsPath,
       },
-      viewPath: 'templates/',
+      viewPath,
       extName: '.hbs',
     }),
   );
@@ -25,12 +28,13 @@ module.exports = async function sendEmail({ email, body, subject }) {
   try {
     const mail = await transporter.sendMail({
       from: '"HelpMeDude! - Shelter" <helpmedude@shelter.com>',
-      to: email,
+      to,
       subject: subject || 'HelpMeDude! - Shelter',
-      html: `<h1>${body}</h1>`,
+      template: 'password',
+      context: { name: 'John' },
     });
     return mail;
   } catch (error) {
-    throw new Error(error);
+    console.log(error);
   }
 };

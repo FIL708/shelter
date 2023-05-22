@@ -15,7 +15,7 @@ module.exports = Router()
   .use('/auth', auth)
   .get('/test', async (req, res) => {
     try {
-      const mail = await sendEmail({ email: 'asd@asd.com', body: 'Mail!' });
+      const mail = await sendEmail({ to: 'asd@asd.com' });
       console.log(mail);
 
       return res.status(200).send('send');
