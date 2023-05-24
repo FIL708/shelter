@@ -18,7 +18,7 @@ module.exports = Router()
       const mail = await sendEmail({
         to: 'asd@asd.com',
         template: 'password',
-        context: { name: 'Filip' },
+        context: { password: 'Filip' },
       });
       console.log(mail);
 
