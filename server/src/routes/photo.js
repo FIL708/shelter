@@ -21,7 +21,7 @@ const getAllPhotos = async (req, res) => {
     }
     res.status(200).json(photos);
   } catch (error) {
-    return res.status(500).json({ error });
+    return res.status(500).json({ message: 'Something goes wrong', error });
   }
 };
 

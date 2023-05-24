@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const passwordGenerator = require('generate-password');
 const config = require('config');
 const { User } = require('../models');
+const sendEmail = require('../utils/send-email.js');
 
 const serverUrl = config.get('serverUrl');
 const googleClientID = config.get('googleClientID');
@@ -46,13 +47,19 @@ const socialVerify = async (accessToken, refreshToken, profile, done) => {
         numbers: true,
       });
       const hashedPassword = await bcrypt.hash(password, 10);
-      console.log(`Sending mail with password to user: ${password}`);
 
       const newUser = await User.create({
         email,
         avatar,
         password: hashedPassword,
       });
+
+      await sendEmail({
+        to: email,
+        template: 'password',
+        context: { password },
+      });
+
       return done(false, newUser);
     }
 
