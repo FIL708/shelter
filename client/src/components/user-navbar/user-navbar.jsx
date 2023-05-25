@@ -2,7 +2,12 @@ import './user-navbar.css';
 
 import { NavLink } from 'react-router-dom';
 
-export default function UserNavbar({ userRole, logoutHandler, visible }) {
+export default function UserNavbar({
+  userId,
+  userRole,
+  logoutHandler,
+  visible,
+}) {
   if (!visible) return false;
 
   const userNavItems =
@@ -11,12 +16,12 @@ export default function UserNavbar({ userRole, logoutHandler, visible }) {
           { linkName: 'Users', link: '/users' },
           { linkName: 'Pets', link: '/pets' },
           { linkName: 'Messages', link: '/messages' },
-          { linkName: 'My Profile', link: '/profile' },
+          { linkName: 'My Profile', link: `/users/${userId}` },
         ]
       : [
           { linkName: 'Favorites pets', link: '/favorites' },
           { linkName: 'Messages', link: '/messages' },
-          { linkName: 'My Profile', link: '/profile' },
+          { linkName: 'My Profile', link: `/users/${userId}` },
         ];
 
   return (
