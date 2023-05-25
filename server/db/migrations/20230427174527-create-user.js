@@ -15,6 +15,7 @@ module.exports = {
       },
       role: {
         type: STRING,
+        defaultValue: "user",
       },
       email: {
         type: STRING,

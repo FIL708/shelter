@@ -18,7 +18,10 @@ module.exports = (sequelize, { STRING, DATE }) => {
     {
       firstName: STRING,
       lastName: STRING,
-      role: STRING,
+      role: {
+        type: STRING,
+        defaultValue: 'user',
+      },
       email: {
         type: STRING,
         unique: true,

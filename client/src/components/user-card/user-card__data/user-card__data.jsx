@@ -3,6 +3,8 @@ import { getFormattedDate } from '../../../helpers/index.js';
 import './user-card__data.css';
 
 export default function UserCardData({ userData }) {
+  console.log(userData);
+
   const iconType = userData.role === 'admin' ? 'admin' : 'user';
   const formattedBirthday = userData.birthday
     ? getFormattedDate(userData.birthday)
