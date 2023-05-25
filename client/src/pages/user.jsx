@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import {
   ErrorCard,
   LoadingSpinner,
@@ -10,6 +10,7 @@ import { useFetch } from '../hooks';
 
 export default function User() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [user, isLoading, error] = useFetch(`/api/user/${id}`);
 
   const deleteAccount = () => {
@@ -22,7 +23,10 @@ export default function User() {
     console.log('change password');
   };
 
-  if (isLoading || error)
+  if (isLoading || error) {
+    if (error?.status === 403) {
+      navigate('/');
+    }
     return (
       <Page>
         <Subtitle text="Gallery" main />
@@ -33,6 +37,7 @@ export default function User() {
         )}
       </Page>
     );
+  }
   return (
     <Page>
       <Subtitle text="Profile" main />

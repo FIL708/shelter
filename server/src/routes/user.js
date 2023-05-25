@@ -19,6 +19,15 @@ const getAllUsers = async (req, res) => {
 
 const getOneUser = async (req, res) => {
   const { id } = req.params;
+  if (!req.session.passport) {
+    return res.status(403).json({ message: 'Unauthorized' });
+  }
+  if (req.session.passport.user.role !== 'admin') {
+    if (req.session.passport.user.id.toString() !== id.toString()) {
+      return res.status(403).json({ message: 'Unauthorized' });
+    }
+  }
+
   try {
     const user = await User.findByPk(id, {
       attributes: { exclude: ['password', 'addressId'] },
