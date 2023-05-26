@@ -2,6 +2,10 @@ const { Router } = require('express');
 const { User, Address } = require('../models');
 
 const getAllUsers = async (req, res) => {
+  if (!req.session.passport || req.session.passport.user.role !== 'admin') {
+    return res.status(403).json({ message: 'Unauthorized' });
+  }
+
   try {
     const users = await User.findAll({
       attributes: { exclude: ['password'] },
@@ -46,7 +50,16 @@ const getOneUser = async (req, res) => {
 
 const updateUserProfile = async (req, res) => {
   const { id } = req.params;
-  const { address, ...userData } = req.body;
+  const { address, role, ...userData } = req.body;
+
+  if (!req.session.passport) {
+    return res.status(403).json({ message: 'Unauthorized' });
+  }
+  if (req.session.passport.user.role !== 'admin') {
+    if (req.session.passport.user.id.toString() !== id.toString()) {
+      return res.status(403).json({ message: 'Unauthorized' });
+    }
+  }
 
   try {
     const user = await User.findByPk(id, {
@@ -59,7 +72,7 @@ const updateUserProfile = async (req, res) => {
     }
 
     if (userData) {
-      console.log(userData);
+      await User.update(userData, { where: { id } });
     }
 
     if (address) {
