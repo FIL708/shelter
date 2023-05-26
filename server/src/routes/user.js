@@ -43,8 +43,22 @@ const getOneUser = async (req, res) => {
     return res.status(500).json({ message: 'Something goes wrong', error });
   }
 };
-const updateUserProfile = (req, res) => {
-  res.json(req.body);
+
+const updateUserProfile = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const user = await User.findByPk(id, {
+      attributes: { exclude: ['password', 'addressId'] },
+      include: { model: Address, as: 'address' },
+    });
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    return res.json(user);
+  } catch (error) {
+    return res.status(500).json({ message: 'Something goes wrong', error });
+  }
 };
 
 module.exports = Router()
