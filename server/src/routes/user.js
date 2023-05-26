@@ -72,7 +72,10 @@ const updateUserProfile = async (req, res) => {
     }
 
     if (userData) {
-      await User.update(userData, { where: { id } });
+      await User.update(userData, {
+        where: { id },
+        fields: ['firstName', 'lastName', 'phone', 'avatar', 'birthday'],
+      });
     }
 
     if (address) {
