@@ -52,14 +52,14 @@ const updateUserProfile = async (req, res) => {
   const { id } = req.params;
   const { address, role, ...userData } = req.body;
 
-  if (!req.session.passport) {
-    return res.status(403).json({ message: 'Unauthorized' });
-  }
-  if (req.session.passport.user.role !== 'admin') {
-    if (req.session.passport.user.id.toString() !== id.toString()) {
-      return res.status(403).json({ message: 'Unauthorized' });
-    }
-  }
+  // if (!req.session.passport) {
+  //   return res.status(403).json({ message: 'Unauthorized' });
+  // }
+  // if (req.session.passport.user.role !== 'admin') {
+  //   if (req.session.passport.user.id.toString() !== id.toString()) {
+  //     return res.status(403).json({ message: 'Unauthorized' });
+  //   }
+  // }
 
   try {
     const user = await User.findByPk(id, {
@@ -76,7 +76,11 @@ const updateUserProfile = async (req, res) => {
     }
 
     if (address) {
-      console.log(address);
+      const location = await Address.findOne({ where: { city: address.city } });
+      if (!location) {
+        const newLocation = await Address.create(address);
+        await user.update({ addressId: newLocation.id }, { where: { id } });
+      }
     }
 
     return res.json(user);
