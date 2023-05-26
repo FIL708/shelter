@@ -3,8 +3,6 @@ import { getFormattedDate } from '../../../helpers/index.js';
 import './user-card__data.css';
 
 export default function UserCardData({ userData }) {
-  console.log(userData);
-
   const iconType = userData.role === 'admin' ? 'admin' : 'user';
   const formattedBirthday = userData.birthday
     ? getFormattedDate(userData.birthday)
@@ -14,6 +12,7 @@ export default function UserCardData({ userData }) {
       ? `${userData.firstName || '-'} ${userData.lastName || '-'}`
       : 'Unknown';
   const formattedCreatedAt = getFormattedDate(userData.createdAt);
+
   return (
     <div className="user-card__data">
       <strong className="user-card__data__name">

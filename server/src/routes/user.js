@@ -43,5 +43,11 @@ const getOneUser = async (req, res) => {
     return res.status(500).json({ message: 'Something goes wrong', error });
   }
 };
+const updateUserProfile = (req, res) => {
+  res.json(req.body);
+};
 
-module.exports = Router().get('/', getAllUsers).get('/:id', getOneUser);
+module.exports = Router()
+  .get('/', getAllUsers)
+  .get('/:id', getOneUser)
+  .put('/:id', updateUserProfile);

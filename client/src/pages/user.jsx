@@ -38,6 +38,7 @@ export default function User() {
       </Page>
     );
   }
+
   return (
     <Page>
       <Subtitle text="Profile" main />
