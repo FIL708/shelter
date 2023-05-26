@@ -46,6 +46,8 @@ const getOneUser = async (req, res) => {
 
 const updateUserProfile = async (req, res) => {
   const { id } = req.params;
+  const { address, ...userData } = req.body;
+
   try {
     const user = await User.findByPk(id, {
       attributes: { exclude: ['password', 'addressId'] },
@@ -55,6 +57,15 @@ const updateUserProfile = async (req, res) => {
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
+
+    if (userData) {
+      console.log(userData);
+    }
+
+    if (address) {
+      console.log(address);
+    }
+
     return res.json(user);
   } catch (error) {
     return res.status(500).json({ message: 'Something goes wrong', error });
