@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const bcrypt = require('bcrypt');
 const { User, Address } = require('../models');
 
 const getAllUsers = async (req, res) => {
@@ -23,14 +24,14 @@ const getAllUsers = async (req, res) => {
 
 const getOneUser = async (req, res) => {
   const { id } = req.params;
-  if (!req.session.passport) {
-    return res.status(403).json({ message: 'Unauthorized' });
-  }
-  if (req.session.passport.user.role !== 'admin') {
-    if (req.session.passport.user.id.toString() !== id.toString()) {
-      return res.status(403).json({ message: 'Unauthorized' });
-    }
-  }
+  // if (!req.session.passport) {
+  //   return res.status(403).json({ message: 'Unauthorized' });
+  // }
+  // if (req.session.passport.user.role !== 'admin') {
+  //   if (req.session.passport.user.id.toString() !== id.toString()) {
+  //     return res.status(403).json({ message: 'Unauthorized' });
+  //   }
+  // }
 
   try {
     const user = await User.findByPk(id, {
@@ -50,7 +51,7 @@ const getOneUser = async (req, res) => {
 
 const updateUserProfile = async (req, res) => {
   const { id } = req.params;
-  const { address, role, ...userData } = req.body;
+  const { password, address, role, ...userData } = req.body;
 
   if (!req.session.passport) {
     return res.status(403).json({ message: 'Unauthorized' });
@@ -83,10 +84,19 @@ const updateUserProfile = async (req, res) => {
       if (!location) {
         const newLocation = await Address.create(address);
         await user.update({ addressId: newLocation.id }, { where: { id } });
+      } else {
+        await user.update({ addressId: location.id }, { where: { id } });
       }
     }
 
-    return res.json(user);
+    if (password) {
+      const hashedPassword = await bcrypt.hash(password, 10);
+      await User.update({ password: hashedPassword }, { where: { id } });
+    }
+
+    return res
+      .status(200)
+      .json({ message: 'User profile successfully updated' });
   } catch (error) {
     return res.status(500).json({ message: 'Something goes wrong', error });
   }
