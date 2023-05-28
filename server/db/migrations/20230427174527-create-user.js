@@ -41,6 +41,10 @@ module.exports = {
         allowNull: false,
         type: DATE,
       },
+      deletedAt: {
+        allowNull: false,
+        type: DATE,
+      },
       addressId: {
         type: INTEGER,
         references: {

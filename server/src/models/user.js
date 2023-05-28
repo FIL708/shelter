@@ -37,6 +37,7 @@ module.exports = (sequelize, { STRING, DATE }) => {
     {
       sequelize,
       modelName: 'User',
+      paranoid: true,
     },
   );
   return User;

@@ -92,7 +92,36 @@ const updateUserProfile = async (req, res) => {
   }
 };
 
+const deleteUser = async (req, res) => {
+  const { id } = req.params;
+
+  if (!req.session.passport) {
+    return res.status(403).json({ message: 'Unauthorized' });
+  }
+  if (req.session.passport.user.role !== 'admin') {
+    if (req.session.passport.user.id.toString() !== id.toString()) {
+      return res.status(403).json({ message: 'Unauthorized' });
+    }
+  }
+
+  try {
+    const user = await User.findByPk(id);
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    await User.destroy({ where: { email: user.email } });
+    return res
+      .status(200)
+      .json({ messages: `User ID:${id} successfully deleted` });
+  } catch (error) {
+    return res.status(500).json({ message: 'Something goes wrong', error });
+  }
+};
+
 module.exports = Router()
   .get('/', getAllUsers)
   .get('/:id', getOneUser)
-  .put('/:id', updateUserProfile);
+  .put('/:id', updateUserProfile)
+  .delete('/:id', deleteUser);
