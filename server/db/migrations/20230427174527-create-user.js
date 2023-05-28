@@ -15,6 +15,7 @@ module.exports = {
       },
       role: {
         type: STRING,
+        defaultValue: "user",
       },
       email: {
         type: STRING,
@@ -41,6 +42,7 @@ module.exports = {
         type: DATE,
       },
       deletedAt: {
+        allowNull: false,
         type: DATE,
       },
       addressId: {

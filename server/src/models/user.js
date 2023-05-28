@@ -18,7 +18,10 @@ module.exports = (sequelize, { STRING, DATE }) => {
     {
       firstName: STRING,
       lastName: STRING,
-      role: STRING,
+      role: {
+        type: STRING,
+        defaultValue: 'user',
+      },
       email: {
         type: STRING,
         unique: true,
@@ -33,8 +36,8 @@ module.exports = (sequelize, { STRING, DATE }) => {
     },
     {
       sequelize,
-      paranoid: true,
       modelName: 'User',
+      paranoid: true,
     },
   );
   return User;

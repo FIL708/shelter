@@ -11,10 +11,14 @@ export default function UserCardControl({
 }) {
   const userRole =
     role === 'admin' ? `Admin ID: ${userId}` : `User ID: ${userId}`;
+  const profilePhoto =
+    avatar ||
+    'https://tleliteracy.com/wp-content/uploads/2017/02/default-avatar.png';
+
   return (
     <div className="user-card__control">
       <img
-        src={avatar}
+        src={profilePhoto}
         alt="user avatar"
         className="user-card__control__avatar"
       />
