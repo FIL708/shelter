@@ -9,6 +9,8 @@ export default function ConfirmModal({
   onCancel,
   isVisible,
   toggleModalVision,
+  inputValue,
+  onInputChange,
 }) {
   return (
     <ModalWrapper isVisible={isVisible} toggleModalVision={toggleModalVision}>
@@ -20,6 +22,8 @@ export default function ConfirmModal({
             className="confirm-modal__input"
             placeholder={`To confirm type: ${textToConfirm}`}
             required
+            value={inputValue}
+            onChange={onInputChange}
           />
         )}
 

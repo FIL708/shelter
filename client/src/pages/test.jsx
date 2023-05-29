@@ -3,24 +3,35 @@ import { Page, Subtitle, ConfirmModal, Button } from '../components';
 
 export default function Test() {
   const [visibleModals, setVisibleModals] = useState({ confirm: false });
-  const onClickConfirm = () => {
+  const [confirmValue, setConfirmValue] = useState('');
+
+  const toggleConfirmModal = () => {
     setVisibleModals((prev) => ({ ...prev, confirm: !prev.confirm }));
   };
-  const cancelConfirmMode = () => {
-    onClickConfirm();
+
+  const cancelConfirmModal = () => {
+    setConfirmValue('');
+    toggleConfirmModal();
+  };
+
+  const onChangeConfirmValue = (event) => {
+    const { value } = event.target;
+    setConfirmValue(value);
   };
 
   return (
     <Page>
       <Subtitle text="Test Page" main />
-      <Button text="click" onClick={onClickConfirm} />
+      <Button text="confirm modal" onClick={toggleConfirmModal} />
       <ConfirmModal
         title="Delete account"
         textToConfirm="DELETE"
         question="Are you sure you want to delete your account?"
         isVisible={visibleModals.confirm}
-        toggleModalVision={onClickConfirm}
-        onCancel={cancelConfirmMode}
+        toggleModalVision={toggleConfirmModal}
+        onCancel={cancelConfirmModal}
+        onInputChange={onChangeConfirmValue}
+        inputValue={confirmValue}
       />
     </Page>
   );
