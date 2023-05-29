@@ -4,6 +4,8 @@ import { Page, Subtitle, ConfirmModal, Button } from '../components';
 export default function Test() {
   const [visibleModals, setVisibleModals] = useState({ confirm: false });
   const [confirmValue, setConfirmValue] = useState('');
+  const [isFormValid, setIsFormsValid] = useState({});
+  console.log(isFormValid, setIsFormsValid);
 
   const toggleConfirmModal = () => {
     setVisibleModals((prev) => ({ ...prev, confirm: !prev.confirm }));
