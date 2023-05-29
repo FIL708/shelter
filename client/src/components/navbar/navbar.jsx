@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { UserContext } from '../..';
-import { UserLoggedBar } from '..';
+import { LoggedBar } from '..';
 import './navbar.css';
 
 export default function Navbar() {
@@ -30,7 +30,7 @@ export default function Navbar() {
       </NavLink>
 
       {user ? (
-        <UserLoggedBar {...user} logoutHandler={logoutHandler} />
+        <LoggedBar {...user} logoutHandler={logoutHandler} />
       ) : (
         <>
           <NavLink className="navbar__link navbar__signup" to="/signup">
