@@ -64,3 +64,11 @@
   color: var(--red);
   border: 2px solid var(--red);
 }
+
+.button.cancel {
+  background-color: var(--red);
+}
+
+.button.cancel:hover {
+  opacity: 0.6;
+}
