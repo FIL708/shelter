@@ -13,7 +13,10 @@ export default function ConfirmModal({
       <Subtitle text={title} />
       <p className="confirm-modal__question">{question}</p>
       {textToConfirm && (
-        <Textfield placeholder={`To confirm type: ${textToConfirm}`} />
+        <Textfield
+          className="confirm-modal__input"
+          placeholder={`To confirm type: ${textToConfirm}`}
+        />
       )}
 
       <div className="confirm-modal__buttons">
