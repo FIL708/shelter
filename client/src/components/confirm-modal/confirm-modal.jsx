@@ -23,14 +23,18 @@ export default function ConfirmModal({
     setInputValue(value);
   };
 
+  const onCancelConfirm = () => {
+    setInputValue('');
+    setIsConfirmValid({ isValid: null, message: null });
+    onCancel();
+  };
+
   const validationHandler = () => {
     const validationObject = inputValidator(
       inputValue,
       'confirm',
       textToConfirm,
     );
-    console.log(validationObject);
-
     setIsConfirmValid(validationObject);
   };
   return (
@@ -56,7 +60,7 @@ export default function ConfirmModal({
             onClick={onConfirm}
             disabled={!isFormValid.isValid}
           />
-          <Button className="cancel" text="Cancel" onClick={onCancel} />
+          <Button className="cancel" text="Cancel" onClick={onCancelConfirm} />
         </div>
       </form>
     </ModalWrapper>
