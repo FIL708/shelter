@@ -8,7 +8,6 @@ export default function ConfirmModal({
   question,
   textToConfirm,
   onConfirm,
-  onCancel,
   isVisible,
   toggleModalVision,
 }) {
@@ -23,10 +22,10 @@ export default function ConfirmModal({
     setInputValue(value);
   };
 
-  const onCancelConfirm = () => {
+  const onCancel = () => {
     setInputValue('');
     setIsConfirmValid({ isValid: null, message: null });
-    onCancel();
+    toggleModalVision();
   };
 
   const validationHandler = () => {
@@ -60,7 +59,7 @@ export default function ConfirmModal({
             onClick={onConfirm}
             disabled={!isFormValid.isValid}
           />
-          <Button className="cancel" text="Cancel" onClick={onCancelConfirm} />
+          <Button className="cancel" text="Cancel" onClick={onCancel} />
         </div>
       </form>
     </ModalWrapper>

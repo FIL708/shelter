@@ -3,17 +3,9 @@ import { Page, Subtitle, ConfirmModal, Button } from '../components';
 
 export default function Test() {
   const [visibleModals, setVisibleModals] = useState({ confirm: false });
-  const [confirmValue, setConfirmValue] = useState('');
-  const [isFormValid, setIsFormsValid] = useState({});
-  console.log(isFormValid, setIsFormsValid);
 
   const toggleConfirmModal = () => {
     setVisibleModals((prev) => ({ ...prev, confirm: !prev.confirm }));
-  };
-
-  const cancelConfirmModal = () => {
-    setConfirmValue('');
-    toggleConfirmModal();
   };
 
   return (
@@ -26,8 +18,6 @@ export default function Test() {
         question="Are you sure you want to delete your account?"
         isVisible={visibleModals.confirm}
         toggleModalVision={toggleConfirmModal}
-        onCancel={cancelConfirmModal}
-        inputValue={confirmValue}
       />
     </Page>
   );
