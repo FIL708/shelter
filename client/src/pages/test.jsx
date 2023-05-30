@@ -21,6 +21,7 @@ export default function Test() {
     <Page>
       <Subtitle text="Test Page" main />
       <Button text="confirm modal" onClick={toggleConfirmModal} />
+      <Button text="change password" onClick={toggleConfirmModal} />
       <ConfirmModal
         title="Delete account"
         textToConfirm="DELETE"
