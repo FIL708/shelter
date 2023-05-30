@@ -1,5 +1,5 @@
 .confirm-modal {
-  padding: 20px 30px;
+  padding: 20px 40px;
   text-align: center;
   background-color: var(--less-white);
   box-shadow: var(--shadow-4);
@@ -14,8 +14,7 @@
 
 .confirm-modal__input {
   margin: auto;
-  max-width: 300px;
-  text-align: left;
+  max-width: 200px;
 }
 
 .confirm-modal__buttons {
