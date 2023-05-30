@@ -16,11 +16,6 @@ export default function Test() {
     toggleConfirmModal();
   };
 
-  const onChangeConfirmValue = (event) => {
-    const { value } = event.target;
-    setConfirmValue(value);
-  };
-
   return (
     <Page>
       <Subtitle text="Test Page" main />
@@ -32,7 +27,6 @@ export default function Test() {
         isVisible={visibleModals.confirm}
         toggleModalVision={toggleConfirmModal}
         onCancel={cancelConfirmModal}
-        onInputChange={onChangeConfirmValue}
         inputValue={confirmValue}
       />
     </Page>

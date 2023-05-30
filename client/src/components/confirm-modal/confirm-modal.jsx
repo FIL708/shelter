@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Subtitle, Textfield, Button, ModalWrapper } from '../index.js';
+import { inputValidator } from '../../helpers';
 import './confirm-modal.css';
 
 export default function ConfirmModal({
@@ -9,9 +11,28 @@ export default function ConfirmModal({
   onCancel,
   isVisible,
   toggleModalVision,
-  inputValue,
-  onInputChange,
 }) {
+  const [isFormValid, setIsConfirmValid] = useState({
+    isValid: null,
+    message: null,
+  });
+  const [inputValue, setInputValue] = useState('');
+
+  const setConfirmValue = (event) => {
+    const { value } = event.target;
+    setInputValue(value);
+  };
+
+  const validationHandler = () => {
+    const validationObject = inputValidator(
+      inputValue,
+      'confirm',
+      textToConfirm,
+    );
+    console.log(validationObject);
+
+    setIsConfirmValid(validationObject);
+  };
   return (
     <ModalWrapper isVisible={isVisible} toggleModalVision={toggleModalVision}>
       <form className="confirm-modal">
@@ -23,12 +44,18 @@ export default function ConfirmModal({
             placeholder={`To confirm type: ${textToConfirm}`}
             required
             value={inputValue}
-            onChange={onInputChange}
+            onChange={setConfirmValue}
+            validation={isFormValid}
+            onBlur={validationHandler}
           />
         )}
 
         <div className="confirm-modal__buttons">
-          <Button text="Confirm" onClick={onConfirm} />
+          <Button
+            text="Confirm"
+            onClick={onConfirm}
+            disabled={!isFormValid.isValid}
+          />
           <Button className="cancel" text="Cancel" onClick={onCancel} />
         </div>
       </form>
