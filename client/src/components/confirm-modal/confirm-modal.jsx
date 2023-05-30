@@ -43,6 +43,7 @@ export default function ConfirmModal({
         <p className="confirm-modal__question">{question}</p>
         {textToConfirm && (
           <Textfield
+            name="confirm-input"
             className="confirm-modal__input"
             placeholder={`To confirm type: ${textToConfirm}`}
             required
