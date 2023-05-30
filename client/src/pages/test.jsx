@@ -7,6 +7,9 @@ export default function Test() {
   const toggleConfirmModal = () => {
     setVisibleModals((prev) => ({ ...prev, confirm: !prev.confirm }));
   };
+  const deleteAccountHandler = () => {
+    console.log('Delete');
+  };
 
   return (
     <Page>
@@ -18,6 +21,7 @@ export default function Test() {
         question="Are you sure you want to delete your account?"
         isVisible={visibleModals.confirm}
         toggleModalVision={toggleConfirmModal}
+        onConfirm={deleteAccountHandler}
       />
     </Page>
   );
