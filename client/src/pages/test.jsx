@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { Page, Subtitle, ConfirmModal, Button } from '../components';
+import {
+  Page,
+  Subtitle,
+  ConfirmModal,
+  ChangePasswordForm,
+  Button,
+} from '../components';
 
 export default function Test() {
   const [visibleModals, setVisibleModals] = useState({ confirm: false });
@@ -23,6 +29,7 @@ export default function Test() {
         toggleModalVision={toggleConfirmModal}
         onConfirm={deleteAccountHandler}
       />
+      <ChangePasswordForm />
     </Page>
   );
 }

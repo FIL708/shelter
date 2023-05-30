@@ -37,3 +37,4 @@ export { default as PetDescription } from './pet-description/pet-description.jsx
 export { default as OpinionsList } from './opinions-list/opinions-list.jsx';
 export { default as UserCard } from './user-card/user-card.jsx';
 export { default as ConfirmModal } from './confirm-modal/confirm-modal.jsx';
+export { default as ChangePasswordForm } from './change-password-form/change-password-form.jsx';
