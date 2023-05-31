@@ -19,7 +19,7 @@ export default function Test() {
     updateForm: {},
   });
   const [isFormsValid, setIsFormValid] = useState({
-    passwordForm: {},
+    passwordForm: { password: {}, confirm: '' },
     updateForm: {},
   });
   const toggleConfirmModal = () => {
@@ -31,7 +31,10 @@ export default function Test() {
 
   const passwordFormDataHandler = (event) => {
     const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, passwordForm: { [name]: value } }));
+    setFormData((prev) => ({
+      ...prev,
+      passwordForm: { ...prev.passwordForm, [name]: value },
+    }));
   };
 
   const passwordValidationHandler = (event, type) => {
@@ -39,10 +42,10 @@ export default function Test() {
     const validationObject = inputValidator(value, type);
     setIsFormValid((prev) => ({
       ...prev,
-      password: { [name]: validationObject },
+      passwordForm: { ...prev.passwordForm, [name]: validationObject },
     }));
   };
-  console.log(formData);
+  console.log(isFormsValid);
 
   return (
     <Page>
@@ -59,6 +62,7 @@ export default function Test() {
       />
       <ChangePasswordForm
         validationHandler={passwordValidationHandler}
+        validationObject={isFormsValid.passwordForm}
         dataHandler={passwordFormDataHandler}
         inputsValues={formData.passwordForm}
       />

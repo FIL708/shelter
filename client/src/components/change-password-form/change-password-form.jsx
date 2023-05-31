@@ -5,9 +5,8 @@ export default function ChangePasswordForm({
   dataHandler,
   inputsValues,
   validationHandler,
+  validationObject,
 }) {
-  console.log(inputsValues);
-
   return (
     <form className="change-password-form">
       <Subtitle text="Change password" />
@@ -17,6 +16,7 @@ export default function ChangePasswordForm({
         type="password"
         value={inputsValues.password}
         onChange={(event) => dataHandler(event)}
+        validation={validationObject.password}
         onBlur={(event) => validationHandler(event, 'password')}
       />
       <Textfield
@@ -25,7 +25,10 @@ export default function ChangePasswordForm({
         type="password"
         value={inputsValues.confirm}
         onChange={(event) => dataHandler(event)}
-        // onBlur={(event) => validationHandler(event, 'confirm')}
+        validation={validationObject.confirm}
+        onBlur={(event) =>
+          validationHandler(event, 'confirm', inputsValues.password)
+        }
       />
       <div className="confirm-modal__buttons">
         <Button text="Confirm" />
