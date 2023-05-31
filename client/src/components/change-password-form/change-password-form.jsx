@@ -4,8 +4,10 @@ import './change-password-form.css';
 export default function ChangePasswordForm({
   dataHandler,
   inputsValues,
-  // validationHandler
+  validationHandler,
 }) {
+  console.log(inputsValues);
+
   return (
     <form className="change-password-form">
       <Subtitle text="Change password" />
@@ -13,9 +15,9 @@ export default function ChangePasswordForm({
         name="password"
         label="Password"
         type="password"
-        onChange={(event) => dataHandler(event)}
         value={inputsValues.password}
-        // onBlur={(event) => validationHandler(event, 'password')}
+        onChange={(event) => dataHandler(event)}
+        onBlur={(event) => validationHandler(event, 'password')}
       />
       <Textfield
         name="confirm"

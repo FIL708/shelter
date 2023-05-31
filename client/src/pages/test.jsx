@@ -31,7 +31,7 @@ export default function Test() {
 
   const passwordFormDataHandler = (event) => {
     const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, passwordForm: { [name]: value } }));
   };
 
   const passwordValidationHandler = (event, type) => {
