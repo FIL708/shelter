@@ -1,7 +1,11 @@
 import { Subtitle, Textfield, Button } from '../index.js';
 import './change-password-form.css';
 
-export default function ChangePasswordForm({ validationHandler }) {
+export default function ChangePasswordForm({
+  dataHandler,
+  inputsValues,
+  // validationHandler
+}) {
   return (
     <form className="change-password-form">
       <Subtitle text="Change password" />
@@ -9,13 +13,17 @@ export default function ChangePasswordForm({ validationHandler }) {
         name="password"
         label="Password"
         type="password"
-        onBlur={(event) => validationHandler(event, 'password')}
+        onChange={(event) => dataHandler(event)}
+        value={inputsValues.password}
+        // onBlur={(event) => validationHandler(event, 'password')}
       />
       <Textfield
         name="confirm"
         label="Confirm password"
         type="password"
-        onBlur={(event) => validationHandler(event, 'confirm')}
+        value={inputsValues.confirm}
+        onChange={(event) => dataHandler(event)}
+        // onBlur={(event) => validationHandler(event, 'confirm')}
       />
       <div className="confirm-modal__buttons">
         <Button text="Confirm" />

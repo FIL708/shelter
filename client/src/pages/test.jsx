@@ -29,6 +29,11 @@ export default function Test() {
     console.log(setFormData, isFormsValid);
   };
 
+  const passwordFormDataHandler = (event) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
   const passwordValidationHandler = (event, type) => {
     const { name, value } = event.target;
     const validationObject = inputValidator(value, type);
@@ -37,6 +42,7 @@ export default function Test() {
       password: { [name]: validationObject },
     }));
   };
+  console.log(formData);
 
   return (
     <Page>
@@ -52,8 +58,9 @@ export default function Test() {
         onConfirm={deleteAccountHandler}
       />
       <ChangePasswordForm
-        inputValue={formData.passwordForm}
         validationHandler={passwordValidationHandler}
+        dataHandler={passwordFormDataHandler}
+        inputsValues={formData.passwordForm}
       />
     </Page>
   );
