@@ -10,7 +10,9 @@ export default function ChangePasswordForm({
   toggleModalVision,
   onCancel,
 }) {
-  console.log(inputsValues);
+  const confirmButtonDisable = !(
+    validationObject.password.isValid && validationObject.confirm.isValid
+  );
 
   return (
     <ModalWrapper isVisible={isVisible} toggleModalVision={toggleModalVision}>
@@ -37,7 +39,7 @@ export default function ChangePasswordForm({
           }
         />
         <div className="confirm-modal__buttons">
-          <Button text="Confirm" />
+          <Button text="Confirm" disabled={confirmButtonDisable} />
           <Button className="cancel" text="Cancel" onClick={onCancel} />
         </div>
       </form>
