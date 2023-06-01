@@ -14,9 +14,11 @@ export default function Test() {
     changePassword: false,
     updateForm: false,
   });
-  const [formData, setFormData] = useState({
-    passwordForm: { password: '', confirm: '' },
-    updateForm: {},
+  // const [updateForm, setUpdateForm] = useState({});
+
+  const [passwordForm, setPasswordForm] = useState({
+    password: '',
+    confirm: '',
   });
   const [isFormsValid, setIsFormValid] = useState({
     passwordForm: { password: {}, confirm: '' },
@@ -26,15 +28,12 @@ export default function Test() {
     setVisibleModals((prev) => ({ ...prev, confirm: !prev.confirm }));
   };
   const deleteAccountHandler = () => {
-    console.log(setFormData, isFormsValid);
+    console.log(isFormsValid);
   };
 
   const passwordFormDataHandler = (event) => {
     const { name, value } = event.target;
-    setFormData((prev) => ({
-      ...prev,
-      passwordForm: { ...prev.passwordForm, [name]: value },
-    }));
+    setPasswordForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const passwordValidationHandler = (event, type) => {
@@ -45,7 +44,6 @@ export default function Test() {
       passwordForm: { ...prev.passwordForm, [name]: validationObject },
     }));
   };
-  console.log(isFormsValid);
 
   return (
     <Page>
@@ -64,7 +62,7 @@ export default function Test() {
         validationHandler={passwordValidationHandler}
         validationObject={isFormsValid.passwordForm}
         dataHandler={passwordFormDataHandler}
-        inputsValues={formData.passwordForm}
+        inputsValues={passwordForm}
       />
     </Page>
   );
