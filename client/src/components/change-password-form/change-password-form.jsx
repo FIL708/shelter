@@ -1,4 +1,4 @@
-import { Subtitle, Textfield, Button } from '../index.js';
+import { Subtitle, Textfield, Button, ModalWrapper } from '../index.js';
 import './change-password-form.css';
 
 export default function ChangePasswordForm({
@@ -6,34 +6,38 @@ export default function ChangePasswordForm({
   inputsValues,
   validationHandler,
   validationObject,
+  isVisible,
+  toggleModalVision,
 }) {
   return (
-    <form className="change-password-form">
-      <Subtitle text="Change password" />
-      <Textfield
-        name="password"
-        label="Password"
-        type="password"
-        value={inputsValues.password}
-        onChange={(event) => dataHandler(event)}
-        validation={validationObject.password}
-        onBlur={(event) => validationHandler(event, 'password')}
-      />
-      <Textfield
-        name="confirm"
-        label="Confirm password"
-        type="password"
-        value={inputsValues.confirm}
-        onChange={(event) => dataHandler(event)}
-        validation={validationObject.confirm}
-        onBlur={(event) =>
-          validationHandler(event, 'confirm', inputsValues.password)
-        }
-      />
-      <div className="confirm-modal__buttons">
-        <Button text="Confirm" />
-        <Button className="cancel" text="Cancel" />
-      </div>
-    </form>
+    <ModalWrapper isVisible={isVisible} toggleModalVision={toggleModalVision}>
+      <form className="change-password-form">
+        <Subtitle text="Change password" />
+        <Textfield
+          name="password"
+          label="Password"
+          type="password"
+          value={inputsValues.password}
+          onChange={(event) => dataHandler(event)}
+          validation={validationObject.password}
+          onBlur={(event) => validationHandler(event, 'password')}
+        />
+        <Textfield
+          name="confirm"
+          label="Confirm password"
+          type="password"
+          value={inputsValues.confirm}
+          onChange={(event) => dataHandler(event)}
+          validation={validationObject.confirm}
+          onBlur={(event) =>
+            validationHandler(event, 'confirm', inputsValues.password)
+          }
+        />
+        <div className="confirm-modal__buttons">
+          <Button text="Confirm" />
+          <Button className="cancel" text="Cancel" />
+        </div>
+      </form>
+    </ModalWrapper>
   );
 }

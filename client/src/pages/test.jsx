@@ -21,21 +21,21 @@ export default function Test() {
     confirm: '',
   });
   const [isFormsValid, setIsFormValid] = useState({
-    passwordForm: { password: {}, confirm: '' },
+    passwordForm: { password: {}, confirm: {} },
     updateForm: {},
   });
+
   const toggleConfirmModal = () => {
     setVisibleModals((prev) => ({ ...prev, confirm: !prev.confirm }));
   };
-  const deleteAccountHandler = () => {
-    console.log(isFormsValid);
-  };
 
+  const togglePasswordModal = () => {
+    setVisibleModals((prev) => ({ ...prev, password: !prev.password }));
+  };
   const passwordFormDataHandler = (event) => {
     const { name, value } = event.target;
     setPasswordForm((prev) => ({ ...prev, [name]: value }));
   };
-
   const passwordValidationHandler = (event, type) => {
     const { name, value } = event.target;
     const validationObject = inputValidator(value, type);
@@ -44,25 +44,31 @@ export default function Test() {
       passwordForm: { ...prev.passwordForm, [name]: validationObject },
     }));
   };
+  const onClosingPasswordForm = () => {
+    togglePasswordModal();
+    setPasswordForm({ password: '', confirm: '' });
+  };
 
   return (
     <Page>
       <Subtitle text="Test Page" main />
       <Button text="confirm modal" onClick={toggleConfirmModal} />
-      <Button text="change password" onClick={toggleConfirmModal} />
+      <Button text="change password" onClick={togglePasswordModal} />
       <ConfirmModal
         title="Delete account"
         textToConfirm="DELETE"
         question="Are you sure you want to delete your account?"
         isVisible={visibleModals.confirm}
         toggleModalVision={toggleConfirmModal}
-        onConfirm={deleteAccountHandler}
       />
       <ChangePasswordForm
         validationHandler={passwordValidationHandler}
         validationObject={isFormsValid.passwordForm}
         dataHandler={passwordFormDataHandler}
         inputsValues={passwordForm}
+        isVisible={visibleModals.password}
+        toggleModalVision={togglePasswordModal}
+        onCancel={onClosingPasswordForm}
       />
     </Page>
   );
