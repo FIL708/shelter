@@ -26,8 +26,6 @@ const inputValidator = (value, type, confirm) => {
     return { isValid, message };
   }
   if (type.includes('confirm')) {
-    console.log(value, confirm);
-
     const isValid = String(value) === String(confirm);
     const message = isValid ? 'Correct!' : 'Do not match!';
     return { isValid, message };
