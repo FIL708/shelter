@@ -10,6 +10,8 @@ export default function ChangePasswordForm({
   toggleModalVision,
   onCancel,
 }) {
+  console.log(inputsValues);
+
   return (
     <ModalWrapper isVisible={isVisible} toggleModalVision={toggleModalVision}>
       <form className="change-password-form">
