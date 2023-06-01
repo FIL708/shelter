@@ -21,7 +21,16 @@ export default function Test() {
     confirm: '',
   });
   const [isFormsValid, setIsFormValid] = useState({
-    passwordForm: { password: {}, confirm: {} },
+    passwordForm: {
+      password: {
+        isValid: null,
+        message: null,
+      },
+      confirm: {
+        isValid: null,
+        message: null,
+      },
+    },
     updateForm: {},
   });
 
@@ -46,6 +55,19 @@ export default function Test() {
   };
   const onClosingPasswordForm = () => {
     togglePasswordModal();
+    setIsFormValid((prev) => ({
+      ...prev,
+      passwordForm: {
+        password: {
+          isValid: null,
+          message: null,
+        },
+        confirm: {
+          isValid: null,
+          message: null,
+        },
+      },
+    }));
     setPasswordForm({ password: '', confirm: '' });
   };
 
