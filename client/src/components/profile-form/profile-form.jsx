@@ -6,20 +6,20 @@ export default function ProfileForm() {
     <form className="profile-form">
       <Subtitle text="Update Profile" />
       <fieldset>
-        <Textfield />
-        <Textfield />
+        <Textfield name="firstName" label="First Name" />
+        <Textfield name="lastName" label="Last Name" />
       </fieldset>
       <fieldset>
-        <Textfield />
-        <Textfield />
+        <Textfield name="city" label="City" />
+        <Textfield name="country" label="Country" />
       </fieldset>
       <fieldset>
-        <Textfield />
-        <Textfield />
+        <Textfield name="phone" label="Phone Number" />
+        <Textfield name="birthday" label="BirthDay" />
       </fieldset>
       <fieldset>
         <img src="" alt="avatar" />
-        <Textfield />
+        <Textfield name="avatar" label="Avatar URL" />
       </fieldset>
       <div className="confirm-modal__buttons">
         <Button text="Confirm" />
