@@ -4,6 +4,7 @@ import {
   Subtitle,
   ConfirmModal,
   ChangePasswordForm,
+  ProfileForm,
   Button,
 } from '../components';
 import { inputValidator } from '../helpers/index.js';
@@ -92,6 +93,7 @@ export default function Test() {
         toggleModalVision={togglePasswordModal}
         onCancel={onClosingPasswordForm}
       />
+      <ProfileForm />
     </Page>
   );
 }
