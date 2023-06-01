@@ -8,6 +8,7 @@ export default function ChangePasswordForm({
   validationObject,
   isVisible,
   toggleModalVision,
+  onCancel,
 }) {
   return (
     <ModalWrapper isVisible={isVisible} toggleModalVision={toggleModalVision}>
@@ -35,7 +36,7 @@ export default function ChangePasswordForm({
         />
         <div className="confirm-modal__buttons">
           <Button text="Confirm" />
-          <Button className="cancel" text="Cancel" />
+          <Button className="cancel" text="Cancel" onClick={onCancel} />
         </div>
       </form>
     </ModalWrapper>
