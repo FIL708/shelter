@@ -15,7 +15,6 @@
   display: flex;
   gap: 25px;
   justify-content: space-between;
-  align-items: flex-end;
 }
 
 .profile-form__avatar {

@@ -9,6 +9,15 @@ import {
 } from '../components';
 import { inputValidator } from '../helpers/index.js';
 
+const user = {
+  firstName: '',
+  lastName: '',
+  phone: '',
+  avatar: '',
+  birthday: '',
+};
+console.log(user);
+
 export default function Test() {
   const [visibleModals, setVisibleModals] = useState({
     confirm: false,

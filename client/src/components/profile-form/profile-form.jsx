@@ -17,7 +17,7 @@ export default function ProfileForm() {
       </fieldset>
       <fieldset className="profile-form__fieldset">
         <Textfield name="phone" label="Phone Number" />
-        <Textfield name="birthday" label="BirthDay" />
+        <Textfield name="birthday" label="Date of birth" />
       </fieldset>
       <fieldset className="profile-form__fieldset">
         <img src={avatarURL} alt="avatar" className="profile-form__avatar" />
