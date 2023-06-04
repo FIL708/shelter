@@ -4,6 +4,7 @@
   font-weight: 400;
   letter-spacing: 2px;
   color: var(--blue);
+  text-align: center;
 }
 
 .subtitle > * {
