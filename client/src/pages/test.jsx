@@ -12,8 +12,8 @@ import { inputValidator } from '../helpers/index.js';
 export default function Test() {
   const [visibleModals, setVisibleModals] = useState({
     confirm: false,
-    changePassword: false,
-    updateForm: false,
+    password: false,
+    update: false,
   });
   const [updateForm, setUpdateForm] = useState({
     firstName: 'Filip',
@@ -81,10 +81,14 @@ export default function Test() {
     setPasswordForm({ password: '', confirm: '' });
   };
 
+  const toggleUpdateModal = () => {
+    setVisibleModals((prev) => ({ ...prev, update: !prev.update }));
+  };
   const updateFormDataHandler = (event) => {
     const { name, value } = event.target;
     setUpdateForm((prev) => ({ ...prev, [name]: value }));
   };
+
   console.log(updateForm);
 
   return (
@@ -92,6 +96,7 @@ export default function Test() {
       <Subtitle text="Test Page" main />
       <Button text="confirm modal" onClick={toggleConfirmModal} />
       <Button text="change password" onClick={togglePasswordModal} />
+      <Button text="update" onClick={toggleUpdateModal} />
       <ConfirmModal
         title="Delete account"
         textToConfirm="DELETE"
@@ -111,6 +116,8 @@ export default function Test() {
       <ProfileForm
         dataHandler={updateFormDataHandler}
         inputsValues={updateForm}
+        toggleModalVision={toggleUpdateModal}
+        isVisible={visibleModals.update}
       />
     </Page>
   );
