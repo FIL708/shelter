@@ -9,22 +9,20 @@ import {
 } from '../components';
 import { inputValidator } from '../helpers/index.js';
 
-const user = {
-  firstName: '',
-  lastName: '',
-  phone: '',
-  avatar: '',
-  birthday: '',
-};
-console.log(user);
-
 export default function Test() {
   const [visibleModals, setVisibleModals] = useState({
     confirm: false,
     changePassword: false,
     updateForm: false,
   });
-  // const [updateForm, setUpdateForm] = useState({});
+  const [updateForm, setUpdateForm] = useState({
+    firstName: 'Filip',
+    lastName: 'John',
+    city: 'Mława',
+    country: 'Poland',
+    phone: '123123123',
+    birthday: '04.02.1995',
+  });
 
   const [passwordForm, setPasswordForm] = useState({
     password: '',
@@ -81,6 +79,11 @@ export default function Test() {
     setPasswordForm({ password: '', confirm: '' });
   };
 
+  const updateFormDataHandler = (event) => {
+    const { name, value } = event.target;
+    setUpdateForm((prev) => ({ ...prev, [name]: value }));
+  };
+
   return (
     <Page>
       <Subtitle text="Test Page" main />
@@ -102,7 +105,10 @@ export default function Test() {
         toggleModalVision={togglePasswordModal}
         onCancel={onClosingPasswordForm}
       />
-      <ProfileForm />
+      <ProfileForm
+        dataHandler={updateFormDataHandler}
+        inputsValues={updateForm}
+      />
     </Page>
   );
 }
