@@ -88,6 +88,14 @@ export default function Test() {
     const { name, value } = event.target;
     setUpdateForm((prev) => ({ ...prev, [name]: value }));
   };
+  const updateValidationHandler = (event, type) => {
+    const { name, value } = event.target;
+    const validationObject = inputValidator(value, type);
+    setIsFormValid((prev) => ({
+      ...prev,
+      updateForm: { ...prev.updateForm, [name]: validationObject },
+    }));
+  };
 
   console.log(updateForm);
 
@@ -118,6 +126,8 @@ export default function Test() {
         inputsValues={updateForm}
         toggleModalVision={toggleUpdateModal}
         isVisible={visibleModals.update}
+        validationHandler={updateValidationHandler}
+        validationObject={isFormsValid.updateForm}
       />
     </Page>
   );
