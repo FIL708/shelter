@@ -16,6 +16,10 @@
   cursor: pointer;
 }
 
+.textfield__input:hover {
+  box-shadow: var(--input);
+}
+
 .valid .textfield__input {
   border-bottom: 2px solid var(--valid);
 }
