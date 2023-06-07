@@ -41,7 +41,16 @@ export default function Test() {
         message: null,
       },
     },
-    updateForm: {},
+    updateForm: {
+      phone: {
+        isValid: null,
+        message: null,
+      },
+      avatar: {
+        isValid: null,
+        message: null,
+      },
+    },
   });
 
   const toggleConfirmModal = () => {
@@ -96,8 +105,7 @@ export default function Test() {
       updateForm: { ...prev.updateForm, [name]: validationObject },
     }));
   };
-
-  console.log(updateForm);
+  console.log(isFormsValid.updateForm);
 
   return (
     <Page>

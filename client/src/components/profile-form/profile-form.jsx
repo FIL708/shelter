@@ -6,10 +6,15 @@ export default function ProfileForm({
   dataHandler,
   toggleModalVision,
   isVisible,
+  validationHandler,
+  validationObject,
 }) {
   const avatarURL =
     inputsValues.avatar ||
     'https://avatars.design/wp-content/uploads/2021/02/corporate-avatars-TN-1.jpg';
+  const confirmButtonDisable = !(
+    validationObject.phone.isValid && validationObject.avatar.isValid
+  );
   return (
     <ModalWrapper toggleModalVision={toggleModalVision} isVisible={isVisible}>
       <form className="profile-form">
@@ -48,6 +53,8 @@ export default function ProfileForm({
             label="Phone Number"
             value={inputsValues.phone}
             onChange={dataHandler}
+            validation={validationObject.phone}
+            onBlur={(event) => validationHandler(event, 'phone')}
           />
           <Textfield
             type="date"
@@ -64,10 +71,12 @@ export default function ProfileForm({
             label="Avatar URL"
             value={inputsValues.avatar}
             onChange={dataHandler}
+            validation={validationObject.avatar}
+            onBlur={(event) => validationHandler(event, 'url')}
           />
         </fieldset>
         <div className="confirm-modal__buttons">
-          <Button text="Confirm" />
+          <Button text="Confirm" disabled={confirmButtonDisable} />
           <Button className="cancel" text="Cancel" />
         </div>
       </form>
