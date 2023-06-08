@@ -16,6 +16,7 @@ export default function ProfileForm({
   const confirmButtonDisable = !(
     validationObject.phone.isValid && validationObject.avatar.isValid
   );
+
   return (
     <ModalWrapper toggleModalVision={toggleModalVision} isVisible={isVisible}>
       <form className="profile-form">
@@ -38,13 +39,13 @@ export default function ProfileForm({
           <Textfield
             name="city"
             label="City"
-            value={inputsValues.city}
+            value={inputsValues.address?.city}
             onChange={dataHandler}
           />
           <Textfield
             name="country"
             label="Country"
-            value={inputsValues.country}
+            value={inputsValues.address?.country}
             onChange={dataHandler}
           />
         </fieldset>

@@ -25,24 +25,26 @@ export default function User() {
   });
   const [updateForm, setUpdateForm] = useState({
     previous: {
-      firstName: 'Filip',
-      lastName: 'John',
-      city: 'Mława',
-      country: 'Poland',
-      phone: '123123123',
-      birthday: '1995-02-05',
-      avatar:
-        'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80',
+      firstName: '',
+      lastName: '',
+      address: {
+        city: '',
+        country: '',
+      },
+      phone: '',
+      birthday: '',
+      avatar: '',
     },
     current: {
-      firstName: 'Filip',
-      lastName: 'John',
-      city: 'Mława',
-      country: 'Poland',
-      phone: '123123123',
-      birthday: '1995-02-05',
-      avatar:
-        'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80',
+      firstName: '',
+      lastName: '',
+      address: {
+        city: '',
+        country: '',
+      },
+      phone: '',
+      birthday: '',
+      avatar: '',
     },
   });
   const [passwordForm, setPasswordForm] = useState({
@@ -170,7 +172,7 @@ export default function User() {
     return (
       <Page>
         <Subtitle text="Gallery" main />
-        {isLoading ? (
+        {isLoading || user ? (
           <LoadingSpinner />
         ) : (
           <ErrorCard errorCode={error.status} errorMessage={error.message} />
