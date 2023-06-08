@@ -8,6 +8,7 @@ export default function ProfileForm({
   isVisible,
   validationHandler,
   validationObject,
+  onCancel,
 }) {
   const avatarURL =
     inputsValues.avatar ||
@@ -77,7 +78,7 @@ export default function ProfileForm({
         </fieldset>
         <div className="confirm-modal__buttons">
           <Button text="Confirm" disabled={confirmButtonDisable} />
-          <Button className="cancel" text="Cancel" />
+          <Button className="cancel" text="Cancel" onClick={onCancel} />
         </div>
       </form>
     </ModalWrapper>
