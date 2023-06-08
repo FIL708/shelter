@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   ErrorCard,
@@ -72,6 +72,10 @@ export default function User() {
       },
     },
   });
+
+  useEffect(() => {
+    setUpdateForm({ previous: user, current: user });
+  }, [user]);
 
   const toggleConfirmModal = () => {
     setVisibleModals((prev) => ({ ...prev, confirm: !prev.confirm }));
