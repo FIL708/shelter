@@ -31,6 +31,7 @@ export default function Textfield({
 
   const inputType = type === 'password' ? passwordVisible : type;
   const iconType = passwordVisible === 'password' ? 'invisible' : 'visible';
+  const inputValue = value || '';
 
   return (
     <label htmlFor={name} className={inputClassName}>
@@ -43,7 +44,7 @@ export default function Textfield({
         placeholder={placeholder}
         required={required}
         onChange={onChange}
-        value={value}
+        value={inputValue}
         onBlur={onBlur}
       />
 

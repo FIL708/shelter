@@ -45,7 +45,6 @@ export default function User() {
         'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80',
     },
   });
-
   const [passwordForm, setPasswordForm] = useState({
     password: '',
     confirm: '',
@@ -74,7 +73,9 @@ export default function User() {
   });
 
   useEffect(() => {
-    setUpdateForm({ previous: user, current: user });
+    if (user) {
+      setUpdateForm({ previous: user, current: user });
+    }
   }, [user]);
 
   const toggleConfirmModal = () => {
@@ -119,10 +120,21 @@ export default function User() {
   };
   const updateFormDataHandler = (event) => {
     const { name, value } = event.target;
-    setUpdateForm((prev) => ({
-      ...prev,
-      current: { ...prev.current, [name]: value },
-    }));
+
+    if (name === 'city' || name === 'country') {
+      setUpdateForm((prev) => ({
+        ...prev,
+        current: {
+          ...prev.current,
+          address: { ...prev.current.address, [name]: value },
+        },
+      }));
+    } else {
+      setUpdateForm((prev) => ({
+        ...prev,
+        current: { ...prev.current, [name]: value },
+      }));
+    }
   };
   const updateValidationHandler = (event, type) => {
     const { name, value } = event.target;
