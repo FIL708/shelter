@@ -13,9 +13,9 @@ export default function ProfileForm({
   const avatarURL =
     inputsValues.avatar ||
     'https://avatars.design/wp-content/uploads/2021/02/corporate-avatars-TN-1.jpg';
-  const confirmButtonDisable = !(
-    validationObject.phone.isValid && validationObject.avatar.isValid
-  );
+  const confirmButtonDisable =
+    validationObject.phone.isValid === false ||
+    validationObject.avatar.isValid === false;
 
   return (
     <ModalWrapper toggleModalVision={toggleModalVision} isVisible={isVisible}>

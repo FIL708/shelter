@@ -185,7 +185,7 @@ export default function User() {
     <Page>
       <Subtitle text="Profile" main />
       <UserCard
-        userData={user}
+        userData={updateForm.previous}
         deleteAccount={toggleConfirmModal}
         updateProfile={toggleUpdateModal}
         changePassword={togglePasswordModal}
