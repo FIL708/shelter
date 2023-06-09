@@ -9,6 +9,7 @@ export default function ProfileForm({
   validationHandler,
   validationObject,
   onCancel,
+  onConfirm,
 }) {
   const avatarURL =
     inputsValues.avatar ||
@@ -78,7 +79,11 @@ export default function ProfileForm({
           />
         </fieldset>
         <div className="confirm-modal__buttons">
-          <Button text="Confirm" disabled={confirmButtonDisable} />
+          <Button
+            text="Confirm"
+            disabled={confirmButtonDisable}
+            onClick={onConfirm}
+          />
           <Button className="cancel" text="Cancel" onClick={onCancel} />
         </div>
       </form>

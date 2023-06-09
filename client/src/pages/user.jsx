@@ -146,6 +146,24 @@ export default function User() {
       updateForm: { ...prev.updateForm, [name]: validationObject },
     }));
   };
+  const isUpdateFormChanged = () => {
+    if (updateForm.previous.firstName !== updateForm.current.firstName)
+      return true;
+    if (updateForm.previous.lastName !== updateForm.current.lastName)
+      return true;
+    if (updateForm.previous.phone !== updateForm.current.phone) return true;
+    if (updateForm.previous.birthday !== updateForm.current.birthday)
+      return true;
+    if (updateForm.previous.avatar !== updateForm.current.avatar) return true;
+    if (updateForm.previous.address.city !== updateForm.current.address.city)
+      return true;
+    if (
+      updateForm.previous.address.country !== updateForm.current.address.country
+    )
+      return true;
+
+    return false;
+  };
   const onClosingUpdateForm = () => {
     toggleUpdateModal();
     setIsFormValid((prev) => ({
@@ -163,6 +181,27 @@ export default function User() {
     }));
     setPasswordForm({ password: '', confirm: '' });
     setUpdateForm((prev) => ({ ...prev, current: prev.previous }));
+  };
+  const onConfirmUpdateForm = () => {
+    isUpdateFormChanged();
+    if (isUpdateFormChanged()) {
+      // ADD REQUEST
+      setUpdateForm((prev) => ({ ...prev, previous: prev.current }));
+      setIsFormValid((prev) => ({
+        ...prev,
+        updateForm: {
+          phone: {
+            isValid: null,
+            message: null,
+          },
+          avatar: {
+            isValid: null,
+            message: null,
+          },
+        },
+      }));
+    }
+    toggleUpdateModal();
   };
 
   if (isLoading || error) {
@@ -214,6 +253,7 @@ export default function User() {
         validationHandler={updateValidationHandler}
         validationObject={isFormsValid.updateForm}
         onCancel={onClosingUpdateForm}
+        onConfirm={onConfirmUpdateForm}
       />
     </Page>
   );
