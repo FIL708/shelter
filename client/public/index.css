@@ -41,7 +41,9 @@ body {
   text-rendering: optimizeSpeed;
   background-color: var(--white);
   color: var(--dark-grey);
+  overflow-y: scroll;
 }
+
 body > div {
   display: flex;
   flex-direction: column;
