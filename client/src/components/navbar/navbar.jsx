@@ -29,6 +29,8 @@ export default function Navbar() {
         Contact
       </NavLink>
 
+      <hr className="navbar-divider" />
+
       {user ? (
         <LoggedBar {...user} logoutHandler={logoutHandler} />
       ) : (

@@ -38,3 +38,9 @@
   height: 2px;
   background: var(--less-white);
 }
+
+.navbar-divider {
+  background: var(--less-white);
+  border: 0;
+  width: 2px;
+}
