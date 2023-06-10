@@ -42,6 +42,7 @@ body {
   background-color: var(--white);
   color: var(--dark-grey);
 }
+
 body > div {
   display: flex;
   flex-direction: column;

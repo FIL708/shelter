@@ -9,6 +9,13 @@
   font-family: 'Lato', sans-serif;
   letter-spacing: 2px;
 }
+.navbar__link::before {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 30px;
+  background-color: #fff;
+}
 
 .navbar__link:hover {
   text-decoration: underline;
@@ -16,7 +23,6 @@
 
 .navbar .active {
   text-decoration: underline;
-  font-weight: 700;
 }
 
 .navbar__contact {
