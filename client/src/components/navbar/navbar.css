@@ -5,27 +5,36 @@
 }
 
 .navbar__link {
+  display: block;
+  position: relative;
   font-size: 18px;
   font-family: 'Lato', sans-serif;
   letter-spacing: 2px;
 }
-.navbar__link::before {
+.navbar__link::after {
+  position: absolute;
   content: '';
-  display: block;
-  height: 2px;
-  width: 30px;
-  background-color: #fff;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--less-white);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
 }
 
-.navbar__link:hover {
-  text-decoration: underline;
+.navbar__link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
-.navbar .active {
-  text-decoration: underline;
-}
-
-.navbar__contact {
-  padding-right: 22px;
-  border-right: 2px solid var(--white);
+.active::before {
+  position: absolute;
+  content: '';
+  top: 110%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--less-white);
 }
