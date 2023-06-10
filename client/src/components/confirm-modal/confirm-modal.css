@@ -1,0 +1,27 @@
+.confirm-modal {
+  max-width: 600px;
+  width: 90%;
+  padding: 20px 40px;
+  text-align: center;
+  background-color: var(--less-white);
+  box-shadow: var(--shadow-4);
+  border-radius: 8px;
+}
+
+.confirm-modal__question {
+  margin: 20px 0 10px;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.confirm-modal__input {
+  margin: auto;
+  max-width: 200px;
+}
+
+.confirm-modal__buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}

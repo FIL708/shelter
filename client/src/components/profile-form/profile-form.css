@@ -1,0 +1,24 @@
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 30px 40px;
+  max-width: 600px;
+  width: 90%;
+  background-color: var(--less-white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-4);
+}
+
+.profile-form__fieldset {
+  width: 100%;
+  display: flex;
+  gap: 25px;
+  justify-content: space-between;
+}
+
+.profile-form__avatar {
+  width: 30%;
+  border-radius: 8px;
+  box-shadow: var(--shadow-4);
+}

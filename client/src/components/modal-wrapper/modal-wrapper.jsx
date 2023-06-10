@@ -6,10 +6,10 @@ export default function ModalWrapper({
   isVisible,
   toggleModalVision,
 }) {
-  const modalClassName = isVisible ? 'modal-wrapper' : 'invisible';
+  if (!isVisible) return false;
 
   return (
-    <dialog className={modalClassName}>
+    <dialog className="modal-wrapper">
       <Button
         className="modal-wrapper__button"
         iconType="exit"

@@ -14,6 +14,13 @@ const inputValidator = (value, type, confirm) => {
     const message = isValid ? 'Correct!' : 'Invalid email!';
     return { isValid, message };
   }
+  if (type.includes('url')) {
+    const regex =
+      /(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z]{2,}(\.[a-zA-Z]{2,})(\.[a-zA-Z]{2,})?\/[a-zA-Z0-9]{2,}|((https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z]{2,}(\.[a-zA-Z]{2,})(\.[a-zA-Z]{2,})?)|(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})?/g;
+    const isValid = regex.test(value);
+    const message = isValid ? 'Correct!' : 'Invalid URL!';
+    return { isValid, message };
+  }
   if (type.includes('number')) {
     const isValid = typeof value === 'number';
     const message = isValid ? 'Correct!' : 'Input need to be a number!';

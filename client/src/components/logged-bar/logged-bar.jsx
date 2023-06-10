@@ -1,14 +1,8 @@
 import { useState } from 'react';
 import { Button, UserNavbar } from '../index.js';
-import './user-logged-bar.css';
+import './logged-bar.css';
 
-export default function UserLoggedBar({
-  id,
-  avatar,
-  email,
-  role,
-  logoutHandler,
-}) {
+export default function LoggedBar({ id, avatar, email, role, logoutHandler }) {
   const [isNavVisible, setIsNavVisible] = useState(false);
   const toggleNavVisibility = () => setIsNavVisible((prev) => !prev);
   const photo =
