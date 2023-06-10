@@ -17,7 +17,7 @@
   top: 110%;
   left: 0;
   width: 100%;
-  height: 3px;
+  height: 2px;
   background: var(--less-white);
   transform: scaleX(0);
   transform-origin: right;
@@ -35,6 +35,6 @@
   top: 110%;
   left: 0;
   width: 100%;
-  height: 3px;
+  height: 2px;
   background: var(--less-white);
 }
