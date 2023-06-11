@@ -76,7 +76,19 @@ export default function User() {
 
   useEffect(() => {
     if (user) {
-      setUpdateForm({ previous: user, current: user });
+      const userData = {
+        id: user.id,
+        email: user.email,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        address: { city: user.address?.city, country: user.address?.country },
+        phone: user.phone,
+        birthday: user.birthday,
+        avatar: user.avatar,
+        createdAt: user.createdAt,
+      };
+
+      setUpdateForm({ previous: userData, current: userData });
     }
   }, [user]);
 
@@ -182,26 +194,36 @@ export default function User() {
     setPasswordForm({ password: '', confirm: '' });
     setUpdateForm((prev) => ({ ...prev, current: prev.previous }));
   };
-  const onConfirmUpdateForm = () => {
-    isUpdateFormChanged();
-    if (isUpdateFormChanged()) {
-      // ADD REQUEST
-      setUpdateForm((prev) => ({ ...prev, previous: prev.current }));
-      setIsFormValid((prev) => ({
-        ...prev,
-        updateForm: {
-          phone: {
-            isValid: null,
-            message: null,
-          },
-          avatar: {
-            isValid: null,
-            message: null,
-          },
-        },
-      }));
+  const onConfirmUpdateForm = async () => {
+    try {
+      if (isUpdateFormChanged()) {
+        const res = await fetch(`/api/user/${id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(updateForm.current),
+        });
+
+        if (res.ok) {
+          setUpdateForm((prev) => ({ ...prev, previous: prev.current }));
+          setIsFormValid((prev) => ({
+            ...prev,
+            updateForm: {
+              phone: {
+                isValid: null,
+                message: null,
+              },
+              avatar: {
+                isValid: null,
+                message: null,
+              },
+            },
+          }));
+        }
+      }
+      toggleUpdateModal();
+    } catch (errorA) {
+      console.log(errorA);
     }
-    toggleUpdateModal();
   };
 
   if (isLoading || error) {
