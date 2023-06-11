@@ -197,32 +197,31 @@ export default function User() {
   const onConfirmUpdateForm = async () => {
     try {
       if (isUpdateFormChanged()) {
-        const res = await fetch(`/api/user/${id}`, {
+        await fetch(`/api/user/${id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(updateForm.current),
         });
 
-        if (res.ok) {
-          setUpdateForm((prev) => ({ ...prev, previous: prev.current }));
-          setIsFormValid((prev) => ({
-            ...prev,
-            updateForm: {
-              phone: {
-                isValid: null,
-                message: null,
-              },
-              avatar: {
-                isValid: null,
-                message: null,
-              },
+        setUpdateForm((prev) => ({ ...prev, previous: prev.current }));
+        setIsFormValid((prev) => ({
+          ...prev,
+          updateForm: {
+            phone: {
+              isValid: null,
+              message: null,
             },
-          }));
-        }
+            avatar: {
+              isValid: null,
+              message: null,
+            },
+          },
+        }));
       }
+    } catch (updateError) {
+      navigate('/');
+    } finally {
       toggleUpdateModal();
-    } catch (errorA) {
-      console.log(errorA);
     }
   };
 
