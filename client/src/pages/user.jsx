@@ -126,20 +126,7 @@ export default function User() {
     togglePasswordModal();
     setIsFormValid((prev) => ({
       ...prev,
-      passwordForm: {
-        currentPassword: {
-          isValid: null,
-          message: null,
-        },
-        newPassword: {
-          isValid: null,
-          message: null,
-        },
-        confirmPassword: {
-          isValid: null,
-          message: null,
-        },
-      },
+      passwordForm: initialIsFormValid.passwordForm,
     }));
     setPasswordForm({ newPassword: '', confirmPassword: '' });
   };
@@ -236,16 +223,7 @@ export default function User() {
     toggleUpdateModal();
     setIsFormValid((prev) => ({
       ...prev,
-      updateForm: {
-        phone: {
-          isValid: null,
-          message: null,
-        },
-        avatar: {
-          isValid: null,
-          message: null,
-        },
-      },
+      updateForm: initialIsFormValid.updateForm,
     }));
     setPasswordForm({ password: '', confirm: '' });
     setUpdateForm((prev) => ({ ...prev, current: prev.previous }));
