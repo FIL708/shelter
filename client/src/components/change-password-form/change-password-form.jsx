@@ -19,19 +19,19 @@ export default function ChangePasswordForm({
       <form className="change-password-form">
         <Subtitle text="Change password" />
         <Textfield
-          name="password"
-          label="Password"
+          name="newPassword"
+          label="New Password"
           type="password"
-          value={inputsValues.password}
+          value={inputsValues.newPassword}
           onChange={(event) => dataHandler(event)}
           validation={validationObject.password}
           onBlur={(event) => validationHandler(event, 'password')}
         />
         <Textfield
-          name="confirm"
-          label="Confirm password"
+          name="confirmPassword"
+          label="Confirm Password"
           type="password"
-          value={inputsValues.confirm}
+          value={inputsValues.confirmPassword}
           onChange={(event) => dataHandler(event)}
           validation={validationObject.confirm}
           onBlur={(event) =>

@@ -48,8 +48,8 @@ export default function User() {
     },
   });
   const [passwordForm, setPasswordForm] = useState({
-    password: '',
-    confirm: '',
+    newPassword: '',
+    confirmPassword: '',
   });
   const [isFormsValid, setIsFormValid] = useState({
     passwordForm: {
@@ -131,7 +131,7 @@ export default function User() {
         },
       },
     }));
-    setPasswordForm({ password: '', confirm: '' });
+    setPasswordForm({ newPassword: '', confirmPassword: '' });
   };
 
   const toggleUpdateModal = () => {
