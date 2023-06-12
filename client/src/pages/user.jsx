@@ -168,8 +168,13 @@ export default function User() {
       }));
     }
   };
-  const onConfirmPasswordForm = () => {
+  const onConfirmPasswordForm = async () => {
     checkRequiredPasswordFormFields();
+    await fetch(`/api/user/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: passwordForm }),
+    });
   };
 
   const toggleUpdateModal = () => {
@@ -228,7 +233,6 @@ export default function User() {
     setPasswordForm({ password: '', confirm: '' });
     setUpdateForm((prev) => ({ ...prev, current: prev.previous }));
   };
-
   const onConfirmUpdateForm = async () => {
     try {
       if (isUpdateFormChanged()) {
