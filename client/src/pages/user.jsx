@@ -74,9 +74,9 @@ export default function User() {
     },
   });
   const [confirmMessage, setConfirmMessage] = useState({
-    passwordForm: { message: '', isWrong: false },
-    deleteModal: { message: '', isWrong: false },
-    updateForm: { message: '', isWrong: false },
+    passwordForm: { text: '', isWrong: false },
+    deleteModal: { text: '', isWrong: false },
+    updateForm: { text: '', isWrong: false },
   });
   console.log(confirmMessage, setConfirmMessage);
 
@@ -211,13 +211,13 @@ export default function User() {
         if (!res.ok) {
           setConfirmMessage((prev) => ({
             ...prev,
-            updateForm: { message: 'Something goes wrong' },
+            updateForm: { text: 'Something goes wrong' },
             isWrong: true,
           }));
         } else {
           setConfirmMessage((prev) => ({
             ...prev,
-            updateForm: { message: 'Profile successfully updated' },
+            updateForm: { text: 'Profile successfully updated' },
             isWrong: false,
           }));
           setUpdateForm((prev) => ({ ...prev, previous: prev.current }));
@@ -237,11 +237,11 @@ export default function User() {
         }
       }
 
-      toggleUpdateModal();
+      setTimeout(() => toggleUpdateModal(), 2000);
     } catch (updateError) {
       setConfirmMessage((prev) => ({
         ...prev,
-        updateForm: { message: 'Something goes wrong' },
+        updateForm: { text: 'Something goes wrong' },
         isWrong: true,
       }));
       setTimeout(() => navigate('/'), 2000);
@@ -298,6 +298,7 @@ export default function User() {
         validationObject={isFormsValid.updateForm}
         onCancel={onClosingUpdateForm}
         onConfirm={onConfirmUpdateForm}
+        message={confirmMessage.updateForm}
       />
     </Page>
   );

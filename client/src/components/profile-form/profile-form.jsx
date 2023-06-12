@@ -10,6 +10,7 @@ export default function ProfileForm({
   validationObject,
   onCancel,
   onConfirm,
+  message,
 }) {
   const avatarURL =
     inputsValues.avatar ||
@@ -17,6 +18,7 @@ export default function ProfileForm({
   const confirmButtonDisable =
     validationObject.phone.isValid === false ||
     validationObject.avatar.isValid === false;
+  const messageClassName = '';
 
   return (
     <ModalWrapper toggleModalVision={toggleModalVision} isVisible={isVisible}>
@@ -86,6 +88,7 @@ export default function ProfileForm({
           />
           <Button className="cancel" text="Cancel" onClick={onCancel} />
         </div>
+        <p className={messageClassName}>{message.text}</p>
       </form>
     </ModalWrapper>
   );

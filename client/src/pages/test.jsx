@@ -38,6 +38,8 @@ export default function Test() {
     },
   });
 
+  const message = { text: 'User profile successfully updated', isOk: true };
+
   const [passwordForm, setPasswordForm] = useState({
     password: '',
     confirm: '',
@@ -170,6 +172,7 @@ export default function Test() {
         validationHandler={updateValidationHandler}
         validationObject={isFormsValid.updateForm}
         onCancel={onClosingUpdateForm}
+        message={message}
       />
     </Page>
   );
