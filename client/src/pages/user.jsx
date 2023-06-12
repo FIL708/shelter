@@ -175,7 +175,6 @@ export default function User() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password: passwordForm }),
     });
-    console.log(res);
 
     if (res.status === 401) {
       const respondMessage = await res.json();
@@ -185,6 +184,16 @@ export default function User() {
           ...prev.passwordForm,
           currentPassword: { message: respondMessage.message, isValid: false },
         },
+      }));
+    } else if (!res.ok) {
+      setConfirmMessage((prev) => ({
+        ...prev,
+        passwordForm: { text: 'Something goes wrong', isWrong: true },
+      }));
+    } else {
+      setConfirmMessage((prev) => ({
+        ...prev,
+        passwordForm: { text: 'Password successfully changed', isWrong: false },
       }));
     }
   };
@@ -334,6 +343,7 @@ export default function User() {
         toggleModalVision={togglePasswordModal}
         onCancel={onClosingPasswordForm}
         onConfirm={onConfirmPasswordForm}
+        message={confirmMessage.passwordForm}
       />
       <ProfileForm
         dataHandler={updateFormDataHandler}

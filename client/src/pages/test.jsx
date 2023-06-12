@@ -38,7 +38,7 @@ export default function Test() {
     },
   });
 
-  const message = { text: 'User profile successfully updated', isWrong: true };
+  const message = { text: 'User profile successfully updated', isWrong: false };
 
   const [passwordForm, setPasswordForm] = useState({
     password: '',
@@ -163,6 +163,7 @@ export default function Test() {
         isVisible={visibleModals.password}
         toggleModalVision={togglePasswordModal}
         onCancel={onClosingPasswordForm}
+        message={message}
       />
       <ProfileForm
         dataHandler={updateFormDataHandler}

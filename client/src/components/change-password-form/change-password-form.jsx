@@ -10,7 +10,14 @@ export default function ChangePasswordForm({
   toggleModalVision,
   onCancel,
   onConfirm,
+  message,
 }) {
+  const messageClassName = message.text
+    ? `change-password-form__message visible ${
+        message.isWrong ? 'not-valid__message' : 'valid__message'
+      }`
+    : 'change-password-form__message';
+
   return (
     <ModalWrapper isVisible={isVisible} toggleModalVision={toggleModalVision}>
       <form className="change-password-form">
@@ -47,6 +54,7 @@ export default function ChangePasswordForm({
           <Button text="Confirm" onClick={onConfirm} />
           <Button className="cancel" text="Cancel" onClick={onCancel} />
         </div>
+        <p className={messageClassName}>{message.text}</p>
       </form>
     </ModalWrapper>
   );
