@@ -12,7 +12,7 @@ import {
 } from '../components';
 import { UserContext } from '../index.jsx';
 import { useFetch } from '../hooks';
-import { inputValidator } from '../helpers';
+import { inputValidator, areObjectsEqual } from '../helpers';
 
 export default function User() {
   const { id } = useParams();
@@ -267,24 +267,6 @@ export default function User() {
       updateForm: { ...prev.updateForm, [name]: validationObject },
     }));
   };
-  const isUpdateFormChanged = () => {
-    if (updateForm.previous.firstName !== updateForm.current.firstName)
-      return true;
-    if (updateForm.previous.lastName !== updateForm.current.lastName)
-      return true;
-    if (updateForm.previous.phone !== updateForm.current.phone) return true;
-    if (updateForm.previous.birthday !== updateForm.current.birthday)
-      return true;
-    if (updateForm.previous.avatar !== updateForm.current.avatar) return true;
-    if (updateForm.previous.address.city !== updateForm.current.address.city)
-      return true;
-    if (
-      updateForm.previous.address.country !== updateForm.current.address.country
-    )
-      return true;
-
-    return false;
-  };
   const onClosingUpdateForm = () => {
     toggleUpdateModal();
     setIsFormValid((prev) => ({
@@ -297,7 +279,7 @@ export default function User() {
   };
   const onConfirmUpdateForm = async () => {
     try {
-      if (isUpdateFormChanged()) {
+      if (!areObjectsEqual(updateForm.previous, updateForm.current)) {
         const res = await fetch(`/api/user/${id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
