@@ -18,9 +18,11 @@ export default function ProfileForm({
   const confirmButtonDisable =
     validationObject.phone.isValid === false ||
     validationObject.avatar.isValid === false;
-  const messageClassName = message.isWrong
-    ? 'profile-form__message valid__message'
-    : 'profile-form__message not-valid__message';
+  const messageClassName = message.text
+    ? `profile-form__message visible ${
+        message.isWrong ? 'not-valid__message' : 'valid__message'
+      }`
+    : 'profile-form__message';
 
   return (
     <ModalWrapper toggleModalVision={toggleModalVision} isVisible={isVisible}>
@@ -82,7 +84,8 @@ export default function ProfileForm({
             onBlur={(event) => validationHandler(event, 'url')}
           />
         </fieldset>
-        <div className="profile-form__buttons">
+
+        <div className="confirm-modal__buttons">
           <Button
             text="Confirm"
             disabled={confirmButtonDisable}

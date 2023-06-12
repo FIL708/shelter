@@ -38,7 +38,7 @@ export default function Test() {
     },
   });
 
-  const message = { text: 'User profile successfully updated', isOk: true };
+  const message = { text: 'User profile successfully updated', isWrong: true };
 
   const [passwordForm, setPasswordForm] = useState({
     password: '',
