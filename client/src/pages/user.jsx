@@ -218,10 +218,9 @@ export default function User() {
           },
         }));
       }
+      toggleUpdateModal();
     } catch (updateError) {
       navigate('/');
-    } finally {
-      toggleUpdateModal();
     }
   };
 
