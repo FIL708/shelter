@@ -4,7 +4,16 @@ export default function Test() {
   return (
     <Page>
       <Subtitle text="Test Page" main />
-      <FormMessage text="its ok " />
+      <div
+        style={{
+          width: '300px',
+          height: '200px',
+          backgroundColor: 'red',
+          position: 'relative',
+        }}
+      >
+        <FormMessage text="its ok" isValid bottom="10%" />
+      </div>
     </Page>
   );
 }

@@ -1,14 +1,12 @@
 .form__message {
-  position: absolute;
-  left: 15%;
   opacity: 0;
   display: block;
   width: 70%;
   bottom: 84px;
   padding: 10px;
   text-align: center;
-  background-color: var(--error);
   color: var(--white);
+  background-color: var(--blue);
   transition: 0.3s;
 }
 
