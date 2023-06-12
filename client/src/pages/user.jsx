@@ -79,10 +79,9 @@ export default function User() {
     confirmPassword: '',
   });
   const [isFormsValid, setIsFormValid] = useState(initialIsFormValid);
-  const [confirmMessage, setConfirmMessage] = useState({
-    passwordForm: { text: '', isWrong: false },
-    deleteModal: { text: '', isWrong: false },
-    updateForm: { text: '', isWrong: false },
+  const [formsMessage, setFormsMessage] = useState({
+    text: '',
+    isWrong: false,
   });
 
   useEffect(() => {
@@ -128,7 +127,11 @@ export default function User() {
       ...prev,
       passwordForm: initialIsFormValid.passwordForm,
     }));
-    setPasswordForm({ newPassword: '', confirmPassword: '' });
+    setPasswordForm({
+      currentPassword: '',
+      newPassword: '',
+      confirmPassword: '',
+    });
   };
   const checkRequiredPasswordFormFields = () => {
     let isFilled = true;
@@ -195,12 +198,12 @@ export default function User() {
           },
         }));
       } else if (!res.ok) {
-        setConfirmMessage((prev) => ({
+        setFormsMessage((prev) => ({
           ...prev,
           passwordForm: { text: 'Something goes wrong', isWrong: true },
         }));
       } else {
-        setConfirmMessage((prev) => ({
+        setFormsMessage((prev) => ({
           ...prev,
           passwordForm: {
             text: 'Password successfully changed',
@@ -209,7 +212,7 @@ export default function User() {
         }));
         setTimeout(() => {
           togglePasswordModal();
-          setConfirmMessage((prev) => ({
+          setFormsMessage((prev) => ({
             ...prev,
             passwordForm: {
               text: '',
@@ -276,7 +279,7 @@ export default function User() {
     }));
     setPasswordForm({ password: '', confirm: '' });
     setUpdateForm((prev) => ({ ...prev, current: prev.previous }));
-    setConfirmMessage((prev) => ({
+    setFormsMessage((prev) => ({
       ...prev,
       passwordForm: { text: '', isWrong: false },
     }));
@@ -290,12 +293,12 @@ export default function User() {
           body: JSON.stringify(updateForm.current),
         });
         if (!res.ok) {
-          setConfirmMessage((prev) => ({
+          setFormsMessage((prev) => ({
             ...prev,
             updateForm: { text: 'Something goes wrong', isWrong: true },
           }));
         } else {
-          setConfirmMessage((prev) => ({
+          setFormsMessage((prev) => ({
             ...prev,
             updateForm: {
               text: 'Profile successfully updated',
@@ -312,7 +315,7 @@ export default function User() {
 
       setTimeout(() => {
         toggleUpdateModal();
-        setConfirmMessage((prev) => ({
+        setFormsMessage((prev) => ({
           ...prev,
           updateForm: {
             text: '',
@@ -321,7 +324,7 @@ export default function User() {
         }));
       }, 1000);
     } catch (updateError) {
-      setConfirmMessage((prev) => ({
+      setFormsMessage((prev) => ({
         ...prev,
         updateForm: { text: 'Something goes wrong', isWrong: false },
       }));
@@ -370,7 +373,7 @@ export default function User() {
         toggleModalVision={togglePasswordModal}
         onCancel={onClosingPasswordForm}
         onConfirm={onConfirmPasswordForm}
-        message={confirmMessage.passwordForm}
+        message={formsMessage.passwordForm}
       />
       <ProfileForm
         dataHandler={updateFormDataHandler}
@@ -381,7 +384,7 @@ export default function User() {
         validationObject={isFormsValid.updateForm}
         onCancel={onClosingUpdateForm}
         onConfirm={onConfirmUpdateForm}
-        message={confirmMessage.updateForm}
+        message={formsMessage.updateForm}
       />
     </Page>
   );
