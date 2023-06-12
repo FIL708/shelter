@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
-import { Textfield, Button, AuthButtons, Subtitle } from '../index.js';
+import {
+  Textfield,
+  Button,
+  AuthButtons,
+  Subtitle,
+  FormMessage,
+} from '../index.js';
 import './login-form.css';
 
 export default function LoginForm({
@@ -17,9 +23,6 @@ export default function LoginForm({
     Object.values(formData).some((item) => !item) ||
     Object.values(formIsValid).some((item) => !item.isValid);
 
-  const messageClassName = message
-    ? 'login-form__message visible'
-    : 'login-form__message';
   return (
     <section className="login-form__section">
       <Subtitle text="Login" main />
@@ -53,8 +56,12 @@ export default function LoginForm({
           onClick={loginHandler}
           disabled={disableButton}
         />
+        <FormMessage
+          text={message.text}
+          isValid={message.isValid}
+          width="100%"
+        />
       </form>
-      <p className={messageClassName}>{message}</p>
       <AuthButtons
         text="or sign in with:"
         authWithGoogle={authWithGoogle}
