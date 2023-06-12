@@ -170,11 +170,23 @@ export default function User() {
   };
   const onConfirmPasswordForm = async () => {
     checkRequiredPasswordFormFields();
-    await fetch(`/api/user/${id}`, {
+    const res = await fetch(`/api/user/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password: passwordForm }),
     });
+    console.log(res);
+
+    if (res.status === 401) {
+      const respondMessage = await res.json();
+      setIsFormValid((prev) => ({
+        ...prev,
+        passwordForm: {
+          ...prev.passwordForm,
+          currentPassword: { message: respondMessage.message, isValid: false },
+        },
+      }));
+    }
   };
 
   const toggleUpdateModal = () => {
