@@ -80,7 +80,7 @@ export default function ProfileForm({
             onBlur={(event) => validationHandler(event, 'url')}
           />
         </fieldset>
-        <div className="confirm-modal__buttons">
+        <div className="profile-form__buttons">
           <Button
             text="Confirm"
             disabled={confirmButtonDisable}
