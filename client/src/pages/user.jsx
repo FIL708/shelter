@@ -78,7 +78,6 @@ export default function User() {
     deleteModal: { text: '', isWrong: false },
     updateForm: { text: '', isWrong: false },
   });
-  console.log(confirmMessage, setConfirmMessage);
 
   useEffect(() => {
     if (user) {
@@ -200,6 +199,7 @@ export default function User() {
     setPasswordForm({ password: '', confirm: '' });
     setUpdateForm((prev) => ({ ...prev, current: prev.previous }));
   };
+
   const onConfirmUpdateForm = async () => {
     try {
       if (isUpdateFormChanged()) {
@@ -211,14 +211,15 @@ export default function User() {
         if (!res.ok) {
           setConfirmMessage((prev) => ({
             ...prev,
-            updateForm: { text: 'Something goes wrong' },
-            isWrong: true,
+            updateForm: { text: 'Something goes wrong', isWrong: true },
           }));
         } else {
           setConfirmMessage((prev) => ({
             ...prev,
-            updateForm: { text: 'Profile successfully updated' },
-            isWrong: false,
+            updateForm: {
+              text: 'Profile successfully updated',
+              isWrong: false,
+            },
           }));
           setUpdateForm((prev) => ({ ...prev, previous: prev.current }));
           setIsFormValid((prev) => ({
@@ -237,12 +238,20 @@ export default function User() {
         }
       }
 
-      setTimeout(() => toggleUpdateModal(), 2000);
+      setTimeout(() => {
+        toggleUpdateModal();
+        setConfirmMessage((prev) => ({
+          ...prev,
+          updateForm: {
+            text: '',
+            isWrong: false,
+          },
+        }));
+      }, 1000);
     } catch (updateError) {
       setConfirmMessage((prev) => ({
         ...prev,
-        updateForm: { text: 'Something goes wrong' },
-        isWrong: true,
+        updateForm: { text: 'Something goes wrong', isWrong: false },
       }));
       setTimeout(() => navigate('/'), 2000);
     }
