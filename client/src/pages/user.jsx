@@ -48,6 +48,7 @@ export default function User() {
     },
   });
   const [passwordForm, setPasswordForm] = useState({
+    currentPassword: '',
     newPassword: '',
     confirmPassword: '',
   });

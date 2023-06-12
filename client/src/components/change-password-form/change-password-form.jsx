@@ -19,6 +19,13 @@ export default function ChangePasswordForm({
       <form className="change-password-form">
         <Subtitle text="Change password" />
         <Textfield
+          name="currentPassword"
+          label="Current Password"
+          type="password"
+          value={inputsValues.currentPassword}
+          onChange={(event) => dataHandler(event)}
+        />
+        <Textfield
           name="newPassword"
           label="New Password"
           type="password"
