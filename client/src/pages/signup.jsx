@@ -12,7 +12,7 @@ export default function Signup() {
     confirm: '',
   });
   const [formIsValid, setFormIsValid] = useState({});
-  const [message, setMessage] = useState({ text: '', type: '' });
+  const [message, setMessage] = useState({ text: '', isValid: false });
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -27,13 +27,13 @@ export default function Signup() {
       if (res.status === 200) {
         setMessage({
           text: 'Account has been successfully created',
-          type: 'success',
+          isValid: true,
         });
         setTimeout(() => navigate('/login'), 2000);
       } else if (res.status === 409) {
-        setMessage('Account already exists');
+        setMessage({ text: 'Account already exists', isValid: false });
       } else if (res.status === '422') {
-        setMessage('Unprocessable entity');
+        setMessage({ text: 'Unprocessable entity', isValid: false });
       }
     } catch (err) {
       setError(err);
