@@ -18,7 +18,9 @@ export default function ProfileForm({
   const confirmButtonDisable =
     validationObject.phone.isValid === false ||
     validationObject.avatar.isValid === false;
-  const messageClassName = '';
+  const messageClassName = message.isWrong
+    ? 'profile-form__message valid__message'
+    : 'profile-form__message not-valid__message';
 
   return (
     <ModalWrapper toggleModalVision={toggleModalVision} isVisible={isVisible}>
