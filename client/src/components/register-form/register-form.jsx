@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
-import { AuthButtons, Button, Subtitle, Textfield } from '../index.js';
+import {
+  AuthButtons,
+  Button,
+  Subtitle,
+  Textfield,
+  FormMessage,
+} from '../index.js';
 import './register-form.css';
 
 export default function RegisterForm({
@@ -17,9 +23,6 @@ export default function RegisterForm({
     Object.values(formData).some((item) => !item) ||
     Object.values(formIsValid).some((item) => !item.isValid);
 
-  const messageClassName = message.text
-    ? `login-form__message visible ${message.type}`
-    : `login-form__message`;
   return (
     <section className="register-form__section">
       <Subtitle text="Join to us" main />
@@ -61,7 +64,11 @@ export default function RegisterForm({
           onClick={registerHandler}
           disabled={disableButton}
         />
-        <p className={messageClassName}>{message.text}</p>
+        <FormMessage
+          text={message.text}
+          isValid={message.isValid}
+          width="100%"
+        />
       </form>
       <AuthButtons
         text="or sign in with:"
