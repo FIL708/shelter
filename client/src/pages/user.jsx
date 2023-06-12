@@ -73,6 +73,12 @@ export default function User() {
       },
     },
   });
+  const [confirmMessage, setConfirmMessage] = useState({
+    passwordForm: { message: '', isWrong: false },
+    deleteModal: { message: '', isWrong: false },
+    updateForm: { message: '', isWrong: false },
+  });
+  console.log(confirmMessage, setConfirmMessage);
 
   useEffect(() => {
     if (user) {
@@ -197,30 +203,48 @@ export default function User() {
   const onConfirmUpdateForm = async () => {
     try {
       if (isUpdateFormChanged()) {
-        await fetch(`/api/user/${id}`, {
+        const res = await fetch(`/api/user/${id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(updateForm.current),
         });
-
-        setUpdateForm((prev) => ({ ...prev, previous: prev.current }));
-        setIsFormValid((prev) => ({
-          ...prev,
-          updateForm: {
-            phone: {
-              isValid: null,
-              message: null,
+        if (!res.ok) {
+          setConfirmMessage((prev) => ({
+            ...prev,
+            updateForm: { message: 'Something goes wrong' },
+            isWrong: true,
+          }));
+        } else {
+          setConfirmMessage((prev) => ({
+            ...prev,
+            updateForm: { message: 'Profile successfully updated' },
+            isWrong: false,
+          }));
+          setUpdateForm((prev) => ({ ...prev, previous: prev.current }));
+          setIsFormValid((prev) => ({
+            ...prev,
+            updateForm: {
+              phone: {
+                isValid: null,
+                message: null,
+              },
+              avatar: {
+                isValid: null,
+                message: null,
+              },
             },
-            avatar: {
-              isValid: null,
-              message: null,
-            },
-          },
-        }));
+          }));
+        }
       }
+
       toggleUpdateModal();
     } catch (updateError) {
-      navigate('/');
+      setConfirmMessage((prev) => ({
+        ...prev,
+        updateForm: { message: 'Something goes wrong' },
+        isWrong: true,
+      }));
+      setTimeout(() => navigate('/'), 2000);
     }
   };
 
