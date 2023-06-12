@@ -253,16 +253,7 @@ export default function User() {
           setUpdateForm((prev) => ({ ...prev, previous: prev.current }));
           setIsFormValid((prev) => ({
             ...prev,
-            updateForm: {
-              phone: {
-                isValid: null,
-                message: null,
-              },
-              avatar: {
-                isValid: null,
-                message: null,
-              },
-            },
+            updateForm: initialIsFormValid.updateForm,
           }));
         }
       }
