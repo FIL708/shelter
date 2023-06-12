@@ -154,6 +154,7 @@ export default function Test() {
         question="Are you sure you want to delete your account?"
         isVisible={visibleModals.confirm}
         toggleModalVision={toggleConfirmModal}
+        message={message}
       />
       <ChangePasswordForm
         validationHandler={passwordValidationHandler}

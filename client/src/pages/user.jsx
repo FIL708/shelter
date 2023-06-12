@@ -102,8 +102,11 @@ export default function User() {
     }
   }, [user]);
 
-  const toggleConfirmModal = () => {
+  const toggleDeleteAccountModal = () => {
     setVisibleModals((prev) => ({ ...prev, confirm: !prev.confirm }));
+  };
+  const onConfirmDeleteAccount = () => {
+    console.log('delete');
   };
 
   const togglePasswordModal = () => {
@@ -327,7 +330,7 @@ export default function User() {
       <Subtitle text="Profile" main />
       <UserCard
         userData={updateForm.previous}
-        deleteAccount={toggleConfirmModal}
+        deleteAccount={toggleDeleteAccountModal}
         updateProfile={toggleUpdateModal}
         changePassword={togglePasswordModal}
       />
@@ -336,7 +339,9 @@ export default function User() {
         textToConfirm="DELETE"
         question="Are you sure you want to delete your account?"
         isVisible={visibleModals.confirm}
-        toggleModalVision={toggleConfirmModal}
+        toggleModalVision={toggleDeleteAccountModal}
+        message={formsMessage}
+        onConfirm={onConfirmDeleteAccount}
       />
       <ChangePasswordForm
         validationHandler={passwordValidationHandler}

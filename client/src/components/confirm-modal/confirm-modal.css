@@ -1,4 +1,5 @@
 .confirm-modal {
+  position: relative;
   max-width: 600px;
   width: 90%;
   padding: 20px 40px;
@@ -20,8 +21,33 @@
 }
 
 .confirm-modal__buttons {
-  margin-top: 30px;
+  margin-top: 80px;
   display: flex;
   justify-content: center;
   gap: 30px;
+}
+
+.confirm-modal__message {
+  position: absolute;
+  left: 15%;
+  opacity: 0;
+  display: block;
+  width: 70%;
+  bottom: 65px;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--error);
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.confirm-modal__message.visible {
+  opacity: 1;
+}
+
+.valid__message {
+  background-color: var(--valid);
+}
+.not-valid__message {
+  background-color: var(--red);
 }
