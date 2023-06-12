@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   ErrorCard,
@@ -10,12 +10,14 @@ import {
   ChangePasswordForm,
   ProfileForm,
 } from '../components';
+import { UserContext } from '../index.jsx';
 import { useFetch } from '../hooks';
 import { inputValidator } from '../helpers';
 
 export default function User() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { serverUrl } = useContext(UserContext);
   const [user, isLoading, error] = useFetch(`/api/user/${id}`);
   const initialIsFormValid = {
     passwordForm: {
@@ -105,8 +107,18 @@ export default function User() {
   const toggleDeleteAccountModal = () => {
     setVisibleModals((prev) => ({ ...prev, confirm: !prev.confirm }));
   };
-  const onConfirmDeleteAccount = () => {
-    console.log('delete');
+  const onConfirmDeleteAccount = async () => {
+    const res = await fetch(`/api/user/${id}`, {
+      method: 'DELETE',
+    });
+    if (!res.ok) {
+      setFormsMessage({ text: 'Something goes wrong', isWrong: true });
+    } else {
+      setFormsMessage({ text: 'Account successfully deleted', isWrong: false });
+      setTimeout(() => {
+        window.open(`${serverUrl}/api/auth/logout`, '_self');
+      }, 1000);
+    }
   };
 
   const togglePasswordModal = () => {
