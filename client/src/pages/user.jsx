@@ -195,6 +195,16 @@ export default function User() {
         ...prev,
         passwordForm: { text: 'Password successfully changed', isWrong: false },
       }));
+      setTimeout(() => {
+        togglePasswordModal();
+        setConfirmMessage((prev) => ({
+          ...prev,
+          passwordForm: {
+            text: '',
+            isWrong: false,
+          },
+        }));
+      }, 1000);
     }
   };
 
@@ -253,6 +263,10 @@ export default function User() {
     }));
     setPasswordForm({ password: '', confirm: '' });
     setUpdateForm((prev) => ({ ...prev, current: prev.previous }));
+    setConfirmMessage((prev) => ({
+      ...prev,
+      passwordForm: { text: '', isWrong: false },
+    }));
   };
   const onConfirmUpdateForm = async () => {
     try {
