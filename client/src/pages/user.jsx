@@ -83,7 +83,6 @@ export default function User() {
     deleteModal: { text: '', isWrong: false },
     updateForm: { text: '', isWrong: false },
   });
-  console.log(isFormsValid);
 
   useEffect(() => {
     if (user) {
@@ -138,6 +137,9 @@ export default function User() {
       },
     }));
     setPasswordForm({ newPassword: '', confirmPassword: '' });
+  };
+  const onConfirmPasswordForm = () => {
+    console.log('confirm');
   };
 
   const toggleUpdateModal = () => {
@@ -303,6 +305,7 @@ export default function User() {
         isVisible={visibleModals.password}
         toggleModalVision={togglePasswordModal}
         onCancel={onClosingPasswordForm}
+        onConfirm={onConfirmPasswordForm}
       />
       <ProfileForm
         dataHandler={updateFormDataHandler}
