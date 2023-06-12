@@ -39,3 +39,4 @@ export { default as UserCard } from './user-card/user-card.jsx';
 export { default as ConfirmModal } from './confirm-modal/confirm-modal.jsx';
 export { default as ChangePasswordForm } from './change-password-form/change-password-form.jsx';
 export { default as ProfileForm } from './profile-form/profile-form.jsx';
+export { default as FormMessage } from './form-message/form-message.jsx';
