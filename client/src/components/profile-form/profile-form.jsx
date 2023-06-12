@@ -1,4 +1,10 @@
-import { Subtitle, Textfield, Button, ModalWrapper } from '../index.js';
+import {
+  Subtitle,
+  Textfield,
+  Button,
+  ModalWrapper,
+  FormMessage,
+} from '../index.js';
 import './profile-form.css';
 
 export default function ProfileForm({
@@ -18,11 +24,6 @@ export default function ProfileForm({
   const confirmButtonDisable =
     validationObject.phone.isValid === false ||
     validationObject.avatar.isValid === false;
-  const messageClassName = message.text
-    ? `profile-form__message visible ${
-        message.isWrong ? 'not-valid__message' : 'valid__message'
-      }`
-    : 'profile-form__message';
 
   return (
     <ModalWrapper toggleModalVision={toggleModalVision} isVisible={isVisible}>
@@ -93,7 +94,12 @@ export default function ProfileForm({
           />
           <Button className="cancel" text="Cancel" onClick={onCancel} />
         </div>
-        <p className={messageClassName}>{message.text}</p>
+        <FormMessage
+          text={message.text}
+          isValid={!message.isWrong}
+          left="15%"
+          bottom="84px"
+        />
       </form>
     </ModalWrapper>
   );
