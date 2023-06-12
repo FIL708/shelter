@@ -10,25 +10,21 @@ export default function ChangePasswordForm({
   toggleModalVision,
   onCancel,
 }) {
-  const confirmButtonDisable = !(
-    validationObject.newPassword.isValid &&
-    validationObject.confirmPassword.isValid
-  );
-
   return (
     <ModalWrapper isVisible={isVisible} toggleModalVision={toggleModalVision}>
       <form className="change-password-form">
         <Subtitle text="Change password" />
         <Textfield
           name="currentPassword"
-          label="Current Password"
+          label="Current Password *"
           type="password"
           value={inputsValues.currentPassword}
+          validation={validationObject.currentPassword}
           onChange={(event) => dataHandler(event)}
         />
         <Textfield
           name="newPassword"
-          label="New Password"
+          label="New Password *"
           type="password"
           value={inputsValues.newPassword}
           onChange={(event) => dataHandler(event)}
@@ -37,7 +33,7 @@ export default function ChangePasswordForm({
         />
         <Textfield
           name="confirmPassword"
-          label="Confirm Password"
+          label="Confirm Password *"
           type="password"
           value={inputsValues.confirmPassword}
           onChange={(event) => dataHandler(event)}
@@ -47,7 +43,7 @@ export default function ChangePasswordForm({
           }
         />
         <div className="confirm-modal__buttons">
-          <Button text="Confirm" disabled={confirmButtonDisable} />
+          <Button text="Confirm" />
           <Button className="cancel" text="Cancel" onClick={onCancel} />
         </div>
       </form>

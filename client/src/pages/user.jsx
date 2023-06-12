@@ -54,6 +54,10 @@ export default function User() {
   });
   const [isFormsValid, setIsFormValid] = useState({
     passwordForm: {
+      currentPassword: {
+        isValid: null,
+        message: null,
+      },
       newPassword: {
         isValid: null,
         message: null,
