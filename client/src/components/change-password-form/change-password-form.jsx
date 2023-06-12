@@ -1,4 +1,10 @@
-import { Subtitle, Textfield, Button, ModalWrapper } from '../index.js';
+import {
+  Subtitle,
+  Textfield,
+  Button,
+  ModalWrapper,
+  FormMessage,
+} from '../index.js';
 import './change-password-form.css';
 
 export default function ChangePasswordForm({
@@ -12,12 +18,6 @@ export default function ChangePasswordForm({
   onConfirm,
   message,
 }) {
-  const messageClassName = message.text
-    ? `change-password-form__message visible ${
-        message.isWrong ? 'not-valid__message' : 'valid__message'
-      }`
-    : 'change-password-form__message';
-
   return (
     <ModalWrapper isVisible={isVisible} toggleModalVision={toggleModalVision}>
       <form className="change-password-form">
@@ -54,7 +54,13 @@ export default function ChangePasswordForm({
           <Button text="Confirm" onClick={onConfirm} />
           <Button className="cancel" text="Cancel" onClick={onCancel} />
         </div>
-        <p className={messageClassName}>{message.text}</p>
+        <FormMessage
+          text={message.text}
+          isValid={!message.isWrong}
+          left="10%"
+          bottom="92px"
+          width="80%"
+        />
       </form>
     </ModalWrapper>
   );

@@ -226,6 +226,12 @@ export default function User() {
           text: 'Password successfully changed',
           isWrong: false,
         });
+        setPasswordForm({
+          currentPassword: '',
+          newPassword: '',
+          confirmPassword: '',
+        });
+        setIsFormValid(initialIsFormValid);
 
         setTimeout(() => {
           togglePasswordModal();
