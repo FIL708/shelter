@@ -108,16 +108,23 @@ export default function User() {
     setVisibleModals((prev) => ({ ...prev, confirm: !prev.confirm }));
   };
   const onConfirmDeleteAccount = async () => {
-    const res = await fetch(`/api/user/${id}`, {
-      method: 'DELETE',
-    });
-    if (!res.ok) {
+    try {
+      const res = await fetch(`/api/user/${id}`, {
+        method: 'DELETE',
+      });
+      if (!res.ok) {
+        setFormsMessage({ text: 'Something goes wrong', isWrong: true });
+      } else {
+        setFormsMessage({
+          text: 'Account successfully deleted',
+          isWrong: false,
+        });
+        setTimeout(() => {
+          window.open(`${serverUrl}/api/auth/logout`, '_self');
+        }, 1000);
+      }
+    } catch (errorDelete) {
       setFormsMessage({ text: 'Something goes wrong', isWrong: true });
-    } else {
-      setFormsMessage({ text: 'Account successfully deleted', isWrong: false });
-      setTimeout(() => {
-        window.open(`${serverUrl}/api/auth/logout`, '_self');
-      }, 1000);
     }
   };
 
