@@ -131,6 +131,7 @@ export default function User() {
     setPasswordForm({ newPassword: '', confirmPassword: '' });
   };
   const checkRequiredPasswordFormFields = () => {
+    let isFilled = true;
     if (!passwordForm.currentPassword) {
       setIsFormValid((prev) => ({
         ...prev,
@@ -142,6 +143,7 @@ export default function User() {
           },
         },
       }));
+      isFilled = false;
     }
     if (!passwordForm.newPassword) {
       setIsFormValid((prev) => ({
@@ -154,6 +156,7 @@ export default function User() {
           },
         },
       }));
+      isFilled = false;
     }
     if (!passwordForm.confirmPassword) {
       setIsFormValid((prev) => ({
@@ -166,45 +169,55 @@ export default function User() {
           },
         },
       }));
+      isFilled = false;
     }
+    return isFilled;
   };
   const onConfirmPasswordForm = async () => {
-    checkRequiredPasswordFormFields();
-    const res = await fetch(`/api/user/${id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ password: passwordForm }),
-    });
+    const isFormFilled = checkRequiredPasswordFormFields();
+    if (isFormFilled) {
+      const res = await fetch(`/api/user/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: passwordForm }),
+      });
 
-    if (res.status === 401) {
-      const respondMessage = await res.json();
-      setIsFormValid((prev) => ({
-        ...prev,
-        passwordForm: {
-          ...prev.passwordForm,
-          currentPassword: { message: respondMessage.message, isValid: false },
-        },
-      }));
-    } else if (!res.ok) {
-      setConfirmMessage((prev) => ({
-        ...prev,
-        passwordForm: { text: 'Something goes wrong', isWrong: true },
-      }));
-    } else {
-      setConfirmMessage((prev) => ({
-        ...prev,
-        passwordForm: { text: 'Password successfully changed', isWrong: false },
-      }));
-      setTimeout(() => {
-        togglePasswordModal();
+      if (res.status === 401) {
+        const respondMessage = await res.json();
+        setIsFormValid((prev) => ({
+          ...prev,
+          passwordForm: {
+            ...prev.passwordForm,
+            currentPassword: {
+              message: respondMessage.message,
+              isValid: false,
+            },
+          },
+        }));
+      } else if (!res.ok) {
+        setConfirmMessage((prev) => ({
+          ...prev,
+          passwordForm: { text: 'Something goes wrong', isWrong: true },
+        }));
+      } else {
         setConfirmMessage((prev) => ({
           ...prev,
           passwordForm: {
-            text: '',
+            text: 'Password successfully changed',
             isWrong: false,
           },
         }));
-      }, 1000);
+        setTimeout(() => {
+          togglePasswordModal();
+          setConfirmMessage((prev) => ({
+            ...prev,
+            passwordForm: {
+              text: '',
+              isWrong: false,
+            },
+          }));
+        }, 1000);
+      }
     }
   };
 
