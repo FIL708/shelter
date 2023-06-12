@@ -10,13 +10,19 @@ export default function ProfileForm({
   validationObject,
   onCancel,
   onConfirm,
+  message,
 }) {
   const avatarURL =
     inputsValues.avatar ||
-    'https://avatars.design/wp-content/uploads/2021/02/corporate-avatars-TN-1.jpg';
+    'https://tleliteracy.com/wp-content/uploads/2017/02/default-avatar.png';
   const confirmButtonDisable =
     validationObject.phone.isValid === false ||
     validationObject.avatar.isValid === false;
+  const messageClassName = message.text
+    ? `profile-form__message visible ${
+        message.isWrong ? 'not-valid__message' : 'valid__message'
+      }`
+    : 'profile-form__message';
 
   return (
     <ModalWrapper toggleModalVision={toggleModalVision} isVisible={isVisible}>
@@ -78,6 +84,7 @@ export default function ProfileForm({
             onBlur={(event) => validationHandler(event, 'url')}
           />
         </fieldset>
+
         <div className="confirm-modal__buttons">
           <Button
             text="Confirm"
@@ -86,6 +93,7 @@ export default function ProfileForm({
           />
           <Button className="cancel" text="Cancel" onClick={onCancel} />
         </div>
+        <p className={messageClassName}>{message.text}</p>
       </form>
     </ModalWrapper>
   );

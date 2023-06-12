@@ -10,6 +10,7 @@ export default function ConfirmModal({
   onConfirm,
   isVisible,
   toggleModalVision,
+  message,
 }) {
   const [isFormValid, setIsConfirmValid] = useState({
     isValid: null,
@@ -36,6 +37,13 @@ export default function ConfirmModal({
     );
     setIsConfirmValid(validationObject);
   };
+
+  const messageClassName = message.text
+    ? `confirm-modal__message visible ${
+        message.isWrong ? 'not-valid__message' : 'valid__message'
+      }`
+    : 'confirm-modal__message';
+
   return (
     <ModalWrapper isVisible={isVisible} toggleModalVision={toggleModalVision}>
       <form className="confirm-modal">
@@ -62,6 +70,7 @@ export default function ConfirmModal({
           />
           <Button className="cancel" text="Cancel" onClick={onCancel} />
         </div>
+        <p className={messageClassName}>{message.text}</p>
       </form>
     </ModalWrapper>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   ErrorCard,
@@ -10,13 +10,41 @@ import {
   ChangePasswordForm,
   ProfileForm,
 } from '../components';
+import { UserContext } from '../index.jsx';
 import { useFetch } from '../hooks';
-import { inputValidator } from '../helpers';
+import { inputValidator, areObjectsEqual } from '../helpers';
 
 export default function User() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { serverUrl } = useContext(UserContext);
   const [user, isLoading, error] = useFetch(`/api/user/${id}`);
+  const initialIsFormValid = {
+    passwordForm: {
+      currentPassword: {
+        isValid: null,
+        message: null,
+      },
+      newPassword: {
+        isValid: null,
+        message: null,
+      },
+      confirmPassword: {
+        isValid: null,
+        message: null,
+      },
+    },
+    updateForm: {
+      phone: {
+        isValid: null,
+        message: null,
+      },
+      avatar: {
+        isValid: null,
+        message: null,
+      },
+    },
+  };
 
   const [visibleModals, setVisibleModals] = useState({
     confirm: false,
@@ -48,40 +76,56 @@ export default function User() {
     },
   });
   const [passwordForm, setPasswordForm] = useState({
-    password: '',
-    confirm: '',
+    currentPassword: '',
+    newPassword: '',
+    confirmPassword: '',
   });
-  const [isFormsValid, setIsFormValid] = useState({
-    passwordForm: {
-      password: {
-        isValid: null,
-        message: null,
-      },
-      confirm: {
-        isValid: null,
-        message: null,
-      },
-    },
-    updateForm: {
-      phone: {
-        isValid: null,
-        message: null,
-      },
-      avatar: {
-        isValid: null,
-        message: null,
-      },
-    },
+  const [isFormsValid, setIsFormValid] = useState(initialIsFormValid);
+  const [formsMessage, setFormsMessage] = useState({
+    text: '',
+    isWrong: false,
   });
 
   useEffect(() => {
     if (user) {
-      setUpdateForm({ previous: user, current: user });
+      const userData = {
+        id: user.id,
+        email: user.email,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        address: { city: user.address?.city, country: user.address?.country },
+        phone: user.phone,
+        birthday: user.birthday,
+        avatar: user.avatar,
+        createdAt: user.createdAt,
+      };
+
+      setUpdateForm({ previous: userData, current: userData });
     }
   }, [user]);
 
-  const toggleConfirmModal = () => {
+  const toggleDeleteAccountModal = () => {
     setVisibleModals((prev) => ({ ...prev, confirm: !prev.confirm }));
+  };
+  const onConfirmDeleteAccount = async () => {
+    try {
+      const res = await fetch(`/api/user/${id}`, {
+        method: 'DELETE',
+      });
+      if (!res.ok) {
+        setFormsMessage({ text: 'Something goes wrong', isWrong: true });
+      } else {
+        setFormsMessage({
+          text: 'Account successfully deleted',
+          isWrong: false,
+        });
+        setTimeout(() => {
+          window.open(`${serverUrl}/api/auth/logout`, '_self');
+        }, 1000);
+      }
+    } catch (errorDelete) {
+      setFormsMessage({ text: 'Something goes wrong', isWrong: true });
+    }
   };
 
   const togglePasswordModal = () => {
@@ -103,18 +147,95 @@ export default function User() {
     togglePasswordModal();
     setIsFormValid((prev) => ({
       ...prev,
-      passwordForm: {
-        password: {
-          isValid: null,
-          message: null,
-        },
-        confirm: {
-          isValid: null,
-          message: null,
-        },
-      },
+      passwordForm: initialIsFormValid.passwordForm,
     }));
-    setPasswordForm({ password: '', confirm: '' });
+    setPasswordForm({
+      currentPassword: '',
+      newPassword: '',
+      confirmPassword: '',
+    });
+  };
+  const checkRequiredPasswordFormFields = () => {
+    let isFilled = true;
+    if (!passwordForm.currentPassword) {
+      setIsFormValid((prev) => ({
+        ...prev,
+        passwordForm: {
+          ...prev.passwordForm,
+          currentPassword: {
+            isValid: false,
+            message: 'This field is required',
+          },
+        },
+      }));
+      isFilled = false;
+    }
+    if (!passwordForm.newPassword) {
+      setIsFormValid((prev) => ({
+        ...prev,
+        passwordForm: {
+          ...prev.passwordForm,
+          newPassword: {
+            isValid: false,
+            message: 'This field is required',
+          },
+        },
+      }));
+      isFilled = false;
+    }
+    if (!passwordForm.confirmPassword) {
+      setIsFormValid((prev) => ({
+        ...prev,
+        passwordForm: {
+          ...prev.passwordForm,
+          confirmPassword: {
+            isValid: false,
+            message: 'This field is required',
+          },
+        },
+      }));
+      isFilled = false;
+    }
+    return isFilled;
+  };
+  const onConfirmPasswordForm = async () => {
+    const isFormFilled = checkRequiredPasswordFormFields();
+    if (isFormFilled) {
+      const res = await fetch(`/api/user/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: passwordForm }),
+      });
+
+      if (res.status === 401) {
+        const respondMessage = await res.json();
+        setIsFormValid((prev) => ({
+          ...prev,
+          passwordForm: {
+            ...prev.passwordForm,
+            currentPassword: {
+              message: respondMessage.message,
+              isValid: false,
+            },
+          },
+        }));
+      } else if (!res.ok) {
+        setFormsMessage({ text: 'Something goes wrong', isWrong: true });
+      } else {
+        setFormsMessage({
+          text: 'Password successfully changed',
+          isWrong: false,
+        });
+
+        setTimeout(() => {
+          togglePasswordModal();
+          setFormsMessage({
+            text: '',
+            isWrong: false,
+          });
+        }, 1000);
+      }
+    }
   };
 
   const toggleUpdateModal = () => {
@@ -146,62 +267,47 @@ export default function User() {
       updateForm: { ...prev.updateForm, [name]: validationObject },
     }));
   };
-  const isUpdateFormChanged = () => {
-    if (updateForm.previous.firstName !== updateForm.current.firstName)
-      return true;
-    if (updateForm.previous.lastName !== updateForm.current.lastName)
-      return true;
-    if (updateForm.previous.phone !== updateForm.current.phone) return true;
-    if (updateForm.previous.birthday !== updateForm.current.birthday)
-      return true;
-    if (updateForm.previous.avatar !== updateForm.current.avatar) return true;
-    if (updateForm.previous.address.city !== updateForm.current.address.city)
-      return true;
-    if (
-      updateForm.previous.address.country !== updateForm.current.address.country
-    )
-      return true;
-
-    return false;
-  };
   const onClosingUpdateForm = () => {
     toggleUpdateModal();
     setIsFormValid((prev) => ({
       ...prev,
-      updateForm: {
-        phone: {
-          isValid: null,
-          message: null,
-        },
-        avatar: {
-          isValid: null,
-          message: null,
-        },
-      },
+      updateForm: initialIsFormValid.updateForm,
     }));
     setPasswordForm({ password: '', confirm: '' });
     setUpdateForm((prev) => ({ ...prev, current: prev.previous }));
+    setFormsMessage({ text: '', isWrong: false });
   };
-  const onConfirmUpdateForm = () => {
-    isUpdateFormChanged();
-    if (isUpdateFormChanged()) {
-      // ADD REQUEST
-      setUpdateForm((prev) => ({ ...prev, previous: prev.current }));
-      setIsFormValid((prev) => ({
-        ...prev,
-        updateForm: {
-          phone: {
-            isValid: null,
-            message: null,
-          },
-          avatar: {
-            isValid: null,
-            message: null,
-          },
-        },
-      }));
+  const onConfirmUpdateForm = async () => {
+    try {
+      if (!areObjectsEqual(updateForm.previous, updateForm.current)) {
+        const res = await fetch(`/api/user/${id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(updateForm.current),
+        });
+        if (!res.ok) {
+          setFormsMessage({ text: 'Something goes wrong', isWrong: true });
+        } else {
+          setFormsMessage({
+            text: 'Profile successfully updated',
+            isWrong: false,
+          });
+          setUpdateForm((prev) => ({ ...prev, previous: prev.current }));
+          setIsFormValid((prev) => ({
+            ...prev,
+            updateForm: initialIsFormValid.updateForm,
+          }));
+        }
+      }
+
+      setTimeout(() => {
+        toggleUpdateModal();
+        setFormsMessage({ text: '', isWrong: false });
+      }, 1000);
+    } catch (updateError) {
+      setFormsMessage({ text: 'Something goes wrong', isWrong: false });
+      setTimeout(() => navigate('/'), 2000);
     }
-    toggleUpdateModal();
   };
 
   if (isLoading || error) {
@@ -225,7 +331,7 @@ export default function User() {
       <Subtitle text="Profile" main />
       <UserCard
         userData={updateForm.previous}
-        deleteAccount={toggleConfirmModal}
+        deleteAccount={toggleDeleteAccountModal}
         updateProfile={toggleUpdateModal}
         changePassword={togglePasswordModal}
       />
@@ -234,7 +340,9 @@ export default function User() {
         textToConfirm="DELETE"
         question="Are you sure you want to delete your account?"
         isVisible={visibleModals.confirm}
-        toggleModalVision={toggleConfirmModal}
+        toggleModalVision={toggleDeleteAccountModal}
+        message={formsMessage}
+        onConfirm={onConfirmDeleteAccount}
       />
       <ChangePasswordForm
         validationHandler={passwordValidationHandler}
@@ -244,6 +352,8 @@ export default function User() {
         isVisible={visibleModals.password}
         toggleModalVision={togglePasswordModal}
         onCancel={onClosingPasswordForm}
+        onConfirm={onConfirmPasswordForm}
+        message={formsMessage}
       />
       <ProfileForm
         dataHandler={updateFormDataHandler}
@@ -254,6 +364,7 @@ export default function User() {
         validationObject={isFormsValid.updateForm}
         onCancel={onClosingUpdateForm}
         onConfirm={onConfirmUpdateForm}
+        message={formsMessage}
       />
     </Page>
   );

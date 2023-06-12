@@ -64,7 +64,7 @@ const updateUserProfile = async (req, res) => {
 
   try {
     const user = await User.findByPk(id, {
-      attributes: { exclude: ['password', 'addressId'] },
+      attributes: { exclude: ['addressId'] },
       include: { model: Address, as: 'address' },
     });
 
@@ -90,7 +90,18 @@ const updateUserProfile = async (req, res) => {
     }
 
     if (password) {
-      const hashedPassword = await bcrypt.hash(password, 10);
+      const { currentPassword, newPassword } = password;
+      const isPasswordValid = await bcrypt.compare(
+        currentPassword,
+        user.password,
+      );
+      if (!isPasswordValid) {
+        return res
+          .status(401)
+          .json({ message: 'The entered password is incorrect' });
+      }
+
+      const hashedPassword = await bcrypt.hash(newPassword, 10);
       await User.update({ password: hashedPassword }, { where: { id } });
     }
 
