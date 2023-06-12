@@ -17,6 +17,32 @@ export default function User() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [user, isLoading, error] = useFetch(`/api/user/${id}`);
+  const initialIsFormValid = {
+    passwordForm: {
+      currentPassword: {
+        isValid: null,
+        message: null,
+      },
+      newPassword: {
+        isValid: null,
+        message: null,
+      },
+      confirmPassword: {
+        isValid: null,
+        message: null,
+      },
+    },
+    updateForm: {
+      phone: {
+        isValid: null,
+        message: null,
+      },
+      avatar: {
+        isValid: null,
+        message: null,
+      },
+    },
+  };
 
   const [visibleModals, setVisibleModals] = useState({
     confirm: false,
@@ -52,32 +78,7 @@ export default function User() {
     newPassword: '',
     confirmPassword: '',
   });
-  const [isFormsValid, setIsFormValid] = useState({
-    passwordForm: {
-      currentPassword: {
-        isValid: null,
-        message: null,
-      },
-      newPassword: {
-        isValid: null,
-        message: null,
-      },
-      confirmPassword: {
-        isValid: null,
-        message: null,
-      },
-    },
-    updateForm: {
-      phone: {
-        isValid: null,
-        message: null,
-      },
-      avatar: {
-        isValid: null,
-        message: null,
-      },
-    },
-  });
+  const [isFormsValid, setIsFormValid] = useState(initialIsFormValid);
   const [confirmMessage, setConfirmMessage] = useState({
     passwordForm: { text: '', isWrong: false },
     deleteModal: { text: '', isWrong: false },
@@ -126,11 +127,15 @@ export default function User() {
     setIsFormValid((prev) => ({
       ...prev,
       passwordForm: {
-        password: {
+        currentPassword: {
           isValid: null,
           message: null,
         },
-        confirm: {
+        newPassword: {
+          isValid: null,
+          message: null,
+        },
+        confirmPassword: {
           isValid: null,
           message: null,
         },
@@ -138,8 +143,46 @@ export default function User() {
     }));
     setPasswordForm({ newPassword: '', confirmPassword: '' });
   };
+  const checkRequiredPasswordFormFields = () => {
+    if (!passwordForm.currentPassword) {
+      setIsFormValid((prev) => ({
+        ...prev,
+        passwordForm: {
+          ...prev.passwordForm,
+          currentPassword: {
+            isValid: false,
+            message: 'This field is required',
+          },
+        },
+      }));
+    }
+    if (!passwordForm.newPassword) {
+      setIsFormValid((prev) => ({
+        ...prev,
+        passwordForm: {
+          ...prev.passwordForm,
+          newPassword: {
+            isValid: false,
+            message: 'This field is required',
+          },
+        },
+      }));
+    }
+    if (!passwordForm.confirmPassword) {
+      setIsFormValid((prev) => ({
+        ...prev,
+        passwordForm: {
+          ...prev.passwordForm,
+          confirmPassword: {
+            isValid: false,
+            message: 'This field is required',
+          },
+        },
+      }));
+    }
+  };
   const onConfirmPasswordForm = () => {
-    console.log('confirm');
+    checkRequiredPasswordFormFields();
   };
 
   const toggleUpdateModal = () => {
