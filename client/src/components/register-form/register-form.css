@@ -28,22 +28,3 @@
 .register-form__link:hover {
   text-decoration: underline;
 }
-
-.login-form__message {
-  opacity: 0;
-  display: block;
-  width: 100%;
-  padding: 10px;
-  text-align: center;
-  background-color: var(--error);
-  color: var(--white);
-  transition: 0.3s;
-}
-
-.login-form__message.visible {
-  opacity: 1;
-}
-
-.login-form__message.success {
-  background-color: var(--valid);
-}

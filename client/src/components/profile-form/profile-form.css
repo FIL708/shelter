@@ -23,28 +23,3 @@
   border-radius: 8px;
   box-shadow: var(--shadow-4);
 }
-
-.profile-form__message {
-  position: absolute;
-  left: 15%;
-  opacity: 0;
-  display: block;
-  width: 70%;
-  bottom: 84px;
-  padding: 10px;
-  text-align: center;
-  background-color: var(--error);
-  color: var(--white);
-  transition: 0.3s;
-}
-
-.profile-form__message.visible {
-  opacity: 1;
-}
-
-.valid__message {
-  background-color: var(--valid);
-}
-.not-valid__message {
-  background-color: var(--red);
-}

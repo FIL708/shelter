@@ -28,18 +28,3 @@
 .login-form__register {
   text-align: center;
 }
-
-.login-form__error-message {
-  opacity: 0;
-  display: block;
-  width: 100%;
-  padding: 10px;
-  text-align: center;
-  background-color: var(--error);
-  color: var(--white);
-  transition: 0.3s;
-}
-
-.login-form__error-message.visible {
-  opacity: 1;
-}

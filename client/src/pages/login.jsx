@@ -7,7 +7,7 @@ export default function Login() {
   const { serverUrl } = useContext(UserContext);
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [formIsValid, setFormIsValid] = useState({});
-  const [message, setMessage] = useState(null);
+  const [message, setMessage] = useState({ text: '', isValid: false });
   const [error, setError] = useState(null);
 
   const loginHandler = async () => {
@@ -19,10 +19,9 @@ export default function Login() {
       });
 
       if (res.status === 200) {
-        setMessage(null);
         window.open(res.url, '_self');
       } else if (res.status === 401) {
-        setMessage('Incorrect email or password');
+        setMessage({ text: 'Incorrect email or password', isValid: false });
       }
     } catch (err) {
       setError(err);

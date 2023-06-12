@@ -1,0 +1,21 @@
+.form__message {
+  opacity: 0;
+  display: block;
+  width: 70%;
+  padding: 10px;
+  text-align: center;
+  color: var(--white);
+  background-color: var(--blue);
+  transition: 0.3s;
+}
+
+.form__message.visible {
+  opacity: 1;
+}
+
+.valid__message {
+  background-color: var(--valid);
+}
+.not-valid__message {
+  background-color: var(--red);
+}
