@@ -11,7 +11,8 @@ export default function ChangePasswordForm({
   onCancel,
 }) {
   const confirmButtonDisable = !(
-    validationObject.password.isValid && validationObject.confirm.isValid
+    validationObject.newPassword.isValid &&
+    validationObject.confirmPassword.isValid
   );
 
   return (
@@ -31,7 +32,7 @@ export default function ChangePasswordForm({
           type="password"
           value={inputsValues.newPassword}
           onChange={(event) => dataHandler(event)}
-          validation={validationObject.password}
+          validation={validationObject.newPassword}
           onBlur={(event) => validationHandler(event, 'password')}
         />
         <Textfield
@@ -40,9 +41,9 @@ export default function ChangePasswordForm({
           type="password"
           value={inputsValues.confirmPassword}
           onChange={(event) => dataHandler(event)}
-          validation={validationObject.confirm}
+          validation={validationObject.confirmPassword}
           onBlur={(event) =>
-            validationHandler(event, 'confirm', inputsValues.password)
+            validationHandler(event, 'confirm', inputsValues.newPassword)
           }
         />
         <div className="confirm-modal__buttons">

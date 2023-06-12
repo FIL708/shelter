@@ -54,11 +54,11 @@ export default function User() {
   });
   const [isFormsValid, setIsFormValid] = useState({
     passwordForm: {
-      password: {
+      newPassword: {
         isValid: null,
         message: null,
       },
-      confirm: {
+      confirmPassword: {
         isValid: null,
         message: null,
       },
@@ -79,6 +79,7 @@ export default function User() {
     deleteModal: { text: '', isWrong: false },
     updateForm: { text: '', isWrong: false },
   });
+  console.log(isFormsValid);
 
   useEffect(() => {
     if (user) {
