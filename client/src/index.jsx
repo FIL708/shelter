@@ -12,8 +12,8 @@ import {
   Test,
   Users,
   User,
+  NotFound,
 } from './pages';
-import NotFound from './pages/not-found';
 
 export const UserContext = createContext();
 
