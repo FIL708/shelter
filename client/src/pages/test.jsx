@@ -1,19 +1,15 @@
-import { Page, Subtitle, FormMessage } from '../components/ui';
+import { Page, Subtitle } from '../components/ui';
+import OpinionsListItem from '../features/adoption/opinions-list/opinions-list__item/opinions-list__item.jsx';
 
 export default function Test() {
   return (
     <Page>
       <Subtitle text="Test Page" main />
-      <div
-        style={{
-          width: '300px',
-          height: '200px',
-          backgroundColor: 'red',
-          position: 'relative',
-        }}
-      >
-        <FormMessage text="its ok" isValid bottom="10%" />
-      </div>
+      <OpinionsListItem
+        body="asdasdg asdhasdhasd hasdhasdh hasdhasd"
+        user="Filip"
+        updatedAt="1994-02-01"
+      />
     </Page>
   );
 }
