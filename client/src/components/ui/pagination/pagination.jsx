@@ -1,5 +1,5 @@
 import { Button } from '../../form';
-import { getPages } from '../../../helpers';
+import getPages from './get-pages.js';
 import './pagination.css';
 
 export default function Pagination({ page, pages, changePage }) {
