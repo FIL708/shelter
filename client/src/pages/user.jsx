@@ -5,11 +5,9 @@ import {
   LoadingSpinner,
   Page,
   Subtitle,
-  UserCard,
   ConfirmModal,
-  ChangePasswordForm,
-  ProfileForm,
-} from '../components';
+} from '../components/ui';
+import { ChangePasswordForm, ProfileForm, UserCard } from '../features/user';
 import { UserContext } from '../index.jsx';
 import { useFetch } from '../hooks';
 import { inputValidator, areObjectsEqual } from '../helpers';

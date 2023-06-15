@@ -1,4 +1,4 @@
-import { Page, ErrorCard } from '../components';
+import { Page, ErrorCard } from '../components/ui';
 
 export default function NotFound() {
   return (

@@ -1,4 +1,4 @@
-import { Page, Subtitle, FormMessage } from '../components';
+import { Page, Subtitle, FormMessage } from '../components/ui';
 
 export default function Test() {
   return (

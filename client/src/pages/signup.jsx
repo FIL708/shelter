@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Page, RegisterForm, ErrorCard } from '../components';
+import { Page, ErrorCard } from '../components/ui';
+import { RegisterForm } from '../features/signup';
 import { inputValidator } from '../helpers';
 import { UserContext } from '..';
 
