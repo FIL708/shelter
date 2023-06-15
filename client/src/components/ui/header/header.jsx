@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Navbar from '..';
+import { Navbar } from '..';
 
 import logo from './assets/logo.svg';
 import './header.css';
