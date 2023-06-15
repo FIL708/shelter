@@ -33,6 +33,7 @@ import { ReactComponent as User } from './icon__glyphs/user.svg';
 import { ReactComponent as Admin } from './icon__glyphs/admin.svg';
 import { ReactComponent as Female } from './icon__glyphs/female.svg';
 import { ReactComponent as Male } from './icon__glyphs/male.svg';
+import { ReactComponent as Edit } from './icon__glyphs/edit.svg';
 
 const chooseIcon = (type) => {
   switch (type) {
@@ -106,6 +107,8 @@ const chooseIcon = (type) => {
       return Female;
     case 'male':
       return Male;
+    case 'edit':
+      return Edit;
     default:
       return undefined;
   }

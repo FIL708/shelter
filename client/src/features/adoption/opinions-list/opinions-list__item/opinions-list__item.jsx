@@ -1,8 +1,8 @@
 import './opinions-list__item.css';
 import { getFormattedDate } from '../../../../utils';
 
-export default function OpinionsListItem({ body, user, createdAt }) {
-  const formattedDate = getFormattedDate(createdAt, 'full');
+export default function OpinionsListItem({ body, user, updatedAt }) {
+  const formattedDate = getFormattedDate(updatedAt, 'full');
   return (
     <li className="opinions-list__item">
       <h3 className="opinions-list__item-header">
