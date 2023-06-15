@@ -1,4 +1,4 @@
-import { Icon } from '../index.js';
+import { Icon } from '../../index.js';
 
 import './button.css';
 
