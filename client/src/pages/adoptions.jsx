@@ -2,17 +2,16 @@ import { useEffect, useState } from 'react';
 import {
   Page,
   Subtitle,
-  PetController,
-  PetCardList,
   Pagination,
   ScrollButton,
   LoadingSpinner,
   ErrorCard,
-} from '../components';
-import { getDataChunks } from '../helpers';
+} from '../components/ui';
+import { PetController, PetCardList } from '../features/adoptions';
+import { getDataChunks } from '../utils';
 import { useScrollToggle, useFetch } from '../hooks';
 
-export default function Adoption() {
+export default function Adoptions() {
   const [pets, isLoading, error] = useFetch('/api/adoption');
   const [petsData, setPetsData] = useState([]);
   const [controlValues, setControlValues] = useState({

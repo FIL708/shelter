@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import {
   Page,
   Subtitle,
-  UsersTable,
   Pagination,
   ScrollButton,
   LoadingSpinner,
   ErrorCard,
-} from '../components';
-import { getDataChunks, getFilteredUsers } from '../helpers';
+} from '../components/ui';
+import { UsersTable } from '../features/users';
+import { getDataChunks, getFilteredUsers } from '../utils';
 import { useFetch, useScrollToggle } from '../hooks';
 
 export default function Users() {

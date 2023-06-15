@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react';
 import {
-  GalleryCardList,
   Page,
   Subtitle,
   Pagination,
   ScrollButton,
-  GalleryController,
   LoadingSpinner,
   ErrorCard,
-} from '../components';
-import { getDataChunks } from '../helpers';
+} from '../components/ui';
+import { GalleryCardList, GalleryController } from '../features/gallery';
+import { getDataChunks } from '../utils';
 import { useFetch, useScrollToggle } from '../hooks';
 
 export default function Gallery() {

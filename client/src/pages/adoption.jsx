@@ -2,14 +2,16 @@ import { useParams } from 'react-router-dom';
 import {
   Page,
   Subtitle,
-  PetGallery,
   ScrollButton,
+  LoadingSpinner,
+  ErrorCard,
+} from '../components/ui';
+import {
+  PetGallery,
   PetDetails,
   PetDescription,
   OpinionsList,
-  LoadingSpinner,
-  ErrorCard,
-} from '../components';
+} from '../features/adoption';
 import { useScrollToggle, useFetch } from '../hooks';
 
 export default function Adoption() {

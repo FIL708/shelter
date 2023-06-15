@@ -1,11 +1,5 @@
-import {
-  Page,
-  ScrollButton,
-  Subtitle,
-  HomeWelcomeSection,
-  HomeGoalsSection,
-  HomeMissionSection,
-} from '../components';
+import { Page, ScrollButton, Subtitle } from '../components/ui';
+import { WelcomeSection, GoalsSection, MissionSection } from '../features/home';
 import { useScrollToggle } from '../hooks';
 
 export default function Home() {
@@ -13,10 +7,10 @@ export default function Home() {
 
   return (
     <Page>
-      <HomeWelcomeSection />
-      <HomeGoalsSection />
+      <WelcomeSection />
+      <GoalsSection />
       <Subtitle text="our mission" />
-      <HomeMissionSection />
+      <MissionSection />
       <ScrollButton visible={isScrollButtonVisible} />
     </Page>
   );

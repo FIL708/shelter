@@ -1,0 +1,9 @@
+export { default as adoptions } from './adoptions.png';
+export { default as care } from './care.png';
+export { default as donations } from './donations.png';
+export { default as feed } from './feed.png';
+export { default as find } from './find.png';
+export { default as food } from './food.png';
+export { default as help } from './help.png';
+export { default as logo } from './logo.svg';
+export { default as treat } from './treat.png';

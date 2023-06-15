@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
-import { inputValidator } from '../helpers';
-import { Page, LoginForm, ErrorCard } from '../components';
+import { inputValidator } from '../utils';
+import { Page, ErrorCard } from '../components/ui';
+import { LoginForm } from '../features/login';
 import { UserContext } from '..';
 
 export default function Login() {
