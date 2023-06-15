@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { inputValidator } from '../helpers';
+import { inputValidator } from '../utils';
 import { Page, ErrorCard } from '../components/ui';
 import { LoginForm } from '../features/login';
 import { UserContext } from '..';

@@ -8,7 +8,7 @@ import {
   ErrorCard,
 } from '../components/ui';
 import { PetController, PetCardList } from '../features/adoptions';
-import { getDataChunks } from '../helpers';
+import { getDataChunks } from '../utils';
 import { useScrollToggle, useFetch } from '../hooks';
 
 export default function Adoptions() {

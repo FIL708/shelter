@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from '../../../components/form';
 import { Icon } from '../../../components/ui';
-import { getFormattedDate } from '../../../helpers';
+import { getFormattedDate } from '../../../utils';
 import './pet-details.css';
 
 export default function PetDetails({ data }) {

@@ -8,7 +8,7 @@ import {
   ErrorCard,
 } from '../components/ui';
 import { UsersTable } from '../features/users';
-import { getDataChunks, getFilteredUsers } from '../helpers';
+import { getDataChunks, getFilteredUsers } from '../utils';
 import { useFetch, useScrollToggle } from '../hooks';
 
 export default function Users() {

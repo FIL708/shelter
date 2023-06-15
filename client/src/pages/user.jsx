@@ -10,7 +10,7 @@ import {
 import { ChangePasswordForm, ProfileForm, UserCard } from '../features/user';
 import { UserContext } from '../index.jsx';
 import { useFetch } from '../hooks';
-import { inputValidator, areObjectsEqual } from '../helpers';
+import { inputValidator, areObjectsEqual } from '../utils';
 
 export default function User() {
   const { id } = useParams();

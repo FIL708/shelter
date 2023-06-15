@@ -1,5 +1,5 @@
 import { Icon } from '../../../../components/ui';
-import { getFormattedDate } from '../../../../helpers';
+import { getFormattedDate } from '../../../../utils';
 import './user-card__data.css';
 
 export default function UserCardData({ userData }) {

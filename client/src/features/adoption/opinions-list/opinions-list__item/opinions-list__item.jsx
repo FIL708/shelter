@@ -1,5 +1,5 @@
 import './opinions-list__item.css';
-import { getFormattedDate } from '../../../../helpers';
+import { getFormattedDate } from '../../../../utils';
 
 export default function OpinionsListItem({ body, user, createdAt }) {
   const formattedDate = getFormattedDate(createdAt, 'full');

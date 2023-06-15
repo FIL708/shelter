@@ -8,7 +8,7 @@ import {
   ErrorCard,
 } from '../components/ui';
 import { GalleryCardList, GalleryController } from '../features/gallery';
-import { getDataChunks } from '../helpers';
+import { getDataChunks } from '../utils';
 import { useFetch, useScrollToggle } from '../hooks';
 
 export default function Gallery() {

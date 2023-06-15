@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Textfield, Button } from '../../form';
 import { Subtitle, ModalWrapper, FormMessage } from '..';
-import { inputValidator } from '../../../helpers';
+import { inputValidator } from '../../../utils';
 import './confirm-modal.css';
 
 export default function ConfirmModal({
