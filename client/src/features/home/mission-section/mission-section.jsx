@@ -1,10 +1,6 @@
 import HomeCard from '../home-card/home-card.jsx';
+import { care, feed, find, help, treat } from '../assets';
 import './mission-section.css';
-import care from './assets/care.png';
-import feed from './assets/feed.png';
-import find from './assets/find.png';
-import help from './assets/help.png';
-import treat from './assets/treat.png';
 
 export default function MissionSection() {
   return (

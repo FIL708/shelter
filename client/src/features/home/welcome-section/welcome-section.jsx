@@ -1,6 +1,6 @@
 import { Subtitle } from '../../../components/ui';
 import './welcome-section.css';
-import logo from './assets/logo.svg';
+import { logo } from '../assets';
 
 export default function WelcomeSection() {
   return (

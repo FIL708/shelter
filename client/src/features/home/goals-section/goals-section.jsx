@@ -1,8 +1,6 @@
 import HomeCard from '../home-card/home-card.jsx';
 import './goals-section.css';
-import adoptions from './assets/adoptions.png';
-import donations from './assets/donations.png';
-import food from './assets/food.png';
+import { adoptions, donations, food } from '../assets';
 
 export default function GoalsSection() {
   return (
