@@ -1,10 +1,16 @@
+import { useContext } from 'react';
 import { Button } from '../../../../components/form';
+import { UserContext } from '../../../..';
 import './opinions-list__button.css';
 
 export default function OpinionsListItemButtons({
   updateOpinion,
   deleteOpinion,
 }) {
+  const { user } = useContext(UserContext);
+  console.log(user);
+  if (!user) return false;
+
   return (
     <div className="opinions-list__buttons">
       <Button
