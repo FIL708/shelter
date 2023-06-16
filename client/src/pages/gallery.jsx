@@ -9,13 +9,12 @@ import {
 } from '../components/ui';
 import { GalleryCardList, GalleryController } from '../features/gallery';
 import { getDataChunks } from '../utils';
-import { useFetch, useScrollToggle } from '../hooks';
+import { useFetch } from '../hooks';
 
 export default function Gallery() {
   const [photos, isLoading, error] = useFetch('/api/photo');
   const [petPhotos, setPetPhotos] = useState([]);
   const [page, setPage] = useState(1);
-  const isScrollButtonVisible = useScrollToggle(200);
   const [filteringTag, setFilteringTag] = useState('all');
 
   useEffect(() => {
@@ -75,7 +74,7 @@ export default function Gallery() {
         page={page}
         pages={photosChunks.length}
       />
-      <ScrollButton visible={isScrollButtonVisible} />
+      <ScrollButton />
     </Page>
   );
 }

@@ -12,12 +12,11 @@ import {
   PetDescription,
   OpinionsList,
 } from '../features/adoption';
-import { useScrollToggle, useFetch } from '../hooks';
+import { useFetch } from '../hooks';
 
 export default function Adoption() {
   const { id } = useParams();
   const [pet, isLoading, error] = useFetch(`/api/adoption/${id}`);
-  const isScrollButtonVisible = useScrollToggle(200);
 
   if (isLoading || error)
     return (
@@ -40,7 +39,7 @@ export default function Adoption() {
       <PetDescription text={pet.description} />
       <Subtitle text="What people think about me" />
       <OpinionsList opinions={pet.opinions} />
-      <ScrollButton visible={isScrollButtonVisible} />
+      <ScrollButton />
     </Page>
   );
 }

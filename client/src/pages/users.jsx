@@ -9,7 +9,7 @@ import {
 } from '../components/ui';
 import { UsersTable } from '../features/users';
 import { getDataChunks, getFilteredUsers } from '../utils';
-import { useFetch, useScrollToggle } from '../hooks';
+import { useFetch } from '../hooks';
 
 export default function Users() {
   const [users, isLoading, error] = useFetch('/api/user');
@@ -22,7 +22,6 @@ export default function Users() {
     search: '',
     searchBy: 'first name',
   });
-  const isScrollButtonVisible = useScrollToggle(200);
 
   useEffect(() => {
     setUsersData(getFilteredUsers(users, filter));
@@ -79,7 +78,7 @@ export default function Users() {
         page={page}
         pages={dataChunks.length}
       />
-      <ScrollButton visible={isScrollButtonVisible} />
+      <ScrollButton />
     </Page>
   );
 }
