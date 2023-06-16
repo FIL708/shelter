@@ -6,11 +6,15 @@ import './opinions-list__button.css';
 export default function OpinionsListItemButtons({
   updateOpinion,
   deleteOpinion,
+  opinionId,
+  opinionAuthorId,
 }) {
   const { user } = useContext(UserContext);
-  console.log(user);
+  console.log(opinionId);
   if (!user) return false;
-
+  if (opinionAuthorId !== user.id) {
+    if (user.role !== 'admin') return false;
+  }
   return (
     <div className="opinions-list__buttons">
       <Button

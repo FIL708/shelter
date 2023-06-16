@@ -3,8 +3,10 @@ import OpinionsListButtons from '../opinions-list__buttons/opinions-list__button
 import { getFormattedDate } from '../../../../utils';
 
 export default function OpinionsListItem({
+  id,
   body,
   user,
+  userId,
   updatedAt,
   updateOpinion,
   deleteOpinion,
@@ -18,6 +20,8 @@ export default function OpinionsListItem({
         {' - '}
         <span className="opinions-list__item-date">{formattedDate}</span>
         <OpinionsListButtons
+          opinionId={id}
+          opinionAuthorId={userId}
           updateOpinion={updateOpinion}
           deleteOpinion={deleteOpinion}
         />
