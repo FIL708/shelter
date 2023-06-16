@@ -2,7 +2,13 @@ import './opinions-list__item.css';
 import { Button } from '../../../../components/form';
 import { getFormattedDate } from '../../../../utils';
 
-export default function OpinionsListItem({ body, user, updatedAt }) {
+export default function OpinionsListItem({
+  body,
+  user,
+  updatedAt,
+  updateOpinion,
+  deleteOpinion,
+}) {
   if (!body) return false;
   const formattedDate = getFormattedDate(updatedAt, 'full');
   return (
@@ -12,8 +18,18 @@ export default function OpinionsListItem({ body, user, updatedAt }) {
         {' - '}
         <span className="opinions-list__item-date">{formattedDate}</span>
         <div className="opinions-list__buttons">
-          <Button iconType="edit" iconFill="#7286d3" iconSize="18px" />
-          <Button iconType="exit" iconFill="#9f3e3e" iconSize="18px" />
+          <Button
+            iconType="edit"
+            iconFill="#7286d3"
+            iconSize="18px"
+            onClick={updateOpinion}
+          />
+          <Button
+            iconType="exit"
+            iconFill="#9f3e3e"
+            iconSize="18px"
+            onClick={deleteOpinion}
+          />
         </div>
       </h3>
       <p className="opinions-list__item-body">{body}</p>
