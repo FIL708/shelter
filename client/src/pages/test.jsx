@@ -7,7 +7,7 @@ export default function Test() {
       <Subtitle text="Test Page" main />
       <OpinionsListItem
         body="asdasdg asdhasdhasd hasdhasdh hasdhasd"
-        user="Filip"
+        user={{ firstName: 'Filip', lastName: 'Zebrowski' }}
         updatedAt="1994-02-01"
       />
     </Page>
