@@ -1,6 +1,8 @@
-import './opinions-list__item.css';
-import OpinionsListButtons from '../opinions-list__buttons/opinions-list__buttons.jsx';
+import { useState } from 'react';
+import { Textarea } from '../../../../components/form';
 import { getFormattedDate } from '../../../../utils';
+import OpinionsListButtons from '../opinions-list__buttons/opinions-list__buttons.jsx';
+import './opinions-list__item.css';
 
 export default function OpinionsListItem({
   id,
@@ -11,6 +13,12 @@ export default function OpinionsListItem({
   updateOpinion,
   deleteOpinion,
 }) {
+  const [editMode, setEditMode] = useState(true);
+
+  const changeMode = () => {
+    setEditMode((prev) => !prev);
+  };
+
   if (!body) return false;
   const formattedDate = getFormattedDate(updatedAt, 'full');
   return (
@@ -24,10 +32,15 @@ export default function OpinionsListItem({
           opinionId={id}
           opinionAuthorId={userId}
           updateOpinion={updateOpinion}
+          changeMode={changeMode}
           deleteOpinion={deleteOpinion}
         />
       </h3>
-      <p className="opinions-list__item-body">{body}</p>
+      {editMode ? (
+        <Textarea />
+      ) : (
+        <p className="opinions-list__item-body">{body}</p>
+      )}
     </li>
   );
 }
