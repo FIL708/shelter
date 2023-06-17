@@ -23,7 +23,7 @@ export default function OpinionsListItemButtons({
         <>
           <Button
             iconType="confirm"
-            iconFill="#7286d3"
+            iconFill="#167230"
             iconSize="18px"
             onClick={changeMode}
           />
@@ -43,7 +43,7 @@ export default function OpinionsListItemButtons({
             onClick={changeMode}
           />
           <Button
-            iconType="exit"
+            iconType="delete"
             iconFill="#9f3e3e"
             iconSize="18px"
             onClick={deleteOpinion}
