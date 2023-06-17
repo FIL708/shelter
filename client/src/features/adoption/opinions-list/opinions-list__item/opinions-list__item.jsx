@@ -20,6 +20,7 @@ export default function OpinionsListItem({
   };
 
   if (!body) return false;
+
   const formattedDate = getFormattedDate(updatedAt, 'full');
   return (
     <li className="opinions-list__item">
@@ -29,6 +30,7 @@ export default function OpinionsListItem({
         </span>
         <span className="opinions-list__item-date">{formattedDate}</span>
         <OpinionsListButtons
+          editMode={editMode}
           opinionId={id}
           opinionAuthorId={userId}
           updateOpinion={updateOpinion}
