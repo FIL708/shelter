@@ -4,10 +4,12 @@ import { UserContext } from '../../../..';
 import './opinions-list__button.css';
 
 export default function OpinionsListItemButtons({
-  updateOpinion,
+  // updateOpinion,
   deleteOpinion,
+  changeMode,
   opinionId,
   opinionAuthorId,
+  editMode,
 }) {
   const { user } = useContext(UserContext);
   console.log(opinionId);
@@ -17,18 +19,37 @@ export default function OpinionsListItemButtons({
   }
   return (
     <div className="opinions-list__buttons">
-      <Button
-        iconType="edit"
-        iconFill="#7286d3"
-        iconSize="18px"
-        onClick={updateOpinion}
-      />
-      <Button
-        iconType="exit"
-        iconFill="#9f3e3e"
-        iconSize="18px"
-        onClick={deleteOpinion}
-      />
+      {editMode ? (
+        <>
+          <Button
+            iconType="edit"
+            iconFill="#7286d3"
+            iconSize="18px"
+            onClick={changeMode}
+          />
+          <Button
+            iconType="exit"
+            iconFill="#9f3e3e"
+            iconSize="18px"
+            onClick={deleteOpinion}
+          />
+        </>
+      ) : (
+        <>
+          <Button
+            iconType="edit"
+            iconFill="#7286d3"
+            iconSize="18px"
+            onClick={changeMode}
+          />
+          <Button
+            iconType="exit"
+            iconFill="#9f3e3e"
+            iconSize="18px"
+            onClick={deleteOpinion}
+          />
+        </>
+      )}
     </div>
   );
 }
