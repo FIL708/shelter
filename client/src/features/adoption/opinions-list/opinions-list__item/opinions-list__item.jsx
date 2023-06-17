@@ -13,7 +13,7 @@ export default function OpinionsListItem({
   updateOpinion,
   deleteOpinion,
 }) {
-  const [editMode, setEditMode] = useState(true);
+  const [editMode, setEditMode] = useState(false);
 
   const changeMode = () => {
     setEditMode((prev) => !prev);

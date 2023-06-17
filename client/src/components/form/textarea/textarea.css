@@ -4,6 +4,7 @@
   border: 2px solid var(--less-white);
   border-radius: 4px;
   color: var(--dark-grey);
+  background: transparent;
 }
 
 .textarea:focus {

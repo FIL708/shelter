@@ -22,7 +22,7 @@ export default function OpinionsListItemButtons({
       {editMode ? (
         <>
           <Button
-            iconType="edit"
+            iconType="confirm"
             iconFill="#7286d3"
             iconSize="18px"
             onClick={changeMode}
