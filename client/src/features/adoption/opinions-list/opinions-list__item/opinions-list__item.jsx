@@ -16,8 +16,9 @@ export default function OpinionsListItem({
   return (
     <li className="opinions-list__item">
       <h3 className="opinions-list__item-header">
-        {`${user.firstName} ${user.lastName}`}
-        {' - '}
+        <span className="opinions-list__item-user">
+          {`${user.firstName} ${user.lastName}`}
+        </span>
         <span className="opinions-list__item-date">{formattedDate}</span>
         <OpinionsListButtons
           opinionId={id}

@@ -8,10 +8,14 @@
 .opinions-list__item-header {
   display: flex;
   align-items: center;
-  margin-bottom: 22px;
+  margin-bottom: 12px;
   font-size: 16px;
   font-weight: 400;
   color: var(--blue);
+}
+
+.opinions-list__item-user {
+  width: 160px;
 }
 
 .opinions-list__item-date {

@@ -1,4 +1,5 @@
 import { Page, Subtitle } from '../components/ui';
+import { Textarea } from '../components/form';
 import OpinionsListItem from '../features/adoption/opinions-list/opinions-list__item/opinions-list__item.jsx';
 
 export default function Test() {
@@ -10,6 +11,7 @@ export default function Test() {
         user={{ firstName: 'Filip', lastName: 'Zebrowski' }}
         updatedAt="1994-02-01"
       />
+      <Textarea />
     </Page>
   );
 }

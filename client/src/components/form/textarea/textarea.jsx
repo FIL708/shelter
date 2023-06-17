@@ -1,5 +1,5 @@
 import './textarea.css';
 
-export default function Textarea() {
-  return <textarea name="" id="" cols="30" rows="10" />;
+export default function Textarea({ name, value }) {
+  return <textarea className="textarea" name={name} id={name} value={value} />;
 }
