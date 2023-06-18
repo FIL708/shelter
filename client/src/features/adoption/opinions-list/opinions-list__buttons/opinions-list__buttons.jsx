@@ -9,6 +9,7 @@ export default function OpinionsListItemButtons({
   opinionAuthorId,
   editMode,
   confirmOpinionChanges,
+  cancelOpinionChanges,
 }) {
   const { user } = useContext(UserContext);
 
@@ -30,7 +31,7 @@ export default function OpinionsListItemButtons({
             iconType="exit"
             iconFill="#9f3e3e"
             iconSize="18px"
-            onClick={deleteOpinion}
+            onClick={cancelOpinionChanges}
           />
         </>
       ) : (

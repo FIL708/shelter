@@ -22,6 +22,11 @@ export default function OpinionsListItem({
     setOpinionText(value);
   };
 
+  const cancelOpinionChanges = () => {
+    setOpinionText(body);
+    toggleEditMode(id);
+  };
+
   if (!body) return false;
 
   const formattedDate = getFormattedDate(updatedAt, 'full');
@@ -37,6 +42,7 @@ export default function OpinionsListItem({
           opinionId={id}
           opinionAuthorId={userId}
           confirmOpinionChanges={() => confirmOpinionChanges(id, opinionText)}
+          cancelOpinionChanges={cancelOpinionChanges}
           toggleEditMode={() => toggleEditMode(id)}
           deleteOpinion={deleteOpinion}
         />
