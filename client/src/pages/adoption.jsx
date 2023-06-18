@@ -42,6 +42,7 @@ export default function Adoption() {
 
   const confirmOpinionChanges = (opinionId, newValue) => {
     console.log(opinionId, newValue);
+    toggleEditMode(opinionId);
   };
 
   if (isLoading || error)

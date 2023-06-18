@@ -4,15 +4,14 @@ import { UserContext } from '../../../..';
 import './opinions-list__button.css';
 
 export default function OpinionsListItemButtons({
-  // updateOpinion,
   deleteOpinion,
   toggleEditMode,
-  opinionId,
   opinionAuthorId,
   editMode,
+  confirmOpinionChanges,
 }) {
   const { user } = useContext(UserContext);
-  console.log(opinionId);
+
   if (!user) return false;
   if (opinionAuthorId !== user.id) {
     if (user.role !== 'admin') return false;
@@ -25,7 +24,7 @@ export default function OpinionsListItemButtons({
             iconType="confirm"
             iconFill="#167230"
             iconSize="18px"
-            onClick={() => toggleEditMode(opinionId)}
+            onClick={confirmOpinionChanges}
           />
           <Button
             iconType="exit"
@@ -40,7 +39,7 @@ export default function OpinionsListItemButtons({
             iconType="edit"
             iconFill="#7286d3"
             iconSize="18px"
-            onClick={() => toggleEditMode(opinionId)}
+            onClick={toggleEditMode}
           />
           <Button
             iconType="delete"

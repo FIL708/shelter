@@ -11,9 +11,9 @@ export default function OpinionsListItem({
   userId,
   updatedAt,
   editMode,
-  updateOpinion,
   deleteOpinion,
   toggleEditMode,
+  confirmOpinionChanges,
 }) {
   const [opinionText, setOpinionText] = useState(body);
 
@@ -36,8 +36,8 @@ export default function OpinionsListItem({
           editMode={editMode}
           opinionId={id}
           opinionAuthorId={userId}
-          updateOpinion={updateOpinion}
-          toggleEditMode={toggleEditMode}
+          confirmOpinionChanges={() => confirmOpinionChanges(id, opinionText)}
+          toggleEditMode={() => toggleEditMode(id)}
           deleteOpinion={deleteOpinion}
         />
       </h3>
