@@ -1,6 +1,6 @@
 import './textarea.css';
 
-export default function Textarea({ name, value, onChange }) {
+export default function Textarea({ name, value, onChange, placeholder }) {
   return (
     <textarea
       className="textarea"
@@ -8,6 +8,7 @@ export default function Textarea({ name, value, onChange }) {
       id={name}
       value={value}
       onChange={onChange}
+      placeholder={placeholder}
     />
   );
 }

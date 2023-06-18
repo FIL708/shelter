@@ -10,13 +10,16 @@ export default function OpinionsListItem({
   user,
   userId,
   updatedAt,
+  editMode,
   updateOpinion,
   deleteOpinion,
+  toggleEditMode,
 }) {
-  const [editMode, setEditMode] = useState(false);
+  const [opinionText, setOpinionText] = useState(body);
 
-  const changeMode = () => {
-    setEditMode((prev) => !prev);
+  const opinionHandler = (event) => {
+    const { value } = event.target;
+    setOpinionText(value);
   };
 
   if (!body) return false;
@@ -34,12 +37,17 @@ export default function OpinionsListItem({
           opinionId={id}
           opinionAuthorId={userId}
           updateOpinion={updateOpinion}
-          changeMode={changeMode}
+          toggleEditMode={toggleEditMode}
           deleteOpinion={deleteOpinion}
         />
       </h3>
       {editMode ? (
-        <Textarea />
+        <Textarea
+          value={opinionText}
+          onChange={(event) => {
+            opinionHandler(event);
+          }}
+        />
       ) : (
         <p className="opinions-list__item-body">{body}</p>
       )}

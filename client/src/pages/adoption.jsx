@@ -18,13 +18,28 @@ import { useFetch } from '../hooks';
 export default function Adoption() {
   const { id } = useParams();
   const [pet, isLoading, error] = useFetch(`/api/adoption/${id}`);
-  const [opinions, setOpinions] = useState();
+  const [opinions, setOpinions] = useState([]);
+  console.log(opinions);
 
   useEffect(() => {
     if (pet.opinions) {
-      setOpinions(pet.opinions);
+      const opinionsList = pet.opinions.map((opinion) => ({
+        ...opinion,
+        editMode: false,
+      }));
+      setOpinions(opinionsList);
     }
   }, [pet]);
+
+  const toggleEditMode = (opinionId) => {
+    const arrayAfterToggle = opinions.map((opinion) =>
+      opinion.id === opinionId
+        ? { ...opinion, editMode: !opinion.editMode }
+        : opinion,
+    );
+    setOpinions(arrayAfterToggle);
+  };
+  console.log(toggleEditMode);
 
   if (isLoading || error)
     return (
@@ -46,7 +61,7 @@ export default function Adoption() {
       <Subtitle text="Something About Me" />
       <PetDescription text={pet.description} />
       <Subtitle text="What people think about me" />
-      <OpinionsList opinions={opinions} />
+      <OpinionsList opinions={opinions} toggleEditMode={toggleEditMode} />
       <ScrollButton />
     </Page>
   );

@@ -6,7 +6,7 @@ import './opinions-list__button.css';
 export default function OpinionsListItemButtons({
   // updateOpinion,
   deleteOpinion,
-  changeMode,
+  toggleEditMode,
   opinionId,
   opinionAuthorId,
   editMode,
@@ -25,7 +25,7 @@ export default function OpinionsListItemButtons({
             iconType="confirm"
             iconFill="#167230"
             iconSize="18px"
-            onClick={changeMode}
+            onClick={() => toggleEditMode(opinionId)}
           />
           <Button
             iconType="exit"
@@ -40,7 +40,7 @@ export default function OpinionsListItemButtons({
             iconType="edit"
             iconFill="#7286d3"
             iconSize="18px"
-            onClick={changeMode}
+            onClick={() => toggleEditMode(opinionId)}
           />
           <Button
             iconType="delete"
