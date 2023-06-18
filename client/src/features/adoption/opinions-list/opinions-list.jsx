@@ -5,6 +5,7 @@ export default function OpinionsList({
   opinions,
   toggleEditMode,
   confirmOpinionChanges,
+  deleteOpinion,
 }) {
   if (!opinions) return false;
   return (
@@ -15,6 +16,7 @@ export default function OpinionsList({
           {...opinion}
           toggleEditMode={toggleEditMode}
           confirmOpinionChanges={confirmOpinionChanges}
+          deleteOpinion={deleteOpinion}
         />
       ))}
     </ul>

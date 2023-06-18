@@ -16,6 +16,7 @@ export default function OpinionsListItem({
   confirmOpinionChanges,
 }) {
   const [opinionText, setOpinionText] = useState(body);
+  console.log(deleteOpinion);
 
   const opinionHandler = (event) => {
     const { value } = event.target;
@@ -43,7 +44,7 @@ export default function OpinionsListItem({
           confirmOpinionChanges={() => confirmOpinionChanges(id, opinionText)}
           cancelOpinionChanges={cancelOpinionChanges}
           toggleEditMode={() => toggleEditMode(id)}
-          deleteOpinion={deleteOpinion}
+          deleteOpinion={() => deleteOpinion(id)}
         />
       </h3>
       {editMode ? (
