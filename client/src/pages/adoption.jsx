@@ -41,7 +41,11 @@ export default function Adoption() {
   };
 
   const confirmOpinionChanges = (opinionId, newValue) => {
-    console.log(opinionId, newValue);
+    const arrayAfterChanges = opinions.map((opinion) =>
+      opinion.id === opinionId ? { ...opinion, body: newValue } : opinion,
+    );
+
+    setOpinions(arrayAfterChanges);
     toggleEditMode(opinionId);
   };
 

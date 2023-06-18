@@ -55,7 +55,7 @@ export default function OpinionsListItem({
           }}
         />
       ) : (
-        <p className="opinions-list__item-body">{body}</p>
+        <p className="opinions-list__item-body">{opinionText}</p>
       )}
     </li>
   );
