@@ -42,11 +42,11 @@ export default function Adoption() {
 
   const confirmOpinionChanges = (opinionId, newValue) => {
     const arrayAfterChanges = opinions.map((opinion) =>
-      opinion.id === opinionId ? { ...opinion, body: newValue } : opinion,
+      opinion.id === opinionId
+        ? { ...opinion, body: newValue, editMode: !opinion.editMode }
+        : opinion,
     );
-
     setOpinions(arrayAfterChanges);
-    toggleEditMode(opinionId);
   };
 
   if (isLoading || error)

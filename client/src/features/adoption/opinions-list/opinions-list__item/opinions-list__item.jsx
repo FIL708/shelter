@@ -38,9 +38,8 @@ export default function OpinionsListItem({
         </span>
         <span className="opinions-list__item-date">{formattedDate}</span>
         <OpinionsListButtons
-          editMode={editMode}
-          opinionId={id}
           opinionAuthorId={userId}
+          editMode={editMode}
           confirmOpinionChanges={() => confirmOpinionChanges(id, opinionText)}
           cancelOpinionChanges={cancelOpinionChanges}
           toggleEditMode={() => toggleEditMode(id)}
@@ -55,7 +54,7 @@ export default function OpinionsListItem({
           }}
         />
       ) : (
-        <p className="opinions-list__item-body">{opinionText}</p>
+        <p className="opinions-list__item-body">{body}</p>
       )}
     </li>
   );
