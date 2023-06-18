@@ -49,6 +49,13 @@ export default function Adoption() {
     setOpinions(arrayAfterChanges);
   };
 
+  const deleteOpinion = (opinionId) => {
+    const arrayAfterDelete = opinions.filter(
+      (opinion) => opinion.id !== opinionId,
+    );
+    setOpinions(arrayAfterDelete);
+  };
+
   if (isLoading || error)
     return (
       <Page>
@@ -73,6 +80,7 @@ export default function Adoption() {
         opinions={opinions}
         toggleEditMode={toggleEditMode}
         confirmOpinionChanges={confirmOpinionChanges}
+        deleteOpinion={deleteOpinion}
       />
       <ScrollButton />
     </Page>
