@@ -39,7 +39,10 @@ export default function Adoption() {
     );
     setOpinions(arrayAfterToggle);
   };
-  console.log(toggleEditMode);
+
+  const confirmOpinionChanges = (opinionId, newValue) => {
+    console.log(opinionId, newValue);
+  };
 
   if (isLoading || error)
     return (
@@ -61,7 +64,11 @@ export default function Adoption() {
       <Subtitle text="Something About Me" />
       <PetDescription text={pet.description} />
       <Subtitle text="What people think about me" />
-      <OpinionsList opinions={opinions} toggleEditMode={toggleEditMode} />
+      <OpinionsList
+        opinions={opinions}
+        toggleEditMode={toggleEditMode}
+        confirmOpinionChanges={confirmOpinionChanges}
+      />
       <ScrollButton />
     </Page>
   );
