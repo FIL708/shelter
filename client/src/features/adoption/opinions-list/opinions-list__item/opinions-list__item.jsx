@@ -15,7 +15,6 @@ export default function OpinionsListItem({
 }) {
   const [opinionText, setOpinionText] = useState(body);
   const [editMode, setEditMode] = useState(false);
-  console.log(deleteOpinion);
 
   const toggleEditMode = () => {
     setEditMode((prev) => !prev);
