@@ -44,11 +44,20 @@ export default function Adoption() {
     }
   };
 
-  const deleteOpinion = (opinionId) => {
-    const arrayAfterDelete = opinions.filter(
-      (opinion) => opinion.id !== opinionId,
-    );
-    setOpinions(arrayAfterDelete);
+  const deleteOpinion = async (opinionId) => {
+    try {
+      const res = await fetch(`/api/opinion/${opinionId}`, {
+        method: 'DELETE',
+      });
+      if (res.ok) {
+        const arrayAfterDelete = opinions.filter(
+          (opinion) => opinion.id !== opinionId,
+        );
+        setOpinions(arrayAfterDelete);
+      }
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   if (isLoading || error)
