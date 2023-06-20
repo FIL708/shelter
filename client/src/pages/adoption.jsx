@@ -19,7 +19,6 @@ export default function Adoption() {
   const { id } = useParams();
   const [pet, isLoading, error] = useFetch(`/api/adoption/${id}`);
   const [opinions, setOpinions] = useState([]);
-  console.log(opinions);
 
   useEffect(() => {
     if (pet.opinions) {
