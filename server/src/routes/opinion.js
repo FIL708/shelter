@@ -8,13 +8,16 @@ const updateOpinion = async (req, res) => {
     if (!req.session.passport) {
       return res.status(403).json({ message: 'Unauthorized' });
     }
+
+    const opinion = await Opinion.findByPk(id);
+
     if (req.session.passport.user.role !== 'admin') {
-      if (req.session.passport.user.id.toString() !== id.toString()) {
+      if (
+        req.session.passport.user.id.toString() !== opinion.userId.toString()
+      ) {
         return res.status(403).json({ message: 'Unauthorized' });
       }
     }
-
-    const opinion = await Opinion.findByPk(id);
 
     if (!opinion) {
       return res.status(404).json({ message: 'Opinion not found' });
