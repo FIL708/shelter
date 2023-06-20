@@ -30,4 +30,21 @@ const updateOpinion = async (req, res) => {
   }
 };
 
-module.exports = Router().put('/:id', updateOpinion);
+const deleteOpinion = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const opinion = await Opinion.findByPk(id);
+
+    if (!opinion) {
+      return res.status(404).json({ message: 'Opinion not found' });
+    }
+    console.log(opinion);
+  } catch (error) {
+    return res.status(500).json({ message: 'Something goes wrong', error });
+  }
+};
+
+module.exports = Router()
+  .put('/:id', updateOpinion)
+  .delete('/:id', deleteOpinion);
