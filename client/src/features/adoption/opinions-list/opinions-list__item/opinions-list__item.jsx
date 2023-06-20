@@ -31,6 +31,11 @@ export default function OpinionsListItem({
     toggleEditMode();
   };
 
+  const confirmChanges = () => {
+    confirmOpinionChanges(id, opinionText);
+    toggleEditMode();
+  };
+
   if (!body) return false;
 
   const formattedDate = getFormattedDate(updatedAt, 'full');
@@ -44,9 +49,9 @@ export default function OpinionsListItem({
         <OpinionsListButtons
           opinionAuthorId={userId}
           editMode={editMode}
-          confirmOpinionChanges={() => confirmOpinionChanges(id, opinionText)}
+          confirmOpinionChanges={confirmChanges}
           cancelOpinionChanges={cancelOpinionChanges}
-          toggleEditMode={() => toggleEditMode(id)}
+          toggleEditMode={toggleEditMode}
           deleteOpinion={() => deleteOpinion(id)}
         />
       </h3>
