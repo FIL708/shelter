@@ -1,5 +1,35 @@
 const { Router } = require('express');
-const { Opinion } = require('../models');
+const { Opinion, User, Adoption } = require('../models');
+
+const createOpinion = async (req, res) => {
+  if (!req.session.passport) {
+    return res.status(403).json({ message: 'Unauthorized' });
+  }
+
+  const adoptionId = req.params.id;
+  const userId = req.session.passport.user.id;
+  const { body } = req.body;
+  if (!body) {
+    return res.status(422).json({ message: 'Unprocessable entity' });
+  }
+
+  try {
+    const user = await User.findByPk(userId);
+    if (!user) {
+      return res.status(404).json({ message: 'Users not found' });
+    }
+
+    const adoption = await Adoption.findByPk(adoptionId);
+    if (!adoption) {
+      return res.status(404).json({ message: 'Adoption not found' });
+    }
+
+    await Opinion.create({ body, adoptionId, userId });
+    return res.status(200).json({ message: 'Opinion successfully created' });
+  } catch (error) {
+    return res.status(500).json({ message: 'Something goes wrong', error });
+  }
+};
 
 const updateOpinion = async (req, res) => {
   const { id } = req.params;
@@ -63,5 +93,6 @@ const deleteOpinion = async (req, res) => {
 };
 
 module.exports = Router()
+  .post('/:id', createOpinion)
   .put('/:id', updateOpinion)
   .delete('/:id', deleteOpinion);
