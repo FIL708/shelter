@@ -5,6 +5,7 @@
   border-radius: 4px;
   color: var(--dark-grey);
   background: transparent;
+  resize: vertical;
 }
 
 .textarea:focus {
