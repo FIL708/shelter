@@ -10,13 +10,16 @@ export default function OpinionsListItem({
   user,
   userId,
   updatedAt,
-  editMode,
   deleteOpinion,
-  toggleEditMode,
   confirmOpinionChanges,
 }) {
   const [opinionText, setOpinionText] = useState(body);
+  const [editMode, setEditMode] = useState(false);
   console.log(deleteOpinion);
+
+  const toggleEditMode = () => {
+    setEditMode((prev) => !prev);
+  };
 
   const opinionHandler = (event) => {
     const { value } = event.target;
@@ -25,7 +28,7 @@ export default function OpinionsListItem({
 
   const cancelOpinionChanges = () => {
     setOpinionText(body);
-    toggleEditMode(id);
+    toggleEditMode();
   };
 
   if (!body) return false;

@@ -23,28 +23,13 @@ export default function Adoption() {
 
   useEffect(() => {
     if (pet.opinions) {
-      const opinionsList = pet.opinions.map((opinion) => ({
-        ...opinion,
-        editMode: false,
-      }));
-      setOpinions(opinionsList);
+      setOpinions(pet.opinions);
     }
   }, [pet]);
 
-  const toggleEditMode = (opinionId) => {
-    const arrayAfterToggle = opinions.map((opinion) =>
-      opinion.id === opinionId
-        ? { ...opinion, editMode: !opinion.editMode }
-        : opinion,
-    );
-    setOpinions(arrayAfterToggle);
-  };
-
   const confirmOpinionChanges = (opinionId, newValue) => {
     const arrayAfterChanges = opinions.map((opinion) =>
-      opinion.id === opinionId
-        ? { ...opinion, body: newValue, editMode: !opinion.editMode }
-        : opinion,
+      opinion.id === opinionId ? { ...opinion, body: newValue } : opinion,
     );
     setOpinions(arrayAfterChanges);
   };
@@ -78,7 +63,6 @@ export default function Adoption() {
       <Subtitle text="What people think about me" />
       <OpinionsList
         opinions={opinions}
-        toggleEditMode={toggleEditMode}
         confirmOpinionChanges={confirmOpinionChanges}
         deleteOpinion={deleteOpinion}
       />
