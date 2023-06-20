@@ -26,11 +26,22 @@ export default function Adoption() {
     }
   }, [pet]);
 
-  const confirmOpinionChanges = (opinionId, newValue) => {
-    const arrayAfterChanges = opinions.map((opinion) =>
-      opinion.id === opinionId ? { ...opinion, body: newValue } : opinion,
-    );
-    setOpinions(arrayAfterChanges);
+  const confirmOpinionChanges = async (opinionId, body) => {
+    try {
+      const res = await fetch(`/api/opinion/${opinionId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ body }),
+      });
+      if (res.ok) {
+        const arrayAfterChanges = opinions.map((opinion) =>
+          opinion.id === opinionId ? { ...opinion, body } : opinion,
+        );
+        setOpinions(arrayAfterChanges);
+      }
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   const deleteOpinion = (opinionId) => {
