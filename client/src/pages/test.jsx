@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Page, Subtitle } from '../components/ui';
 import { Textarea } from '../components/form';
-import OpinionsListItem from '../features/adoption/opinions-list/opinions-list__item/opinions-list__item.jsx';
+import OpinionsListItem from '../features/adoption/opinions-list/opinion/opinion.jsx';
 
 export default function Test() {
   const [state, setState] = useState();

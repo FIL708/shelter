@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { Button } from '../../../../components/form';
 import { UserContext } from '../../../..';
-import './opinions-list__button.css';
+import './opinion__buttons.css';
 
-export default function OpinionsListItemButtons({
+export default function OpinionButtons({
   deleteOpinion,
   toggleEditMode,
   opinionAuthorId,

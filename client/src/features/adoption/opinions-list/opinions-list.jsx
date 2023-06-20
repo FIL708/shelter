@@ -1,4 +1,4 @@
-import OpinionsListItem from './opinions-list__item/opinions-list__item.jsx';
+import Opinion from './opinion/opinion.jsx';
 import './opinions-list.css';
 
 export default function OpinionsList({
@@ -11,7 +11,7 @@ export default function OpinionsList({
   return (
     <ul className="opinions-list">
       {opinions.map((opinion) => (
-        <OpinionsListItem
+        <Opinion
           key={opinion.id}
           {...opinion}
           toggleEditMode={toggleEditMode}

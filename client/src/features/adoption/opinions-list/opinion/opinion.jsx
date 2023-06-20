@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Textarea } from '../../../../components/form';
 import { getFormattedDate } from '../../../../utils';
-import OpinionsListButtons from '../opinions-list__buttons/opinions-list__buttons.jsx';
-import './opinions-list__item.css';
+import OpinionButtons from '../opinion__buttons/opinion__buttons.jsx';
+import './opinion.css';
 
-export default function OpinionsListItem({
+export default function Opinion({
   id,
   body,
   user,
@@ -45,7 +45,7 @@ export default function OpinionsListItem({
           {`${user.firstName} ${user.lastName}`}
         </span>
         <span className="opinions-list__item-date">{formattedDate}</span>
-        <OpinionsListButtons
+        <OpinionButtons
           opinionAuthorId={userId}
           editMode={editMode}
           confirmOpinionChanges={confirmChanges}
