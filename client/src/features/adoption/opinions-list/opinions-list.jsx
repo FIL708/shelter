@@ -1,4 +1,5 @@
 import Opinion from './opinion/opinion.jsx';
+import NewOpinion from './new-opinion/new-opinion.jsx';
 import './opinions-list.css';
 
 export default function OpinionsList({
@@ -10,6 +11,7 @@ export default function OpinionsList({
   if (!opinions) return false;
   return (
     <ul className="opinions-list">
+      <NewOpinion />
       {opinions.map((opinion) => (
         <Opinion
           key={opinion.id}
