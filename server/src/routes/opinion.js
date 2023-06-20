@@ -24,8 +24,10 @@ const createOpinion = async (req, res) => {
       return res.status(404).json({ message: 'Adoption not found' });
     }
 
-    await Opinion.create({ body, adoptionId, userId });
-    return res.status(200).json({ message: 'Opinion successfully created' });
+    const opinion = await Opinion.create({ body, adoptionId, userId });
+    return res
+      .status(200)
+      .json({ message: 'Opinion successfully created', opinion });
   } catch (error) {
     return res.status(500).json({ message: 'Something goes wrong', error });
   }

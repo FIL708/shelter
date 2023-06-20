@@ -17,6 +17,8 @@ export default function Button({
   let iconColor;
   if (disabled && className === 'outline') {
     iconColor = '#868686';
+  } else if (disabled && onlyIconClassName === 'only-icon') {
+    iconColor = '#868686';
   } else if (disabled && !className) {
     iconColor = '#fff';
   } else {

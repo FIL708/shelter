@@ -47,6 +47,9 @@
   padding: 8px;
   background-color: transparent;
 }
+.only-icon:disabled {
+  background-color: transparent;
+}
 
 .only-icon:hover {
   background-color: transparent;
