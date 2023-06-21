@@ -39,13 +39,13 @@ export default function Opinion({
 
   const formattedDate = getFormattedDate(updatedAt, 'full');
   return (
-    <li className="opinions-list__item">
-      <h3 className="opinions-list__item-header">
+    <li className="opinion">
+      <h3 className="opinion__header">
         <img className="opinion__avatar" src={user.avatar} alt="user avatar" />
-        <span className="opinions-list__item-user">
+        <span className="opinion__user">
           {`${user.firstName} ${user.lastName}`}
         </span>
-        <span className="opinions-list__item-date">{formattedDate}</span>
+        <span className="opinion__date">{formattedDate}</span>
         <OpinionButtons
           opinionAuthorId={userId}
           editMode={editMode}

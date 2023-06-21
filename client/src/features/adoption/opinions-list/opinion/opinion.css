@@ -1,11 +1,11 @@
-.opinions-list__item {
+.opinion {
   width: 100%;
   margin-bottom: 20px;
   padding: 20px;
   box-shadow: var(--shadow-4);
 }
 
-.opinions-list__item-header {
+.opinion__header {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
@@ -14,11 +14,11 @@
   color: var(--blue);
 }
 
-.opinions-list__item-user {
+.opinion__user {
   width: 160px;
 }
 
-.opinions-list__item-date {
+.opinion__date {
   color: var(--light-grey);
 }
 
