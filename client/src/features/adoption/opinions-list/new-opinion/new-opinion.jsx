@@ -8,8 +8,6 @@ export default function NewOpinion({ createNewOpinion }) {
     const { value } = event.target;
     setNewOpinion(value);
   };
-  const isButtonDisable = !newOpinion;
-  console.log(isButtonDisable);
 
   return (
     <li className="new-opinion">
@@ -23,7 +21,7 @@ export default function NewOpinion({ createNewOpinion }) {
         iconType="send"
         iconFill="#7286d3"
         iconSize="25px"
-        disabled={isButtonDisable}
+        disabled={!newOpinion}
         onClick={() => createNewOpinion(newOpinion)}
       />
     </li>

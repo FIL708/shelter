@@ -19,7 +19,6 @@ export default function Adoption() {
   const { id } = useParams();
   const [pet, isLoading, error] = useFetch(`/api/adoption/${id}`);
   const [opinions, setOpinions] = useState([]);
-  console.log(opinions);
 
   useEffect(() => {
     if (pet.opinions) {
@@ -64,13 +63,16 @@ export default function Adoption() {
   const createNewOpinion = async (body) => {
     try {
       const res = await fetch(`/api/opinion/${id}`, {
-        method: 'PUT',
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ body }),
       });
-      console.log(res);
       const newOpinion = await res.json();
       console.log(newOpinion);
+
+      if (res.ok) {
+        setOpinions((prev) => [newOpinion.opinion, ...prev]);
+      }
     } catch (e) {
       console.log(e);
     }

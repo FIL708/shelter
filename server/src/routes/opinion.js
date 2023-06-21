@@ -25,9 +25,13 @@ const createOpinion = async (req, res) => {
     }
 
     const opinion = await Opinion.create({ body, adoptionId, userId });
-    return res
-      .status(200)
-      .json({ message: 'Opinion successfully created', opinion });
+    return res.status(200).json({
+      message: 'Opinion successfully created',
+      opinion: {
+        ...opinion.dataValues,
+        user: { firstName: user.firstName, lastName: user.lastName },
+      },
+    });
   } catch (error) {
     return res.status(500).json({ message: 'Something goes wrong', error });
   }
