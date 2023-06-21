@@ -19,12 +19,18 @@ export default function Adoption() {
   const { id } = useParams();
   const [pet, isLoading, error] = useFetch(`/api/adoption/${id}`);
   const [opinions, setOpinions] = useState([]);
+  const [newOpinion, setNewOpinion] = useState('');
 
   useEffect(() => {
     if (pet.opinions) {
       setOpinions(pet.opinions);
     }
   }, [pet]);
+
+  const newOpinionHandler = (event) => {
+    const { value } = event.target;
+    setNewOpinion(value);
+  };
 
   const confirmOpinionChanges = async (opinionId, body) => {
     try {
@@ -67,14 +73,15 @@ export default function Adoption() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ body }),
       });
-      const newOpinion = await res.json();
-      console.log(newOpinion);
+      const { opinion } = await res.json();
 
       if (res.ok) {
-        setOpinions((prev) => [newOpinion.opinion, ...prev]);
+        setOpinions((prev) => [opinion, ...prev]);
       }
     } catch (e) {
       console.log(e);
+    } finally {
+      setNewOpinion('');
     }
   };
 
@@ -103,6 +110,8 @@ export default function Adoption() {
         confirmOpinionChanges={confirmOpinionChanges}
         deleteOpinion={deleteOpinion}
         createNewOpinion={createNewOpinion}
+        newOpinion={newOpinion}
+        newOpinionHandler={newOpinionHandler}
       />
       <ScrollButton />
     </Page>

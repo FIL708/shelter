@@ -8,11 +8,17 @@ export default function OpinionsList({
   confirmOpinionChanges,
   deleteOpinion,
   createNewOpinion,
+  newOpinion,
+  newOpinionHandler,
 }) {
   if (!opinions) return false;
   return (
     <ul className="opinions-list">
-      <NewOpinion createNewOpinion={createNewOpinion} />
+      <NewOpinion
+        createNewOpinion={createNewOpinion}
+        newOpinion={newOpinion}
+        newOpinionHandler={newOpinionHandler}
+      />
       {opinions.map((opinion) => (
         <Opinion
           key={opinion.id}

@@ -1,14 +1,11 @@
-import { useState } from 'react';
 import { Button, Textarea } from '../../../../components/form';
 import './new-opinion.css';
 
-export default function NewOpinion({ createNewOpinion }) {
-  const [newOpinion, setNewOpinion] = useState('');
-  const newOpinionHandler = (event) => {
-    const { value } = event.target;
-    setNewOpinion(value);
-  };
-
+export default function NewOpinion({
+  createNewOpinion,
+  newOpinion,
+  newOpinionHandler,
+}) {
   return (
     <li className="new-opinion">
       <Textarea
