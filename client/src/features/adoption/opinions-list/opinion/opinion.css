@@ -21,3 +21,10 @@
 .opinions-list__item-date {
   color: var(--light-grey);
 }
+
+.opinion__avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  margin-right: 8px;
+}

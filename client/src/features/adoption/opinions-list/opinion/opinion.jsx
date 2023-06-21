@@ -41,6 +41,7 @@ export default function Opinion({
   return (
     <li className="opinions-list__item">
       <h3 className="opinions-list__item-header">
+        <img className="opinion__avatar" src={user.avatar} alt="user avatar" />
         <span className="opinions-list__item-user">
           {`${user.firstName} ${user.lastName}`}
         </span>

@@ -29,7 +29,11 @@ const createOpinion = async (req, res) => {
       message: 'Opinion successfully created',
       opinion: {
         ...opinion.dataValues,
-        user: { firstName: user.firstName, lastName: user.lastName },
+        user: {
+          firstName: user.firstName,
+          lastName: user.lastName,
+          avatar: user.avatar,
+        },
       },
     });
   } catch (error) {
