@@ -9,7 +9,7 @@ import {
 } from '../components/ui';
 import { PetController, PetCardList } from '../features/adoptions';
 import { getDataChunks } from '../utils';
-import { useScrollToggle, useFetch } from '../hooks';
+import { useFetch } from '../hooks';
 
 export default function Adoptions() {
   const [pets, isLoading, error] = useFetch('/api/adoption');
@@ -20,7 +20,6 @@ export default function Adoptions() {
     numberOfPets: 9,
   });
   const [page, setPage] = useState(1);
-  const isScrollButtonVisible = useScrollToggle(200);
 
   useEffect(() => {
     if (controlValues.species === 'all') {
@@ -79,7 +78,7 @@ export default function Adoptions() {
         page={page}
         pages={dataChunks.length}
       />
-      <ScrollButton visible={isScrollButtonVisible} />
+      <ScrollButton />
     </Page>
   );
 }

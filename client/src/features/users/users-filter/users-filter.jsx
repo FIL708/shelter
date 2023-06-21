@@ -39,6 +39,7 @@ export default function UsersFilter({ changeFilter, cleanFilter, filter }) {
           onClick={cleanFilter}
           iconType="clear"
           iconSize="20px"
+          iconFill="#e5e0ff"
           className="users-filter__clear-button"
         />
       </fieldset>

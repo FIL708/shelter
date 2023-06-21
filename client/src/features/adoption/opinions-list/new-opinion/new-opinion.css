@@ -1,0 +1,7 @@
+.new-opinion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 80%;
+  margin-bottom: 30px;
+}

@@ -10,7 +10,7 @@ export default function WelcomeSection() {
         alt="welcome section logo"
         className="home__welcome-section__logo"
       />
-      <Subtitle title="Welcome!" />
+      <Subtitle text="Welcome!" />
       <p className="home__welcome-section__note">
         Welcome to HelpMeDude! We are a pet adoption company dedicated to
         providing loving homes for animals in need. Our mission is to match each

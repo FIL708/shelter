@@ -1,19 +1,24 @@
-import { Page, Subtitle, FormMessage } from '../components/ui';
+import { useState } from 'react';
+import { Page, Subtitle } from '../components/ui';
+import { Textarea } from '../components/form';
+import OpinionsListItem from '../features/adoption/opinions-list/opinion/opinion.jsx';
 
 export default function Test() {
+  const [state, setState] = useState();
+  const onChange = (event) => {
+    const { value } = event.target;
+    setState(value);
+  };
+
   return (
     <Page>
       <Subtitle text="Test Page" main />
-      <div
-        style={{
-          width: '300px',
-          height: '200px',
-          backgroundColor: 'red',
-          position: 'relative',
-        }}
-      >
-        <FormMessage text="its ok" isValid bottom="10%" />
-      </div>
+      <OpinionsListItem
+        body="asdasdg asdhasdhasd hasdhasdh hasdhasd"
+        user={{ firstName: 'Filip', lastName: 'Zebrowski' }}
+        updatedAt="1994-02-01"
+      />
+      <Textarea onChange={onChange} value={state} />
     </Page>
   );
 }

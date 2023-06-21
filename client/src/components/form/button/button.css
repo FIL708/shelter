@@ -48,14 +48,23 @@
   background-color: transparent;
 }
 
+.only-icon:disabled {
+  background-color: transparent;
+}
+
 .only-icon:hover {
   background-color: transparent;
   transform: scale(1.2);
 }
 
+.only-icon:active {
+  transform: scale(1);
+}
+
 .button__newsletter {
   border-radius: 0 8px 8px 0;
 }
+
 .pagination__active-button {
   border: 1px solid var(--white);
 }

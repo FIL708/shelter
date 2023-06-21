@@ -51,7 +51,7 @@ const getOneAdoption = async (req, res) => {
           include: {
             model: User,
             as: 'user',
-            attributes: ['firstName', 'lastName'],
+            attributes: ['firstName', 'lastName', 'avatar'],
           },
         },
       ],

@@ -1,0 +1,30 @@
+.opinion {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: var(--shadow-4);
+}
+
+.opinion__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--blue);
+}
+
+.opinion__user {
+  width: 160px;
+}
+
+.opinion__date {
+  color: var(--light-grey);
+}
+
+.opinion__avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  margin-right: 8px;
+}

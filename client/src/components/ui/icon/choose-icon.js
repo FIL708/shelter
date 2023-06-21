@@ -33,6 +33,9 @@ import { ReactComponent as User } from './icon__glyphs/user.svg';
 import { ReactComponent as Admin } from './icon__glyphs/admin.svg';
 import { ReactComponent as Female } from './icon__glyphs/female.svg';
 import { ReactComponent as Male } from './icon__glyphs/male.svg';
+import { ReactComponent as Edit } from './icon__glyphs/edit.svg';
+import { ReactComponent as Confirm } from './icon__glyphs/confirm.svg';
+import { ReactComponent as Delete } from './icon__glyphs/delete.svg';
 
 const chooseIcon = (type) => {
   switch (type) {
@@ -106,6 +109,12 @@ const chooseIcon = (type) => {
       return Female;
     case 'male':
       return Male;
+    case 'edit':
+      return Edit;
+    case 'confirm':
+      return Confirm;
+    case 'delete':
+      return Delete;
     default:
       return undefined;
   }
