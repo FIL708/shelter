@@ -6,7 +6,7 @@ export default function Home() {
     <Page>
       <WelcomeSection />
       <GoalsSection />
-      <Subtitle text="our mission" />
+      <Subtitle text="Our mission" />
       <MissionSection />
       <ScrollButton />
     </Page>
