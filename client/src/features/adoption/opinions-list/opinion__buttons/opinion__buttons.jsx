@@ -18,7 +18,7 @@ export default function OpinionButtons({
     if (user.role !== 'admin') return false;
   }
   return (
-    <div className="opinions-list__buttons">
+    <div className="opinion__buttons">
       {editMode ? (
         <>
           <Button

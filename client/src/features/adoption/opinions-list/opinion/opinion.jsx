@@ -63,7 +63,7 @@ export default function Opinion({
           }}
         />
       ) : (
-        <p className="opinions-list__item-body">{body}</p>
+        <p className="opinion__body">{body}</p>
       )}
     </li>
   );
