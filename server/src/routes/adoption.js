@@ -55,11 +55,13 @@ const getOneAdoption = async (req, res) => {
           },
         },
       ],
+      order: [[{ model: Opinion, as: 'opinions' }, 'updatedAt', 'DESC']],
     });
 
     if (!adoption) {
       return res.status(404).json({ message: 'Adoption not found' });
     }
+    console.log(adoption.toJSON());
 
     return res.status(200).json(adoption);
   } catch (error) {
