@@ -6,13 +6,13 @@ export default function OpinionButtons({
   toggleEditMode,
   opinionAuthorId,
   editMode,
-  user,
+  loggedUser,
   confirmOpinionChanges,
   cancelOpinionChanges,
 }) {
-  if (!user) return false;
-  if (opinionAuthorId !== user.id) {
-    if (user.role !== 'admin') return false;
+  if (!loggedUser) return false;
+  if (opinionAuthorId !== loggedUser.id) {
+    if (loggedUser.role !== 'admin') return false;
   }
   return (
     <div className="opinion__buttons">

@@ -21,13 +21,13 @@ export default function OpinionsList({
         createNewOpinion={createNewOpinion}
         newOpinion={newOpinion}
         newOpinionHandler={newOpinionHandler}
-        user={user}
+        loggedUser={user}
       />
       {opinions.map((opinion) => (
         <Opinion
           key={opinion.id}
           {...opinion}
-          user={user}
+          loggedUser={user}
           toggleEditMode={toggleEditMode}
           confirmOpinionChanges={confirmOpinionChanges}
           deleteOpinion={deleteOpinion}
