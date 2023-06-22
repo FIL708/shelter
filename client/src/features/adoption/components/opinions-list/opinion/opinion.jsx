@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Textarea } from '../../../../components/form';
-import { getFormattedDate } from '../../../../utils';
+import { Textarea } from '../../../../../components/form';
+import { getFormattedDate } from '../../../../../utils';
 import OpinionButtons from '../opinion__buttons/opinion__buttons.jsx';
 import './opinion.css';
 
@@ -12,6 +12,7 @@ export default function Opinion({
   updatedAt,
   deleteOpinion,
   confirmOpinionChanges,
+  loggedUser,
 }) {
   const [opinionText, setOpinionText] = useState(body);
   const [editMode, setEditMode] = useState(false);
@@ -53,6 +54,7 @@ export default function Opinion({
           cancelOpinionChanges={cancelOpinionChanges}
           toggleEditMode={toggleEditMode}
           deleteOpinion={() => deleteOpinion(id)}
+          loggedUser={loggedUser}
         />
       </h3>
       {editMode ? (

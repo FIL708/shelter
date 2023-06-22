@@ -1,4 +1,4 @@
-import { Button } from '../../../../components/form';
+import { Button } from '../../../../../components/form';
 import './opinion__buttons.css';
 
 export default function OpinionButtons({
@@ -10,6 +10,8 @@ export default function OpinionButtons({
   confirmOpinionChanges,
   cancelOpinionChanges,
 }) {
+  console.log(loggedUser);
+
   if (!loggedUser) return false;
   if (opinionAuthorId !== loggedUser.id) {
     if (loggedUser.role !== 'admin') return false;

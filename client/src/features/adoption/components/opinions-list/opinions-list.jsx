@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { UserContext } from '../../..';
+import { UserContext } from '../../../..';
 import Opinion from './opinion/opinion.jsx';
 import NewOpinion from './new-opinion/new-opinion.jsx';
 import './opinions-list.css';
@@ -14,6 +14,8 @@ export default function OpinionsList({
   newOpinionHandler,
 }) {
   const { user } = useContext(UserContext);
+  console.log(user);
+
   if (!opinions) return false;
   return (
     <ul className="opinions-list">
