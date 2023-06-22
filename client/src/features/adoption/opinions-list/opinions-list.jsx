@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { UserContext } from '../../..';
 import Opinion from './opinion/opinion.jsx';
 import NewOpinion from './new-opinion/new-opinion.jsx';
 import './opinions-list.css';
@@ -11,6 +13,7 @@ export default function OpinionsList({
   newOpinion,
   newOpinionHandler,
 }) {
+  const { user } = useContext(UserContext);
   if (!opinions) return false;
   return (
     <ul className="opinions-list">
@@ -18,11 +21,13 @@ export default function OpinionsList({
         createNewOpinion={createNewOpinion}
         newOpinion={newOpinion}
         newOpinionHandler={newOpinionHandler}
+        user={user}
       />
       {opinions.map((opinion) => (
         <Opinion
           key={opinion.id}
           {...opinion}
+          user={user}
           toggleEditMode={toggleEditMode}
           confirmOpinionChanges={confirmOpinionChanges}
           deleteOpinion={deleteOpinion}
