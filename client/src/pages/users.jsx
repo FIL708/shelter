@@ -14,7 +14,6 @@ import { useFetch } from '../hooks';
 export default function Users() {
   const [users, isLoading, error] = useFetch('/api/user');
   const [usersData, setUsersData] = useState([]);
-  console.log(usersData);
 
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState({

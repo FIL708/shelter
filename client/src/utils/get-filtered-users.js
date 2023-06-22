@@ -1,6 +1,5 @@
 export default function getSortedData(data, filter) {
   if (!filter.sortBy && !filter.searchBy) return data;
-  console.log(data, filter);
 
   let newData = [...data];
 
