@@ -16,8 +16,14 @@ module.exports = (sequelize, { STRING, DATE }) => {
   }
   User.init(
     {
-      firstName: STRING,
-      lastName: STRING,
+      firstName: {
+        type: STRING,
+        defaultValue: '',
+      },
+      lastName: {
+        type: STRING,
+        defaultValue: '',
+      },
       role: {
         type: STRING,
         defaultValue: 'user',
@@ -37,7 +43,6 @@ module.exports = (sequelize, { STRING, DATE }) => {
     {
       sequelize,
       modelName: 'User',
-      paranoid: true,
     },
   );
   return User;

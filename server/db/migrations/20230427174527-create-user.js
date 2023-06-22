@@ -9,13 +9,15 @@ module.exports = {
       },
       firstName: {
         type: STRING,
+        defaultValue: '',
       },
       lastName: {
         type: STRING,
+        defaultValue: '',
       },
       role: {
         type: STRING,
-        defaultValue: "user",
+        defaultValue: 'user',
       },
       email: {
         type: STRING,
@@ -38,10 +40,6 @@ module.exports = {
         type: DATE,
       },
       updatedAt: {
-        allowNull: false,
-        type: DATE,
-      },
-      deletedAt: {
         allowNull: false,
         type: DATE,
       },
