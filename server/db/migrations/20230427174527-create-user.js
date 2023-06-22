@@ -9,9 +9,11 @@ module.exports = {
       },
       firstName: {
         type: STRING,
+        defaultValue: '',
       },
       lastName: {
         type: STRING,
+        defaultValue: '',
       },
       role: {
         type: STRING,
