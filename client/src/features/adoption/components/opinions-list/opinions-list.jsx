@@ -14,7 +14,6 @@ export default function OpinionsList({
   newOpinionHandler,
 }) {
   const { user } = useContext(UserContext);
-  console.log(user);
 
   if (!opinions) return false;
   return (

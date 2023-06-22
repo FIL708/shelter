@@ -10,8 +10,6 @@ export default function OpinionButtons({
   confirmOpinionChanges,
   cancelOpinionChanges,
 }) {
-  console.log(loggedUser);
-
   if (!loggedUser) return false;
   if (opinionAuthorId !== loggedUser.id) {
     if (loggedUser.role !== 'admin') return false;
