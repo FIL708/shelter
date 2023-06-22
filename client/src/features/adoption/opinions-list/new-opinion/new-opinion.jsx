@@ -5,7 +5,9 @@ export default function NewOpinion({
   createNewOpinion,
   newOpinion,
   newOpinionHandler,
+  loggedUser,
 }) {
+  if (!loggedUser) return false;
   return (
     <li className="new-opinion">
       <Textarea

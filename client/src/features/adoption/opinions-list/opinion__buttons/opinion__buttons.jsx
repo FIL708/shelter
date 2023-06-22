@@ -1,6 +1,4 @@
-import { useContext } from 'react';
 import { Button } from '../../../../components/form';
-import { UserContext } from '../../../..';
 import './opinion__buttons.css';
 
 export default function OpinionButtons({
@@ -8,14 +6,13 @@ export default function OpinionButtons({
   toggleEditMode,
   opinionAuthorId,
   editMode,
+  loggedUser,
   confirmOpinionChanges,
   cancelOpinionChanges,
 }) {
-  const { user } = useContext(UserContext);
-
-  if (!user) return false;
-  if (opinionAuthorId !== user.id) {
-    if (user.role !== 'admin') return false;
+  if (!loggedUser) return false;
+  if (opinionAuthorId !== loggedUser.id) {
+    if (loggedUser.role !== 'admin') return false;
   }
   return (
     <div className="opinion__buttons">

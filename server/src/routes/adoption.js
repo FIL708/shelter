@@ -55,6 +55,7 @@ const getOneAdoption = async (req, res) => {
           },
         },
       ],
+      order: [[{ model: Opinion, as: 'opinions' }, 'updatedAt', 'DESC']],
     });
 
     if (!adoption) {
