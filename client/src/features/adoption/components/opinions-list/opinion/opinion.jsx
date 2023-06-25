@@ -11,7 +11,7 @@ export default function Opinion({
   userId,
   updatedAt,
   deleteOpinion,
-  confirmOpinionChanges,
+  updateOpinion,
   loggedUser,
 }) {
   const [opinionText, setOpinionText] = useState(body);
@@ -32,7 +32,7 @@ export default function Opinion({
   };
 
   const confirmChanges = () => {
-    confirmOpinionChanges(id, opinionText);
+    updateOpinion(id, opinionText);
     toggleEditMode();
   };
 
@@ -50,7 +50,7 @@ export default function Opinion({
         <OpinionButtons
           opinionAuthorId={userId}
           editMode={editMode}
-          confirmOpinionChanges={confirmChanges}
+          confirmChanges={confirmChanges}
           cancelOpinionChanges={cancelOpinionChanges}
           toggleEditMode={toggleEditMode}
           deleteOpinion={() => deleteOpinion(id)}

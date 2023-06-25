@@ -7,9 +7,9 @@ import './opinions-list.css';
 export default function OpinionsList({
   opinions,
   toggleEditMode,
-  confirmOpinionChanges,
+  updateOpinion,
   deleteOpinion,
-  createNewOpinion,
+  createOpinion,
   newOpinion,
   newOpinionHandler,
 }) {
@@ -19,7 +19,7 @@ export default function OpinionsList({
   return (
     <ul className="opinions-list">
       <NewOpinion
-        createNewOpinion={createNewOpinion}
+        createOpinion={createOpinion}
         newOpinion={newOpinion}
         newOpinionHandler={newOpinionHandler}
         loggedUser={user}
@@ -30,7 +30,7 @@ export default function OpinionsList({
           {...opinion}
           loggedUser={user}
           toggleEditMode={toggleEditMode}
-          confirmOpinionChanges={confirmOpinionChanges}
+          updateOpinion={updateOpinion}
           deleteOpinion={deleteOpinion}
         />
       ))}

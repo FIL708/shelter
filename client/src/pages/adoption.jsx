@@ -97,9 +97,9 @@ export default function Adoption() {
       <Subtitle text="What people think about me" />
       <OpinionsList
         opinions={opinions}
-        confirmOpinionChanges={updateOpinionRequest}
+        updateOpinion={updateOpinionRequest}
         deleteOpinion={deleteOpinionRequest}
-        createNewOpinion={createOpinionRequest}
+        createOpinion={createOpinionRequest}
         newOpinion={newOpinion}
         newOpinionHandler={newOpinionHandler}
       />
