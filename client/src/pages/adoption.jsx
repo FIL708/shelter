@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   Page,
@@ -19,15 +18,17 @@ import { useOpinion } from '../features/adoption/hooks';
 export default function Adoption() {
   const { id } = useParams();
   const [pet, isLoading, error] = useFetch(`/api/adoption/${id}`);
-  const [opinions, addOpinion, changeOpinion, deleteOpinion] = useOpinion(pet);
-  const [newOpinion, setNewOpinion] = useState('');
+  const [
+    opinions,
+    newOpinion,
+    newOpinionHandler,
+    resetNewOpinion,
+    addOpinion,
+    changeOpinion,
+    deleteOpinion,
+  ] = useOpinion(pet);
 
-  const newOpinionHandler = (event) => {
-    const { value } = event.target;
-    setNewOpinion(value);
-  };
-
-  const confirmOpinionChanges = async (opinionId, body) => {
+  const updateOpinionRequest = async (opinionId, body) => {
     try {
       const res = await fetch(`/api/opinion/${opinionId}`, {
         method: 'PUT',
@@ -55,7 +56,7 @@ export default function Adoption() {
     }
   };
 
-  const createNewOpinion = async (body) => {
+  const createOpinionRequest = async (body) => {
     try {
       const res = await fetch(`/api/opinion/${id}`, {
         method: 'POST',
@@ -70,7 +71,7 @@ export default function Adoption() {
     } catch (e) {
       console.log(e);
     } finally {
-      setNewOpinion('');
+      resetNewOpinion();
     }
   };
 
@@ -96,9 +97,9 @@ export default function Adoption() {
       <Subtitle text="What people think about me" />
       <OpinionsList
         opinions={opinions}
-        confirmOpinionChanges={confirmOpinionChanges}
+        confirmOpinionChanges={updateOpinionRequest}
         deleteOpinion={deleteOpinionRequest}
-        createNewOpinion={createNewOpinion}
+        createNewOpinion={createOpinionRequest}
         newOpinion={newOpinion}
         newOpinionHandler={newOpinionHandler}
       />

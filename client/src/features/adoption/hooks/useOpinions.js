@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 export default function useOpinion(initial) {
   const [opinions, setOpinions] = useState([]);
+  const [newOpinion, setNewOpinion] = useState('');
 
   useEffect(() => {
     if (initial) {
@@ -25,5 +26,22 @@ export default function useOpinion(initial) {
     setOpinions((prev) => prev.filter((opinion) => opinion.id !== id));
   };
 
-  return [opinions, addOpinion, changeOpinion, deleteOpinion];
+  const newOpinionHandler = (event) => {
+    const { value } = event.target;
+    setNewOpinion(value);
+  };
+
+  const resetNewOpinion = () => {
+    setNewOpinion('');
+  };
+
+  return [
+    opinions,
+    newOpinion,
+    newOpinionHandler,
+    resetNewOpinion,
+    addOpinion,
+    changeOpinion,
+    deleteOpinion,
+  ];
 }
