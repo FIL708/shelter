@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   Page,
@@ -14,18 +14,13 @@ import {
   OpinionsList,
 } from '../features/adoption';
 import { useFetch } from '../hooks';
+import { useOpinion } from '../features/adoption/hooks';
 
 export default function Adoption() {
   const { id } = useParams();
   const [pet, isLoading, error] = useFetch(`/api/adoption/${id}`);
-  const [opinions, setOpinions] = useState([]);
+  const [opinions, addOpinion, changeOpinion, deleteOpinion] = useOpinion(pet);
   const [newOpinion, setNewOpinion] = useState('');
-
-  useEffect(() => {
-    if (pet.opinions) {
-      setOpinions(pet.opinions);
-    }
-  }, [pet]);
 
   const newOpinionHandler = (event) => {
     const { value } = event.target;
@@ -40,26 +35,20 @@ export default function Adoption() {
         body: JSON.stringify({ body }),
       });
       if (res.ok) {
-        const arrayAfterChanges = opinions.map((opinion) =>
-          opinion.id === opinionId ? { ...opinion, body } : opinion,
-        );
-        setOpinions(arrayAfterChanges);
+        changeOpinion(opinionId, body);
       }
     } catch (e) {
       console.log(e);
     }
   };
 
-  const deleteOpinion = async (opinionId) => {
+  const deleteOpinionRequest = async (opinionId) => {
     try {
       const res = await fetch(`/api/opinion/${opinionId}`, {
         method: 'DELETE',
       });
       if (res.ok) {
-        const arrayAfterDelete = opinions.filter(
-          (opinion) => opinion.id !== opinionId,
-        );
-        setOpinions(arrayAfterDelete);
+        deleteOpinion(opinionId);
       }
     } catch (e) {
       console.log(e);
@@ -76,7 +65,7 @@ export default function Adoption() {
       const { opinion } = await res.json();
 
       if (res.ok) {
-        setOpinions((prev) => [opinion, ...prev]);
+        addOpinion(opinion);
       }
     } catch (e) {
       console.log(e);
@@ -108,7 +97,7 @@ export default function Adoption() {
       <OpinionsList
         opinions={opinions}
         confirmOpinionChanges={confirmOpinionChanges}
-        deleteOpinion={deleteOpinion}
+        deleteOpinion={deleteOpinionRequest}
         createNewOpinion={createNewOpinion}
         newOpinion={newOpinion}
         newOpinionHandler={newOpinionHandler}
