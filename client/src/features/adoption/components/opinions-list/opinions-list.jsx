@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { UserContext } from '../../..';
+import { UserContext } from '../../../..';
 import Opinion from './opinion/opinion.jsx';
 import NewOpinion from './new-opinion/new-opinion.jsx';
 import './opinions-list.css';
@@ -7,18 +7,19 @@ import './opinions-list.css';
 export default function OpinionsList({
   opinions,
   toggleEditMode,
-  confirmOpinionChanges,
+  updateOpinion,
   deleteOpinion,
-  createNewOpinion,
+  createOpinion,
   newOpinion,
   newOpinionHandler,
 }) {
   const { user } = useContext(UserContext);
+
   if (!opinions) return false;
   return (
     <ul className="opinions-list">
       <NewOpinion
-        createNewOpinion={createNewOpinion}
+        createOpinion={createOpinion}
         newOpinion={newOpinion}
         newOpinionHandler={newOpinionHandler}
         loggedUser={user}
@@ -29,7 +30,7 @@ export default function OpinionsList({
           {...opinion}
           loggedUser={user}
           toggleEditMode={toggleEditMode}
-          confirmOpinionChanges={confirmOpinionChanges}
+          updateOpinion={updateOpinion}
           deleteOpinion={deleteOpinion}
         />
       ))}

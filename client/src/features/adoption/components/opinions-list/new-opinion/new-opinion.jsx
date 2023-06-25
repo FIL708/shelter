@@ -1,8 +1,8 @@
-import { Button, Textarea } from '../../../../components/form';
+import { Button, Textarea } from '../../../../../components/form';
 import './new-opinion.css';
 
 export default function NewOpinion({
-  createNewOpinion,
+  createOpinion,
   newOpinion,
   newOpinionHandler,
   loggedUser,
@@ -21,7 +21,7 @@ export default function NewOpinion({
         iconFill="#7286d3"
         iconSize="25px"
         disabled={!newOpinion}
-        onClick={() => createNewOpinion(newOpinion)}
+        onClick={() => createOpinion(newOpinion)}
       />
     </li>
   );

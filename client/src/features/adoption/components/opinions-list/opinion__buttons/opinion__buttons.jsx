@@ -1,4 +1,4 @@
-import { Button } from '../../../../components/form';
+import { Button } from '../../../../../components/form';
 import './opinion__buttons.css';
 
 export default function OpinionButtons({
@@ -7,7 +7,7 @@ export default function OpinionButtons({
   opinionAuthorId,
   editMode,
   loggedUser,
-  confirmOpinionChanges,
+  confirmChanges,
   cancelOpinionChanges,
 }) {
   if (!loggedUser) return false;
@@ -22,7 +22,7 @@ export default function OpinionButtons({
             iconType="confirm"
             iconFill="#167230"
             iconSize="18px"
-            onClick={confirmOpinionChanges}
+            onClick={confirmChanges}
           />
           <Button
             iconType="exit"

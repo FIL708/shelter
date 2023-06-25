@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   Page,
@@ -14,25 +13,22 @@ import {
   OpinionsList,
 } from '../features/adoption';
 import { useFetch } from '../hooks';
+import { useOpinion } from '../features/adoption/hooks';
 
 export default function Adoption() {
   const { id } = useParams();
   const [pet, isLoading, error] = useFetch(`/api/adoption/${id}`);
-  const [opinions, setOpinions] = useState([]);
-  const [newOpinion, setNewOpinion] = useState('');
+  const [
+    opinions,
+    newOpinion,
+    newOpinionHandler,
+    resetNewOpinion,
+    addOpinion,
+    changeOpinion,
+    deleteOpinion,
+  ] = useOpinion(pet);
 
-  useEffect(() => {
-    if (pet.opinions) {
-      setOpinions(pet.opinions);
-    }
-  }, [pet]);
-
-  const newOpinionHandler = (event) => {
-    const { value } = event.target;
-    setNewOpinion(value);
-  };
-
-  const confirmOpinionChanges = async (opinionId, body) => {
+  const updateOpinionRequest = async (opinionId, body) => {
     try {
       const res = await fetch(`/api/opinion/${opinionId}`, {
         method: 'PUT',
@@ -40,33 +36,27 @@ export default function Adoption() {
         body: JSON.stringify({ body }),
       });
       if (res.ok) {
-        const arrayAfterChanges = opinions.map((opinion) =>
-          opinion.id === opinionId ? { ...opinion, body } : opinion,
-        );
-        setOpinions(arrayAfterChanges);
+        changeOpinion(opinionId, body);
       }
     } catch (e) {
       console.log(e);
     }
   };
 
-  const deleteOpinion = async (opinionId) => {
+  const deleteOpinionRequest = async (opinionId) => {
     try {
       const res = await fetch(`/api/opinion/${opinionId}`, {
         method: 'DELETE',
       });
       if (res.ok) {
-        const arrayAfterDelete = opinions.filter(
-          (opinion) => opinion.id !== opinionId,
-        );
-        setOpinions(arrayAfterDelete);
+        deleteOpinion(opinionId);
       }
     } catch (e) {
       console.log(e);
     }
   };
 
-  const createNewOpinion = async (body) => {
+  const createOpinionRequest = async (body) => {
     try {
       const res = await fetch(`/api/opinion/${id}`, {
         method: 'POST',
@@ -76,12 +66,12 @@ export default function Adoption() {
       const { opinion } = await res.json();
 
       if (res.ok) {
-        setOpinions((prev) => [opinion, ...prev]);
+        addOpinion(opinion);
       }
     } catch (e) {
       console.log(e);
     } finally {
-      setNewOpinion('');
+      resetNewOpinion();
     }
   };
 
@@ -107,9 +97,9 @@ export default function Adoption() {
       <Subtitle text="What people think about me" />
       <OpinionsList
         opinions={opinions}
-        confirmOpinionChanges={confirmOpinionChanges}
-        deleteOpinion={deleteOpinion}
-        createNewOpinion={createNewOpinion}
+        updateOpinion={updateOpinionRequest}
+        deleteOpinion={deleteOpinionRequest}
+        createOpinion={createOpinionRequest}
         newOpinion={newOpinion}
         newOpinionHandler={newOpinionHandler}
       />
