@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function useOpinions(initial) {
+export default function useOpinion(initial) {
   const [opinions, setOpinions] = useState([]);
 
   useEffect(() => {
