@@ -27,21 +27,23 @@ export default function NavUserPanel({
 
   return (
     <nav className="nav__user-panel">
-      <li className="nav__user-panel__email">{userEmail}</li>
-      {panelItems.map((item) => (
-        <li className="nav__user-panel__item" key={item.linkName}>
-          <NavLink to={item.link}>{item.linkName}</NavLink>
+      <h4 className="nav__user-panel__email">{userEmail}</h4>
+      <ul className="nav__user-panel__list">
+        {panelItems.map((item) => (
+          <li className="nav__user-panel__item" key={item.linkName}>
+            <NavLink to={item.link}>{item.linkName}</NavLink>
+          </li>
+        ))}
+        <li className="nav__user-panel__item">
+          <button
+            type="button"
+            className="nav__user-panel__logout"
+            onClick={logoutHandler}
+          >
+            Logout
+          </button>
         </li>
-      ))}
-      <li className="nav__user-panel__item">
-        <button
-          type="button"
-          className="nav__user-panel__logout"
-          onClick={logoutHandler}
-        >
-          Logout
-        </button>
-      </li>
+      </ul>
     </nav>
   );
 }

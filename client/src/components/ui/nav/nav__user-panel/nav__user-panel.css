@@ -15,6 +15,7 @@
   margin: 0px 8px;
   padding: 12px 0;
   border-bottom: 1px solid var(--blue);
+  font-weight: 400;
 }
 
 .nav__user-panel__item {
