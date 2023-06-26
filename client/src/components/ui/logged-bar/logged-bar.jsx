@@ -9,18 +9,24 @@ export default function LoggedBar({ id, avatar, role, logoutHandler }) {
     avatar ||
     'https://tleliteracy.com/wp-content/uploads/2017/02/default-avatar.png';
   return (
-    <button
-      className="user-logged-bar"
-      type="button"
-      onClick={toggleNavVisibility}
-    >
-      <img src={photo} alt="user avatar" className="user-logged-bar__avatar" />
+    <div className="user-logged-bar">
+      <button
+        className="user-logged-bar__button"
+        type="button"
+        onClick={toggleNavVisibility}
+      >
+        <img
+          src={photo}
+          alt="user avatar"
+          className="user-logged-bar__avatar"
+        />
+      </button>
       <UserNavbar
         userId={id}
         userRole={role}
         logoutHandler={logoutHandler}
         visible={isNavVisible}
       />
-    </button>
+    </div>
   );
 }

@@ -1,14 +1,16 @@
 .user-logged-bar {
-  all: unset;
   position: relative;
+}
+.user-logged-bar__button {
+  all: unset;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.user-logged-bar:hover {
+.user-logged-bar__button:hover {
   transform: scale(1.1);
 }
-.user-logged-bar:active {
+.user-logged-bar__button:active {
   transform: scale(1.05);
 }
 
