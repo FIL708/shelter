@@ -22,7 +22,6 @@
 .user-navbar__item > * {
   padding: 12px 10px;
   display: block;
-  width: 100%;
 }
 
 .user-navbar__item > .active {

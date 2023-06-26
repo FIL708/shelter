@@ -7,7 +7,7 @@ import {
   Subtitle,
   ConfirmModal,
 } from '../components/ui';
-import { ChangePasswordForm, ProfileForm, UserCard } from '../features/user';
+import { ChangePasswordForm, ProfileForm, UserCard } from '../features/profile';
 import { UserContext } from '../index.jsx';
 import { useFetch } from '../hooks';
 import { inputValidator, areObjectsEqual } from '../utils';
