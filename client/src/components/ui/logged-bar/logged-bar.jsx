@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { UserNavbar } from '..';
 import './logged-bar.css';
 
-export default function LoggedBar({ id, avatar, role, logoutHandler }) {
+export default function LoggedBar({ id, avatar, role, logoutHandler, email }) {
   const [isNavVisible, setIsNavVisible] = useState(false);
   const toggleNavVisibility = () => setIsNavVisible((prev) => !prev);
   const photo =
@@ -22,6 +22,7 @@ export default function LoggedBar({ id, avatar, role, logoutHandler }) {
         />
       </button>
       <UserNavbar
+        userEmail={email}
         userId={id}
         userRole={role}
         logoutHandler={logoutHandler}

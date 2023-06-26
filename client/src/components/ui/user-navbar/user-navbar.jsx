@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 export default function UserNavbar({
   userId,
   userRole,
+  userEmail,
   logoutHandler,
   visible,
 }) {
@@ -26,6 +27,7 @@ export default function UserNavbar({
 
   return (
     <nav className="user-navbar">
+      <li className="user-navbar__email">{userEmail}</li>
       {userNavItems.map((item) => (
         <li className="user-navbar__item" key={item.linkName}>
           <NavLink to={item.link}>{item.linkName}</NavLink>
