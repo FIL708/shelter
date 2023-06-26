@@ -11,7 +11,7 @@ export default function NavUserPanel({
 }) {
   if (!visible) return false;
 
-  const userNavItems =
+  const panelItems =
     userRole === 'admin'
       ? [
           { linkName: 'Users', link: '/users' },
@@ -28,7 +28,7 @@ export default function NavUserPanel({
   return (
     <nav className="nav__user-panel">
       <li className="nav__user-panel__email">{userEmail}</li>
-      {userNavItems.map((item) => (
+      {panelItems.map((item) => (
         <li className="nav__user-panel__item" key={item.linkName}>
           <NavLink to={item.link}>{item.linkName}</NavLink>
         </li>

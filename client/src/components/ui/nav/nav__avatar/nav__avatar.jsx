@@ -3,30 +3,26 @@ import NavUserPanel from '../nav__user-panel/user-navbar.jsx';
 import './nav__avatar.css';
 
 export default function NavAvatar({ id, avatar, role, logoutHandler, email }) {
-  const [isNavVisible, setIsNavVisible] = useState(false);
-  const toggleNavVisibility = () => setIsNavVisible((prev) => !prev);
+  const [isPanelVisible, setIsPanelVisible] = useState(false);
+  const togglePanelVisibility = () => setIsPanelVisible((prev) => !prev);
   const photo =
     avatar ||
     'https://tleliteracy.com/wp-content/uploads/2017/02/default-avatar.png';
   return (
-    <div className="user-logged-bar">
+    <div className="nav__avatar">
       <button
-        className="user-logged-bar__button"
+        className="nav__avatar__button"
         type="button"
-        onClick={toggleNavVisibility}
+        onClick={togglePanelVisibility}
       >
-        <img
-          src={photo}
-          alt="user avatar"
-          className="user-logged-bar__avatar"
-        />
+        <img src={photo} alt="user avatar" className="nav__avatar__avatar" />
       </button>
       <NavUserPanel
         userEmail={email}
         userId={id}
         userRole={role}
         logoutHandler={logoutHandler}
-        visible={isNavVisible}
+        visible={isPanelVisible}
       />
     </div>
   );

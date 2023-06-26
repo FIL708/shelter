@@ -1,21 +1,21 @@
-.user-logged-bar {
+.nav__avatar {
   position: relative;
 }
-.user-logged-bar__button {
+.nav__avatar__button {
   all: unset;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.user-logged-bar__button:hover {
+.nav__avatar__button:hover {
   transform: scale(1.1);
 }
 
-.user-logged-bar__button:active {
+.nav__avatar__button:active {
   transform: scale(1.05);
 }
 
-.user-logged-bar__avatar {
+.nav__avatar__avatar {
   width: 35px;
   height: 35px;
   object-fit: cover;
