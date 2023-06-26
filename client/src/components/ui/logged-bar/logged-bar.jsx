@@ -3,7 +3,7 @@ import { Button } from '../../form';
 import { UserNavbar } from '..';
 import './logged-bar.css';
 
-export default function LoggedBar({ id, avatar, email, role, logoutHandler }) {
+export default function LoggedBar({ id, avatar, role, logoutHandler }) {
   const [isNavVisible, setIsNavVisible] = useState(false);
   const toggleNavVisibility = () => setIsNavVisible((prev) => !prev);
   const photo =
@@ -12,7 +12,6 @@ export default function LoggedBar({ id, avatar, email, role, logoutHandler }) {
   return (
     <div className="user-logged-bar">
       <img src={photo} alt="user avatar" className="user-logged-bar__avatar" />
-      {email}
       <Button
         className="user-logged-bar__option-button"
         iconType="option"
