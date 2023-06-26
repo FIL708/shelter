@@ -16,12 +16,12 @@ export default function UserNavbar({
           { linkName: 'Users', link: '/users' },
           { linkName: 'Pets', link: '/pets' },
           { linkName: 'Messages', link: '/messages' },
-          { linkName: 'My Profile', link: `/users/${userId}` },
+          { linkName: 'My Profile', link: `/profile/${userId}` },
         ]
       : [
           { linkName: 'Favorites pets', link: '/favorites' },
           { linkName: 'Messages', link: '/messages' },
-          { linkName: 'My Profile', link: `/users/${userId}` },
+          { linkName: 'My Profile', link: `/profile/${userId}` },
         ];
 
   return (

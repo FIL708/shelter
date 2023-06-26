@@ -10,6 +10,7 @@
 .user-logged-bar__button:hover {
   transform: scale(1.1);
 }
+
 .user-logged-bar__button:active {
   transform: scale(1.05);
 }
