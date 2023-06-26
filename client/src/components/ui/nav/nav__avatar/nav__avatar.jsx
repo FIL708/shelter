@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import NavUserPanel from '../nav__user-panel/user-navbar.jsx';
+import NavUserPanel from '../nav__user-panel/nav__user-panel.jsx';
 import './nav__avatar.css';
 
 export default function NavAvatar({ id, avatar, role, logoutHandler, email }) {

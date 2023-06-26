@@ -1,4 +1,4 @@
-import './user-navbar.css';
+import './nav__user-panel.css';
 
 import { NavLink } from 'react-router-dom';
 
