@@ -29,7 +29,7 @@
   transform-origin: left;
 }
 
-.active::before {
+.nav__link.active::before {
   position: absolute;
   content: '';
   top: 110%;
