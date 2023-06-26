@@ -1,0 +1,43 @@
+.nav__user-panel {
+  position: absolute;
+  top: 34px;
+  right: 15px;
+  border: 2px solid var(--less-white);
+  border-radius: 8px 0 8px 8px;
+  background-color: var(--white);
+  color: var(--dark-grey);
+  box-shadow: var(--shadow-4);
+  z-index: 3;
+  text-align: center;
+}
+
+.nav__user-panel__email {
+  margin: 0px 8px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--blue);
+  font-weight: 400;
+}
+
+.nav__user-panel__item {
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.nav__user-panel__item > * {
+  padding: 12px 0;
+  display: block;
+}
+
+.nav__user-panel__logout {
+  all: unset;
+  padding: 12px 0;
+  color: var(--error);
+}
+
+.nav__user-panel__item > .active {
+  background-color: var(--less-white);
+}
+
+.nav__user-panel__item:hover {
+  background-color: var(--less-white);
+}

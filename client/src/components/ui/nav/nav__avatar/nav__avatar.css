@@ -1,0 +1,23 @@
+.nav__avatar {
+  position: relative;
+}
+.nav__avatar__button {
+  all: unset;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav__avatar__button:hover {
+  transform: scale(1.1);
+}
+
+.nav__avatar__button:active {
+  transform: scale(1.05);
+}
+
+.nav__avatar__avatar {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+}

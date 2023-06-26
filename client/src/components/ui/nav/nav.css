@@ -1,17 +1,17 @@
-.navbar {
+.nav {
   display: flex;
   gap: 30px;
   color: var(--white);
 }
 
-.navbar__link {
+.nav__link {
   display: block;
   position: relative;
   font-size: 18px;
   font-family: 'Lato', sans-serif;
   letter-spacing: 2px;
 }
-.navbar__link::after {
+.nav__link::after {
   position: absolute;
   content: '';
   top: 110%;
@@ -24,12 +24,12 @@
   transition: transform 0.5s;
 }
 
-.navbar__link:hover::after {
+.nav__link:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-.active::before {
+.nav__link.active::before {
   position: absolute;
   content: '';
   top: 110%;
@@ -39,7 +39,7 @@
   background: var(--less-white);
 }
 
-.navbar-divider {
+.nav-divider {
   background: var(--less-white);
   border: 0;
   width: 2px;

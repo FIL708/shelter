@@ -7,12 +7,12 @@ import {
   Subtitle,
   ConfirmModal,
 } from '../components/ui';
-import { ChangePasswordForm, ProfileForm, UserCard } from '../features/user';
+import { ChangePasswordForm, ProfileForm, UserCard } from '../features/profile';
 import { UserContext } from '../index.jsx';
 import { useFetch } from '../hooks';
 import { inputValidator, areObjectsEqual } from '../utils';
 
-export default function User() {
+export default function Profile() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { serverUrl } = useContext(UserContext);

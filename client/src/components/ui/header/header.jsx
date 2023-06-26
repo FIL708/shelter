@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Navbar } from '..';
+import { Nav } from '..';
 
 import logo from './assets/logo.svg';
 import './header.css';
@@ -10,7 +10,7 @@ export default function Header() {
       <Link to="/">
         <img src={logo} alt="logo" className="header__logo" />
       </Link>
-      <Navbar />
+      <Nav />
     </header>
   );
 }
