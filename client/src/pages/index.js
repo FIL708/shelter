@@ -7,5 +7,5 @@ export { default as Login } from './login.jsx';
 export { default as Signup } from './signup.jsx';
 export { default as Test } from './test.jsx';
 export { default as Users } from './users.jsx';
-export { default as User } from './profile.jsx';
+export { default as Profile } from './profile.jsx';
 export { default as NotFound } from './not-found.jsx';

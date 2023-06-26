@@ -11,7 +11,7 @@ import {
   Login,
   Test,
   Users,
-  User,
+  Profile,
   NotFound,
 } from './pages';
 
@@ -30,7 +30,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/users" element={<Users />} />
-          <Route path="/users/:id" element={<User />} />
+          <Route path="/profile/:id" element={<Profile />} />
           <Route path="/test" element={<Test />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
