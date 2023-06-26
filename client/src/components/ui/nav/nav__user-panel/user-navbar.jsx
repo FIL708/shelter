@@ -2,7 +2,7 @@ import './user-navbar.css';
 
 import { NavLink } from 'react-router-dom';
 
-export default function UserNavbar({
+export default function NavUserPanel({
   userId,
   userRole,
   userEmail,
@@ -26,17 +26,17 @@ export default function UserNavbar({
         ];
 
   return (
-    <nav className="user-navbar">
-      <li className="user-navbar__email">{userEmail}</li>
+    <nav className="nav__user-panel">
+      <li className="nav__user-panel__email">{userEmail}</li>
       {userNavItems.map((item) => (
-        <li className="user-navbar__item" key={item.linkName}>
+        <li className="nav__user-panel__item" key={item.linkName}>
           <NavLink to={item.link}>{item.linkName}</NavLink>
         </li>
       ))}
-      <li className="user-navbar__item">
+      <li className="nav__user-panel__item">
         <button
           type="button"
-          className="user-navbar__logout"
+          className="nav__user-panel__logout"
           onClick={logoutHandler}
         >
           Logout

@@ -1,4 +1,4 @@
-.user-navbar {
+.nav__user-panel {
   position: absolute;
   top: 34px;
   right: 15px;
@@ -11,32 +11,32 @@
   text-align: center;
 }
 
-.user-navbar__email {
+.nav__user-panel__email {
   margin: 0px 8px;
   padding: 12px 0;
   border-bottom: 1px solid var(--blue);
 }
 
-.user-navbar__item {
+.nav__user-panel__item {
   transition: 0.3s;
   cursor: pointer;
 }
 
-.user-navbar__item > * {
+.nav__user-panel__item > * {
   padding: 12px 0;
   display: block;
 }
 
-.user-navbar__logout {
+.nav__user-panel__logout {
   all: unset;
   padding: 12px 0;
   color: var(--error);
 }
 
-.user-navbar__item > .active {
+.nav__user-panel__item > .active {
   background-color: var(--less-white);
 }
 
-.user-navbar__item:hover {
+.nav__user-panel__item:hover {
   background-color: var(--less-white);
 }
