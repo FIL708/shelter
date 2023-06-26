@@ -1,9 +1,9 @@
 .user-navbar {
   position: absolute;
-  top: 32px;
-  right: 0px;
+  top: 34px;
+  right: 15px;
   border: 2px solid var(--less-white);
-  border-radius: 8px;
+  border-radius: 8px 0 8px 8px;
   background-color: var(--white);
   color: var(--dark-grey);
   box-shadow: var(--shadow-4);
