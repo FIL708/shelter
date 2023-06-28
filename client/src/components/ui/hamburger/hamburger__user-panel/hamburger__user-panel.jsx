@@ -2,7 +2,7 @@ import HamburgerLink from '../hamburger__link/hamburger__link.jsx';
 
 import './hamburger__user-panel.css';
 
-export default function HamburgerUserPanel({ user }) {
+export default function HamburgerUserPanel({ user, logoutHandler }) {
   const panelItems =
     user.role === 'admin'
       ? [
@@ -34,6 +34,15 @@ export default function HamburgerUserPanel({ user }) {
           key={item.linkName}
         />
       ))}
+      <li className="hamburger__user-panel__logout">
+        <button
+          className="hamburger__user-panel__logout-button"
+          type="button"
+          onClick={logoutHandler}
+        >
+          Logout
+        </button>
+      </li>
     </>
   );
 }

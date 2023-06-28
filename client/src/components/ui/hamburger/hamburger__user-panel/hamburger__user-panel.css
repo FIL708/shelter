@@ -16,3 +16,19 @@
   font-weight: 400;
   font-size: 20px;
 }
+
+.hamburger__user-panel__logout-button {
+  all: unset;
+  display: block;
+  width: 100%;
+  color: var(--error);
+  font-size: 22px;
+  padding: 10px 0;
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.hamburger__user-panel__logout-button:hover {
+  background-color: var(--less-white);
+}
