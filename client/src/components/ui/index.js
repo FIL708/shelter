@@ -1,6 +1,7 @@
 export { default as Header } from './header/header.jsx';
 export { default as Page } from './page/page.jsx';
 export { default as Nav } from './nav/nav.jsx';
+export { default as Hamburger } from './hamburger/hamburger.jsx';
 export { default as Icon } from './icon/icon.jsx';
 export { default as Subtitle } from './subtitle/subtitle.jsx';
 export { default as Footer } from './footer/footer.jsx';

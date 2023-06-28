@@ -5,8 +5,13 @@ import HamburgerUserPanel from './hamburger__user-panel/hamburger__user-panel.js
 
 import './hamburger.css';
 
-export default function Hamburger({ user, logoutHandler }) {
-  console.log(user, logoutHandler);
+export default function Hamburger({
+  user,
+  logoutHandler,
+  toggleHamburger,
+  isVisible,
+}) {
+  if (!isVisible) return false;
 
   return (
     <nav className="hamburger">
@@ -15,6 +20,7 @@ export default function Hamburger({ user, logoutHandler }) {
         iconSize="35px"
         iconFill="#4B4B4B"
         className="hamburger__back-button"
+        onClick={toggleHamburger}
       />
       <ul className="hamburger__list">
         <HamburgerMain />
@@ -24,7 +30,7 @@ export default function Hamburger({ user, logoutHandler }) {
 
       <ul className="hamburger__list">
         {user ? (
-          <HamburgerUserPanel user={user} />
+          <HamburgerUserPanel user={user} logoutHandler={logoutHandler} />
         ) : (
           <>
             <HamburgerLink text="Signup" to="/signup">
