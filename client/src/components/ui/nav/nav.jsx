@@ -1,16 +1,9 @@
-import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { UserContext } from '../../..';
+
 import NavAvatar from './nav__avatar/nav__avatar.jsx';
 import './nav.css';
 
-export default function Nav() {
-  const { user, serverUrl } = useContext(UserContext);
-
-  const logoutHandler = () => {
-    window.open(`${serverUrl}/api/auth/logout`, '_self');
-  };
-
+export default function Nav({ logoutHandler, user }) {
   return (
     <nav className="nav">
       <NavLink className="nav__link" to="/test">
