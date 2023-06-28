@@ -18,7 +18,7 @@ export default function HamburgerUserPanel({ user }) {
         ];
 
   return (
-    <ul className="hamburger__user-panel">
+    <>
       <li className="hamburger__user-panel__user">
         <img
           src={user.avatar}
@@ -34,6 +34,6 @@ export default function HamburgerUserPanel({ user }) {
           key={item.linkName}
         />
       ))}
-    </ul>
+    </>
   );
 }

@@ -9,17 +9,20 @@ export default function Hamburger({ user, logoutHandler }) {
 
   return (
     <nav className="hamburger">
-      <HamburgerMain />
+      <ul className="hamburger__list">
+        <HamburgerMain />
+      </ul>
+
       <hr className="hamburger__divider" />
-      <ul>
+      <ul className="hamburger__list">
         <HamburgerLink text="Signup" to="/signup">
           Signup
         </HamburgerLink>
         <HamburgerLink text="Login" to="/login">
           Login
         </HamburgerLink>
+        <HamburgerUserPanel user={user} />
       </ul>
-      <HamburgerUserPanel user={user} />
     </nav>
   );
 }

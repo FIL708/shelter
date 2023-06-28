@@ -1,6 +1,17 @@
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
 .hamburger__divider {
   height: 2px;
   width: 70%;
   background: var(--blue);
   border: 0;
+}
+
+.hamburger__list {
+  width: 100%;
 }
