@@ -1,5 +1,11 @@
-import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-export default function HamburgerLink() {
-  return <div>hamburger__link</div>;
+import './hamburger__link.css';
+
+export default function HamburgerLink({ text, to }) {
+  return (
+    <NavLink className="hamburger__link" to={to}>
+      {text}
+    </NavLink>
+  );
 }
