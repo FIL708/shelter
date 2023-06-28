@@ -14,6 +14,7 @@ export default function Hamburger({ user, logoutHandler }) {
       </ul>
 
       <hr className="hamburger__divider" />
+
       <ul className="hamburger__list">
         <HamburgerLink text="Signup" to="/signup">
           Signup
