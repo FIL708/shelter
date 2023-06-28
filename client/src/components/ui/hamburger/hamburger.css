@@ -25,3 +25,8 @@
 .hamburger__list {
   width: 100%;
 }
+
+.hamburger__back-button {
+  align-self: flex-end;
+  margin-right: 10px;
+}

@@ -1,3 +1,4 @@
+import { Button } from '../../form';
 import HamburgerLink from './hamburger__link/hamburger__link.jsx';
 import HamburgerMain from './hamburger__main-links/hamburger__main-links.jsx';
 import HamburgerUserPanel from './hamburger__user-panel/hamburger__user-panel.jsx';
@@ -9,6 +10,12 @@ export default function Hamburger({ user, logoutHandler }) {
 
   return (
     <nav className="hamburger">
+      <Button
+        iconType="back"
+        iconSize="35px"
+        iconFill="#4B4B4B"
+        className="hamburger__back-button"
+      />
       <ul className="hamburger__list">
         <HamburgerMain />
       </ul>
