@@ -10,7 +10,7 @@ export default function Test() {
   return (
     <Page>
       <Subtitle text="Test Page" main />
-      <Hamburger />
+      <Hamburger user={user} />
     </Page>
   );
 }

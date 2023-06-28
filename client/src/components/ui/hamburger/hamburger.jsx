@@ -1,5 +1,4 @@
-import { NavLink } from 'react-router-dom';
-
+import HamburgerLink from './hamburger__link/hamburger__link.jsx';
 import HamburgerMain from './hamburger__main-links/hamburger__main-links.jsx';
 
 export default function Hamburger({ user, logoutHandler }) {
@@ -9,12 +8,12 @@ export default function Hamburger({ user, logoutHandler }) {
     <nav className="hamburger">
       <HamburgerMain />
       <ul>
-        <NavLink className="hamburger__link" to="/signup">
+        <HamburgerLink text="Signup" to="/signup">
           Signup
-        </NavLink>
-        <NavLink className="hamburger__link" to="/login">
+        </HamburgerLink>
+        <HamburgerLink text="Login" to="/login">
           Login
-        </NavLink>
+        </HamburgerLink>
       </ul>
     </nav>
   );
