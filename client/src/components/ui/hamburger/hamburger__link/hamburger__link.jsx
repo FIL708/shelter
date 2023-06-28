@@ -4,8 +4,10 @@ import './hamburger__link.css';
 
 export default function HamburgerLink({ text, to }) {
   return (
-    <NavLink className="hamburger__link" to={to}>
-      {text}
-    </NavLink>
+    <li className="hamburger__link__list-item">
+      <NavLink className="hamburger__link" to={to}>
+        {text}
+      </NavLink>
+    </li>
   );
 }

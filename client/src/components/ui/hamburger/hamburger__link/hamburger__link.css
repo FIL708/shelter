@@ -1,0 +1,16 @@
+.hamburger__link {
+  display: block;
+  width: 100%;
+  font-size: 22px;
+  padding: 10px 0;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.hamburger__link:hover {
+  background-color: var(--less-white);
+}
+
+.hamburger__link.active {
+  background-color: var(--less-white);
+}
