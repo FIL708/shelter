@@ -1,0 +1,16 @@
+.hamburger__user-panel__user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hamburger__user-panel__avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.hamburger__user-panel__email {
+  font-weight: 400;
+  font-size: 20px;
+}
