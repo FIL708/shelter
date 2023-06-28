@@ -13,19 +13,19 @@ export default function Nav() {
 
   return (
     <nav className="nav">
-      <NavLink className="nav__link navbar__home" to="/test">
+      <NavLink className="nav__link" to="/test">
         Development
       </NavLink>
-      <NavLink className="nav__link navbar__home" to="/">
+      <NavLink className="nav__link" to="/">
         Home
       </NavLink>
-      <NavLink className="nav__link navbar__adoption" to="/adoptions">
+      <NavLink className="nav__link" to="/adoptions">
         Adoptions
       </NavLink>
-      <NavLink className="nav__link navbar__gallery" to="/gallery">
+      <NavLink className="nav__link" to="/gallery">
         Gallery
       </NavLink>
-      <NavLink className="nav__link navbar__contact" to="/contact">
+      <NavLink className="nav__link" to="/contact">
         Contact
       </NavLink>
 
@@ -35,10 +35,10 @@ export default function Nav() {
         <NavAvatar {...user} logoutHandler={logoutHandler} />
       ) : (
         <>
-          <NavLink className="nav__link nav__signup" to="/signup">
+          <NavLink className="nav__link" to="/signup">
             Signup
           </NavLink>
-          <NavLink className="nav__link nav__login" to="/login">
+          <NavLink className="nav__link" to="/login">
             Login
           </NavLink>
         </>
