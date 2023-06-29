@@ -11,10 +11,9 @@ export default function Hamburger({
   toggleHamburger,
   isVisible,
 }) {
-  if (!isVisible) return false;
-
+  const navClass = isVisible ? 'hamburger visible' : 'hamburger';
   return (
-    <nav className="hamburger">
+    <nav className={navClass}>
       <Button
         iconType="back"
         iconSize="35px"

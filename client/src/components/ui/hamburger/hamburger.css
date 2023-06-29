@@ -1,18 +1,23 @@
 .hamburger {
   position: fixed;
-  right: 0;
+  right: -500px;
   top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  height: 100vh;
-  width: 80vw;
+  height: 100%;
+  width: 100%;
   max-width: 500px;
   background-color: var(--white);
   border-left: 3px solid var(--less-white);
   z-index: 5;
+  transition: right 0.3s;
+}
+
+.hamburger.visible {
+  right: 0;
 }
 
 .hamburger__divider {
