@@ -36,6 +36,8 @@ import { ReactComponent as Male } from './icon__glyphs/male.svg';
 import { ReactComponent as Edit } from './icon__glyphs/edit.svg';
 import { ReactComponent as Confirm } from './icon__glyphs/confirm.svg';
 import { ReactComponent as Delete } from './icon__glyphs/delete.svg';
+import { ReactComponent as Back } from './icon__glyphs/back.svg';
+import { ReactComponent as Burger } from './icon__glyphs/burger.svg';
 
 const chooseIcon = (type) => {
   switch (type) {
@@ -115,6 +117,10 @@ const chooseIcon = (type) => {
       return Confirm;
     case 'delete':
       return Delete;
+    case 'back':
+      return Back;
+    case 'burger':
+      return Burger;
     default:
       return undefined;
   }
