@@ -30,7 +30,12 @@ export default function Header() {
         <Nav logoutHandler={logoutHandler} user={user} />
       ) : (
         <>
-          <Button text="Hamburger" onClick={toggleHamburger} />
+          <Button
+            iconFill="#fff2f2"
+            iconType="burger"
+            iconSize="25px"
+            onClick={toggleHamburger}
+          />
           <Hamburger
             user={user}
             isVisible={isHamburgerVisible}
