@@ -1,14 +1,18 @@
+.hamburger__link__list-item {
+  box-shadow: inset 0 0 0 0 var(--less-white);
+  transition: ease-out 0.5s;
+}
+
+.hamburger__link__list-item:hover {
+  box-shadow: inset 500px 0 0 0 var(--less-white);
+}
+
 .hamburger__link {
   display: block;
   width: 100%;
   font-size: 22px;
   padding: 10px 0;
   text-align: center;
-  transition: 0.3s;
-}
-
-.hamburger__link:hover {
-  background-color: var(--less-white);
 }
 
 .hamburger__link.active {

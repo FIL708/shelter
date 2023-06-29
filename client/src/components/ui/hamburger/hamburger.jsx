@@ -12,6 +12,7 @@ export default function Hamburger({
   isVisible,
 }) {
   const navClass = isVisible ? 'hamburger visible' : 'hamburger';
+
   return (
     <nav className={navClass}>
       <Button
