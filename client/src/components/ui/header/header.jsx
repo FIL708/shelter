@@ -5,13 +5,15 @@ import { UserContext } from '../../..';
 import { Nav, Hamburger } from '..';
 import { Button } from '../../form';
 
+import { useWindowSize } from '../../../hooks';
+
 import logo from './assets/logo.svg';
 import './header.css';
 
 export default function Header() {
   const { user, serverUrl } = useContext(UserContext);
 
-  const temporary = false;
+  const { width } = useWindowSize();
   const [isHamburgerVisible, setIsHamburgerVisible] = useState(false);
 
   const toggleHamburger = () => {
@@ -26,7 +28,7 @@ export default function Header() {
         <img src={logo} alt="logo" className="header__logo" />
       </Link>
 
-      {temporary ? (
+      {width > 1024 ? (
         <Nav logoutHandler={logoutHandler} user={user} />
       ) : (
         <>
