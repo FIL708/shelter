@@ -11,7 +11,7 @@
   width: 100%;
   max-width: 500px;
   background-color: var(--white);
-  border-left: 3px solid var(--less-white);
+  border-left: 10px solid var(--less-white);
   z-index: 5;
   transition: right 0.3s;
 }
