@@ -15,6 +15,23 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
+    "settings": {
+        "react": {
+          "version": "detect"
+        },
+        "import/resolver": {
+          "node": {
+            "extensions": [
+              ".js",
+              ".jsx"
+            ],
+            "moduleDirectory": [
+              "node_modules",
+              "src"
+            ]
+          }
+        }
+      },
     "plugins": [
         "react", "prettier"
     ],
