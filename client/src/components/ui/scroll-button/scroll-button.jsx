@@ -1,10 +1,14 @@
-import { useScrollToggle } from '../../../hooks';
+import { useScrollToggle, useWindowSize } from '../../../hooks';
 import { Button } from '../../form';
 
 import './scroll-button.css';
 
 export default function ScrollButton({ offset }) {
   const isScrollButtonVisible = useScrollToggle(offset || 200);
+  const { width } = useWindowSize();
+
+  if (width < 1060) return false;
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   };
