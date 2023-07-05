@@ -5,8 +5,7 @@ import './scroll-button.css';
 
 export default function ScrollButton({ offset }) {
   const isScrollButtonVisible = useScrollToggle(offset || 200);
-  const { width, height } = useWindowSize();
-  console.log(width, height);
+  const { width } = useWindowSize();
 
   if (width < 1060) return false;
 
