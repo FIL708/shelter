@@ -1,4 +1,4 @@
-import { RadioButton } from '../../../components/form';
+import { RadioButton } from 'components/form';
 import './gallery-controller.css';
 
 export default function GalleryController({ value, onChange }) {
