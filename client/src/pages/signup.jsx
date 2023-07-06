@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Page, ErrorCard } from '../components/ui';
-import { RegisterForm } from '../features/signup';
-import { inputValidator } from '../utils';
+import { Page, ErrorCard } from 'components/ui';
+import { RegisterForm } from 'features/signup';
+import { inputValidator } from 'utils';
 import { UserContext } from '..';
 
 export default function Signup() {
