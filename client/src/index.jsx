@@ -13,7 +13,7 @@ import {
   Users,
   Profile,
   NotFound,
-} from './pages';
+} from 'pages';
 
 export const UserContext = createContext();
 
