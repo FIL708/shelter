@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Button, Textfield } from '../../../components/form';
-import { AuthButtons, Subtitle, FormMessage } from '../../../components/ui';
+import { Button, Textfield } from 'components/form';
+import { AuthButtons, Subtitle, FormMessage } from 'components/ui';
 import './register-form.css';
 
 export default function RegisterForm({
