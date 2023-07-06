@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from '../../../../components/form';
+import { Button } from 'components/form';
 import PetGalleryList from './pet-gallery__list/pet-gallery__list.jsx';
 import './pet-gallery.css';
 
