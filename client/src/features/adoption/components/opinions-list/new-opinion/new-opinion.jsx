@@ -1,4 +1,4 @@
-import { Button, Textarea } from '../../../../../components/form';
+import { Button, Textarea } from 'components/form';
 import './new-opinion.css';
 
 export default function NewOpinion({
