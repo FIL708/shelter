@@ -1,4 +1,4 @@
-import { Button } from '../../form';
+import { Button } from 'components/form';
 import './auth-buttons.css';
 
 export default function AuthButtons({
