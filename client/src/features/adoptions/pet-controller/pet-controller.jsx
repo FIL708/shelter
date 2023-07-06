@@ -1,4 +1,4 @@
-import { RadioButton, Textfield } from '../../../components/form';
+import { RadioButton, Textfield } from 'components/form';
 import './pet-controller.css';
 
 export default function PetController({ values, onChange }) {
