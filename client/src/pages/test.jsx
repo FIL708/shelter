@@ -1,6 +1,6 @@
-import { Page, Subtitle } from '../components/ui';
+import { Page, Subtitle } from 'components/ui';
 
-import { useWindowSize } from '../hooks';
+import { useWindowSize } from 'hooks';
 
 export default function Test() {
   const { width } = useWindowSize();
