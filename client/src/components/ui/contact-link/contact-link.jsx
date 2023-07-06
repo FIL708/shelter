@@ -1,4 +1,4 @@
-import { Icon } from '..';
+import { Icon } from 'components/ui';
 import './contact-link.css';
 
 export default function ContactLink({ text, type, href, iconSize = '15px' }) {
