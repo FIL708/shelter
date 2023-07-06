@@ -1,4 +1,4 @@
-import { Button } from '../../form';
+import { Button } from 'components/form';
 import './modal-wrapper.css';
 
 export default function ModalWrapper({
