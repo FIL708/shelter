@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from '..';
+import { Button } from 'components/form';
 
 import './textfield.css';
 
