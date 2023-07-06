@@ -1,4 +1,4 @@
-import { Dropdown, Textfield, Button } from '../../../components/form';
+import { Dropdown, Textfield, Button } from 'components/form';
 import './users-filter.css';
 
 export default function UsersFilter({ changeFilter, cleanFilter, filter }) {
