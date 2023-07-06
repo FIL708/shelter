@@ -1,5 +1,5 @@
-import { useScrollToggle, useWindowSize } from '../../../hooks';
-import { Button } from '../../form';
+import { useScrollToggle, useWindowSize } from 'hooks';
+import { Button } from 'components/form';
 
 import './scroll-button.css';
 
