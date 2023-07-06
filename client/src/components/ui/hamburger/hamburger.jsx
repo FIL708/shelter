@@ -1,4 +1,4 @@
-import { Button } from '../../form';
+import { Button } from 'components/form';
 import HamburgerLink from './hamburger__link/hamburger__link.jsx';
 import HamburgerMain from './hamburger__main-links/hamburger__main-links.jsx';
 import HamburgerUserPanel from './hamburger__user-panel/hamburger__user-panel.jsx';
