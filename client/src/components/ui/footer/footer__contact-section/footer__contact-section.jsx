@@ -1,4 +1,4 @@
-import { ContactLink } from '../..';
+import { ContactLink } from 'components/ui';
 
 import './footer__contact-section.css';
 

@@ -1,4 +1,4 @@
-import { Page } from '../components/ui';
+import { Page } from 'components/ui';
 
 export default function Contact() {
   return (

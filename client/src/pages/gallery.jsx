@@ -6,10 +6,10 @@ import {
   ScrollButton,
   LoadingSpinner,
   ErrorCard,
-} from '../components/ui';
-import { GalleryCardList, GalleryController } from '../features/gallery';
-import { getDataChunks } from '../utils';
-import { useFetch } from '../hooks';
+} from 'components/ui';
+import { GalleryCardList, GalleryController } from 'features/gallery';
+import { getDataChunks } from 'utils';
+import { useFetch } from 'hooks';
 
 export default function Gallery() {
   const [photos, isLoading, error] = useFetch('/api/photo');

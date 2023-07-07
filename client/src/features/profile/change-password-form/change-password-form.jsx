@@ -1,5 +1,5 @@
-import { Textfield, Button } from '../../../components/form';
-import { Subtitle, ModalWrapper, FormMessage } from '../../../components/ui';
+import { Textfield, Button } from 'components/form';
+import { Subtitle, ModalWrapper, FormMessage } from 'components/ui';
 import './change-password-form.css';
 
 export default function ChangePasswordForm({

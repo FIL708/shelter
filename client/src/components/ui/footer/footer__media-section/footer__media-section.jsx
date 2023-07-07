@@ -1,5 +1,5 @@
-import { ContactLink } from '../..';
-import { Textfield, Button } from '../../../form';
+import { ContactLink } from 'components/ui';
+import { Textfield, Button } from 'components/form';
 import './footer__media-section.css';
 
 export default function FooterMediaSection({

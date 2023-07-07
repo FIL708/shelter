@@ -6,10 +6,10 @@ import {
   ScrollButton,
   LoadingSpinner,
   ErrorCard,
-} from '../components/ui';
-import { PetController, PetCardList } from '../features/adoptions';
-import { getDataChunks } from '../utils';
-import { useFetch } from '../hooks';
+} from 'components/ui';
+import { PetController, PetCardList } from 'features/adoptions';
+import { getDataChunks } from 'utils';
+import { useFetch } from 'hooks';
 
 export default function Adoptions() {
   const [pets, isLoading, error] = useFetch('/api/adoption');

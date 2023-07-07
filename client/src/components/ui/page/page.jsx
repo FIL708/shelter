@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Header, Footer } from '..';
-import { inputValidator } from '../../../utils';
+import { Header, Footer } from 'components/ui';
+import { inputValidator } from 'utils';
 import './page.css';
 
 export default function Page({ children }) {

@@ -6,10 +6,10 @@ import {
   ScrollButton,
   LoadingSpinner,
   ErrorCard,
-} from '../components/ui';
-import { UsersTable } from '../features/users';
-import { getDataChunks, getFilteredUsers } from '../utils';
-import { useFetch } from '../hooks';
+} from 'components/ui';
+import { UsersTable } from 'features/users';
+import { getDataChunks, getFilteredUsers } from 'utils';
+import { useFetch } from 'hooks';
 
 export default function Users() {
   const [users, isLoading, error] = useFetch('/api/user');

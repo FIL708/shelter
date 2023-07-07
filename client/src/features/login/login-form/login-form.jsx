@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Textfield, Button } from '../../../components/form';
-import { AuthButtons, Subtitle, FormMessage } from '../../../components/ui';
+import { Textfield, Button } from 'components/form';
+import { AuthButtons, Subtitle, FormMessage } from 'components/ui';
 import './login-form.css';
 
 export default function LoginForm({

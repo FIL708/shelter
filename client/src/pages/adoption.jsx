@@ -5,15 +5,15 @@ import {
   ScrollButton,
   LoadingSpinner,
   ErrorCard,
-} from '../components/ui';
+} from 'components/ui';
 import {
   PetGallery,
   PetDetails,
   PetDescription,
   OpinionsList,
-} from '../features/adoption';
-import { useFetch } from '../hooks';
-import { useOpinion } from '../features/adoption/hooks';
+} from 'features/adoption';
+import { useFetch } from 'hooks';
+import { useOpinion } from 'features/adoption/hooks';
 
 export default function Adoption() {
   const { id } = useParams();

@@ -1,11 +1,10 @@
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
+import { Nav, Hamburger } from 'components/ui';
+import { Button } from 'components/form';
+import { useWindowSize } from 'hooks';
 import { UserContext } from '../../..';
-import { Nav, Hamburger } from '..';
-import { Button } from '../../form';
-
-import { useWindowSize } from '../../../hooks';
 
 import logo from './assets/logo.svg';
 import './header.css';

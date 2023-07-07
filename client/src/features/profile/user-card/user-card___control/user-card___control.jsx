@@ -1,4 +1,4 @@
-import { Button } from '../../../../components/form';
+import { Button } from 'components/form';
 import './user-card___control.css';
 
 export default function UserCardControl({

@@ -1,4 +1,4 @@
-import { Button } from '../../form';
+import { Button } from 'components/form';
 import getPages from './get-pages.js';
 import './pagination.css';
 

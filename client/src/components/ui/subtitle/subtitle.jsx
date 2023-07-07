@@ -1,4 +1,4 @@
-import { Icon } from '..';
+import { Icon } from 'components/ui';
 import './subtitle.css';
 
 export default function Subtitle({ text, main }) {

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Button } from '../../../../components/form';
-import { Icon } from '../../../../components/ui';
-import { getFormattedDate } from '../../../../utils';
+import { Button } from 'components/form';
+import { Icon } from 'components/ui';
+import { getFormattedDate } from 'utils';
 import PetCardPhoto from './pet-card-photo/pet-card-photo.jsx';
 import './pet-card.css';
 

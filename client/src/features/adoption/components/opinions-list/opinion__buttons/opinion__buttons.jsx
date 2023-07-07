@@ -1,4 +1,4 @@
-import { Button } from '../../../../../components/form';
+import { Button } from 'components/form';
 import './opinion__buttons.css';
 
 export default function OpinionButtons({

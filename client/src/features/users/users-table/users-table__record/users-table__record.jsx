@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Icon } from '../../../../components/ui';
-import { getFormattedDate } from '../../../../utils';
+import { Icon } from 'components/ui';
+import { getFormattedDate } from 'utils';
 import './users-table__record.css';
 
 export default function UsersTableRecord({

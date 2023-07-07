@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Textarea } from '../../../../../components/form';
-import { getFormattedDate } from '../../../../../utils';
+import { Textarea } from 'components/form';
+import { getFormattedDate } from 'utils';
 import OpinionButtons from '../opinion__buttons/opinion__buttons.jsx';
 import './opinion.css';
 

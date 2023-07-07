@@ -1,4 +1,4 @@
-import { Subtitle } from '../../../components/ui';
+import { Subtitle } from 'components/ui';
 import './welcome-section.css';
 import { logo } from '../assets';
 
