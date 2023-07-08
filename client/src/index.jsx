@@ -12,6 +12,7 @@ import {
   Test,
   Users,
   Profile,
+  Forgot,
   NotFound,
 } from 'pages';
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/users" element={<Users />} />
           <Route path="/profile/:id" element={<Profile />} />
+          <Route path="/forgot" element={<Forgot />} />
           <Route path="/test" element={<Test />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
