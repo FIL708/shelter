@@ -6,8 +6,8 @@ export default function ResetForm() {
     <form className="reset-form">
       <Subtitle text="Reset password" main />
       <fieldset>
-        <Textfield />
-        <Textfield />
+        <Textfield label="Password" />
+        <Textfield label="Confirm password" />
       </fieldset>
       <Button />
     </form>
