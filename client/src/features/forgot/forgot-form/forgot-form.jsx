@@ -14,7 +14,6 @@ export default function ForgotForm() {
         </p>
         <Textfield placeholder="Enter your email address" />
       </fieldset>
-
       <Button text="Reset password" />
     </form>
   );
