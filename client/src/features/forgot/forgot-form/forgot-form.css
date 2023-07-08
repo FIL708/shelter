@@ -1,4 +1,7 @@
 .forgot-form {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
   width: 90%;
   max-width: 500px;
   padding: 40px 20px;
