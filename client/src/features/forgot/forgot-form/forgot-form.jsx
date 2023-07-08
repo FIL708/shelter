@@ -1,6 +1,8 @@
 import { Subtitle } from 'components/ui';
 import { Button, Textfield } from 'components/form';
 
+import './forgot-form.css';
+
 export default function ForgotForm() {
   return (
     <form className="forgot-form">
