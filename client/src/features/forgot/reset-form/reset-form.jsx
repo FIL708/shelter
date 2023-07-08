@@ -1,3 +1,9 @@
+import { Subtitle } from 'components/ui';
+
 export default function ResetForm() {
-  return <div>reset-form</div>;
+  return (
+    <form className="reset-form">
+      <Subtitle text="Reset password" main />
+    </form>
+  );
 }
