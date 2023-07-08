@@ -3,7 +3,7 @@ import { Button, Textfield } from 'components/form';
 
 import './reset-form.css';
 
-export default function ResetForm() {
+export default function ResetForm({ inputValues, handler }) {
   return (
     <form className="reset-form">
       <Subtitle text="Reset password" main />
@@ -12,11 +12,15 @@ export default function ResetForm() {
           name="password"
           label="Password"
           placeholder="Enter your new password"
+          value={inputValues.password}
+          onChange={handler}
         />
         <Textfield
           name="confirm"
           label="Confirm password"
           placeholder="Confirm your password"
+          value={inputValues.confirm}
+          onChange={handler}
         />
       </fieldset>
       <Button text="Reset password" />
