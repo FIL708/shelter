@@ -9,8 +9,8 @@ export default function ForgotForm() {
         Please enter the email address you`d like to password reset information
         sent to.
       </p>
-      <Textfield />
-      <Button />
+      <Textfield placeholder="Enter your email address" />
+      <Button text="Reset password" />
     </form>
   );
 }
