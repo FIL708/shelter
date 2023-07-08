@@ -33,6 +33,7 @@ function App() {
           <Route path="/users" element={<Users />} />
           <Route path="/profile/:id" element={<Profile />} />
           <Route path="/forgot" element={<Forgot />} />
+          <Route path="/forgot/:id" element={<Forgot />} />
           <Route path="/test" element={<Test />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
