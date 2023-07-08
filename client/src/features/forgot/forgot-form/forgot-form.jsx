@@ -1,4 +1,5 @@
 import { Subtitle } from 'components/ui';
+import { Button, Textfield } from 'components/form';
 
 export default function ForgotForm() {
   return (
@@ -8,6 +9,8 @@ export default function ForgotForm() {
         Please enter the email address you`d like to password reset information
         sent to.
       </p>
+      <Textfield />
+      <Button />
     </form>
   );
 }
