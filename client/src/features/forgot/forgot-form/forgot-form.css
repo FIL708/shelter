@@ -1,0 +1,7 @@
+.forgot-form {
+  width: 90%;
+  max-width: 500px;
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-8);
+}
