@@ -3,7 +3,7 @@ import { Button, Textfield } from 'components/form';
 
 import './reset-form.css';
 
-export default function ResetForm({ inputValues, handler }) {
+export default function ResetForm({ inputValues, handler, resetPassword }) {
   return (
     <form className="reset-form">
       <Subtitle text="Reset password" main />
@@ -23,7 +23,7 @@ export default function ResetForm({ inputValues, handler }) {
           onChange={handler}
         />
       </fieldset>
-      <Button text="Reset password" />
+      <Button text="Reset password" onClick={resetPassword} />
     </form>
   );
 }

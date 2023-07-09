@@ -3,7 +3,7 @@ import { Button, Textfield } from 'components/form';
 
 import './forgot-form.css';
 
-export default function ForgotForm({ inputValue, handler }) {
+export default function ForgotForm({ inputValue, handler, sendEmail }) {
   return (
     <form className="forgot-form">
       <Subtitle text="Forgot your password?" main />
@@ -20,7 +20,7 @@ export default function ForgotForm({ inputValue, handler }) {
           onChange={handler}
         />
       </fieldset>
-      <Button text="Reset password" />
+      <Button text="Reset password" onClick={sendEmail} />
     </form>
   );
 }
