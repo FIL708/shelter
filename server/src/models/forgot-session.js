@@ -15,7 +15,10 @@ module.exports = (sequelize, { UUIDV4, INTEGER, DATE }) => {
         type: UUIDV4,
       },
       userId: INTEGER,
-      expiredDate: { type: DATE, defaultValue: Date.now() + 43200 },
+      expiredDate: {
+        type: DATE,
+        defaultValue: new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
+      },
     },
     {
       sequelize,
