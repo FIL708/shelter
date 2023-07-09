@@ -31,6 +31,10 @@ export default function Forgot() {
 
       if (res.ok) {
         setForgotValue('');
+        setFormMessage({
+          text: 'Please check your email for a password reset link.',
+          isValid: true,
+        });
       }
     } catch (error) {
       console.log(error);

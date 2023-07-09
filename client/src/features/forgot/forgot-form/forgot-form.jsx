@@ -24,12 +24,14 @@ export default function ForgotForm({
           value={inputValue}
           onChange={handler}
         />
-        <FormMessage
-          text={message.text}
-          isValid={message.isValid}
-          width="100%"
-        />
       </fieldset>
+      <FormMessage
+        text={message.text}
+        isValid={message.isValid}
+        width="90%"
+        bottom="78px"
+        left="5%"
+      />
       <Button text="Reset password" onClick={sendEmail} />
     </form>
   );
