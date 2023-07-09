@@ -7,10 +7,7 @@ const checkForgotSession = (req, res) => {
 };
 
 const sendForgotEmail = async (req, res) => {
-  console.log('hit');
-
   const { email } = req.body;
-  console.log(email);
 
   if (!email) return res.status(422).json({ message: 'Invalid data provided' });
 

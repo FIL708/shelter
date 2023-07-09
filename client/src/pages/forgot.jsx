@@ -7,7 +7,8 @@ export default function Forgot() {
   const { id } = useParams();
   const [forgotValue, setForgotValue] = useState('');
   const [resetValues, setResetValues] = useState({ password: '', confirm: '' });
-  console.log(forgotValue);
+  const [formMessage, setFormMessage] = useState({ text: '', isValid: false });
+  console.log(setFormMessage);
 
   const forgotValueHandler = (event) => {
     const { value } = event.target;
@@ -19,13 +20,17 @@ export default function Forgot() {
   };
 
   const sendForgotRequest = async () => {
+    if (!forgotValue) return;
+
     try {
       const res = await fetch('/api/forgot', {
         method: 'POST',
         body: JSON.stringify({ email: forgotValue }),
         headers: { 'Content-Type': 'application/json' },
       });
-      console.log(res);
+      if (res.ok) {
+        setForgotValue('');
+      }
     } catch (error) {
       console.log(error);
     }
@@ -41,12 +46,14 @@ export default function Forgot() {
           inputValues={resetValues}
           handler={resetValuesHandler}
           resetPassword={sendResetRequest}
+          formMessage={formMessage}
         />
       ) : (
         <ForgotForm
           inputValue={forgotValue}
           handler={forgotValueHandler}
           sendEmail={sendForgotRequest}
+          formMessage={formMessage}
         />
       )}
     </Page>
