@@ -1,9 +1,14 @@
-import { Subtitle } from 'components/ui';
+import { Subtitle, FormMessage } from 'components/ui';
 import { Button, Textfield } from 'components/form';
 
 import './forgot-form.css';
 
-export default function ForgotForm({ inputValue, handler, sendEmail }) {
+export default function ForgotForm({
+  inputValue,
+  handler,
+  sendEmail,
+  message,
+}) {
   return (
     <form className="forgot-form">
       <Subtitle text="Forgot your password?" main />
@@ -18,6 +23,11 @@ export default function ForgotForm({ inputValue, handler, sendEmail }) {
           placeholder="Enter your email address"
           value={inputValue}
           onChange={handler}
+        />
+        <FormMessage
+          text={message.text}
+          isValid={message.isValid}
+          width="100%"
         />
       </fieldset>
       <Button text="Reset password" onClick={sendEmail} />

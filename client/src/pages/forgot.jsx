@@ -28,6 +28,7 @@ export default function Forgot() {
         body: JSON.stringify({ email: forgotValue }),
         headers: { 'Content-Type': 'application/json' },
       });
+
       if (res.ok) {
         setForgotValue('');
       }
@@ -46,14 +47,14 @@ export default function Forgot() {
           inputValues={resetValues}
           handler={resetValuesHandler}
           resetPassword={sendResetRequest}
-          formMessage={formMessage}
+          message={formMessage}
         />
       ) : (
         <ForgotForm
           inputValue={forgotValue}
           handler={forgotValueHandler}
           sendEmail={sendForgotRequest}
-          formMessage={formMessage}
+          message={formMessage}
         />
       )}
     </Page>
