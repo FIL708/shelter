@@ -5,6 +5,7 @@ const photo = require('./photo.js');
 const user = require('./user.js');
 const auth = require('./auth.js');
 const opinion = require('./opinion.js');
+const forgot = require('./forgot.js');
 
 module.exports = Router()
   .get('/status', status)
@@ -12,4 +13,5 @@ module.exports = Router()
   .use('/photo', photo)
   .use('/user', user)
   .use('/auth', auth)
-  .use('/opinion', opinion);
+  .use('/opinion', opinion)
+  .use('/forgot', forgot);

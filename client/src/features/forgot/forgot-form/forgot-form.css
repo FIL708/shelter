@@ -1,0 +1,19 @@
+.forgot-form {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 60px;
+  width: 90%;
+  max-width: 500px;
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-8);
+}
+
+.forgot-form__description {
+  margin-bottom: 20px;
+}
+
+.forgot-form__fieldset {
+  margin-bottom: 20px;
+}
