@@ -1,29 +1,29 @@
 module.exports = {
-  async up(queryInterface, {INTEGER, DATE}) {
+  async up(queryInterface, { INTEGER, DATE, UUIDV4 }) {
     await queryInterface.createTable('ForgotSession', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: INTEGER
+        type: UUIDV4,
       },
       userId: {
-        type: INTEGER
+        type: INTEGER,
       },
       expiredDate: {
-        type: DATE
+        type: DATE,
       },
       createdAt: {
         allowNull: false,
-        type: DATE
+        type: DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: DATE
-      }
+        type: DATE,
+      },
     });
   },
   async down(queryInterface) {
     await queryInterface.dropTable('ForgotSession');
-  }
+  },
 };
