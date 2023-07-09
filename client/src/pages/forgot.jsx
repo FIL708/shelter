@@ -20,8 +20,11 @@ export default function Forgot() {
 
   return (
     <Page>
-      <ForgotForm inputValue={forgotValue} handler={forgotValueHandler} />
-      <ResetForm inputValues={resetValues} handler={resetValuesHandler} />
+      {id ? (
+        <ResetForm inputValues={resetValues} handler={resetValuesHandler} />
+      ) : (
+        <ForgotForm inputValue={forgotValue} handler={forgotValueHandler} />
+      )}
     </Page>
   );
 }
