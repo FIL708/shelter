@@ -10,8 +10,9 @@ module.exports = {
       userId: {
         type: INTEGER,
       },
-      expiredDate: {
+      expirationDate: {
         type: DATE,
+        defaultValue: new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
       },
       createdAt: {
         allowNull: false,
