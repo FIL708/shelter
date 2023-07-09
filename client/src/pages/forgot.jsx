@@ -7,7 +7,6 @@ export default function Forgot() {
   const { id } = useParams();
   const [forgotValue, setForgotValue] = useState('');
   const [resetValues, setResetValues] = useState({ password: '', confirm: '' });
-  console.log(forgotValue, resetValues, id);
 
   const forgotValueHandler = (event) => {
     const { value } = event.target;
@@ -18,12 +17,27 @@ export default function Forgot() {
     setResetValues((prev) => ({ ...prev, [name]: value }));
   };
 
+  const sendForgotRequest = () => {
+    console.log('Forgot!');
+  };
+  const sendResetRequest = () => {
+    console.log('Reset!');
+  };
+
   return (
     <Page>
       {id ? (
-        <ResetForm inputValues={resetValues} handler={resetValuesHandler} />
+        <ResetForm
+          inputValues={resetValues}
+          handler={resetValuesHandler}
+          resetPassword={sendResetRequest}
+        />
       ) : (
-        <ForgotForm inputValue={forgotValue} handler={forgotValueHandler} />
+        <ForgotForm
+          inputValue={forgotValue}
+          handler={forgotValueHandler}
+          sendEmail={sendForgotRequest}
+        />
       )}
     </Page>
   );
