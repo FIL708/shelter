@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { ForgotSession } = require('../models');
+const { User, ForgotSession } = require('../models');
 
 const checkForgotSession = (req, res) => {
   const { id } = req.params;
@@ -11,7 +11,11 @@ const sendForgotEmail = async (req, res) => {
 
   if (!email) return res.status(422).json({ message: 'Invalid data provided' });
 
-  await ForgotSession.create();
+  const user = await User.findOne({ where: { email } });
+
+  if (!user) return res.status(404).json({ message: 'User not found' });
+
+  await ForgotSession.create({ userId: user.id });
 
   return res.status(200).json({ message: 'Email successfully sended' });
 };
