@@ -1,25 +1,25 @@
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up(queryInterface, {INTEGER, DATE}) {
     await queryInterface.createTable('ForgotSession', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: INTEGER
       },
       userId: {
-        type: Sequelize.NUMBER
+        type: INTEGER
       },
       expiredDate: {
-        type: Sequelize.DATE
+        type: DATE
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: DATE
       }
     });
   },

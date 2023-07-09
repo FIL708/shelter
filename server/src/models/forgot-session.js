@@ -1,6 +1,6 @@
 const { Model } = require('sequelize');
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, { NUMBER, DATE }) => {
   class ForgotSession extends Model {
     static associate(models) {
       // define association here
@@ -8,12 +8,12 @@ module.exports = (sequelize, DataTypes) => {
   }
   ForgotSession.init(
     {
-      userId: DataTypes.NUMBER,
-      expiredDate: DataTypes.DATE,
+      userId: NUMBER,
+      expiredDate: DATE,
     },
     {
       sequelize,
-      modelName: 'forgot-session',
+      modelName: 'ForgotSession',
     },
   );
   return ForgotSession;
