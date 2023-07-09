@@ -12,7 +12,7 @@ export default function ForgotForm({
   return (
     <form className="forgot-form">
       <Subtitle text="Forgot your password?" main />
-      <fieldset>
+      <fieldset className="forgot-form__fieldset">
         <p className="forgot-form__description">
           Please enter the email address you`d like to password reset
           information sent to
@@ -29,7 +29,7 @@ export default function ForgotForm({
         text={message.text}
         isValid={message.isValid}
         width="90%"
-        bottom="78px"
+        bottom="90px"
         left="5%"
       />
       <Button text="Reset password" onClick={sendEmail} />
