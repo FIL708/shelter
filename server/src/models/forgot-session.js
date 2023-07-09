@@ -3,7 +3,7 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, { UUIDV4, INTEGER, DATE }) => {
   class ForgotSession extends Model {
     static associate(models) {
-      // define association here
+      ForgotSession.belongsTo(models.User, { foreignKey: 'userId' });
     }
   }
   ForgotSession.init(
