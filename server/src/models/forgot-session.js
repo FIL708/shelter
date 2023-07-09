@@ -1,6 +1,6 @@
 const { Model } = require('sequelize');
 
-module.exports = (sequelize, { UUIDV4, INTEGER, DATE }) => {
+module.exports = (sequelize, { UUIDV4, UUID, INTEGER, DATE }) => {
   class ForgotSession extends Model {
     static associate(models) {
       ForgotSession.belongsTo(models.User, { foreignKey: 'userId' });
@@ -10,9 +10,9 @@ module.exports = (sequelize, { UUIDV4, INTEGER, DATE }) => {
     {
       id: {
         allowNull: false,
-        autoIncrement: true,
+        defaultValue: UUIDV4,
         primaryKey: true,
-        type: UUIDV4,
+        type: UUID,
       },
       userId: INTEGER,
       expirationDate: {

@@ -1,18 +1,18 @@
 module.exports = {
-  async up(queryInterface, { INTEGER, DATE, UUIDV4 }) {
+  async up(queryInterface, { UUIDV4, UUID, INTEGER, DATE }) {
     await queryInterface.createTable('ForgotSession', {
       id: {
         allowNull: false,
-        autoIncrement: true,
+        defaultValue: UUIDV4,
         primaryKey: true,
-        type: UUIDV4,
+        type: UUID,
       },
       userId: {
         type: INTEGER,
       },
       expirationDate: {
         type: DATE,
-        defaultValue: new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
+        defaultValue: new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
       },
       createdAt: {
         allowNull: false,
