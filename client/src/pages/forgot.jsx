@@ -36,6 +36,13 @@ export default function Forgot() {
           isValid: true,
         });
       }
+      if (res.status === 404) {
+        setFormMessage({
+          text: `${forgotValue} not found!`,
+          isValid: false,
+        });
+        setForgotValue('');
+      }
     } catch (error) {
       console.log(error);
     }
