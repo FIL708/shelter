@@ -8,7 +8,6 @@ export default function Forgot() {
   const [forgotValue, setForgotValue] = useState('');
   const [resetValues, setResetValues] = useState({ password: '', confirm: '' });
   const [formMessage, setFormMessage] = useState({ text: '', isValid: false });
-  console.log(setFormMessage);
 
   const forgotValueHandler = (event) => {
     const { value } = event.target;
