@@ -3,6 +3,7 @@ const { User, ForgotSession } = require('../models');
 
 const checkForgotSession = (req, res) => {
   const { id } = req.params;
+
   return res.status(200).json({ id });
 };
 
@@ -20,6 +21,13 @@ const sendForgotEmail = async (req, res) => {
   return res.status(200).json({ message: 'Email successfully sended' });
 };
 
+const resetPassword = (req, res) => {
+  const { password } = req.body;
+  console.log(password);
+  return res.status(200).json({ password });
+};
+
 module.exports = Router()
   .get('/:id', checkForgotSession)
+  .post('/:id', resetPassword)
   .post('/', sendForgotEmail);
