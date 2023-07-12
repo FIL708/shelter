@@ -14,6 +14,7 @@ import {
   Profile,
   Forgot,
   NotFound,
+  ResetPassword,
 } from 'pages';
 
 export const UserContext = createContext();
@@ -33,7 +34,7 @@ function App() {
           <Route path="/users" element={<Users />} />
           <Route path="/profile/:id" element={<Profile />} />
           <Route path="/forgot" element={<Forgot />} />
-          <Route path="/forgot/:id" element={<Forgot />} />
+          <Route path="/forgot/:id" element={<ResetPassword />} />
           <Route path="/test" element={<Test />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
