@@ -1,19 +1,26 @@
 import { useState } from 'react';
-import { ErrorCard, LoadingSpinner, Page, Subtitle } from 'components/ui';
+import { ErrorCard, LoadingSpinner, Page } from 'components/ui';
 import { useFetch } from 'hooks';
 import { ResetForm } from 'features/forgot';
 import { useParams } from 'react-router-dom';
+import { inputValidator } from 'utils';
 
 export default function ResetPassword() {
   const { id } = useParams();
   const [check, isLoading, error] = useFetch(`/api/forgot/${id}`);
   const [resetValues, setResetValues] = useState({ password: '', confirm: '' });
+  const [formIsValid, setFormIsValid] = useState({});
   const [formMessage, setFormMessage] = useState({ text: '', isValid: false });
-  console.log(setFormMessage, check);
+  console.log(check);
 
   const resetValuesHandler = (event) => {
     const { value, name } = event.target;
     setResetValues((prev) => ({ ...prev, [name]: value }));
+  };
+  const validationHandler = (event, type, confirm) => {
+    const { name, value } = event.target;
+    const validationObject = inputValidator(value, type, confirm);
+    setFormIsValid((prev) => ({ ...prev, [name]: validationObject }));
   };
   const sendResetRequest = async () => {
     if (!resetValues.password) return;
@@ -43,7 +50,6 @@ export default function ResetPassword() {
   if (isLoading || error)
     return (
       <Page>
-        <Subtitle text="Our Pets" main />
         {isLoading ? (
           <LoadingSpinner />
         ) : (
@@ -58,6 +64,8 @@ export default function ResetPassword() {
         handler={resetValuesHandler}
         resetPassword={sendResetRequest}
         message={formMessage}
+        formIsValid={formIsValid}
+        validationHandler={validationHandler}
       />
     </Page>
   );
