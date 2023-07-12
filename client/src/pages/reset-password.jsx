@@ -6,17 +6,38 @@ import { useParams } from 'react-router-dom';
 
 export default function ResetPassword() {
   const { id } = useParams();
-  const [pets, isLoading, error] = useFetch(`/api/forgot/${id}`);
+  const [check, isLoading, error] = useFetch(`/api/forgot/${id}`);
   const [resetValues, setResetValues] = useState({ password: '', confirm: '' });
   const [formMessage, setFormMessage] = useState({ text: '', isValid: false });
-  console.log(setFormMessage, pets, isLoading, error);
+  console.log(setFormMessage, check);
 
   const resetValuesHandler = (event) => {
     const { value, name } = event.target;
     setResetValues((prev) => ({ ...prev, [name]: value }));
   };
-  const sendResetRequest = () => {
-    console.log('Reset!');
+  const sendResetRequest = async () => {
+    if (!resetValues.password) return;
+
+    try {
+      const res = await fetch(`/api/forgot/${id}`, {
+        method: 'POST',
+        body: JSON.stringify({ password: resetValues.password }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (res.ok) {
+        setResetValues({ password: '', confirm: '' });
+        setFormMessage({
+          text: 'Password successfully changed!',
+          isValid: true,
+        });
+      }
+    } catch (reqError) {
+      setResetValues({ password: '', confirm: '' });
+      setFormMessage({
+        text: 'Something goes wrong',
+        isValid: true,
+      });
+    }
   };
 
   if (isLoading || error)
