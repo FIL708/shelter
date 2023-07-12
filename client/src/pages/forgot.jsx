@@ -30,14 +30,18 @@ export default function Forgot() {
         });
       }
       if (res.status === 404) {
+        setForgotValue('');
         setFormMessage({
           text: `${forgotValue} not found!`,
           isValid: false,
         });
-        setForgotValue('');
       }
     } catch (error) {
-      console.log(error);
+      setForgotValue({ password: '', confirm: '' });
+      setFormMessage({
+        text: 'Something goes wrong',
+        isValid: false,
+      });
     }
   };
 

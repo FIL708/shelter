@@ -35,7 +35,7 @@ export default function ResetPassword() {
       setResetValues({ password: '', confirm: '' });
       setFormMessage({
         text: 'Something goes wrong',
-        isValid: true,
+        isValid: false,
       });
     }
   };
