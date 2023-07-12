@@ -1,3 +1,10 @@
+import { Page } from 'components/ui';
+import { ResetForm } from 'features/forgot';
+
 export default function ResetPassword() {
-  return <div>password-reset</div>;
+  return (
+    <Page>
+      <ResetForm />
+    </Page>
+  );
 }
