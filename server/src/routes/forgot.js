@@ -29,7 +29,7 @@ const sendForgotEmail = async (req, res) => {
     to: email,
     subject: 'Password Reset Request - HelpMeDude!',
     template: 'forgot',
-    context: { link: `${clientUrl}/forgot/${session.id}`, userName },
+    context: { link: `http://${clientUrl}/forgot/${session.id}`, userName },
   });
 
   return res.status(200).json({ message: 'Email successfully sended' });
