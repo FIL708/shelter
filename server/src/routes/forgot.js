@@ -3,7 +3,7 @@ const config = require('config');
 const { User, ForgotSession } = require('../models');
 const sendEmail = require('../utils/send-email.js');
 
-const clientUrl = config.get('serverUrl');
+const clientUrl = config.get('clientUrl');
 
 const checkForgotSession = (req, res) => {
   const { id } = req.params;
@@ -21,7 +21,6 @@ const sendForgotEmail = async (req, res) => {
   if (!user) return res.status(404).json({ message: 'User not found' });
 
   const session = await ForgotSession.create({ userId: user.id });
-  console.log(`${clientUrl}/forgot/${session.id}`);
 
   const userName = user.firstName || 'USER';
 
@@ -29,7 +28,7 @@ const sendForgotEmail = async (req, res) => {
     to: email,
     subject: 'Password Reset Request - HelpMeDude!',
     template: 'forgot',
-    context: { link: `http://${clientUrl}/forgot/${session.id}`, userName },
+    context: { link: `${clientUrl}/#/forgot/${session.id}`, userName },
   });
 
   return res.status(200).json({ message: 'Email successfully sended' });
