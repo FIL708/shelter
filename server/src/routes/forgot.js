@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const config = require('config');
 const { User, ForgotSession } = require('../models');
-// const sendEmail = require('../utils/send-email.js');
+const sendEmail = require('../utils/send-email.js');
 
 const clientUrl = config.get('serverUrl');
 
@@ -23,11 +23,11 @@ const sendForgotEmail = async (req, res) => {
   const session = await ForgotSession.create({ userId: user.id });
   console.log(`${clientUrl}/forgot/${session.id}`);
 
-  // await sendEmail({
-  //   to: email,
-  //   template: 'forgot',
-  //   context: { link: `${clientUrl}/forgot/${session.id}` },
-  // });
+  await sendEmail({
+    to: email,
+    template: 'forgot',
+    context: { link: `${clientUrl}/forgot/${session.id}` },
+  });
 
   return res.status(200).json({ message: 'Email successfully sended' });
 };
