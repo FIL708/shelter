@@ -23,11 +23,13 @@ const sendForgotEmail = async (req, res) => {
   const session = await ForgotSession.create({ userId: user.id });
   console.log(`${clientUrl}/forgot/${session.id}`);
 
+  const userName = user.firstName || 'USER';
+
   await sendEmail({
     to: email,
     subject: 'Password Reset Request - HelpMeDude!',
     template: 'forgot',
-    context: { link: `${clientUrl}/forgot/${session.id}` },
+    context: { link: `${clientUrl}/forgot/${session.id}`, userName },
   });
 
   return res.status(200).json({ message: 'Email successfully sended' });
