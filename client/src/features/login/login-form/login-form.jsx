@@ -40,7 +40,7 @@ export default function LoginForm({
           value={formData.password}
           validation={formIsValid.password}
         />
-        <Link className="login-form__link" to="/">
+        <Link className="login-form__link" to="/forgot">
           Forgot password?
         </Link>
         <Button
