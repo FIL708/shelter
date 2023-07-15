@@ -75,6 +75,8 @@ const resetPassword = async (req, res) => {
       context: { userName },
     });
 
+    await ForgotSession.destroy({ where: { id } });
+
     return res
       .status(200)
       .json({ message: 'Password has been successfully reset' });
