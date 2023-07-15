@@ -8,4 +8,6 @@ export { default as Signup } from './signup.jsx';
 export { default as Test } from './test.jsx';
 export { default as Users } from './users.jsx';
 export { default as Profile } from './profile.jsx';
+export { default as Forgot } from './forgot.jsx';
+export { default as ResetPassword } from './reset-password.jsx';
 export { default as NotFound } from './not-found.jsx';

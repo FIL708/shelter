@@ -1,0 +1,18 @@
+.reset-form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 60px;
+  width: 90%;
+  max-width: 500px;
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-8);
+}
+
+.reset-form__fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 30px;
+}

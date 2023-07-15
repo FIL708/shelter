@@ -1,14 +1,12 @@
 import { Page, Subtitle } from 'components/ui';
-
-import { useWindowSize } from 'hooks';
+import { ForgotForm, ResetForm } from 'features/forgot';
 
 export default function Test() {
-  const { width } = useWindowSize();
-  console.log(width);
-
   return (
     <Page>
       <Subtitle text="Test Page" main />
+      <ForgotForm />
+      <ResetForm />
     </Page>
   );
 }
