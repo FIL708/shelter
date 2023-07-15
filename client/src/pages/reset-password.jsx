@@ -1,17 +1,18 @@
 import { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+
 import { ErrorCard, LoadingSpinner, Page } from 'components/ui';
 import { useFetch } from 'hooks';
 import { ResetForm } from 'features/forgot';
-import { useParams } from 'react-router-dom';
 import { inputValidator } from 'utils';
 
 export default function ResetPassword() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [sessionId, isLoading, error] = useFetch(`/api/forgot/${id}`);
   const [formData, setResetValues] = useState({ password: '', confirm: '' });
   const [formIsValid, setFormIsValid] = useState({});
   const [formMessage, setFormMessage] = useState({ text: '', isValid: false });
-  console.log(formMessage);
 
   const resetValuesHandler = (event) => {
     const { value, name } = event.target;
@@ -38,6 +39,7 @@ export default function ResetPassword() {
           text: 'Password successfully changed!',
           isValid: true,
         });
+        setTimeout(() => navigate('/login'), 2000);
       }
     } catch (reqError) {
       setResetValues({ password: '', confirm: '' });
