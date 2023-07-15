@@ -1,4 +1,4 @@
-import { Subtitle } from 'components/ui';
+import { Subtitle, FormMessage } from 'components/ui';
 import { Button, Textfield } from 'components/form';
 
 import './reset-form.css';
@@ -9,6 +9,7 @@ export default function ResetForm({
   resetPassword,
   formIsValid,
   validationHandler,
+  message,
 }) {
   const disableButton =
     Object.values(inputValues).some((item) => !item) ||
@@ -43,6 +44,13 @@ export default function ResetForm({
           }
         />
       </fieldset>
+      <FormMessage
+        text={message.text}
+        isValid={message.isValid}
+        width="90%"
+        bottom="90px"
+        left="5%"
+      />
       <Button
         text="Reset password"
         onClick={resetPassword}
