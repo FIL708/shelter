@@ -60,11 +60,10 @@ const resetPassword = async (req, res) => {
       });
     }
 
+    const user = await User.findByPk(session.userId);
+
     const hashedPassword = await bcrypt.hash(password, 10);
-    const user = await User.update(
-      { password: hashedPassword },
-      { where: { id: session.userId } },
-    );
+    await user.update({ password: hashedPassword });
 
     const userName = user.firstName || 'USER';
 
@@ -74,8 +73,6 @@ const resetPassword = async (req, res) => {
       template: 'successful-reset-password',
       context: { userName },
     });
-
-    await ForgotSession.destroy({ where: { id } });
 
     return res
       .status(200)
