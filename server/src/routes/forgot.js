@@ -38,7 +38,7 @@ const sendForgotEmail = async (req, res) => {
   await sendEmail({
     to: email,
     subject: 'Password Reset Request - HelpMeDude!',
-    template: 'forgot',
+    template: 'reset-forgotten-password',
     context: { link: `${clientUrl}/#/forgot/${session.id}`, userName },
   });
 
@@ -61,10 +61,19 @@ const resetPassword = async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    await User.update(
+    const user = await User.update(
       { password: hashedPassword },
       { where: { id: session.userId } },
     );
+
+    const userName = user.firstName || 'USER';
+
+    await sendEmail({
+      to: user.email,
+      subject: 'Successful Password Reset - HelpMeDude!',
+      template: 'reset-password',
+      context: { link: `${clientUrl}/#/forgot/${session.id}`, userName },
+    });
 
     return res
       .status(200)
