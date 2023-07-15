@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const config = require('config');
+const bcrypt = require('bcrypt');
 const { User, ForgotSession } = require('../models');
 const sendEmail = require('../utils/send-email.js');
 
@@ -46,20 +47,31 @@ const sendForgotEmail = async (req, res) => {
 
 const resetPassword = async (req, res) => {
   const { password, id } = req.body;
-  console.log(password, id);
+  try {
+    const session = await ForgotSession.findByPk(id);
+    if (!session) {
+      return res.status(404).json({ message: 'Session not found' });
+    }
 
-  const session = await ForgotSession.findByPk(id);
-  if (!session) {
-    return res.status(404).json({ message: 'Session not found' });
-  }
+    if (new Date(session.expirationDate.getTime()) < Date.now()) {
+      await ForgotSession.destroy({ where: { id } });
+      return res.status(410).json({
+        message: 'The password reset request has expired.',
+      });
+    }
 
-  if (new Date(session.expirationDate.getTime()) < Date.now()) {
-    await ForgotSession.destroy({ where: { id } });
-    return res.status(410).json({
-      message: 'The password reset request has expired.',
-    });
+    const hashedPassword = await bcrypt.hash(password, 10);
+    await User.update(
+      { password: hashedPassword },
+      { where: { id: session.userId } },
+    );
+
+    return res
+      .status(200)
+      .json({ message: 'Password has been successfully reset' });
+  } catch (error) {
+    return res.status(500).json({ message: 'Something goes wrong', error });
   }
-  return res.status(200).json({ password });
 };
 
 module.exports = Router()
