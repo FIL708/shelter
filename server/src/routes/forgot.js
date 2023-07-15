@@ -44,9 +44,21 @@ const sendForgotEmail = async (req, res) => {
   return res.status(200).json({ message: 'Email successfully sended' });
 };
 
-const resetPassword = (req, res) => {
-  const { password } = req.body;
-  console.log(password);
+const resetPassword = async (req, res) => {
+  const { password, id } = req.body;
+  console.log(password, id);
+
+  const session = await ForgotSession.findByPk(id);
+  if (!session) {
+    return res.status(404).json({ message: 'Session not found' });
+  }
+
+  if (new Date(session.expirationDate.getTime()) < Date.now()) {
+    await ForgotSession.destroy({ where: { id } });
+    return res.status(410).json({
+      message: 'The password reset request has expired.',
+    });
+  }
   return res.status(200).json({ password });
 };
 

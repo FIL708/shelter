@@ -7,11 +7,10 @@ import { inputValidator } from 'utils';
 
 export default function ResetPassword() {
   const { id } = useParams();
-  const [check, isLoading, error] = useFetch(`/api/forgot/${id}`);
-  const [resetValues, setResetValues] = useState({ password: '', confirm: '' });
+  const [sessionId, isLoading, error] = useFetch(`/api/forgot/${id}`);
+  const [formData, setResetValues] = useState({ password: '', confirm: '' });
   const [formIsValid, setFormIsValid] = useState({});
   const [formMessage, setFormMessage] = useState({ text: '', isValid: false });
-  console.log(check);
 
   const resetValuesHandler = (event) => {
     const { value, name } = event.target;
@@ -23,12 +22,12 @@ export default function ResetPassword() {
     setFormIsValid((prev) => ({ ...prev, [name]: validationObject }));
   };
   const sendResetRequest = async () => {
-    if (!resetValues.password) return;
+    if (!formData.password) return;
 
     try {
       const res = await fetch(`/api/forgot/${id}`, {
         method: 'POST',
-        body: JSON.stringify({ password: resetValues.password }),
+        body: JSON.stringify({ password: formData.password, id: sessionId.id }),
         headers: { 'Content-Type': 'application/json' },
       });
       if (res.ok) {
@@ -60,7 +59,7 @@ export default function ResetPassword() {
   return (
     <Page>
       <ResetForm
-        inputValues={resetValues}
+        inputValues={formData}
         handler={resetValuesHandler}
         resetPassword={sendResetRequest}
         message={formMessage}
