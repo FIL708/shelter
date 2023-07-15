@@ -61,10 +61,10 @@ const resetPassword = async (req, res) => {
     }
 
     const user = await User.findByPk(session.userId);
+    const userName = user.firstName || 'USER';
+
     const hashedPassword = await bcrypt.hash(password, 10);
     await user.update({ password: hashedPassword });
-
-    const userName = user.firstName || 'USER';
 
     await sendEmail({
       to: user.email,
