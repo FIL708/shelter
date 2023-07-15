@@ -38,7 +38,7 @@ const sendForgotEmail = async (req, res) => {
   await sendEmail({
     to: email,
     subject: 'Password Reset Request - HelpMeDude!',
-    template: 'reset-forgotten-password',
+    template: 'reset-password',
     context: { link: `${clientUrl}/#/forgot/${session.id}`, userName },
   });
 
