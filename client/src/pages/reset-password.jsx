@@ -11,6 +11,7 @@ export default function ResetPassword() {
   const [formData, setResetValues] = useState({ password: '', confirm: '' });
   const [formIsValid, setFormIsValid] = useState({});
   const [formMessage, setFormMessage] = useState({ text: '', isValid: false });
+  console.log(formMessage);
 
   const resetValuesHandler = (event) => {
     const { value, name } = event.target;
@@ -32,6 +33,7 @@ export default function ResetPassword() {
       });
       if (res.ok) {
         setResetValues({ password: '', confirm: '' });
+        setFormMessage({ text: '', isValid: false });
         setFormMessage({
           text: 'Password successfully changed!',
           isValid: true,
