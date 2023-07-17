@@ -1,21 +1,26 @@
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import { Page, ErrorCard } from 'components/ui';
 import { RegisterForm } from 'features/signup';
-import { inputValidator } from 'utils';
+import { useValidation } from 'hooks';
 import { UserContext } from '..';
 
 export default function Signup() {
   const { serverUrl } = useContext(UserContext);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
     confirm: '',
   });
-  const [formIsValid, setFormIsValid] = useState({});
+  const [isFormValid, validationHandler] = useValidation({
+    email: { isValid: false, message: '' },
+    password: { isValid: false, message: '' },
+    confirm: { isValid: false, message: '' },
+  });
   const [message, setMessage] = useState({ text: '', isValid: false });
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
 
   const registerHandler = async () => {
     try {
@@ -44,11 +49,6 @@ export default function Signup() {
     const { name, value } = event.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-  const validationHandler = (event, type, confirm) => {
-    const { name, value } = event.target;
-    const validationObject = inputValidator(value, type, confirm);
-    setFormIsValid((prev) => ({ ...prev, [name]: validationObject }));
-  };
 
   const registerWithGoogle = () => {
     window.open(`${serverUrl}/api/auth/google`, '_self');
@@ -68,7 +68,7 @@ export default function Signup() {
           registerHandler={registerHandler}
           registerDataHandler={registerDataHandler}
           formData={formData}
-          formIsValid={formIsValid}
+          formIsValid={isFormValid}
           validationHandler={validationHandler}
           registerWithGoogle={registerWithGoogle}
           registerWithTwitter={registerWithTwitter}
