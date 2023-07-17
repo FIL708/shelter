@@ -1,23 +1,28 @@
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import { Page, ErrorCard } from 'components/ui';
 import { RegisterForm } from 'features/signup';
-import { inputValidator } from 'utils';
+import { useValidation } from 'hooks';
 import { UserContext } from '..';
 
 export default function Signup() {
   const { serverUrl } = useContext(UserContext);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
     confirm: '',
   });
-  const [formIsValid, setFormIsValid] = useState({});
-  const [message, setMessage] = useState({ text: '', isValid: false });
+  const [isFormValid, validationHandler, validationReset] = useValidation({
+    email: { isValid: null, message: '' },
+    password: { isValid: null, message: '' },
+    confirm: { isValid: null, message: '' },
+  });
+  const [message, setMessage] = useState({ text: '', isValid: null });
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
 
-  const registerHandler = async () => {
+  const registrationRequest = async () => {
     try {
       const res = await fetch('/api/auth/register', {
         method: 'POST',
@@ -32,6 +37,12 @@ export default function Signup() {
         });
         setTimeout(() => navigate('/login'), 2000);
       } else if (res.status === 409) {
+        setFormData({
+          email: '',
+          password: '',
+          confirm: '',
+        });
+        validationReset();
         setMessage({ text: 'Account already exists', isValid: false });
       } else if (res.status === '422') {
         setMessage({ text: 'Unprocessable entity', isValid: false });
@@ -43,11 +54,6 @@ export default function Signup() {
   const registerDataHandler = (event) => {
     const { name, value } = event.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-  const validationHandler = (event, type, confirm) => {
-    const { name, value } = event.target;
-    const validationObject = inputValidator(value, type, confirm);
-    setFormIsValid((prev) => ({ ...prev, [name]: validationObject }));
   };
 
   const registerWithGoogle = () => {
@@ -65,10 +71,10 @@ export default function Signup() {
         <ErrorCard errorCode="500" errorMessage={error} />
       ) : (
         <RegisterForm
-          registerHandler={registerHandler}
+          registerHandler={registrationRequest}
           registerDataHandler={registerDataHandler}
           formData={formData}
-          formIsValid={formIsValid}
+          formIsValid={isFormValid}
           validationHandler={validationHandler}
           registerWithGoogle={registerWithGoogle}
           registerWithTwitter={registerWithTwitter}
