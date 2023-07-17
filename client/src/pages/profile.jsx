@@ -12,6 +12,32 @@ import { UserContext } from 'index.jsx';
 import { useFetch, useValidation } from 'hooks';
 import { areObjectsEqual } from 'utils';
 
+const passwordValidationInit = {
+  currentPassword: {
+    isValid: null,
+    message: null,
+  },
+  newPassword: {
+    isValid: null,
+    message: null,
+  },
+  confirmPassword: {
+    isValid: null,
+    message: null,
+  },
+};
+
+const updateValidationInit = {
+  phone: {
+    isValid: null,
+    message: '',
+  },
+  avatar: {
+    isValid: null,
+    message: '',
+  },
+};
+
 export default function Profile() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -44,40 +70,18 @@ export default function Profile() {
     },
   });
   const [isUpdateFormValid, updateValidationHandler, updateValidationReset] =
-    useValidation({
-      phone: {
-        isValid: null,
-        message: '',
-      },
-      avatar: {
-        isValid: null,
-        message: '',
-      },
-    });
+    useValidation(updateValidationInit);
+
   const [passwordForm, setPasswordForm] = useState({
     currentPassword: '',
     newPassword: '',
     confirmPassword: '',
   });
-
   const [
     isPasswordFormValid,
     passwordValidationHandler,
     passwordValidationReset,
-  ] = useValidation({
-    currentPassword: {
-      isValid: null,
-      message: null,
-    },
-    newPassword: {
-      isValid: null,
-      message: null,
-    },
-    confirmPassword: {
-      isValid: null,
-      message: null,
-    },
-  });
+  ] = useValidation(passwordValidationInit);
 
   const [formsMessage, setFormsMessage] = useState({
     text: '',
