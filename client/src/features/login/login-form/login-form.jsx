@@ -7,16 +7,12 @@ export default function LoginForm({
   loginHandler,
   loginDataHandler,
   formData,
-  validationHandler,
-  formIsValid,
   authWithGoogle,
   authWithTwitter,
   authWithFacebook,
   message,
 }) {
-  const disableButton =
-    Object.values(formData).some((item) => !item) ||
-    Object.values(formIsValid).some((item) => !item.isValid);
+  const disableButton = Object.values(formData).some((item) => !item);
 
   return (
     <section className="login-form__section">
@@ -27,18 +23,14 @@ export default function LoginForm({
           type="email"
           label="Email"
           onChange={(event) => loginDataHandler(event)}
-          onBlur={(event) => validationHandler(event, 'email')}
           value={formData.email}
-          validation={formIsValid.email}
         />
         <Textfield
           name="password"
           type="password"
           label="Password"
           onChange={(event) => loginDataHandler(event)}
-          onBlur={(event) => validationHandler(event, 'password')}
           value={formData.password}
-          validation={formIsValid.password}
         />
         <Link className="login-form__link" to="/forgot">
           Forgot password?

@@ -14,15 +14,15 @@ export default function Signup() {
     password: '',
     confirm: '',
   });
-  const [isFormValid, validationHandler] = useValidation({
-    email: { isValid: false, message: '' },
-    password: { isValid: false, message: '' },
-    confirm: { isValid: false, message: '' },
+  const [isFormValid, validationHandler, validationReset] = useValidation({
+    email: { isValid: null, message: '' },
+    password: { isValid: null, message: '' },
+    confirm: { isValid: null, message: '' },
   });
-  const [message, setMessage] = useState({ text: '', isValid: false });
+  const [message, setMessage] = useState({ text: '', isValid: null });
   const [error, setError] = useState(null);
 
-  const registerHandler = async () => {
+  const registrationRequest = async () => {
     try {
       const res = await fetch('/api/auth/register', {
         method: 'POST',
@@ -37,6 +37,12 @@ export default function Signup() {
         });
         setTimeout(() => navigate('/login'), 2000);
       } else if (res.status === 409) {
+        setFormData({
+          email: '',
+          password: '',
+          confirm: '',
+        });
+        validationReset();
         setMessage({ text: 'Account already exists', isValid: false });
       } else if (res.status === '422') {
         setMessage({ text: 'Unprocessable entity', isValid: false });
@@ -65,7 +71,7 @@ export default function Signup() {
         <ErrorCard errorCode="500" errorMessage={error} />
       ) : (
         <RegisterForm
-          registerHandler={registerHandler}
+          registerHandler={registrationRequest}
           registerDataHandler={registerDataHandler}
           formData={formData}
           formIsValid={isFormValid}
