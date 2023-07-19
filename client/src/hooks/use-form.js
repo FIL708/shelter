@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function useForm(init) {
+export default function useForm(init = {}) {
   const [form, setForm] = useState(init);
 
   const updateForm = (event) => {
