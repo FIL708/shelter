@@ -4,8 +4,8 @@ import { AuthButtons, Subtitle, FormMessage } from 'components/ui';
 import './login-form.css';
 
 export default function LoginForm({
+  loginRequest,
   loginHandler,
-  loginDataHandler,
   formData,
   authWithGoogle,
   authWithTwitter,
@@ -22,14 +22,14 @@ export default function LoginForm({
           name="email"
           type="email"
           label="Email"
-          onChange={(event) => loginDataHandler(event)}
+          onChange={(event) => loginHandler(event)}
           value={formData.email}
         />
         <Textfield
           name="password"
           type="password"
           label="Password"
-          onChange={(event) => loginDataHandler(event)}
+          onChange={(event) => loginHandler(event)}
           value={formData.password}
         />
         <Link className="login-form__link" to="/forgot">
@@ -40,7 +40,7 @@ export default function LoginForm({
           iconType="login"
           iconFill="#fff2f2"
           iconSize="18px"
-          onClick={loginHandler}
+          onClick={loginRequest}
           disabled={disableButton}
         />
         <FormMessage

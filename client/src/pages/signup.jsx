@@ -15,7 +15,6 @@ export default function Signup() {
     password: '',
     confirm: '',
   });
-
   const [isFormValid, validationHandler, validationReset] = useValidation({
     email: { isValid: null, message: '' },
     password: { isValid: null, message: '' },
