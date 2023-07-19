@@ -9,7 +9,7 @@ import {
 } from 'components/ui';
 import { ChangePasswordForm, ProfileForm, UserCard } from 'features/profile';
 import { UserContext } from 'index.jsx';
-import { useFetch, useValidation } from 'hooks';
+import { useFetch, useForm, useValidation } from 'hooks';
 import { areObjectsEqual } from 'utils';
 
 const passwordValidationInit = {
@@ -72,7 +72,7 @@ export default function Profile() {
   const [isUpdateFormValid, updateValidationHandler, updateValidationReset] =
     useValidation(updateValidationInit);
 
-  const [passwordForm, setPasswordForm] = useState({
+  const [passwordForm, passwordFormHandler, passwordFormReset] = useForm({
     currentPassword: '',
     newPassword: '',
     confirmPassword: '',
@@ -138,18 +138,11 @@ export default function Profile() {
   const togglePasswordModal = () => {
     setVisibleModals((prev) => ({ ...prev, password: !prev.password }));
   };
-  const passwordFormDataHandler = (event) => {
-    const { name, value } = event.target;
-    setPasswordForm((prev) => ({ ...prev, [name]: value }));
-  };
+
   const onClosingPasswordForm = () => {
     togglePasswordModal();
     passwordValidationReset();
-    setPasswordForm({
-      currentPassword: '',
-      newPassword: '',
-      confirmPassword: '',
-    });
+    passwordFormReset();
   };
   const onConfirmPasswordForm = async () => {
     const res = await fetch(`/api/user/${id}`, {
@@ -170,11 +163,7 @@ export default function Profile() {
         text: 'Password successfully changed',
         isWrong: false,
       });
-      setPasswordForm({
-        currentPassword: '',
-        newPassword: '',
-        confirmPassword: '',
-      });
+      passwordFormReset();
       passwordValidationReset();
 
       setTimeout(() => {
@@ -281,7 +270,7 @@ export default function Profile() {
       <ChangePasswordForm
         validationHandler={passwordValidationHandler}
         validationObject={isPasswordFormValid}
-        dataHandler={passwordFormDataHandler}
+        dataHandler={passwordFormHandler}
         inputsValues={passwordForm}
         isVisible={visibleModals.password}
         toggleModalVision={togglePasswordModal}
