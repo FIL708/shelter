@@ -4,7 +4,7 @@ import { AuthButtons, Subtitle, FormMessage } from 'components/ui';
 import './register-form.css';
 
 export default function RegisterForm({
-  registerHandler,
+  registrationRequest,
   registerDataHandler,
   formData,
   formIsValid,
@@ -56,7 +56,7 @@ export default function RegisterForm({
           iconType="register"
           iconFill="#fff2f2"
           iconSize="18px"
-          onClick={registerHandler}
+          onClick={registrationRequest}
           disabled={disableButton}
         />
         <FormMessage
