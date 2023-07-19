@@ -2,5 +2,11 @@ import { useState } from 'react';
 
 export default function useForm(init) {
   const [form, setForm] = useState(init);
-  return [form, setForm];
+
+  const updateForm = (event) => {
+    const { name, value } = event.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  return [form, updateForm];
 }
