@@ -8,5 +8,9 @@ export default function useForm(init = {}) {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  return [form, updateForm];
+  const resetForm = () => {
+    setForm(init);
+  };
+
+  return [form, updateForm, resetForm];
 }
