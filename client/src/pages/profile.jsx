@@ -26,7 +26,11 @@ const passwordValidationInit = {
     message: null,
   },
 };
-
+const passwordFormInit = {
+  currentPassword: '',
+  newPassword: '',
+  confirmPassword: '',
+};
 const updateValidationInit = {
   phone: {
     isValid: null,
@@ -37,6 +41,30 @@ const updateValidationInit = {
     message: '',
   },
 };
+const updateFormInit = {
+  previous: {
+    firstName: '',
+    lastName: '',
+    address: {
+      city: '',
+      country: '',
+    },
+    phone: '',
+    birthday: '',
+    avatar: '',
+  },
+  current: {
+    firstName: '',
+    lastName: '',
+    address: {
+      city: '',
+      country: '',
+    },
+    phone: '',
+    birthday: '',
+    avatar: '',
+  },
+};
 
 export default function Profile() {
   const { id } = useParams();
@@ -45,38 +73,12 @@ export default function Profile() {
 
   const [user, isLoading, error] = useFetch(`/api/user/${id}`);
 
-  const [updateForm, setUpdateForm] = useState({
-    previous: {
-      firstName: '',
-      lastName: '',
-      address: {
-        city: '',
-        country: '',
-      },
-      phone: '',
-      birthday: '',
-      avatar: '',
-    },
-    current: {
-      firstName: '',
-      lastName: '',
-      address: {
-        city: '',
-        country: '',
-      },
-      phone: '',
-      birthday: '',
-      avatar: '',
-    },
-  });
+  const [updateForm, setUpdateForm] = useState(updateFormInit);
   const [isUpdateFormValid, updateValidationHandler, updateValidationReset] =
     useValidation(updateValidationInit);
 
-  const [passwordForm, passwordFormHandler, passwordFormReset] = useForm({
-    currentPassword: '',
-    newPassword: '',
-    confirmPassword: '',
-  });
+  const [passwordForm, passwordFormHandler, passwordFormReset] =
+    useForm(passwordFormInit);
   const [
     isPasswordFormValid,
     passwordValidationHandler,
