@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   ErrorCard,
@@ -7,10 +7,13 @@ import {
   Subtitle,
   ConfirmModal,
 } from 'components/ui';
-import { ChangePasswordForm, ProfileForm, UserCard } from 'features/profile';
+
 import { UserContext } from 'index.jsx';
 import { useFetch, useForm, useValidation } from 'hooks';
 import { areObjectsEqual } from 'utils';
+
+import { ChangePasswordForm, ProfileForm, UserCard } from 'features/profile';
+import { useProfileForm } from 'features/profile/hooks';
 
 const passwordValidationInit = {
   currentPassword: {
@@ -41,30 +44,6 @@ const updateValidationInit = {
     message: '',
   },
 };
-const updateFormInit = {
-  previous: {
-    firstName: '',
-    lastName: '',
-    address: {
-      city: '',
-      country: '',
-    },
-    phone: '',
-    birthday: '',
-    avatar: '',
-  },
-  current: {
-    firstName: '',
-    lastName: '',
-    address: {
-      city: '',
-      country: '',
-    },
-    phone: '',
-    birthday: '',
-    avatar: '',
-  },
-};
 
 export default function Profile() {
   const { id } = useParams();
@@ -73,7 +52,12 @@ export default function Profile() {
 
   const [user, isLoading, error] = useFetch(`/api/user/${id}`);
 
-  const [updateForm, setUpdateForm] = useState(updateFormInit);
+  const [
+    profileForm,
+    profileFormHandler,
+    undoProfileChanges,
+    confirmProfileChanges,
+  ] = useProfileForm(user);
   const [isUpdateFormValid, updateValidationHandler, updateValidationReset] =
     useValidation(updateValidationInit);
 
@@ -94,24 +78,6 @@ export default function Profile() {
     password: false,
     update: false,
   });
-
-  useEffect(() => {
-    if (user) {
-      const userData = {
-        id: user.id,
-        email: user.email,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        address: { city: user.address?.city, country: user.address?.country },
-        phone: user.phone,
-        birthday: user.birthday,
-        avatar: user.avatar,
-        createdAt: user.createdAt,
-      };
-
-      setUpdateForm({ previous: userData, current: userData });
-    }
-  }, [user]);
 
   const toggleDeleteAccountModal = () => {
     setVisibleModals((prev) => ({ ...prev, confirm: !prev.confirm }));
@@ -181,37 +147,20 @@ export default function Profile() {
   const toggleUpdateModal = () => {
     setVisibleModals((prev) => ({ ...prev, update: !prev.update }));
   };
-  const updateFormDataHandler = (event) => {
-    const { name, value } = event.target;
 
-    if (name === 'city' || name === 'country') {
-      setUpdateForm((prev) => ({
-        ...prev,
-        current: {
-          ...prev.current,
-          address: { ...prev.current.address, [name]: value },
-        },
-      }));
-    } else {
-      setUpdateForm((prev) => ({
-        ...prev,
-        current: { ...prev.current, [name]: value },
-      }));
-    }
-  };
   const onClosingUpdateForm = () => {
     toggleUpdateModal();
     updateValidationReset();
-    setUpdateForm((prev) => ({ ...prev, current: prev.previous }));
+    undoProfileChanges();
     setFormsMessage({ text: '', isWrong: false });
   };
   const onConfirmUpdateForm = async () => {
     try {
-      if (!areObjectsEqual(updateForm.previous, updateForm.current)) {
+      if (!areObjectsEqual(profileForm.previous, profileForm.current)) {
         const res = await fetch(`/api/user/${id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(updateForm.current),
+          body: JSON.stringify(profileForm.current),
         });
         if (!res.ok) {
           setFormsMessage({ text: 'Something goes wrong', isWrong: true });
@@ -220,7 +169,7 @@ export default function Profile() {
             text: 'Profile successfully updated',
             isWrong: false,
           });
-          setUpdateForm((prev) => ({ ...prev, previous: prev.current }));
+          confirmProfileChanges();
           updateValidationReset();
         }
       }
@@ -255,7 +204,7 @@ export default function Profile() {
     <Page>
       <Subtitle text="Profile" main />
       <UserCard
-        userData={updateForm.previous}
+        userData={profileForm.previous}
         deleteAccount={toggleDeleteAccountModal}
         updateProfile={toggleUpdateModal}
         changePassword={togglePasswordModal}
@@ -281,8 +230,8 @@ export default function Profile() {
         message={formsMessage}
       />
       <ProfileForm
-        dataHandler={updateFormDataHandler}
-        inputsValues={updateForm.current}
+        dataHandler={profileFormHandler}
+        inputsValues={profileForm.current}
         toggleModalVision={toggleUpdateModal}
         isVisible={visibleModals.update}
         validationHandler={updateValidationHandler}
