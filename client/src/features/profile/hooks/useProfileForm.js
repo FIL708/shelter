@@ -30,19 +30,7 @@ export default function useProfileForm(user) {
 
   useEffect(() => {
     if (user) {
-      const userData = {
-        id: user.id,
-        email: user.email,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        address: { city: user.address?.city, country: user.address?.country },
-        phone: user.phone,
-        birthday: user.birthday,
-        avatar: user.avatar,
-        createdAt: user.createdAt,
-      };
-
-      setProfileForm({ previous: userData, current: userData });
+      setProfileForm({ previous: user, current: user });
     }
   }, [user]);
 
