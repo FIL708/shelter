@@ -2,19 +2,21 @@ import { useContext, useState } from 'react';
 
 import { Page, ErrorCard } from 'components/ui';
 import { LoginForm } from 'features/login';
+import { useForm } from 'hooks';
 import { UserContext } from '..';
 
 export default function Login() {
   const { serverUrl } = useContext(UserContext);
-  const [formData, setFormData] = useState({ email: '', password: '' });
+
+  const [loginData, loginHandler] = useForm({ email: '', password: '' });
   const [message, setMessage] = useState({ text: '', isValid: false });
   const [error, setError] = useState(null);
 
-  const loginHandler = async () => {
+  const loginRequest = async () => {
     try {
       const res = await fetch('/api/auth/login', {
         method: 'POST',
-        body: JSON.stringify(formData),
+        body: JSON.stringify(loginData),
         headers: { 'Content-Type': 'application/json' },
       });
 
@@ -26,11 +28,6 @@ export default function Login() {
     } catch (err) {
       setError(err);
     }
-  };
-
-  const loginDataHandler = (event) => {
-    const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const loginWithGoogle = () => {
@@ -48,9 +45,9 @@ export default function Login() {
         <ErrorCard errorCode="500" errorMessage={error} />
       ) : (
         <LoginForm
+          loginRequest={loginRequest}
           loginHandler={loginHandler}
-          loginDataHandler={loginDataHandler}
-          formData={formData}
+          formData={loginData}
           authWithGoogle={loginWithGoogle}
           authWithTwitter={loginWithTwitter}
           authWithFacebook={loginWithFacebook}

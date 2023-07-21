@@ -3,13 +3,14 @@ import { useNavigate } from 'react-router-dom';
 
 import { Page, ErrorCard } from 'components/ui';
 import { RegisterForm } from 'features/signup';
-import { useValidation } from 'hooks';
+import { useForm, useValidation } from 'hooks';
 import { UserContext } from '..';
 
 export default function Signup() {
   const { serverUrl } = useContext(UserContext);
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
+
+  const [registerData, registerHandler, registerReset] = useForm({
     email: '',
     password: '',
     confirm: '',
@@ -26,7 +27,7 @@ export default function Signup() {
     try {
       const res = await fetch('/api/auth/register', {
         method: 'POST',
-        body: JSON.stringify(formData),
+        body: JSON.stringify(registerData),
         headers: { 'Content-Type': 'application/json' },
       });
 
@@ -37,11 +38,7 @@ export default function Signup() {
         });
         setTimeout(() => navigate('/login'), 2000);
       } else if (res.status === 409) {
-        setFormData({
-          email: '',
-          password: '',
-          confirm: '',
-        });
+        registerReset();
         validationReset();
         setMessage({ text: 'Account already exists', isValid: false });
       } else if (res.status === '422') {
@@ -50,10 +47,6 @@ export default function Signup() {
     } catch (err) {
       setError(err);
     }
-  };
-  const registerDataHandler = (event) => {
-    const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const registerWithGoogle = () => {
@@ -71,9 +64,9 @@ export default function Signup() {
         <ErrorCard errorCode="500" errorMessage={error} />
       ) : (
         <RegisterForm
-          registerHandler={registrationRequest}
-          registerDataHandler={registerDataHandler}
-          formData={formData}
+          registrationRequest={registrationRequest}
+          registerDataHandler={registerHandler}
+          formData={registerData}
           formIsValid={isFormValid}
           validationHandler={validationHandler}
           registerWithGoogle={registerWithGoogle}

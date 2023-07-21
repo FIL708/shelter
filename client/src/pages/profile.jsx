@@ -9,7 +9,7 @@ import {
 } from 'components/ui';
 import { ChangePasswordForm, ProfileForm, UserCard } from 'features/profile';
 import { UserContext } from 'index.jsx';
-import { useFetch, useValidation } from 'hooks';
+import { useFetch, useForm, useValidation } from 'hooks';
 import { areObjectsEqual } from 'utils';
 
 const passwordValidationInit = {
@@ -26,7 +26,11 @@ const passwordValidationInit = {
     message: null,
   },
 };
-
+const passwordFormInit = {
+  currentPassword: '',
+  newPassword: '',
+  confirmPassword: '',
+};
 const updateValidationInit = {
   phone: {
     isValid: null,
@@ -37,6 +41,30 @@ const updateValidationInit = {
     message: '',
   },
 };
+const updateFormInit = {
+  previous: {
+    firstName: '',
+    lastName: '',
+    address: {
+      city: '',
+      country: '',
+    },
+    phone: '',
+    birthday: '',
+    avatar: '',
+  },
+  current: {
+    firstName: '',
+    lastName: '',
+    address: {
+      city: '',
+      country: '',
+    },
+    phone: '',
+    birthday: '',
+    avatar: '',
+  },
+};
 
 export default function Profile() {
   const { id } = useParams();
@@ -45,38 +73,12 @@ export default function Profile() {
 
   const [user, isLoading, error] = useFetch(`/api/user/${id}`);
 
-  const [updateForm, setUpdateForm] = useState({
-    previous: {
-      firstName: '',
-      lastName: '',
-      address: {
-        city: '',
-        country: '',
-      },
-      phone: '',
-      birthday: '',
-      avatar: '',
-    },
-    current: {
-      firstName: '',
-      lastName: '',
-      address: {
-        city: '',
-        country: '',
-      },
-      phone: '',
-      birthday: '',
-      avatar: '',
-    },
-  });
+  const [updateForm, setUpdateForm] = useState(updateFormInit);
   const [isUpdateFormValid, updateValidationHandler, updateValidationReset] =
     useValidation(updateValidationInit);
 
-  const [passwordForm, setPasswordForm] = useState({
-    currentPassword: '',
-    newPassword: '',
-    confirmPassword: '',
-  });
+  const [passwordForm, passwordFormHandler, passwordFormReset] =
+    useForm(passwordFormInit);
   const [
     isPasswordFormValid,
     passwordValidationHandler,
@@ -138,18 +140,11 @@ export default function Profile() {
   const togglePasswordModal = () => {
     setVisibleModals((prev) => ({ ...prev, password: !prev.password }));
   };
-  const passwordFormDataHandler = (event) => {
-    const { name, value } = event.target;
-    setPasswordForm((prev) => ({ ...prev, [name]: value }));
-  };
+
   const onClosingPasswordForm = () => {
     togglePasswordModal();
     passwordValidationReset();
-    setPasswordForm({
-      currentPassword: '',
-      newPassword: '',
-      confirmPassword: '',
-    });
+    passwordFormReset();
   };
   const onConfirmPasswordForm = async () => {
     const res = await fetch(`/api/user/${id}`, {
@@ -170,11 +165,7 @@ export default function Profile() {
         text: 'Password successfully changed',
         isWrong: false,
       });
-      setPasswordForm({
-        currentPassword: '',
-        newPassword: '',
-        confirmPassword: '',
-      });
+      passwordFormReset();
       passwordValidationReset();
 
       setTimeout(() => {
@@ -281,7 +272,7 @@ export default function Profile() {
       <ChangePasswordForm
         validationHandler={passwordValidationHandler}
         validationObject={isPasswordFormValid}
-        dataHandler={passwordFormDataHandler}
+        dataHandler={passwordFormHandler}
         inputsValues={passwordForm}
         isVisible={visibleModals.password}
         toggleModalVision={togglePasswordModal}
