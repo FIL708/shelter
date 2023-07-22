@@ -165,6 +165,7 @@ export default function Profile() {
         });
         if (!res.ok) {
           setFormsMessage({ text: 'Something goes wrong', isWrong: true });
+          undoProfileChanges();
         } else {
           setFormsMessage({
             text: 'Profile successfully updated',
