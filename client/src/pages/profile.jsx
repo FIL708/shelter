@@ -60,6 +60,7 @@ export default function Profile() {
   ] = useProfileForm(user);
   const [isUpdateFormValid, updateValidationHandler, updateValidationReset] =
     useValidation(updateValidationInit);
+  console.log(profileForm);
 
   const [passwordForm, passwordFormHandler, passwordFormReset] =
     useForm(passwordFormInit);
