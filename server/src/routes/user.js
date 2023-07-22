@@ -79,13 +79,17 @@ const updateUserProfile = async (req, res) => {
       });
     }
 
-    if (address) {
+    if (address.city || address.country) {
       const location = await Address.findOne({ where: { city: address.city } });
+
       if (!location) {
-        const newLocation = await Address.create(address);
-        await user.update({ addressId: newLocation.id }, { where: { id } });
+        const newLocation = await Address.create({
+          city: address.city,
+          country: address.country,
+        });
+        await User.update({ addressId: newLocation.id }, { where: { id } });
       } else {
-        await user.update({ addressId: location.id }, { where: { id } });
+        await User.update({ addressId: location.id }, { where: { id } });
       }
     }
 
