@@ -12,6 +12,10 @@
   cursor: pointer;
 }
 
+.radio-button__button-type:hover {
+  opacity: 0.5;
+}
+
 .radio-button__button-type.checked {
   color: var(--blue);
   background-color: var(--white);
