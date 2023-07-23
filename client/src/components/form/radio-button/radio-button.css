@@ -1,3 +1,13 @@
+.radio-button {
+  display: inline-flex;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 8px;
+  font-size: 16px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
 .radio-button__button-type {
   display: inline-block;
   padding: 8px 16px;
@@ -22,6 +32,6 @@
   box-shadow: var(--shadow-8);
 }
 
-.radio-button__input {
+.radio-button__button-type .radio-button__input {
   display: none;
 }

@@ -7,12 +7,11 @@ export default function RadioButton({
   onChange,
   variant,
 }) {
-  const labelClassName =
-    checked && variant === 'button'
-      ? 'checked radio-button__button-type'
-      : 'radio-button__button-type';
+  const variantClassName =
+    variant === 'button' ? 'radio-button__button-type' : 'radio-button';
+
   return (
-    <label htmlFor={value} className={labelClassName}>
+    <label htmlFor={value} className={`${variantClassName}`}>
       {value}
       <input
         className="radio-button__input"
