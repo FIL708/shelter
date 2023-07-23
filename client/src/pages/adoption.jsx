@@ -18,6 +18,8 @@ import { useOpinion } from 'features/adoption/hooks';
 export default function Adoption() {
   const { id } = useParams();
   const [pet, isLoading, error] = useFetch(`/api/adoption/${id}`);
+  console.log(pet);
+
   const [
     opinions,
     newOpinion,
