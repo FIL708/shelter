@@ -9,7 +9,12 @@ export default function AdoptionForm({ title }) {
       <Subtitle text={title} main />
       <fieldset>
         <Textfield name="name" label="Name" placeholder="Enter pet name" />
-        <Textfield name="age" label="Age" placeholder="Enter pet age" />
+        <Textfield
+          type="number"
+          name="age"
+          label="Age"
+          placeholder="Enter pet age"
+        />
       </fieldset>
       <fieldset>
         <Textfield name="city" label="City" placeholder="Enter city" />
