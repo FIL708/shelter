@@ -12,13 +12,13 @@ export default function RadioButton({
       ? 'checked radio-button__button-type'
       : 'radio-button__button-type';
   return (
-    <label htmlFor={name} className={labelClassName}>
+    <label htmlFor={value} className={labelClassName}>
       {value}
       <input
         className="radio-button__input"
         type="radio"
         name={name}
-        id={name}
+        id={value}
         checked={checked}
         value={value}
         onChange={onChange}
