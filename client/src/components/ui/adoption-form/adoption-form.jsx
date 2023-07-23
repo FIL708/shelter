@@ -1,5 +1,5 @@
 import { Subtitle } from 'components/ui';
-import { Textfield, Textarea } from 'components/form';
+import { Textfield, Textarea, RadioButton } from 'components/form';
 
 import './adoption-form.css';
 
@@ -19,6 +19,16 @@ export default function AdoptionForm({ title }) {
       <fieldset>
         <Textfield name="city" label="City" placeholder="Enter city" />
         <Textfield name="country" label="Country" placeholder="Enter country" />
+      </fieldset>
+      <fieldset>
+        <fieldset>
+          <RadioButton value="dog" />
+          <RadioButton value="cat" />
+        </fieldset>
+        <fieldset>
+          <RadioButton value="male" />
+          <RadioButton value="female" />
+        </fieldset>
       </fieldset>
       <Textarea
         name="shortDescription"
