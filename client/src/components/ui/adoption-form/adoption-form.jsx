@@ -11,6 +11,10 @@ export default function AdoptionForm({ title }) {
         <Textfield name="name" label="Name" placeholder="Enter pet name" />
         <Textfield name="age" label="Age" placeholder="Enter pet age" />
       </fieldset>
+      <fieldset>
+        <Textfield name="city" label="City" placeholder="Enter city" />
+        <Textfield name="country" label="Country" placeholder="Enter country" />
+      </fieldset>
     </form>
   );
 }
