@@ -1,4 +1,4 @@
-.radio-button__label {
+.radio-button__button-type {
   display: inline-block;
   padding: 8px 16px;
   letter-spacing: 1px;
@@ -12,7 +12,7 @@
   cursor: pointer;
 }
 
-.radio-button__label.checked {
+.radio-button__button-type.checked {
   color: var(--blue);
   background-color: var(--white);
   box-shadow: var(--shadow-8);
