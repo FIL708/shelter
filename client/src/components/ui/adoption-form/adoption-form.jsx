@@ -1,5 +1,5 @@
 import { Subtitle } from 'components/ui';
-import { Textfield } from 'components/form';
+import { Textfield, Textarea } from 'components/form';
 
 import './adoption-form.css';
 
@@ -15,6 +15,8 @@ export default function AdoptionForm({ title }) {
         <Textfield name="city" label="City" placeholder="Enter city" />
         <Textfield name="country" label="Country" placeholder="Enter country" />
       </fieldset>
+      <Textarea name="shortDescription" label="Short description" />
+      <Textarea name="description" label="Description" />
     </form>
   );
 }
