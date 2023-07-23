@@ -15,8 +15,16 @@ export default function AdoptionForm({ title }) {
         <Textfield name="city" label="City" placeholder="Enter city" />
         <Textfield name="country" label="Country" placeholder="Enter country" />
       </fieldset>
-      <Textarea name="shortDescription" label="Short description" />
-      <Textarea name="description" label="Description" />
+      <Textarea
+        name="shortDescription"
+        label="Short description"
+        placeholder="Enter Preview about pet"
+      />
+      <Textarea
+        name="description"
+        label="Description"
+        placeholder="Enter description about pet"
+      />
     </form>
   );
 }
