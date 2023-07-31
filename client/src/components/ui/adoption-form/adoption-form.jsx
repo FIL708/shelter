@@ -1,9 +1,10 @@
 import { Subtitle } from 'components/ui';
 import { Textfield, Textarea, RadioButton } from 'components/form';
+import AdoptionFormPreview from './adoption-form__preview/adoption-form__preview.jsx';
 
 import './adoption-form.css';
 
-export default function AdoptionForm({ title, formHandler }) {
+export default function AdoptionForm({ title, formHandler, values }) {
   return (
     <form className="adoption-form">
       <Subtitle text={title} main />
@@ -65,6 +66,7 @@ export default function AdoptionForm({ title, formHandler }) {
         placeholder="Enter photos URLs"
         onChange={formHandler}
       />
+      <AdoptionFormPreview images={values.photos} />
     </form>
   );
 }

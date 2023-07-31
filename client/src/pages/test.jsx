@@ -46,12 +46,11 @@ export default function Test() {
       },
     ],
   };
-  console.log(x);
 
   return (
     <Page>
       <Subtitle text="Test Page" main />
-      <AdoptionForm title="New Adoption" />
+      <AdoptionForm title="New Adoption" values={x} />
     </Page>
   );
 }
