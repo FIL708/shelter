@@ -58,6 +58,11 @@ export default function AdoptionForm({ title, formHandler }) {
         placeholder="Enter description about pet"
         onChange={formHandler}
       />
+      <Textarea
+        label="Photos"
+        placeholder="Enter photos URLs"
+        onChange={formHandler}
+      />
     </form>
   );
 }
