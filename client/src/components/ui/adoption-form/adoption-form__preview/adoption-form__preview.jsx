@@ -1,7 +1,7 @@
 import './adoption-form__preview.css';
 
-export default function AdoptionFormPreview({ images }) {
-  if (!images) return false;
+export default function AdoptionFormPreview({ images, visible }) {
+  if (!images || !visible) return false;
   return (
     <div className="adoption-form__preview">
       <p className="adoption-form__preview__label">Preview:</p>

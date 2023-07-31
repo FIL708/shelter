@@ -1,10 +1,15 @@
+import { useState } from 'react';
 import { Subtitle } from 'components/ui';
-import { Textfield, Textarea, RadioButton } from 'components/form';
+import { Textfield, Textarea, RadioButton, Button } from 'components/form';
 import AdoptionFormPreview from './adoption-form__preview/adoption-form__preview.jsx';
 
 import './adoption-form.css';
 
 export default function AdoptionForm({ title, formHandler, values }) {
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+
+  const togglePreview = () => setIsPreviewOpen((prev) => !prev);
+
   return (
     <form className="adoption-form">
       <Subtitle text={title} main />
@@ -66,7 +71,9 @@ export default function AdoptionForm({ title, formHandler, values }) {
         placeholder="Enter photos URLs"
         onChange={formHandler}
       />
-      <AdoptionFormPreview images={values.photos} />
+      <Button text="show preview" onClick={togglePreview} />
+      <AdoptionFormPreview images={values.photos} visible={isPreviewOpen} />
+      <Button text="Create new adoption" />
     </form>
   );
 }
