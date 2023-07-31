@@ -6,6 +6,8 @@ export default function Test() {
     name: 'Rocky',
     description:
       "Meet Rocky! Rocky is a 3-year-old German Shepherd mix with a beautiful black and tan coat and soulful brown eyes. He was brought to the shelter by his previous owner who could no longer care for him. Despite the recent upheaval in his life, Rocky is a friendly and well-adjusted dog who loves to meet new people and make friends.\nRocky is a highly intelligent dog who would benefit from an owner who can provide him with plenty of mental stimulation and exercise. He already knows several commands, including sit, stay, and come, and is eager to learn more. Rocky is also an active dog who enjoys going on long walks and playing in the yard.\nRocky is a loyal and protective dog who would make an excellent companion for an experienced owner or family. He is good with children and gets along well with other dogs, although he can be a bit wary of strangers at first. Rocky is up-to-date on all his vaccinations, neutered, and microchipped. If you're looking for a loyal and devoted friend, then Rocky may be the perfect dog for you. Come meet Rocky and see if he's the right match for your family!",
+    shortDescription:
+      'Meet Rocky! Rocky is a 3-year-old German Shepherd mix with a beautiful black and tan coat and soulful brown eyes...',
     likes: 0,
     views: 7,
     gender: 'male',

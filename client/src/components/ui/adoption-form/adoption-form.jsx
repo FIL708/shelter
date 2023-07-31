@@ -19,6 +19,7 @@ export default function AdoptionForm({ title, formHandler, values }) {
           label="Name"
           placeholder="Enter pet name"
           onChange={formHandler}
+          value={values.name}
         />
         <Textfield
           type="number"
@@ -26,6 +27,7 @@ export default function AdoptionForm({ title, formHandler, values }) {
           label="Age"
           placeholder="Enter pet age"
           onChange={formHandler}
+          value={values.age}
         />
       </fieldset>
       <fieldset className="adoption-form__fieldset">
@@ -34,24 +36,42 @@ export default function AdoptionForm({ title, formHandler, values }) {
           label="City"
           placeholder="Enter city"
           onChange={formHandler}
+          value={values.address.city}
         />
         <Textfield
           name="country"
           label="Country"
           placeholder="Enter  country"
           onChange={formHandler}
+          value={values.address.country}
         />
       </fieldset>
       <fieldset className="adoption-form__fieldset">
         <fieldset className="adoption-form__radio-group">
           <legend>Species:</legend>
-          <RadioButton value="dog" onChange={formHandler} />
-          <RadioButton value="cat" onChange={formHandler} />
+          <RadioButton
+            value="dog"
+            onChange={formHandler}
+            checked={values.species}
+          />
+          <RadioButton
+            value="cat"
+            onChange={formHandler}
+            checked={values.species}
+          />
         </fieldset>
         <fieldset className="adoption-form__radio-group">
           <legend>Gender:</legend>
-          <RadioButton value="male" onChange={formHandler} />
-          <RadioButton value="female" onChange={formHandler} />
+          <RadioButton
+            value="male"
+            onChange={formHandler}
+            checked={values.gender}
+          />
+          <RadioButton
+            value="female"
+            onChange={formHandler}
+            checked={values.gender}
+          />
         </fieldset>
       </fieldset>
       <Textarea
@@ -59,12 +79,14 @@ export default function AdoptionForm({ title, formHandler, values }) {
         label="Short description"
         placeholder="Enter Preview about pet"
         onChange={formHandler}
+        value={values.shortDescription}
       />
       <Textarea
         name="description"
         label="Description"
         placeholder="Enter description about pet"
         onChange={formHandler}
+        value={values.description}
       />
       <Textarea
         label="Photos"
