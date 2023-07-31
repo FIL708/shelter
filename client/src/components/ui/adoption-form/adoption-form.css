@@ -21,6 +21,11 @@
 
 .adoption-form__radio-group {
   display: flex;
-  /* justify-content: center; */
   flex-wrap: nowrap;
+}
+
+@media (max-width: 660px) {
+  .adoption-form__fieldset > * {
+    flex-basis: 100%;
+  }
 }
