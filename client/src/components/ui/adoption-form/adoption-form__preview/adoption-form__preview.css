@@ -1,0 +1,16 @@
+.adoption-form__preview__label {
+  margin-bottom: 20px;
+}
+
+.adoption-form__preview__images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.adoption-form__preview__image {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+}
