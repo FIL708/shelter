@@ -7,7 +7,7 @@ export default function AdoptionForm({ title, formHandler }) {
   return (
     <form className="adoption-form">
       <Subtitle text={title} main />
-      <fieldset>
+      <fieldset className="adoption-form__fieldset">
         <Textfield
           name="name"
           label="Name"
@@ -22,7 +22,7 @@ export default function AdoptionForm({ title, formHandler }) {
           onChange={formHandler}
         />
       </fieldset>
-      <fieldset>
+      <fieldset className="adoption-form__fieldset">
         <Textfield
           name="city"
           label="City"
@@ -36,7 +36,7 @@ export default function AdoptionForm({ title, formHandler }) {
           onChange={formHandler}
         />
       </fieldset>
-      <fieldset>
+      <fieldset className="adoption-form__fieldset">
         <fieldset>
           <legend>Species:</legend>
           <RadioButton value="dog" onChange={formHandler} />
