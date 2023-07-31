@@ -7,6 +7,11 @@
   color: var(--dark-grey);
   background: transparent;
   resize: vertical;
+  transition: 0.3s;
+}
+
+.textarea:hover {
+  box-shadow: var(--input);
 }
 
 .textarea:focus {
