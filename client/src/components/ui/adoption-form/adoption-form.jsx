@@ -38,10 +38,12 @@ export default function AdoptionForm({ title, formHandler }) {
       </fieldset>
       <fieldset>
         <fieldset>
+          <legend>Species:</legend>
           <RadioButton value="dog" onChange={formHandler} />
           <RadioButton value="cat" onChange={formHandler} />
         </fieldset>
         <fieldset>
+          <legend>Gender:</legend>
           <RadioButton value="male" onChange={formHandler} />
           <RadioButton value="female" onChange={formHandler} />
         </fieldset>
