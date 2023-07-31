@@ -12,7 +12,6 @@ export default function RadioButton({
 
   return (
     <label htmlFor={value} className={`${variantClassName}`}>
-      {value}
       <input
         className="radio-button__input"
         type="radio"
@@ -22,6 +21,7 @@ export default function RadioButton({
         value={value}
         onChange={onChange}
       />
+      {value}
     </label>
   );
 }
