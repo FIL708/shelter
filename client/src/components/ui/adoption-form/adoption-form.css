@@ -16,5 +16,11 @@
 }
 
 .adoption-form__fieldset > * {
-  flex-basis: 45%;
+  flex-basis: 47%;
+}
+
+.adoption-form__radio-group {
+  display: flex;
+  /* justify-content: center; */
+  flex-wrap: nowrap;
 }

@@ -37,12 +37,12 @@ export default function AdoptionForm({ title, formHandler }) {
         />
       </fieldset>
       <fieldset className="adoption-form__fieldset">
-        <fieldset>
+        <fieldset className="adoption-form__radio-group">
           <legend>Species:</legend>
           <RadioButton value="dog" onChange={formHandler} />
           <RadioButton value="cat" onChange={formHandler} />
         </fieldset>
-        <fieldset>
+        <fieldset className="adoption-form__radio-group">
           <legend>Gender:</legend>
           <RadioButton value="male" onChange={formHandler} />
           <RadioButton value="female" onChange={formHandler} />
