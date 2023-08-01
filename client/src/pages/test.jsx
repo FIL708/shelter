@@ -59,6 +59,11 @@ export default function Test() {
         ...prev,
         address: { ...prev.address, [name]: value },
       }));
+    } else if (name === 'photos') {
+      setForm((prev) => ({
+        ...prev,
+        photos: value.split(' ').map((url) => ({ url })),
+      }));
     } else {
       setForm((prev) => ({ ...prev, [name]: value }));
     }

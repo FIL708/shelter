@@ -8,6 +8,8 @@ import './adoption-form.css';
 export default function AdoptionForm({ title, formHandler, values }) {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
+  const photos = values.photos.map((photo) => photo.url).join(' ');
+
   const togglePreview = () => setIsPreviewOpen((prev) => !prev);
 
   return (
@@ -102,8 +104,10 @@ export default function AdoptionForm({ title, formHandler, values }) {
       />
       <Textarea
         label="Photos"
+        name="photos"
         placeholder="Enter photos URLs"
         onChange={formHandler}
+        value={photos}
       />
       <Button text="show preview" onClick={togglePreview} />
       <AdoptionFormPreview images={values.photos} visible={isPreviewOpen} />
