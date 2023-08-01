@@ -5,7 +5,12 @@ import AdoptionFormPreview from './adoption-form__preview/adoption-form__preview
 
 import './adoption-form.css';
 
-export default function AdoptionForm({ title, formHandler, values }) {
+export default function AdoptionForm({
+  title,
+  formHandler,
+  values,
+  onConfirm,
+}) {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
   const photos = values.photos.map((photo) => photo.url).join(' ');
@@ -111,7 +116,7 @@ export default function AdoptionForm({ title, formHandler, values }) {
       />
       <Button text="show preview" onClick={togglePreview} />
       <AdoptionFormPreview images={values.photos} visible={isPreviewOpen} />
-      <Button text="Create new adoption" onClick={() => console.log(values)} />
+      <Button text="Create new adoption" onClick={onConfirm} />
     </form>
   );
 }

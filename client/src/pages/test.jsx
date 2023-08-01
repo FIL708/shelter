@@ -68,6 +68,9 @@ export default function Test() {
       setForm((prev) => ({ ...prev, [name]: value }));
     }
   };
+  const confirmForm = () => {
+    console.log(form);
+  };
 
   return (
     <Page>
@@ -76,6 +79,7 @@ export default function Test() {
         title="New Adoption"
         values={form}
         formHandler={formHandler}
+        onConfirm={confirmForm}
       />
     </Page>
   );
