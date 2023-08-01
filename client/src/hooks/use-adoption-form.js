@@ -41,5 +41,6 @@ export default function useAdoptionForm(adoption) {
       setAdoptionForm((prev) => ({ ...prev, [name]: value }));
     }
   };
+
   return [adoptionForm, formHandler];
 }
