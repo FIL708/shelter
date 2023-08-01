@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const init = {
   name: '',
@@ -18,12 +18,6 @@ const init = {
 
 export default function useAdoptionForm(adoption) {
   const [adoptionForm, setAdoptionForm] = useState(adoption || init);
-
-  useEffect(() => {
-    if (adoption) {
-      setAdoptionForm(adoption);
-    }
-  }, [adoption]);
 
   const formHandler = (event) => {
     const { name, value } = event.target;
