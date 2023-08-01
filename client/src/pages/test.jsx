@@ -1,5 +1,5 @@
 import { Page, Subtitle, AdoptionForm } from 'components/ui';
-import { useState } from 'react';
+import useAdoptionForm from 'hooks/use-adoption-form';
 
 export default function Test() {
   const x = {
@@ -50,24 +50,8 @@ export default function Test() {
     ],
   };
 
-  const [form, setForm] = useState(x);
+  const [form, formHandler] = useAdoptionForm(x);
 
-  const formHandler = (event) => {
-    const { name, value } = event.target;
-    if (name === 'city' || name === 'country') {
-      setForm((prev) => ({
-        ...prev,
-        address: { ...prev.address, [name]: value },
-      }));
-    } else if (name === 'photos') {
-      setForm((prev) => ({
-        ...prev,
-        photos: value.split(' ').map((url) => ({ url })),
-      }));
-    } else {
-      setForm((prev) => ({ ...prev, [name]: value }));
-    }
-  };
   const confirmForm = () => {
     console.log(form);
   };
