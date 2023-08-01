@@ -39,21 +39,22 @@ export default function Login() {
   const loginWithFacebook = () => {
     window.open(`${serverUrl}/api/auth/facebook`, '_self');
   };
+
+  if (error) {
+    return <ErrorCard errorCode="500" errorMessage={error} />;
+  }
+
   return (
     <Page>
-      {error ? (
-        <ErrorCard errorCode="500" errorMessage={error} />
-      ) : (
-        <LoginForm
-          loginRequest={loginRequest}
-          loginHandler={loginHandler}
-          formData={loginData}
-          authWithGoogle={loginWithGoogle}
-          authWithTwitter={loginWithTwitter}
-          authWithFacebook={loginWithFacebook}
-          message={message}
-        />
-      )}
+      <LoginForm
+        loginRequest={loginRequest}
+        loginHandler={loginHandler}
+        formData={loginData}
+        authWithGoogle={loginWithGoogle}
+        authWithTwitter={loginWithTwitter}
+        authWithFacebook={loginWithFacebook}
+        message={message}
+      />
     </Page>
   );
 }
