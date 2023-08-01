@@ -30,23 +30,8 @@ export default function AdoptionForm({ title, formHandler, values }) {
           value={values.age}
         />
       </fieldset>
-      <fieldset className="adoption-form__fieldset">
-        <Textfield
-          name="city"
-          label="City"
-          placeholder="Enter city"
-          onChange={formHandler}
-          value={values.address.city}
-        />
-        <Textfield
-          name="country"
-          label="Country"
-          placeholder="Enter  country"
-          onChange={formHandler}
-          value={values.address.country}
-        />
-      </fieldset>
-      <fieldset className="adoption-form__fieldset">
+
+      <fieldset className="adoption-form__fieldset adoption-form__radio-fieldset">
         <fieldset className="adoption-form__radio-group">
           <legend>Species:</legend>
           <RadioButton
@@ -73,6 +58,29 @@ export default function AdoptionForm({ title, formHandler, values }) {
             checked={values.gender}
           />
         </fieldset>
+        <Textfield
+          name="Weight"
+          label="Weight"
+          placeholder="Enter weight of animal"
+          onChange={formHandler}
+          value={values.weight}
+        />
+      </fieldset>
+      <fieldset className="adoption-form__fieldset">
+        <Textfield
+          name="city"
+          label="City"
+          placeholder="Enter city"
+          onChange={formHandler}
+          value={values.address.city}
+        />
+        <Textfield
+          name="country"
+          label="Country"
+          placeholder="Enter  country"
+          onChange={formHandler}
+          value={values.address.country}
+        />
       </fieldset>
       <Textarea
         name="shortDescription"

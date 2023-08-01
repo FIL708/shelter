@@ -21,6 +21,9 @@
 .adoption-form__fieldset > * {
   flex-basis: 47%;
 }
+.adoption-form__radio-fieldset > * {
+  flex-basis: 35%;
+}
 
 .adoption-form__radio-group {
   display: flex;
