@@ -36,31 +36,35 @@ export default function AdoptionForm({ title, formHandler, values }) {
           <legend>Species:</legend>
           <RadioButton
             value="dog"
+            name="species"
             onChange={formHandler}
-            checked={values.species}
+            checked={values.species === 'dog'}
           />
           <RadioButton
             value="cat"
+            name="species"
             onChange={formHandler}
-            checked={values.species}
+            checked={values.species === 'cat'}
           />
         </fieldset>
         <fieldset className="adoption-form__radio-group">
           <legend>Gender:</legend>
           <RadioButton
             value="male"
+            name="gender"
             onChange={formHandler}
-            checked={values.gender}
+            checked={values.gender === 'male'}
           />
           <RadioButton
             value="female"
+            name="gender"
             onChange={formHandler}
-            checked={values.gender}
+            checked={values.gender === 'female'}
           />
         </fieldset>
         <Textfield
-          name="Weight"
-          label="Weight"
+          name="weight"
+          label="Weight ( kg )"
           placeholder="Enter weight of animal"
           onChange={formHandler}
           value={values.weight}
@@ -103,7 +107,7 @@ export default function AdoptionForm({ title, formHandler, values }) {
       />
       <Button text="show preview" onClick={togglePreview} />
       <AdoptionFormPreview images={values.photos} visible={isPreviewOpen} />
-      <Button text="Create new adoption" />
+      <Button text="Create new adoption" onClick={() => console.log(values)} />
     </form>
   );
 }

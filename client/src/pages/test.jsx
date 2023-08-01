@@ -1,4 +1,5 @@
 import { Page, Subtitle, AdoptionForm } from 'components/ui';
+import { useState } from 'react';
 
 export default function Test() {
   const x = {
@@ -49,10 +50,28 @@ export default function Test() {
     ],
   };
 
+  const [form, setForm] = useState(x);
+
+  const formHandler = (event) => {
+    const { name, value } = event.target;
+    if (name === 'city' || name === 'country') {
+      setForm((prev) => ({
+        ...prev,
+        address: { ...prev.address, [name]: value },
+      }));
+    } else {
+      setForm((prev) => ({ ...prev, [name]: value }));
+    }
+  };
+
   return (
     <Page>
       <Subtitle text="Test Page" main />
-      <AdoptionForm title="New Adoption" values={x} />
+      <AdoptionForm
+        title="New Adoption"
+        values={form}
+        formHandler={formHandler}
+      />
     </Page>
   );
 }
