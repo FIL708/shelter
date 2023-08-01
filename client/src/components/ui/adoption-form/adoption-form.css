@@ -1,7 +1,7 @@
 .adoption-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
   padding: 20px 40px;
   max-width: 700px;
   width: 90%;
@@ -13,9 +13,6 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
-}
-.adoption-form__fieldset:first-of-type {
-  margin-top: 30px;
 }
 
 .adoption-form__fieldset > * {

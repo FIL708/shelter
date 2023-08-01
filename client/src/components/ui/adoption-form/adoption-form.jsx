@@ -20,14 +20,16 @@ export default function AdoptionForm({
   return (
     <form className="adoption-form">
       <Subtitle text={title} main />
+
+      <Textfield
+        name="name"
+        label="Name"
+        placeholder="Enter pet name"
+        onChange={formHandler}
+        value={values.name}
+      />
+
       <fieldset className="adoption-form__fieldset">
-        <Textfield
-          name="name"
-          label="Name"
-          placeholder="Enter pet name"
-          onChange={formHandler}
-          value={values.name}
-        />
         <Textfield
           type="number"
           name="age"
@@ -35,6 +37,13 @@ export default function AdoptionForm({
           placeholder="Enter pet age"
           onChange={formHandler}
           value={values.age}
+        />
+        <Textfield
+          name="weight"
+          label="Weight ( kg )"
+          placeholder="Enter weight of animal"
+          onChange={formHandler}
+          value={values.weight}
         />
       </fieldset>
 
@@ -69,14 +78,8 @@ export default function AdoptionForm({
             checked={values.gender === 'female'}
           />
         </fieldset>
-        <Textfield
-          name="weight"
-          label="Weight ( kg )"
-          placeholder="Enter weight of animal"
-          onChange={formHandler}
-          value={values.weight}
-        />
       </fieldset>
+
       <fieldset className="adoption-form__fieldset">
         <Textfield
           name="city"
@@ -93,6 +96,7 @@ export default function AdoptionForm({
           value={values.address.country}
         />
       </fieldset>
+
       <Textarea
         name="shortDescription"
         label="Short description"
@@ -114,6 +118,7 @@ export default function AdoptionForm({
         onChange={formHandler}
         value={photos}
       />
+
       <Button text="show preview" onClick={togglePreview} />
       <AdoptionFormPreview images={values.photos} visible={isPreviewOpen} />
       <Button text="Create new adoption" onClick={onConfirm} />
