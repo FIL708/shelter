@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Subtitle } from 'components/ui';
+import { Subtitle, FormMessage } from 'components/ui';
 import { Textfield, Textarea, RadioButton, Button } from 'components/form';
 import AdoptionFormPreview from './adoption-form__preview/adoption-form__preview.jsx';
 
@@ -10,6 +10,7 @@ export default function AdoptionForm({
   formHandler,
   values,
   onConfirm,
+  message,
 }) {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
@@ -121,6 +122,7 @@ export default function AdoptionForm({
 
       <Button text="show preview" onClick={togglePreview} />
       <AdoptionFormPreview images={values.photos} visible={isPreviewOpen} />
+      <FormMessage text={message.text} isValid={message.isValid} width="100%" />
       <Button text="Create new adoption" onClick={onConfirm} />
     </form>
   );
