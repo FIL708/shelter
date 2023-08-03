@@ -3,7 +3,7 @@ import { Page, Subtitle, LoadingSpinner, ErrorCard } from 'components/ui';
 
 import { useFetch } from 'hooks';
 
-export default function Adoption() {
+export default function EditAdoption() {
   const { id } = useParams();
   const [pet, isLoading, error] = useFetch(`/api/adoption/${id}`);
   console.log(pet);

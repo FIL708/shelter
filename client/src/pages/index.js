@@ -11,4 +11,5 @@ export { default as Profile } from './profile.jsx';
 export { default as Forgot } from './forgot.jsx';
 export { default as ResetPassword } from './reset-password.jsx';
 export { default as NewAdoption } from './new-adoption.jsx';
+export { default as EditAdoption } from './edit-adoption.jsx';
 export { default as NotFound } from './not-found.jsx';
