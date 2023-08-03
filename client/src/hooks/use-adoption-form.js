@@ -29,7 +29,7 @@ export default function useAdoptionForm(adoption) {
     } else if (name === 'photos') {
       setAdoptionForm((prev) => ({
         ...prev,
-        photos: value.split(' ').map((url) => ({ url })),
+        photos: value.split(/\s+/g).map((url) => ({ url })),
       }));
     } else {
       setAdoptionForm((prev) => ({ ...prev, [name]: value }));
