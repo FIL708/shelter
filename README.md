@@ -65,3 +65,14 @@ For running in production:
 To add example data run in container terminal:
 <br>
 `yarn db:seed`
+
+## REST API
+### 1. Status
+> **/api/status**
+- GET
+-
+### 2. Adoption
+### 3. Photo
+### 4. Auth
+### 5. Opinion
+### 6. Forgot
