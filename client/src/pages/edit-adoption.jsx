@@ -36,7 +36,7 @@ export default function EditAdoption() {
   return (
     <Page>
       <AdoptionForm
-        title={` Edit Adoption No. ${id}`}
+        title={`Edit Adoption No. ${id}`}
         values={form}
         formHandler={formHandler}
         onConfirm={confirmForm}

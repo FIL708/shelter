@@ -55,7 +55,8 @@
   color: var(--blue);
 }
 
-.pet-card__button {
+.pet-card__buttons {
+  display: flex;
   position: absolute;
   top: -5px;
   right: 0;

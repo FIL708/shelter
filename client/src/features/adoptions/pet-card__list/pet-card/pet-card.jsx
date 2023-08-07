@@ -15,6 +15,7 @@ export default function PetCard({
   createdAt,
   gender,
   mode,
+  user,
 }) {
   const [isFav, setIsFav] = useState(isFavorite);
 
@@ -33,6 +34,7 @@ export default function PetCard({
   const toggleFav = () => {
     setIsFav((prev) => !prev);
   };
+  console.log(user);
 
   const cardClassName = mode ? `pet-card ${mode}` : 'pet-card';
   const formattedDate = getFormattedDate(createdAt);
@@ -51,13 +53,26 @@ export default function PetCard({
           looking for a home:{' '}
           <span className="pet-card__date">{formattedDate}</span>
         </strong>
-        <Button
-          className="pet-card__button"
-          iconType={favIconType}
-          iconSize="20px"
-          iconFill={favIconFill}
-          onClick={toggleFav}
-        />
+        <div className="pet-card__buttons">
+          {user?.role === 'admin' ? (
+            <Button
+              className="pet-card__button"
+              iconType={favIconType}
+              iconSize="20px"
+              iconFill={favIconFill}
+              onClick={toggleFav}
+            />
+          ) : (
+            false
+          )}
+          <Button
+            className="pet-card__button"
+            iconType={favIconType}
+            iconSize="20px"
+            iconFill={favIconFill}
+            onClick={toggleFav}
+          />
+        </div>
       </div>
     </li>
   );
