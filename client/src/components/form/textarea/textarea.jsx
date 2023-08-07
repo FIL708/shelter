@@ -8,7 +8,7 @@ export default function Textarea({
   label,
 }) {
   return (
-    <label htmlFor={name}>
+    <label htmlFor={name} className="textarea__label">
       {label}
       <textarea
         className="textarea"
