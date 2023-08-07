@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Page,
   Subtitle,
@@ -10,10 +10,8 @@ import {
 import { PetController, PetCardList } from 'features/adoptions';
 import { getDataChunks } from 'utils';
 import { useFetch } from 'hooks';
-import { UserContext } from 'index.jsx';
 
 export default function Adoptions() {
-  const { user } = useContext(UserContext);
   const [pets, isLoading, error] = useFetch('/api/adoption');
   const [petsData, setPetsData] = useState([]);
   const [controlValues, setControlValues] = useState({
@@ -22,7 +20,6 @@ export default function Adoptions() {
     numberOfPets: 9,
   });
   const [page, setPage] = useState(1);
-  console.log(user);
 
   useEffect(() => {
     if (controlValues.species === 'all') {
@@ -75,11 +72,7 @@ export default function Adoptions() {
     <Page>
       <Subtitle text="Our Pets" main />
       <PetController values={controlValues} onChange={handleControlValues} />
-      <PetCardList
-        pets={dataChunks[page - 1]}
-        mode={controlValues.mode}
-        user={user}
-      />
+      <PetCardList pets={dataChunks[page - 1]} mode={controlValues.mode} />
       <Pagination
         changePage={changePage}
         page={page}
