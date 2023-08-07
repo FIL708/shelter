@@ -68,7 +68,6 @@
 
 .pet-card.list {
   display: flex;
-  gap: 2;
   width: 100%;
   max-width: 900px;
 }

@@ -56,7 +56,8 @@
   color: var(--blue);
 }
 
-.pet-details__button {
+.pet-details__buttons {
+  display: flex;
   position: absolute;
   right: 0;
   top: 0;
