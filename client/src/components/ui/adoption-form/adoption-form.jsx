@@ -14,7 +14,9 @@ export default function AdoptionForm({
 }) {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
-  const photos = values.photos.map((photo) => photo.url).join(' ');
+  const photos = values.photos
+    ? values.photos.map((photo) => photo.url).join(' ')
+    : '';
 
   const togglePreview = () => setIsPreviewOpen((prev) => !prev);
 
@@ -87,14 +89,14 @@ export default function AdoptionForm({
           label="City"
           placeholder="Enter city"
           onChange={formHandler}
-          value={values.address.city}
+          value={values.address?.city}
         />
         <Textfield
           name="country"
           label="Country"
           placeholder="Enter  country"
           onChange={formHandler}
-          value={values.address.country}
+          value={values.address?.country}
         />
       </fieldset>
 

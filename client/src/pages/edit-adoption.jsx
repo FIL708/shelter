@@ -1,13 +1,26 @@
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Page, Subtitle, LoadingSpinner, ErrorCard } from 'components/ui';
 
-import { useFetch } from 'hooks';
+import {
+  Page,
+  Subtitle,
+  LoadingSpinner,
+  ErrorCard,
+  AdoptionForm,
+} from 'components/ui';
+import { useFetch, useAdoptionForm } from 'hooks';
 
 export default function EditAdoption() {
   const { id } = useParams();
   const [pet, isLoading, error] = useFetch(`/api/adoption/${id}`);
-  console.log(pet);
+  const [form, formHandler] = useAdoptionForm(pet);
+  const [message, setMessage] = useState({ text: '', isValid: false });
 
+  const confirmForm = () => {
+    console.log(setMessage);
+
+    console.log(form);
+  };
   if (isLoading || error)
     return (
       <Page>
@@ -20,5 +33,15 @@ export default function EditAdoption() {
       </Page>
     );
 
-  return <Page>Hi</Page>;
+  return (
+    <Page>
+      <AdoptionForm
+        title="New adoption"
+        values={form}
+        formHandler={formHandler}
+        onConfirm={confirmForm}
+        message={message}
+      />
+    </Page>
+  );
 }
