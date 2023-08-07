@@ -84,3 +84,15 @@
 .list .pet-card__desc {
   margin-bottom: 10px;
 }
+
+.pet-card__edit-link {
+  padding: 8px;
+  transition: 0.3s;
+}
+.pet-card__edit-link > * {
+  transition: 0.3s;
+}
+
+.pet-card__edit-link:hover > * {
+  transform: scale(1.2);
+}
