@@ -1,0 +1,34 @@
+.adoption-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  max-width: 700px;
+  width: 90%;
+  box-shadow: var(--shadow-8);
+}
+
+.adoption-form__fieldset {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.adoption-form__fieldset > * {
+  flex-basis: 47%;
+}
+.adoption-form__radio-fieldset > * {
+  flex-basis: 35%;
+}
+
+.adoption-form__radio-group {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 660px) {
+  .adoption-form__fieldset > * {
+    flex-basis: 100%;
+  }
+}

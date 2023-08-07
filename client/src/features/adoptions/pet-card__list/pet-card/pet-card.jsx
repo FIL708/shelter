@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from 'components/form';
 import { Icon } from 'components/ui';
 import { getFormattedDate } from 'utils';
@@ -15,6 +16,7 @@ export default function PetCard({
   createdAt,
   gender,
   mode,
+  user,
 }) {
   const [isFav, setIsFav] = useState(isFavorite);
 
@@ -51,13 +53,22 @@ export default function PetCard({
           looking for a home:{' '}
           <span className="pet-card__date">{formattedDate}</span>
         </strong>
-        <Button
-          className="pet-card__button"
-          iconType={favIconType}
-          iconSize="20px"
-          iconFill={favIconFill}
-          onClick={toggleFav}
-        />
+        <div className="pet-card__buttons">
+          {user?.role === 'admin' ? (
+            <Link to={`/adoptions/${id}/edit`} className="pet-card__edit-link">
+              <Icon type="edit" size="20px" fill="#7286d3" />
+            </Link>
+          ) : (
+            false
+          )}
+          <Button
+            className="pet-card__button"
+            iconType={favIconType}
+            iconSize="20px"
+            iconFill={favIconFill}
+            onClick={toggleFav}
+          />
+        </div>
       </div>
     </li>
   );

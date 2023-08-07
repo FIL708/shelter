@@ -15,6 +15,8 @@ import {
   Forgot,
   NotFound,
   ResetPassword,
+  EditAdoption,
+  NewAdoption,
 } from 'pages';
 
 export const UserContext = createContext();
@@ -27,6 +29,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/adoptions" element={<Adoptions />} />
           <Route path="/adoptions/:id" element={<Adoption />} />
+          <Route path="/adoptions/:id/edit" element={<EditAdoption />} />
+          <Route path="/new-adoption" element={<NewAdoption />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/signup" element={<Signup />} />

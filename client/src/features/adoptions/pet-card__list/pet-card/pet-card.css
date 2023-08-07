@@ -55,7 +55,8 @@
   color: var(--blue);
 }
 
-.pet-card__button {
+.pet-card__buttons {
+  display: flex;
   position: absolute;
   top: -5px;
   right: 0;
@@ -67,7 +68,6 @@
 
 .pet-card.list {
   display: flex;
-  gap: 2;
   width: 100%;
   max-width: 900px;
 }
@@ -82,4 +82,16 @@
 
 .list .pet-card__desc {
   margin-bottom: 10px;
+}
+
+.pet-card__edit-link {
+  padding: 8px;
+  transition: 0.3s;
+}
+.pet-card__edit-link > * {
+  transition: 0.3s;
+}
+
+.pet-card__edit-link:hover > * {
+  transform: scale(1.2);
 }

@@ -40,7 +40,7 @@ const getOneAdoption = async (req, res) => {
   try {
     const adoption = await Adoption.findByPk(id, {
       attributes: {
-        exclude: ['addressId', 'updatedAt', 'deletedAt', 'shortDescription'],
+        exclude: ['addressId', 'updatedAt', 'deletedAt'],
       },
       include: [
         { model: Address, as: 'address' },

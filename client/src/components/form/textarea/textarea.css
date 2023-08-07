@@ -1,11 +1,20 @@
-.textarea {
+.textarea__label {
   width: 100%;
+}
+.textarea {
+  width: inherit;
   padding: 10px;
+  margin-top: 4px;
   border: 2px solid var(--less-white);
   border-radius: 4px;
   color: var(--dark-grey);
   background: transparent;
   resize: vertical;
+  transition: box-shadow 0.3s;
+}
+
+.textarea:hover {
+  box-shadow: var(--input);
 }
 
 .textarea:focus {

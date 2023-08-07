@@ -14,3 +14,4 @@ export { default as FormMessage } from './form-message/form-message.jsx';
 export { default as ErrorCard } from './error-card/error-card.jsx';
 export { default as AuthButtons } from './auth-buttons/auth-buttons.jsx';
 export { default as ContactLink } from './contact-link/contact-link.jsx';
+export { default as AdoptionForm } from './adoption-form/adoption-form.jsx';

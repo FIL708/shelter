@@ -58,23 +58,24 @@ export default function Signup() {
   const registerWithFacebook = () => {
     window.open(`${serverUrl}/api/auth/facebook`, '_self');
   };
+
+  if (error) {
+    return <ErrorCard errorCode="500" errorMessage={error} />;
+  }
+
   return (
     <Page>
-      {error ? (
-        <ErrorCard errorCode="500" errorMessage={error} />
-      ) : (
-        <RegisterForm
-          registrationRequest={registrationRequest}
-          registerDataHandler={registerHandler}
-          formData={registerData}
-          formIsValid={isFormValid}
-          validationHandler={validationHandler}
-          registerWithGoogle={registerWithGoogle}
-          registerWithTwitter={registerWithTwitter}
-          registerWithFacebook={registerWithFacebook}
-          message={message}
-        />
-      )}
+      <RegisterForm
+        registrationRequest={registrationRequest}
+        registerDataHandler={registerHandler}
+        formData={registerData}
+        formIsValid={isFormValid}
+        validationHandler={validationHandler}
+        registerWithGoogle={registerWithGoogle}
+        registerWithTwitter={registerWithTwitter}
+        registerWithFacebook={registerWithFacebook}
+        message={message}
+      />
     </Page>
   );
 }

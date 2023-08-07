@@ -1,1 +1,1 @@
-export { default as useProfileForm } from './useProfileForm.js';
+export { default as useProfileForm } from './use-profile-form.js';

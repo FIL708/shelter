@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from 'components/form';
 import { Icon } from 'components/ui';
 import { getFormattedDate } from 'utils';
 import './pet-details.css';
+import { UserContext } from 'index';
 
 export default function PetDetails({ data }) {
   const [isFav, setIsFav] = useState(data?.isFavorite || false);
+  const { user } = useContext(UserContext);
 
   if (!data) return false;
 
@@ -61,13 +64,25 @@ export default function PetDetails({ data }) {
         <span className="pet-details__list-item__data">{formattedDate}</span>
       </strong>
 
-      <Button
-        className="pet-details__button"
-        iconType={iconType}
-        iconSize="25px"
-        iconFill={iconFill}
-        onClick={toggleFav}
-      />
+      <div className="pet-details__buttons">
+        {user?.role === 'admin' ? (
+          <Link
+            to={`/adoptions/${data.id}/edit`}
+            className="pet-card__edit-link"
+          >
+            <Icon type="edit" size="20px" fill="#7286d3" />
+          </Link>
+        ) : (
+          false
+        )}
+        <Button
+          className="pet-details__button"
+          iconType={iconType}
+          iconSize="25px"
+          iconFill={iconFill}
+          onClick={toggleFav}
+        />
+      </div>
     </section>
   );
 }

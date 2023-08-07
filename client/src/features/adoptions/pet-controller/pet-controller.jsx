@@ -8,12 +8,14 @@ export default function PetController({ values, onChange }) {
         <RadioButton
           name="mode"
           value="grid"
+          variant="button"
           checked={values.mode === 'grid'}
           onChange={(event) => onChange(event)}
         />
         <RadioButton
           name="mode"
           value="list"
+          variant="button"
           checked={values.mode === 'list'}
           onChange={(event) => onChange(event)}
         />
@@ -22,18 +24,21 @@ export default function PetController({ values, onChange }) {
         <RadioButton
           name="species"
           value="dogs"
+          variant="button"
           checked={values.species === 'dogs'}
           onChange={(event) => onChange(event)}
         />
         <RadioButton
           name="species"
           value="cats"
+          variant="button"
           checked={values.species === 'cats'}
           onChange={(event) => onChange(event)}
         />
         <RadioButton
           name="species"
           value="all"
+          variant="button"
           checked={values.species === 'all'}
           onChange={(event) => onChange(event)}
         />

@@ -1,12 +1,17 @@
 import './radio-button.css';
 
-export default function RadioButton({ name, checked, value, onChange }) {
-  const labelClassName = checked
-    ? 'checked radio-button__label'
-    : 'radio-button__label';
+export default function RadioButton({
+  name,
+  checked,
+  value,
+  onChange,
+  variant,
+}) {
+  const variantClassName =
+    variant === 'button' ? 'radio-button__button-type' : 'radio-button';
+
   return (
-    <label htmlFor={value} className={labelClassName}>
-      {value}
+    <label htmlFor={value} className={`${variantClassName}`}>
       <input
         className="radio-button__input"
         type="radio"
@@ -16,6 +21,7 @@ export default function RadioButton({ name, checked, value, onChange }) {
         value={value}
         onChange={onChange}
       />
+      {value}
     </label>
   );
 }
