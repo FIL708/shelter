@@ -8,11 +8,9 @@ import { UserContext } from 'index';
 
 export default function PetDetails({ data }) {
   const [isFav, setIsFav] = useState(data?.isFavorite || false);
+  const { user } = useContext(UserContext);
 
   if (!data) return false;
-
-  const { user } = useContext(UserContext);
-  console.log(user);
 
   const formattedDate = getFormattedDate(data.createdAt);
 
