@@ -67,12 +67,58 @@ To add example data run in container terminal:
 `yarn db:seed`
 
 ## REST API
+
 ### 1. Status
 > **/api/status**
+
 - GET
--
+
 ### 2. Adoption
+> **/api/adoption**
+- GET
+
+> **/api/adoption/:id**
+- GET
+
 ### 3. Photo
+> **/api/photo**
+- GET
+
 ### 4. Auth
+> **/api/auth/login**
+- POST
+
+> **/api/auth/logout**
+- GET
+
+> **/api/auth/register**
+- POST
+
+> **/api/auth/google**
+- GET
+
+> **/api/auth/facebook**
+- GET
+
 ### 5. Opinion
+> **/api/opinion/:id**
+- POST
+- PUT
+- DELETE
+
 ### 6. Forgot
+> **/api/forgot**
+ - GET
+
+> **/api/forgot/:id**
+- GET
+- POST
+
+### 6. User
+> **/api/user**
+- GET
+
+> **/api/user/:id**
+- GET
+- POST
+- DELETE
