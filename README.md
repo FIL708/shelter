@@ -69,50 +69,50 @@ To add example data run in container terminal:
 ## REST API
 
 ### 1. Status
-> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/status**
-
+<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px;border-radius:2px">GET</strong> 
+**/api/status**
 
 
 ### 2. Adoption
-> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption**
+<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption**
 
-> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption/:id**
+<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption/:id**
 
 
 ### 3. Photo
-> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/photo**
+<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/photo**
 
 ### 4. Auth
-> <strong style="background-color:#2c609c;padding:2px 4px; border-radius:2px">POST</strong> **/api/auth/login**
+<strong style="background-color:#2c609c;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">POST</strong> **/api/auth/login**
 
-> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/logout**
+<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/logout**
 
-> <strong style="background-color:#2c609c;padding:2px 4px; border-radius:2px">POST</strong> **/api/auth/register**
+<strong style="background-color:#2c609c;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">POST</strong> **/api/auth/register**
 
-> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/google**
+<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/google**
 
-> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/facebook**
+<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/facebook**
 
 ### 5. Opinion
-> <strong style="background-color:#2c609c;padding:2px 4px; border-radius:2px">POST</strong> **/api/opinion/:id**
+<strong style="background-color:#2c609c;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">POST</strong> **/api/opinion/:id**
 
-> <strong style="background-color:#ab7413;padding:2px 4px; border-radius:2px">PUT</strong> **/api/opinion/:id**
+<strong style="background-color:#ab7413;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">PUT</strong> **/api/opinion/:id**
 
-> <strong style="background-color:#9c3214;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/opinion/:id**
+<strong style="background-color:#9c3214;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/opinion/:id**
 
 
 ### 6. Forgot
-> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/forgot**
+<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/forgot**
 
-> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/forgot/:id**
+<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/forgot/:id**
 
-> <strong style="background-color:#2c609c;padding:2px 4px; border-radius:2px">POST</strong> **/api/forgot/:id**
+<strong style="background-color:#2c609c;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">POST</strong> **/api/forgot/:id**
 
 ### 6. User
-> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/user**
+<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/user**
 
-> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/user/:id**
+<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/user/:id**
 
-> <strong style="background-color:#ab7413;padding:2px 4px; border-radius:2px">PUT</strong> **/api/user/:id**
+<strong style="background-color:#ab7413;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">PUT</strong> **/api/user/:id**
 
-> <strong style="background-color:#9c3214;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/user/:id**
+<strong style="background-color:#9c3214;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/user/:id**
