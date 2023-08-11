@@ -69,56 +69,50 @@ To add example data run in container terminal:
 ## REST API
 
 ### 1. Status
-> **/api/status**
+> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/status**
 
-- GET
+
 
 ### 2. Adoption
-> **/api/adoption**
-- GET
+> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption**
 
-> **/api/adoption/:id**
-- GET
+> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption/:id**
+
 
 ### 3. Photo
-> **/api/photo**
-- GET
+> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/photo**
 
 ### 4. Auth
-> **/api/auth/login**
-- POST
+> <strong style="background-color:#2c609c;padding:2px 4px; border-radius:2px">POST</strong> **/api/auth/login**
 
-> **/api/auth/logout**
-- GET
+> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/logout**
 
-> **/api/auth/register**
-- POST
+> <strong style="background-color:#2c609c;padding:2px 4px; border-radius:2px">POST</strong> **/api/auth/register**
 
-> **/api/auth/google**
-- GET
+> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/google**
 
-> **/api/auth/facebook**
-- GET
+> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/facebook**
 
 ### 5. Opinion
-> **/api/opinion/:id**
-- POST
-- PUT
-- DELETE
+> <strong style="background-color:#2c609c;padding:2px 4px; border-radius:2px">POST</strong> **/api/opinion/:id**
+
+> <strong style="background-color:#ab7413;padding:2px 4px; border-radius:2px">PUT</strong> **/api/opinion/:id**
+
+> <strong style="background-color:#9c3214;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/opinion/:id**
+
 
 ### 6. Forgot
-> **/api/forgot**
- - GET
+> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/forgot**
 
-> **/api/forgot/:id**
-- GET
-- POST
+> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/forgot/:id**
+
+> <strong style="background-color:#2c609c;padding:2px 4px; border-radius:2px">POST</strong> **/api/forgot/:id**
 
 ### 6. User
-> **/api/user**
-- GET
+> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/user**
 
-> **/api/user/:id**
-- GET
-- POST
-- DELETE
+> <strong style="background-color:#2c691d;padding:2px 4px; border-radius:2px">GET</strong> **/api/user/:id**
+
+> <strong style="background-color:#ab7413;padding:2px 4px; border-radius:2px">PUT</strong> **/api/user/:id**
+
+> <strong style="background-color:#9c3214;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/user/:id**
