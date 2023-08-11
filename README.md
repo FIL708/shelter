@@ -71,6 +71,7 @@ To add example data run in container terminal:
 ### 1. Status
 <strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px;border-radius:2px">GET</strong> 
 **/api/status**
+> get
 
 
 ### 2. Adoption
