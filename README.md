@@ -4,12 +4,18 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/FIL708/shelter?style=for-the-badge)
 
 # Shelter - Pet Adoption App - IN PROGRESS
+
 ## Description
+
 IN PROGRESS
+
 ## Links:
-* [Design](https://www.figma.com/file/gddkQdzVP0pw7dIb1oNa5C/animal-shelter?node-id=20%3A105&t=7muUg5TZjm3H3sBN-1)
-* [Database diagram](https://drawsql.app/teams/estate/diagrams/shelter)
+
+- [Design](https://www.figma.com/file/gddkQdzVP0pw7dIb1oNa5C/animal-shelter?node-id=20%3A105&t=7muUg5TZjm3H3sBN-1)
+- [Database diagram](https://drawsql.app/teams/estate/diagrams/shelter)
+
 ## Stack:
+
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![React-Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
@@ -18,11 +24,15 @@ IN PROGRESS
 ![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white)
 
 ## Installation ( development ):
+
 `yarn prepare`
 <br>
 `yarn install`
+
 ## Running ( development ):
+
 Create `default.json` file in ./server/config folder with:
+
 ```
 {
     "port": 3500,
@@ -31,7 +41,7 @@ Create `default.json` file in ./server/config folder with:
     "googleClientSecret":"YOUR GOOGLE CLIENT SECRET",
     "facebookID":"YOUR FACEBOOK ID",
     "facebookSecret": "YOUR FACEBOOK SECRET"
-    
+
     <!-- For testing emails -->
     "smtp": {
         "host": "smtp.ethereal.email",
@@ -44,6 +54,7 @@ Create `default.json` file in ./server/config folder with:
     }
 }
 ```
+
 <br>
 
 `yarn start:client`
@@ -51,13 +62,15 @@ Create `default.json` file in ./server/config folder with:
 `yarn start:server`
 
 ## Database:
-**development**: SQLite  **production**: PostgreSQL
+
+**development**: SQLite **production**: PostgreSQL
 <br>
 `yarn db:migrate`
 <br>
 `yarn db:seed`
 
 ## Running ( Docker ):
+
 For running in production:
 <br>
 `docker-compose up`
@@ -68,18 +81,22 @@ To add example data run in container terminal:
 
 ## REST API
 
-### 1. Status
-<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px;border-radius:2px">GET</strong> 
+<details>
+<summary style="font-size:18px; font-weight: 500">1. Status</summary>
+
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px;border-radius:2px">GET</strong>
 **/api/status**
 
-> Get crucial details about the server's location and the profile of the currently logged-in user
+#### Get crucial details about the server's location and the profile of the currently logged-in user
 
-Output:
+> Output:
+
 - status
 - server URL
 - user profile
 
 Output example:
+
 ```
 {
     "status": "Authenticated",
@@ -100,47 +117,52 @@ Output example:
 }
 ```
 
+</details>
 
 ### 2. Adoption
-<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption**
 
-<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption/:id**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption**
 
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption/:id**
 
 ### 3. Photo
-<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/photo**
+
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/photo**
 
 ### 4. Auth
-<strong style="background-color:#2c609c;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">POST</strong> **/api/auth/login**
 
-<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/logout**
+<strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong> **/api/auth/login**
 
-<strong style="background-color:#2c609c;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">POST</strong> **/api/auth/register**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/logout**
 
-<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/google**
+<strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong> **/api/auth/register**
 
-<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/facebook**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/google**
+
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/facebook**
 
 ### 5. Opinion
-<strong style="background-color:#2c609c;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">POST</strong> **/api/opinion/:id**
 
-<strong style="background-color:#ab7413;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">PUT</strong> **/api/opinion/:id**
+<strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong> **/api/opinion/:id**
 
-<strong style="background-color:#9c3214;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/opinion/:id**
+<strong style="background-color:#ab7413;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">PUT</strong> **/api/opinion/:id**
 
+<strong style="background-color:#9c3214;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/opinion/:id**
 
 ### 6. Forgot
-<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/forgot**
 
-<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/forgot/:id**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/forgot**
 
-<strong style="background-color:#2c609c;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">POST</strong> **/api/forgot/:id**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/forgot/:id**
+
+<strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong> **/api/forgot/:id**
 
 ### 6. User
-<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/user**
 
-<strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">GET</strong> **/api/user/:id**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/user**
 
-<strong style="background-color:#ab7413;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">PUT</strong> **/api/user/:id**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/user/:id**
 
-<strong style="background-color:#9c3214;margin:0 4px 0 16px;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/user/:id**
+<strong style="background-color:#ab7413;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">PUT</strong> **/api/user/:id**
+
+<strong style="background-color:#9c3214;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/user/:id**
