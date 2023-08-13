@@ -71,7 +71,34 @@ To add example data run in container terminal:
 ### 1. Status
 <strong style="background-color:#2c691d;margin:0 4px 0 16px;padding:2px 4px;border-radius:2px">GET</strong> 
 **/api/status**
-> get
+
+> Get crucial details about the server's location and the profile of the currently logged-in user
+
+Output:
+- status
+- server URL
+- user profile
+
+Output example:
+```
+{
+    "status": "Authenticated",
+    "user": {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Doe",
+        "role": "admin",
+        "email": "example@example.com",
+        "phone": "111111111",
+        "avatar": "https://example.com",
+        "birthday": "2023-07-12T00:00:00.000Z",
+        "createdAt": "2023-07-09T21:46:33.970Z",
+        "updatedAt": "2023-07-22T22:20:39.412Z",
+        "addressId": 1
+    },
+    "serverUrl": "http://localhost:3500"
+}
+```
 
 
 ### 2. Adoption
