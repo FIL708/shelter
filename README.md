@@ -82,7 +82,7 @@ To add example data run in container terminal:
 ## REST API
 
 <details>
-<summary style="font-size:18px; font-weight: 500">1. Status</summary>
+<summary style="font-size:18px; font-weight: 500; margin-bottom: 12px">1. Status</summary>
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px;border-radius:2px">GET</strong>
 **/api/status**
@@ -95,7 +95,9 @@ To add example data run in container terminal:
 - server URL
 - user profile
 
-Output example:
+<br>
+
+> Output example:
 
 ```
 {
@@ -119,17 +121,23 @@ Output example:
 
 </details>
 
-### 2. Adoption
+<details>
+<summary style="font-size:18px; font-weight: 500; margin-bottom: 12px">2. Adoption</summary>
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption**
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption/:id**
 
-### 3. Photo
+</details>
+
+<details>
+<summary style="font-size:18px; font-weight: 500; margin-bottom: 12px">3. Photo</summary>
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/photo**
 
-### 4. Auth
+</details>
+<details>
+<summary style="font-size:18px; font-weight: 500; margin-bottom: 12px">4. Auth</summary>
 
 <strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong> **/api/auth/login**
 
@@ -141,7 +149,10 @@ Output example:
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/facebook**
 
-### 5. Opinion
+</details>
+
+<details>
+<summary style="font-size:18px; font-weight: 500; margin-bottom: 12px">5. Opinion</summary>
 
 <strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong> **/api/opinion/:id**
 
@@ -149,7 +160,10 @@ Output example:
 
 <strong style="background-color:#9c3214;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/opinion/:id**
 
-### 6. Forgot
+</details>
+
+<details>
+<summary style="font-size:18px; font-weight: 500; margin-bottom: 12px">6. Forgot</summary>
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/forgot**
 
@@ -157,7 +171,10 @@ Output example:
 
 <strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong> **/api/forgot/:id**
 
-### 6. User
+</details>
+
+<details>
+<summary style="font-size:18px; font-weight: 500; margin-bottom: 12px">7. User</summary>
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/user**
 
@@ -166,3 +183,5 @@ Output example:
 <strong style="background-color:#ab7413;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">PUT</strong> **/api/user/:id**
 
 <strong style="background-color:#9c3214;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/user/:id**
+
+</details>
