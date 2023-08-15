@@ -152,28 +152,52 @@ To add example data run in container terminal:
 > Output example:
 
 ```json
-{
-        "id": 1,
-        "name": "Rocky",
-        "shortDescription": "Some description...",
-        "likes": 0,
-        "views": 112,
-        "gender": "male",
-        "age": 11,
-        "weight": 32,
-        "species": "dog",
-        "createdAt": "2023-07-09T21:46:33.978Z",
-        "address": {
-            "id": 1,
-            "city": "Warsaw",
-            "country": "Poland"
-        },
-        "photos": [
-            {
-                "url": "https://photo/1"
-            }
-        ]
-    }
+[
+  {
+    "id": 1,
+    "name": "Rocky",
+    "shortDescription": "Some description...",
+    "likes": 0,
+    "views": 112,
+    "gender": "male",
+    "age": 11,
+    "weight": 32,
+    "species": "dog",
+    "createdAt": "2023-07-09T21:46:33.978Z",
+    "address": {
+      "id": 1,
+      "city": "Warsaw",
+      "country": "Poland"
+    },
+    "photos": [
+      {
+        "url": "https://photo/1"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Luna",
+    "shortDescription": "Some description...",
+    "likes": 0,
+    "views": 8,
+    "gender": "female",
+    "age": 5,
+    "weight": 17,
+    "species": "dog",
+    "createdAt": "2023-07-09T21:46:33.979Z",
+    "address": {
+      "id": 1,
+      "city": "Warsaw",
+      "country": "Poland"
+    },
+    "photos": [
+      {
+        "url": "https://photo/2"
+      }
+    ]
+  }
+]
 ```
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption/:id**
