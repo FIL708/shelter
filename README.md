@@ -111,6 +111,7 @@ To add example data run in container terminal:
 > Get crucial details about the server's location and the profile of the currently logged-in user.
 
 <strong style="margin-left: 7px">Output:</strong>
+
 - status
 - server URL
 - user profile
@@ -139,10 +140,13 @@ To add example data run in container terminal:
   "serverUrl": "http://localhost:3500"
 }
 ```
+
 </details>
 <br>
 
 ---
+
+<br>
 </details>
 
 <details id="adoption">
@@ -229,9 +233,73 @@ To add example data run in container terminal:
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption/:id**
 
+> This route retrieves specific adoption details based on the provided adoption ID.
+
+<strong style="margin-left: 7px">Output:</strong>
+
+- asd
+- asd
+
+<br>
+
+<details>
+<summary style="margin-left: 7px; font-weight: 700">Output example:</summary>
+
+```json
+{
+  "id": 1,
+  "name": "Rocky",
+  "description": "Some long description",
+  "shortDescription": "Some short description.",
+  "likes": 0,
+  "views": 112,
+  "gender": "male",
+  "age": 11,
+  "weight": 32,
+  "species": "dog",
+  "createdAt": "2023-07-09T21:46:33.978Z",
+  "address": {
+    "id": 1,
+    "city": "Warsaw",
+    "country": "Poland"
+  },
+  "photos": [
+    {
+      "id": 1,
+      "url": "https://alpha.aeon.co/images/acd6897d-9849-4188-92c6-79dabcbcd518/header_essay-final-gettyimages-685469924.jpg",
+      "adoptionId": 1
+    },
+    {
+      "id": 2,
+      "url": "https://cdn.galleries.smcloud.net/t/galleries/gf-3YpJ-Szag-K4Gg_dog-niemiecki-1920x1080-nocrop.jpg",
+      "adoptionId": 1
+    }
+  ],
+  "opinions": [
+    {
+      "id": 1,
+      "body": "Some opinion body",
+      "createdAt": "2023-07-09T21:46:34.009Z",
+      "updatedAt": "2023-07-09T21:46:34.009Z",
+      "adoptionId": 1,
+      "userId": 1,
+      "user": {
+        "firstName": "Joe",
+        "lastName": "Doe",
+        "avatar": "https://photo/3"
+      }
+    }
+  ]
+}
+```
+
+</details>
+
 <br>
 
 ---
+
+<br>
 
 </details>
 
