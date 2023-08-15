@@ -147,9 +147,30 @@ To add example data run in container terminal:
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption**
 
-> asdasd
+> This route provides a list of pets available for adoption.
+
+> Output:
+
+- array of all adoptions
+- data in each adoption record includes:
+  - id
+  - name
+  - short description
+  - number of likes
+  - number of views
+  - gander
+  - age
+  - weight
+  - species
+  - created date
+  - address
+  - photo
 
 > Output example:
+
+<details>
+<summary> > Output example:</summary>
+</details>
 
 ```json
 [
