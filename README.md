@@ -237,8 +237,21 @@ To add example data run in container terminal:
 
 <strong style="margin-left: 7px">Output:</strong>
 
-- asd
-- asd
+- object with all data about specific adoption
+- data in specific adoption record includes:
+  - id
+  - name
+  - short description
+  - number of likes
+  - number of views
+  - gander
+  - age
+  - weight
+  - species
+  - created date
+  - address
+  - list of photos
+  - list of opinion with author data
 
 <br>
 
