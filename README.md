@@ -169,8 +169,7 @@ To add example data run in container terminal:
 > Output example:
 
 <details>
-<summary> > Output example:</summary>
-</details>
+<summary>Output example:</summary>
 
 ```json
 [
@@ -220,6 +219,7 @@ To add example data run in container terminal:
   }
 ]
 ```
+</details>
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption/:id**
 
