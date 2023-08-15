@@ -108,17 +108,17 @@ To add example data run in container terminal:
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px;border-radius:2px">GET</strong>
 **/api/status**
 
-#### Get crucial details about the server's location and the profile of the currently logged-in user
+> Get crucial details about the server's location and the profile of the currently logged-in user.
 
-> Output:
-
+<strong style="margin-left: 7px">Output:</strong>
 - status
 - server URL
 - user profile
 
 <br>
 
-> Output example:
+<details>
+<summary style="margin-left: 7px; font-weight: 700">Output example:</summary>
 
 ```json
 {
@@ -139,7 +139,10 @@ To add example data run in container terminal:
   "serverUrl": "http://localhost:3500"
 }
 ```
+</details>
+<br>
 
+---
 </details>
 
 <details id="adoption">
@@ -149,7 +152,7 @@ To add example data run in container terminal:
 
 > This route provides a list of pets available for adoption.
 
-> Output:
+<strong style="margin-left: 7px">Output:</strong>
 
 - array of all adoptions
 - data in each adoption record includes:
@@ -166,10 +169,10 @@ To add example data run in container terminal:
   - address
   - photo
 
-> Output example:
+<br>
 
 <details>
-<summary>Output example:</summary>
+<summary style="margin-left: 7px; font-weight: 700">Output example:</summary>
 
 ```json
 [
@@ -219,9 +222,16 @@ To add example data run in container terminal:
   }
 ]
 ```
+
 </details>
 
+<br>
+
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption/:id**
+
+<br>
+
+---
 
 </details>
 
@@ -281,4 +291,3 @@ To add example data run in container terminal:
 <strong style="background-color:#9c3214;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/user/:id**
 
 </details>
-````
