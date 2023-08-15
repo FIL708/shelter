@@ -45,7 +45,6 @@ IN PROGRESS
 ![Handlebars.js Badge](https://img.shields.io/badge/Handlebars.js-000?logo=handlebarsdotjs&logoColor=fff&style=for-the-badge)
 ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
 
-
 ## 4. Installation ( development ):
 
 `yarn prepare`
@@ -80,18 +79,15 @@ Create `default.json` file in ./server/config folder with:
 
 ## 6. Development
 
-> `yarn start:client`
-> <br>
-> `yarn start:server`
+> `yarn start:client` > <br> > `yarn start:server`
 
 ## 7. Database:
 
-**development**: SQLite **production**: PostgreSQL
-<br>
+- **development**: SQLite
+- **production**: PostgreSQL
+  <br>
 
-> `yarn db:migrate`
-> <br>
-> `yarn db:seed`
+> `yarn db:migrate` > <br> > `yarn db:seed`
 
 ## 8. Production:
 
@@ -150,6 +146,35 @@ To add example data run in container terminal:
 <summary style="font-size:18px; font-weight: 500; margin-bottom: 12px">2. Adoption</summary>
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption**
+
+> asdasd
+
+> Output example:
+
+```json
+{
+        "id": 1,
+        "name": "Rocky",
+        "shortDescription": "Some description...",
+        "likes": 0,
+        "views": 112,
+        "gender": "male",
+        "age": 11,
+        "weight": 32,
+        "species": "dog",
+        "createdAt": "2023-07-09T21:46:33.978Z",
+        "address": {
+            "id": 1,
+            "city": "Warsaw",
+            "country": "Poland"
+        },
+        "photos": [
+            {
+                "url": "https://photo/1"
+            }
+        ]
+    }
+```
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption/:id**
 
@@ -211,3 +236,4 @@ To add example data run in container terminal:
 <strong style="background-color:#9c3214;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/user/:id**
 
 </details>
+````
