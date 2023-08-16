@@ -5,24 +5,19 @@
 
 # Shelter - Pet Adoption App - IN PROGRESS
 
-## Content
+## Table of Contents
 
-1. [Description](#1-description)
-2. [Links](#2-links)
-3. [Stack](#3-stack)
-4. [Installation](#4-installation--development)
-5. [Configuration](#5-configuration)
-6. [Development](#6-development)
-7. [Database](#7-database)
-8. [Production](#8-production)
-9. [REST API](#9-rest-api)
-   - [Status](#status)
-   - [Adoption](#adoption)
-   - [Photo](#photo)
-   - [Auth](#auth)
-   - [Opinion](#opinion)
-   - [Forgot](#forgot)
-   - [User](#user)
+- [Shelter - Pet Adoption App - IN PROGRESS](#shelter---pet-adoption-app---in-progress)
+  - [Table of Contents](#table-of-contents)
+  - [1. Description](#1-description)
+  - [2. Links:](#2-links)
+  - [3. Stack:](#3-stack)
+  - [4. Installation ( development ):](#4-installation--development-)
+  - [5. Configuration:](#5-configuration)
+  - [6. Development](#6-development)
+  - [7. Database:](#7-database)
+  - [8. Production:](#8-production)
+  - [9. REST API](#9-rest-api)
 
 ## 1. Description
 
@@ -103,11 +98,12 @@ To add example data run in container terminal:
 ## 9. REST API
 
 <details id="status">
-<summary style="font-size:18px; font-weight: 500; margin-bottom: 12px">1. Status</summary>
+<summary style="font-size:20px; font-weight: 500; margin-bottom: 12px">1. Status</summary>
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px;border-radius:2px">GET</strong>
-**/api/status**
+<strong style="letter-spacing:1px; font-size: 18px">/api/status</strong>
 
+> [!NOTE]  
 > Get crucial details about the server's location and the profile of the currently logged-in user.
 
 <strong style="margin-left: 7px">Output:</strong>
@@ -142,18 +138,18 @@ To add example data run in container terminal:
 ```
 
 </details>
-<br>
 
 ---
 
-<br>
 </details>
 
 <details id="adoption">
-<summary style="font-size:18px; font-weight: 500; margin-bottom: 12px">2. Adoption</summary>
+<summary style="font-size:20px; font-weight: 500; margin-bottom: 12px">2. Adoption</summary>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/adoption</strong>
 
+> [!NOTE]  
 > This route provides a list of pets available for adoption.
 
 <strong style="margin-left: 7px">Output:</strong>
@@ -165,7 +161,7 @@ To add example data run in container terminal:
   - short description
   - number of likes
   - number of views
-  - gander
+  - gender
   - age
   - weight
   - species
@@ -231,8 +227,10 @@ To add example data run in container terminal:
 
 <br>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/adoption/:id**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/adoption/:id</strong>
 
+> [!NOTE]  
 > This route retrieves specific adoption details based on the provided adoption ID.
 
 <strong style="margin-left: 7px">Output:</strong>
@@ -308,19 +306,17 @@ To add example data run in container terminal:
 
 </details>
 
-<br>
-
 ---
-
-<br>
 
 </details>
 
 <details id="photo">
-<summary style="font-size:18px; font-weight: 500; margin-bottom: 12px">3. Photo</summary>
+<summary style="font-size:20px; font-weight: 500; margin-bottom: 12px">3. Photo</summary>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/photo**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/photo</strong>
 
+> [!NOTE]  
 > A photo route showcases a variety of captivating photographs, focusing on pets and events
 
 <strong style="margin-left: 7px">Output:</strong>
@@ -366,37 +362,43 @@ To add example data run in container terminal:
 
 </details>
 
-<br>
-
 ---
 
-<br>
 </details>
 
 <details id="auth">
-<summary style="font-size:18px; font-weight: 500; margin-bottom: 12px">4. Auth</summary>
+<summary style="font-size:20px; font-weight: 500; margin-bottom: 12px">4. Auth</summary>
 
-<strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong> **/api/auth/login**
+<strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/auth/login</strong>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/logout**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/auth/logout</strong>
 
-<strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong> **/api/auth/register**
+<strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/auth/register</strong>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/google**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/auth/google</strong> 
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/auth/facebook**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/auth/facebook</strong>
+
+---
 
 </details>
 
 <details id="opinion">
-<summary style="font-size:18px; font-weight: 500; margin-bottom: 12px">5. Opinion</summary>
+<summary style="font-size:20px; font-weight: 500; margin-bottom: 12px">5. Opinion</summary>
 
-<strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong> **/api/opinion/:id**
+<strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/opinion/:id</strong>
 
 <img src="https://img.shields.io/badge/Logged%20In-Required-40a7e3?labelColor=dark grey&style=flat" alt="Logged In" />
 
 <br>
 
+> [!NOTE]  
 > The post route ignites fresh perspectives about a specific pet, fostering discussions that shape new opinions within the community.
 
 <strong style="margin-left: 7px">Input:</strong>
@@ -430,12 +432,14 @@ To add example data run in container terminal:
 
 <br>
 
-<strong style="background-color:#ab7413;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">PUT</strong> <strong style="">**/api/opinion/:id**</strong>
+<strong style="background-color:#ab7413;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">PUT</strong>
+<strong style="letter-spacing:1px; font-size: 18px">**/api/opinion/:id**</strong>
 
 <img src="https://img.shields.io/badge/Logged%20In-Required-40a7e3?labelColor=dark grey&style=flat" alt="Logged In" />
 
 <br>
 
+> [!NOTE]  
 > This endpoint is a feature that allows the author user to update their existing opinion about a pet available for adoption.
 
 <strong style="margin-left: 7px">Output:</strong>
@@ -448,35 +452,44 @@ To add example data run in container terminal:
 
 <br>
 
-<strong style="background-color:#9c3214;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/opinion/:id**
-
-<br>
+<strong style="background-color:#9c3214;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">DELETE</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/opinion/:id</strong>
 
 ---
 
-<br>
 </details>
 
 <details id="forgot">
-<summary style="font-size:18px; font-weight: 500; margin-bottom: 12px">6. Forgot</summary>
+<summary style="font-size:20px; font-weight: 500; margin-bottom: 12px">6. Forgot</summary>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/forgot**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/opinion/:id</strong>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/forgot/:id**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/opinion/:id</strong>
 
-<strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong> **/api/forgot/:id**
+<strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/opinion/:id</strong>
+
+---
 
 </details>
 
 <details id="user">
-<summary style="font-size:18px; font-weight: 500; margin-bottom: 12px">7. User</summary>
+<summary style="font-size:20px; font-weight: 500; margin-bottom: 12px">7. User</summary>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/user**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/user</strong>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/user/:id**
+<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/user/:id</strong>
 
-<strong style="background-color:#ab7413;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">PUT</strong> **/api/user/:id**
+<strong style="background-color:#ab7413;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">PUT</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/user/:id</strong>
 
-<strong style="background-color:#9c3214;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/user/:id**
+<strong style="background-color:#9c3214;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">DELETE</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/user/:id</strong>
+
+---
 
 </details>
