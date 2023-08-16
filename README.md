@@ -469,12 +469,21 @@ To add example data run in container terminal:
 
 <img src="https://img.shields.io/badge/Logged%20In-Required-40a7e3?labelColor=dark grey&style=flat" alt="Logged In" />
 
+<br>
+
 > [!NOTE]  
 > This endpoint allows authorized users to remove a specific opinion associated with a pet.
 
 > [!IMPORTANT]  
 > Please note that only users with an admin role are permitted to delete all opinions for all pets.
 
+<strong style="margin-left: 7px">Output:</strong>
+
+```json
+{
+  "message": "Opinion successfully deleted"
+}
+```
 ---
 
 </details>

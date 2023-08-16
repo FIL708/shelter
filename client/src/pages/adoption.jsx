@@ -53,6 +53,10 @@ export default function Adoption() {
       const res = await fetch(`/api/opinion/${opinionId}`, {
         method: 'DELETE',
       });
+      const r = await res.json();
+
+      console.log(r);
+
       if (res.ok) {
         deleteOpinion(opinionId);
       }
