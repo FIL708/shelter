@@ -36,6 +36,10 @@ export default function Adoption() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ body }),
       });
+      const r = await res.json();
+
+      console.log(r);
+
       if (res.ok) {
         changeOpinion(opinionId, body);
       }

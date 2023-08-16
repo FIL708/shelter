@@ -442,18 +442,38 @@ To add example data run in container terminal:
 > [!NOTE]  
 > This endpoint is a feature that allows the author user to update their existing opinion about a pet available for adoption.
 
+> [!IMPORTANT]  
+> Please note that only users with an admin role are permitted to update all opinions for all pets.
+
+<strong style="margin-left: 7px">Input:</strong>
+
+```json
+{
+  "body": "Opinion content"
+}
+```
+
+
 <strong style="margin-left: 7px">Output:</strong>
 
-- array of photos
-- each photo record includes:
-  - id
-  - url
-  - array of tags
+```json
+{
+  "message": "Opinion successfully updated"
+}
+```
 
 <br>
 
 <strong style="background-color:#9c3214;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">DELETE</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/opinion/:id</strong>
+
+<img src="https://img.shields.io/badge/Logged%20In-Required-40a7e3?labelColor=dark grey&style=flat" alt="Logged In" />
+
+> [!NOTE]  
+> This endpoint allows authorized users to remove a specific opinion associated with a pet.
+
+> [!IMPORTANT]  
+> Please note that only users with an admin role are permitted to delete all opinions for all pets.
 
 ---
 
