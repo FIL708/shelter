@@ -492,13 +492,13 @@ To add example data run in container terminal:
 <summary style="font-size:20px; font-weight: 500; margin-bottom: 12px">6. Forgot</summary>
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
-<strong style="letter-spacing:1px; font-size: 18px">/api/opinion/:id</strong>
-
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
-<strong style="letter-spacing:1px; font-size: 18px">/api/opinion/:id</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/forgot/:id</strong>
 
 <strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong>
-<strong style="letter-spacing:1px; font-size: 18px">/api/opinion/:id</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/forgot/:id</strong>
+
+<strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong>
+<strong style="letter-spacing:1px; font-size: 18px">/api/forgot</strong>
 
 ---
 
