@@ -79,7 +79,7 @@ Create `default.json` file in ./server/config folder with:
 
 ## 6. Development
 
-> `yarn start:client` > <br> > `yarn start:server`
+> `yarn start:client` <br> `yarn start:server`
 
 ## 7. Database:
 
@@ -87,7 +87,7 @@ Create `default.json` file in ./server/config folder with:
 - **production**: PostgreSQL
   <br>
 
-> `yarn db:migrate` > <br> > `yarn db:seed`
+> `yarn db:migrate` <br> `yarn db:seed`
 
 ## 8. Production:
 
@@ -392,6 +392,43 @@ To add example data run in container terminal:
 <summary style="font-size:18px; font-weight: 500; margin-bottom: 12px">5. Opinion</summary>
 
 <strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong> **/api/opinion/:id**
+
+<img src="https://img.shields.io/badge/Logged%20In-Required-40a7e3?labelColor=dark grey&style=flat" alt="Logged In" />
+
+<br>
+
+> The post route ignites fresh perspectives about a specific pet, fostering discussions that shape new opinions within the community.
+
+<strong style="margin-left: 7px">Input:</strong>
+
+```json
+{
+  "body": "Opinion content"
+}
+```
+
+<strong style="margin-left: 7px">Output:</strong>
+
+```json
+{
+  "message": "Opinion successfully created",
+  "opinion": {
+    "id": 34,
+    "body": "dfsdsdfsdf",
+    "adoptionId": "1",
+    "userId": 1,
+    "updatedAt": "2023-08-16T08:39:29.816Z",
+    "createdAt": "2023-08-16T08:39:29.816Z",
+    "user": {
+      "firstName": "Filip",
+      "lastName": "Żebrowski",
+      "avatar": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+    }
+  }
+}
+```
+
+<br>
 
 <strong style="background-color:#ab7413;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">PUT</strong> **/api/opinion/:id**
 
