@@ -414,15 +414,15 @@ To add example data run in container terminal:
   "message": "Opinion successfully created",
   "opinion": {
     "id": 34,
-    "body": "dfsdsdfsdf",
+    "body": "Opinion content",
     "adoptionId": "1",
     "userId": 1,
     "updatedAt": "2023-08-16T08:39:29.816Z",
     "createdAt": "2023-08-16T08:39:29.816Z",
     "user": {
-      "firstName": "Filip",
-      "lastName": "Żebrowski",
-      "avatar": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+      "firstName": "Joe",
+      "lastName": "Doe",
+      "avatar": "https://photo/1"
     }
   }
 }
@@ -430,10 +430,31 @@ To add example data run in container terminal:
 
 <br>
 
-<strong style="background-color:#ab7413;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">PUT</strong> **/api/opinion/:id**
+<strong style="background-color:#ab7413;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">PUT</strong> <strong style="">**/api/opinion/:id**</strong>
+
+<img src="https://img.shields.io/badge/Logged%20In-Required-40a7e3?labelColor=dark grey&style=flat" alt="Logged In" />
+
+<br>
+
+> This endpoint is a feature that allows the author user to update their existing opinion about a pet available for adoption.
+
+<strong style="margin-left: 7px">Output:</strong>
+
+- array of photos
+- each photo record includes:
+  - id
+  - url
+  - array of tags
+
+<br>
 
 <strong style="background-color:#9c3214;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">DELETE</strong> **/api/opinion/:id**
 
+<br>
+
+---
+
+<br>
 </details>
 
 <details id="forgot">
