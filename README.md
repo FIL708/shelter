@@ -321,6 +321,56 @@ To add example data run in container terminal:
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong> **/api/photo**
 
+> A photo route showcases a variety of captivating photographs, focusing on pets and events
+
+<strong style="margin-left: 7px">Output:</strong>
+
+- array of photos
+- each photo record includes:
+  - id
+  - url
+  - array of tags
+
+<br>
+
+<details>
+<summary style="margin-left: 7px; font-weight: 700">Output example:</summary>
+
+```json
+[
+  {
+    "id": 1,
+    "url": "https://photo/1",
+    "adoptionId": 1,
+    "tags": [
+      {
+        "name": "main"
+      },
+      {
+        "name": "dog"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "url": "https://photo/2",
+    "adoptionId": 1,
+    "tags": [
+      {
+        "name": "cat"
+      }
+    ]
+  }
+]
+```
+
+</details>
+
+<br>
+
+---
+
+<br>
 </details>
 
 <details id="auth">
