@@ -511,13 +511,24 @@ To add example data run in container terminal:
 <strong style="letter-spacing:1px; font-size: 18px">/api/forgot/:id</strong>
 
 > [!NOTE]  
-> This endpoint allows authorized users to remove a specific opinion associated with a pet.
+> Route that allows users to reset their password, updates the new password in the database, and deletes the associated password reset session.
+
+<strong style="margin-left: 7px">Input:</strong>
+
+> Includes the new password chosen by the user and the session ID associated with the password reset.
+
+```json
+{
+  "id": 1,
+  "password": "123456"
+}
+```
 
 <strong style="margin-left: 7px">Output:</strong>
 
 ```json
-{
-  "message": "Opinion successfully deleted"
+{ 
+  "message": "Password has been successfully reset"
 }
 ```
 
