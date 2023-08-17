@@ -495,13 +495,15 @@ To add example data run in container terminal:
 <strong style="letter-spacing:1px; font-size: 18px">/api/forgot/:id</strong>
 
 > [!NOTE]  
-> This endpoint allows authorized users to remove a specific opinion associated with a pet.
+> This route is typically used to verify whether a specific reset password session is still valid (not expired) and whether it exists in the system.
 
 <strong style="margin-left: 7px">Output:</strong>
 
+>  Provides information about an existing password reset session, which include a unique session identifier (ID) associated with the session. 
+> 
 ```json
 {
-  "message": "Opinion successfully deleted"
+  "id": 1
 }
 ```
 
