@@ -494,11 +494,55 @@ To add example data run in container terminal:
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/forgot/:id</strong>
 
+> [!NOTE]  
+> This endpoint allows authorized users to remove a specific opinion associated with a pet.
+
+<strong style="margin-left: 7px">Output:</strong>
+
+```json
+{
+  "message": "Opinion successfully deleted"
+}
+```
+
 <strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/forgot/:id</strong>
 
+> [!NOTE]  
+> This endpoint allows authorized users to remove a specific opinion associated with a pet.
+
+<strong style="margin-left: 7px">Output:</strong>
+
+```json
+{
+  "message": "Opinion successfully deleted"
+}
+```
+
 <strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/forgot</strong>
+
+> [!NOTE]  
+> Initiates the process of resetting a forgotten password by creating a password reset session and sending a password reset link via email to the user.
+
+
+<strong style="margin-left: 7px">Input:</strong>
+
+> The email address associated with the user's account for which they have forgotten the password.
+
+```json
+{
+  "email": "user@user.com"
+}
+```
+
+<strong style="margin-left: 7px">Output:</strong>
+
+```json
+{
+  "message": "Email successfully sended"
+}
+```
 
 ---
 
