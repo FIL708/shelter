@@ -507,6 +507,8 @@ To add example data run in container terminal:
 }
 ```
 
+<br>
+
 <strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/forgot/:id</strong>
 
@@ -531,6 +533,8 @@ To add example data run in container terminal:
   "message": "Password has been successfully reset"
 }
 ```
+
+<br>
 
 <strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/forgot</strong>
@@ -567,14 +571,50 @@ To add example data run in container terminal:
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/user</strong>
 
-<img src="https://img.shields.io/badge/Logged%20In-Required-40a7e3?labelColor=dark grey&style=flat" alt="Logged In" />
+<img src="https://img.shields.io/badge/Admin-Required-ff931c?labelColor=dark grey&style=flat" alt="Admin" />
 
 <br>
 
 > [!NOTE]  
-> Route that allows users to reset their password, updates the new password in the database, and deletes the associated password reset session.
+> An endpoint that provides a list of registered users for an application.
+
+> [!IMPORTANT]  
+> Please note that only users with an admin role are permitted to obtain users data.
 
 <strong style="margin-left: 7px">Output:</strong>
+
+```json
+[
+    {
+        "id": 1,
+        "firstName": "Joe",
+        "lastName": "Doe",
+        "role": "admin",
+        "email": "jon.doe@gmail.com",
+        "phone": "111111111",
+        "avatar": "https://avatar/1",
+        "birthday": "2023-07-12T00:00:00.000Z",
+        "createdAt": "2023-07-09T21:46:33.970Z",
+        "updatedAt": "2023-07-22T22:20:39.412Z",
+        "addressId": 8
+    },
+    {
+        "id": 2,
+        "firstName": "John",
+        "lastName": "Adams",
+        "role": "user",
+        "email": "john@gmail.com",
+        "phone": "123123123",
+        "avatar": "https://avatar/2",
+        "birthday": null,
+        "createdAt": "2023-07-09T21:46:33.970Z",
+        "updatedAt": "2023-07-09T21:46:33.970Z",
+        "addressId": 1
+    }
+]
+```
+
+<br>
 
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/user/:id</strong>
@@ -584,9 +624,14 @@ To add example data run in container terminal:
 <br>
 
 > [!NOTE]  
-> Route that allows users to reset their password, updates the new password in the database, and deletes the associated password reset session.
+> An endpoint granting access to user data.
+
+>  [!IMPORTANT]  
+> Please note that only users with an admin role and data owners are permitted to obtain user data.
 
 <strong style="margin-left: 7px">Output:</strong>
+
+<br>
 
 <strong style="background-color:#ab7413;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">PUT</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/user/:id</strong>
@@ -596,11 +641,16 @@ To add example data run in container terminal:
 <br>
 
 > [!NOTE]  
-> Route that allows users to reset their password, updates the new password in the database, and deletes the associated password reset session.
+> An endpoint for updating user data.
+
+>  [!IMPORTANT]  
+> Please note that only users with an admin role and data owners are permitted to update user data.
 
 <strong style="margin-left: 7px">Input:</strong>
 
 <strong style="margin-left: 7px">Output:</strong>
+
+<br>
 
 <strong style="background-color:#9c3214;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">DELETE</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/user/:id</strong>
