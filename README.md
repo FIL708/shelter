@@ -1,3 +1,12 @@
+<style>
+  .delete {
+    background-color:#9c3214;
+    margin:0 6px 0 0px;
+    padding:2px 4px;
+    border-radius:2px
+  }
+</style>
+
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/FIL708/shelter?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/FIL708/shelter?color=%23238636&style=for-the-badge)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/FIL708/shelter?color=%23A371F7&style=for-the-badge)
@@ -652,7 +661,7 @@ To add example data run in container terminal:
 
 <br>
 
-<strong style="background-color:#9c3214;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">DELETE</strong>
+<strong class="delete">DELETE</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/user/:id</strong>
 
 <img src="https://img.shields.io/badge/Logged%20In-Required-40a7e3?labelColor=dark grey&style=flat" alt="Logged In" />
