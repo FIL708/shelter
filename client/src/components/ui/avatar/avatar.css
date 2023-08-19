@@ -1,0 +1,12 @@
+.avatar {
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: var(--shadow-8);
+}
+
+.avatar.medium {
+  width: 50px;
+}
+.avatar.small {
+  width: 26px;
+}
