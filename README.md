@@ -1,12 +1,3 @@
-<style>
-  .delete {
-    background-color:#9c3214;
-    margin:0 6px 0 0px;
-    padding:2px 4px;
-    border-radius:2px
-  }
-</style>
-
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/FIL708/shelter?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/FIL708/shelter?color=%23238636&style=for-the-badge)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/FIL708/shelter?color=%23A371F7&style=for-the-badge)
@@ -109,7 +100,7 @@ To add example data run in container terminal:
 <details id="status">
 <summary style="font-size:20px; font-weight: 500; margin-bottom: 12px">1. Status</summary>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px;border-radius:2px">GET</strong>
+![Get](https://img.shields.io/badge/get-2c691d?style=for-the-badge)
 <strong style="letter-spacing:1px; font-size: 18px">/api/status</strong>
 
 > [!NOTE]  
@@ -155,7 +146,7 @@ To add example data run in container terminal:
 <details id="adoption">
 <summary style="font-size:20px; font-weight: 500; margin-bottom: 12px">2. Adoption</summary>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+![Get](https://img.shields.io/badge/get-2c691d?style=for-the-badge)
 <strong style="letter-spacing:1px; font-size: 18px">/api/adoption</strong>
 
 > [!NOTE]  
@@ -236,7 +227,7 @@ To add example data run in container terminal:
 
 <br>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+![Get](https://img.shields.io/badge/get-2c691d?style=for-the-badge)
 <strong style="letter-spacing:1px; font-size: 18px">/api/adoption/:id</strong>
 
 > [!NOTE]  
@@ -322,7 +313,7 @@ To add example data run in container terminal:
 <details id="photo">
 <summary style="font-size:20px; font-weight: 500; margin-bottom: 12px">3. Photo</summary>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+![Get](https://img.shields.io/badge/get-2c691d?style=for-the-badge)
 <strong style="letter-spacing:1px; font-size: 18px">/api/photo</strong>
 
 > [!NOTE]  
@@ -381,16 +372,16 @@ To add example data run in container terminal:
 <strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/auth/login</strong>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+![Get](https://img.shields.io/badge/get-2c691d?style=for-the-badge)
 <strong style="letter-spacing:1px; font-size: 18px">/api/auth/logout</strong>
 
 <strong style="background-color:#2c609c;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">POST</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/auth/register</strong>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+![Get](https://img.shields.io/badge/get-2c691d?style=for-the-badge)
 <strong style="letter-spacing:1px; font-size: 18px">/api/auth/google</strong> 
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+![Get](https://img.shields.io/badge/get-2c691d?style=for-the-badge)
 <strong style="letter-spacing:1px; font-size: 18px">/api/auth/facebook</strong>
 
 ---
@@ -473,7 +464,7 @@ To add example data run in container terminal:
 
 <br>
 
-<strong style="background-color:#9c3214;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">DELETE</strong>
+![DELETE](https://img.shields.io/badge/delete-9c3214?style=for-the-badge)
 <strong style="letter-spacing:1px; font-size: 18px">/api/opinion/:id</strong>
 
 <img src="https://img.shields.io/badge/Logged%20In-Required-40a7e3?labelColor=dark grey&style=flat" alt="Logged In" />
@@ -500,7 +491,7 @@ To add example data run in container terminal:
 <details id="forgot">
 <summary style="font-size:20px; font-weight: 500; margin-bottom: 12px">6. Forgot</summary>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+![Get](https://img.shields.io/badge/get-2c691d?style=for-the-badge)
 <strong style="letter-spacing:1px; font-size: 18px">/api/forgot/:id</strong>
 
 > [!NOTE]  
@@ -577,7 +568,7 @@ To add example data run in container terminal:
 <details id="user">
 <summary style="font-size:20px; font-weight: 500; margin-bottom: 12px">7. User</summary>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+![Get](https://img.shields.io/badge/get-2c691d?style=for-the-badge)
 <strong style="letter-spacing:1px; font-size: 18px">/api/user</strong>
 
 <img src="https://img.shields.io/badge/Admin-Required-ff931c?labelColor=dark grey&style=flat" alt="Admin" />
@@ -625,7 +616,7 @@ To add example data run in container terminal:
 
 <br>
 
-<strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
+![Get](https://img.shields.io/badge/get-2c691d?style=for-the-badge)
 <strong style="letter-spacing:1px; font-size: 18px">/api/user/:id</strong>
 
 <img src="https://img.shields.io/badge/Logged%20In-Required-40a7e3?labelColor=dark grey&style=flat" alt="Logged In" />
@@ -661,7 +652,7 @@ To add example data run in container terminal:
 
 <br>
 
-<strong class="delete">DELETE</strong>
+![DELETE](https://img.shields.io/badge/delete-9c3214?style=for-the-badge)
 <strong style="letter-spacing:1px; font-size: 18px">/api/user/:id</strong>
 
 <img src="https://img.shields.io/badge/Logged%20In-Required-40a7e3?labelColor=dark grey&style=flat" alt="Logged In" />
@@ -683,3 +674,9 @@ To add example data run in container terminal:
 ---
 
 </details>
+
+![Get](https://img.shields.io/badge/get-2c691d?style=for-the-badge)
+![POST](https://img.shields.io/badge/post-2c609c?style=for-the-badge)
+![PUT](https://img.shields.io/badge/put-ab7413?style=for-the-badge)
+![DELETE](https://img.shields.io/badge/delete-9c3214?style=for-the-badge)
+
