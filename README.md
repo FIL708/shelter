@@ -660,9 +660,16 @@ To add example data run in container terminal:
 <br>
 
 > [!NOTE]  
-> Route that allows users to reset their password, updates the new password in the database, and deletes the associated password reset session.
+> An endpoint for deleting user accounts.
+
+> [!IMPORTANT]  
+> Please note that only users with an admin role and data owners are permitted to update user data.
 
 <strong style="margin-left: 7px">Output:</strong>
+
+```json
+{ "messages": "User ID:1 successfully deleted" }
+```
 
 ---
 
