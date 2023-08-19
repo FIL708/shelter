@@ -567,6 +567,10 @@ To add example data run in container terminal:
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/user</strong>
 
+<img src="https://img.shields.io/badge/Logged%20In-Required-40a7e3?labelColor=dark grey&style=flat" alt="Logged In" />
+
+<br>
+
 > [!NOTE]  
 > Route that allows users to reset their password, updates the new password in the database, and deletes the associated password reset session.
 
@@ -575,6 +579,10 @@ To add example data run in container terminal:
 <strong style="background-color:#2c691d;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">GET</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/user/:id</strong>
 
+<img src="https://img.shields.io/badge/Logged%20In-Required-40a7e3?labelColor=dark grey&style=flat" alt="Logged In" />
+
+<br>
+
 > [!NOTE]  
 > Route that allows users to reset their password, updates the new password in the database, and deletes the associated password reset session.
 
@@ -582,6 +590,10 @@ To add example data run in container terminal:
 
 <strong style="background-color:#ab7413;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">PUT</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/user/:id</strong>
+
+<img src="https://img.shields.io/badge/Logged%20In-Required-40a7e3?labelColor=dark grey&style=flat" alt="Logged In" />
+
+<br>
 
 > [!NOTE]  
 > Route that allows users to reset their password, updates the new password in the database, and deletes the associated password reset session.
@@ -592,6 +604,10 @@ To add example data run in container terminal:
 
 <strong style="background-color:#9c3214;margin:0 6px 0 0px;padding:2px 4px; border-radius:2px">DELETE</strong>
 <strong style="letter-spacing:1px; font-size: 18px">/api/user/:id</strong>
+
+<img src="https://img.shields.io/badge/Logged%20In-Required-40a7e3?labelColor=dark grey&style=flat" alt="Logged In" />
+
+<br>
 
 > [!NOTE]  
 > Route that allows users to reset their password, updates the new password in the database, and deletes the associated password reset session.
