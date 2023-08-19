@@ -652,6 +652,13 @@ To add example data run in container terminal:
 
 <br>
 
+<p style="display:flex; justify-content: center">
+
+  ![DELETE](https://img.shields.io/badge/delete-9c3214?style=for-the-badge)
+  <strong style="letter-spacing:1px; font-size: 18px">/api/user/:id</strong>
+
+</p>
+
 ![DELETE](https://img.shields.io/badge/delete-9c3214?style=for-the-badge)
 <strong style="letter-spacing:1px; font-size: 18px">/api/user/:id</strong>
 
