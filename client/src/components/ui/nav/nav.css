@@ -5,7 +5,8 @@
 }
 
 .nav__link {
-  display: block;
+  display: flex;
+  align-items: center;
   position: relative;
   font-size: 18px;
   font-family: 'Lato', sans-serif;
