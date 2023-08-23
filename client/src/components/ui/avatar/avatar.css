@@ -1,12 +1,13 @@
 .avatar {
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 50%;
-  box-shadow: var(--shadow-8);
 }
 
 .avatar.medium {
-  width: 50px;
+  width: 45px;
+  height: 45px;
 }
 .avatar.small {
   width: 26px;
+  height: 26px;
 }

@@ -1,13 +1,12 @@
 import { useState } from 'react';
+import { Avatar } from 'components/ui';
 import NavUserPanel from '../nav__user-panel/nav__user-panel.jsx';
 import './nav__avatar.css';
 
 export default function NavAvatar({ id, avatar, role, logoutHandler, email }) {
   const [isPanelVisible, setIsPanelVisible] = useState(false);
   const togglePanelVisibility = () => setIsPanelVisible((prev) => !prev);
-  const photo =
-    avatar ||
-    'https://tleliteracy.com/wp-content/uploads/2017/02/default-avatar.png';
+
   return (
     <div className="nav__avatar">
       <button
@@ -15,7 +14,7 @@ export default function NavAvatar({ id, avatar, role, logoutHandler, email }) {
         type="button"
         onClick={togglePanelVisibility}
       >
-        <img src={photo} alt="user avatar" className="nav__avatar__avatar" />
+        <Avatar photo={avatar} />
       </button>
       <NavUserPanel
         userEmail={email}
