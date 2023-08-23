@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Textarea } from 'components/form';
+import { Avatar } from 'components/ui';
 import { getFormattedDate } from 'utils';
 import OpinionButtons from '../opinion__buttons/opinion__buttons.jsx';
 import './opinion.css';
@@ -42,7 +43,7 @@ export default function Opinion({
   return (
     <li className="opinion">
       <h3 className="opinion__header">
-        <img className="opinion__avatar" src={user.avatar} alt="user avatar" />
+        <Avatar photo={user.avatar} size="small" />
         <span className="opinion__user">
           {`${user.firstName} ${user.lastName}`}
         </span>
