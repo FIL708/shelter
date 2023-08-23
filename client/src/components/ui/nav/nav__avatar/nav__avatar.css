@@ -1,5 +1,7 @@
 .nav__avatar {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 .nav__avatar__button {
   all: unset;
