@@ -12,11 +12,12 @@ export default function Alert({ variant, message }) {
   } else {
     iconSettings = { glyph: 'alert-info', color: '#00abd8' };
   }
+
   return (
-    <aside className="alert">
+    <aside className={`alert alert__${variant}`}>
       <h4 className="alert__header">
         <Icon type={iconSettings.glyph} fill={iconSettings.color} size="20px" />
-        {variant}
+        {variant}!
       </h4>
       <strong className="alert__message">{message}</strong>
     </aside>
