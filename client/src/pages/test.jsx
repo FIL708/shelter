@@ -8,9 +8,9 @@ export default function Test() {
         variant="success"
         message="Message asd asd asd asdasdasd asdasdasd asdasdasd asdasd"
       />
-      <Alert variant="warning" message="Message" />
+      {/* <Alert variant="warning" message="Message" />
       <Alert variant="info" message="Message" />
-      <Alert variant="error" message="Message" />
+      <Alert variant="error" message="Message" /> */}
     </Page>
   );
 }

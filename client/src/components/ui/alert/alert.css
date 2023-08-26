@@ -1,6 +1,11 @@
 .alert {
+  position: fixed;
+  top: 200px;
+  right: 2%;
+  margin-left: 2%;
   min-width: 200px;
   padding: 8px 12px;
+  background-color: var(--white);
   border: 2px solid transparent;
   border-radius: 4px;
 }
