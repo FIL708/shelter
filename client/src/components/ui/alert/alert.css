@@ -1,0 +1,41 @@
+.alert {
+  position: fixed;
+  top: 200px;
+  right: 2%;
+  margin-left: 2%;
+  min-width: 200px;
+  padding: 8px 12px;
+  background-color: var(--white);
+  border: 2px solid transparent;
+  border-radius: 4px;
+}
+
+.alert__header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.alert__success {
+  color: var(--valid);
+  border-color: var(--valid);
+}
+
+.alert__warning {
+  color: var(--warning);
+  border-color: var(--warning);
+}
+
+.alert__error {
+  color: var(--error);
+  border-color: var(--error);
+}
+
+.alert__info {
+  color: var(--info);
+  border-color: var(--info);
+}

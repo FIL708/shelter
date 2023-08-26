@@ -16,3 +16,4 @@ export { default as AuthButtons } from './auth-buttons/auth-buttons.jsx';
 export { default as ContactLink } from './contact-link/contact-link.jsx';
 export { default as AdoptionForm } from './adoption-form/adoption-form.jsx';
 export { default as Avatar } from './avatar/avatar.jsx';
+export { default as Alert } from './alert/alert.jsx';

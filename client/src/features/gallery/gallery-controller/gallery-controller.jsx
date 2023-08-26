@@ -8,24 +8,28 @@ export default function GalleryController({ value, onChange }) {
       <RadioButton
         name="tags"
         value="all"
+        variant="button"
         checked={value === 'all'}
         onChange={(event) => onChange(event)}
       />
       <RadioButton
         name="tags"
         value="dogs"
+        variant="button"
         checked={value === 'dogs'}
         onChange={(event) => onChange(event)}
       />
       <RadioButton
         name="tags"
         value="cats"
+        variant="button"
         checked={value === 'cats'}
         onChange={(event) => onChange(event)}
       />
       <RadioButton
         name="tags"
         value="events"
+        variant="button"
         checked={value === 'events'}
         onChange={(event) => onChange(event)}
       />

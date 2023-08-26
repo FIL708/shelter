@@ -38,6 +38,10 @@ import { ReactComponent as Confirm } from './icon__glyphs/confirm.svg';
 import { ReactComponent as Delete } from './icon__glyphs/delete.svg';
 import { ReactComponent as Back } from './icon__glyphs/back.svg';
 import { ReactComponent as Burger } from './icon__glyphs/burger.svg';
+import { ReactComponent as AlertSuccess } from './icon__glyphs/alert-success.svg';
+import { ReactComponent as AlertWarning } from './icon__glyphs/alert-warning.svg';
+import { ReactComponent as AlertInfo } from './icon__glyphs/alert-info.svg';
+import { ReactComponent as AlertError } from './icon__glyphs/alert-error.svg';
 
 const chooseIcon = (type) => {
   switch (type) {
@@ -121,6 +125,14 @@ const chooseIcon = (type) => {
       return Back;
     case 'burger':
       return Burger;
+    case 'alert-success':
+      return AlertSuccess;
+    case 'alert-warning':
+      return AlertWarning;
+    case 'alert-info':
+      return AlertInfo;
+    case 'alert-error':
+      return AlertError;
     default:
       return undefined;
   }
