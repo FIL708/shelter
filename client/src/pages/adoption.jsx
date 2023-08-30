@@ -36,6 +36,7 @@ export default function Adoption() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ body }),
       });
+
       if (res.ok) {
         changeOpinion(opinionId, body);
       }
@@ -49,6 +50,7 @@ export default function Adoption() {
       const res = await fetch(`/api/opinion/${opinionId}`, {
         method: 'DELETE',
       });
+
       if (res.ok) {
         deleteOpinion(opinionId);
       }
