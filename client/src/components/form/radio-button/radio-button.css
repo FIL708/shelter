@@ -37,7 +37,7 @@
   opacity: 0.5;
 }
 
-.radio-button__button-type:checked {
+.radio-button__button-type:has(.radio-button__input:checked) {
   color: var(--blue);
   background-color: var(--white);
   box-shadow: var(--shadow-8);
