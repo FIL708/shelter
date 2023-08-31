@@ -5,11 +5,13 @@ import { logo } from '../assets';
 
 export default function WelcomeSection() {
   return (
-    <section className="home__welcome-section">
-      <motion.img
-        initial={{ scale: 1.2 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1 }}
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="home__welcome-section"
+    >
+      <img
         src={logo}
         alt="welcome section logo"
         className="home__welcome-section__logo"
@@ -26,6 +28,6 @@ export default function WelcomeSection() {
         pets and start your journey towards a lifetime of unconditional love and
         companionship.
       </p>
-    </section>
+    </motion.section>
   );
 }
