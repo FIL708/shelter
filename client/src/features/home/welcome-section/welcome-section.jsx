@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Subtitle } from 'components/ui';
 import './welcome-section.css';
 import { logo } from '../assets';
@@ -5,7 +6,10 @@ import { logo } from '../assets';
 export default function WelcomeSection() {
   return (
     <section className="home__welcome-section">
-      <img
+      <motion.img
+        initial={{ scale: 1.2 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1 }}
         src={logo}
         alt="welcome section logo"
         className="home__welcome-section__logo"
