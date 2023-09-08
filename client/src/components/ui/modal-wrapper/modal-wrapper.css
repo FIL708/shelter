@@ -14,6 +14,6 @@
 
 .modal-wrapper__button {
   position: fixed;
-  top: 30px;
-  right: 150px;
+  top: 6vh;
+  right: 4vw;
 }

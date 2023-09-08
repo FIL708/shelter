@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'framer-motion';
 import { Button } from 'components/form';
 import HamburgerLink from './hamburger__link/hamburger__link.jsx';
 import HamburgerMain from './hamburger__main-links/hamburger__main-links.jsx';
@@ -11,37 +12,45 @@ export default function Hamburger({
   toggleHamburger,
   isVisible,
 }) {
-  const navClass = isVisible ? 'hamburger visible' : 'hamburger';
-
   return (
-    <nav className={navClass}>
-      <Button
-        iconType="back"
-        iconSize="35px"
-        iconFill="#4B4B4B"
-        className="hamburger__back-button"
-        onClick={toggleHamburger}
-      />
-      <ul className="hamburger__list">
-        <HamburgerMain />
-      </ul>
+    <AnimatePresence>
+      {isVisible && (
+        <motion.nav
+          className="hamburger"
+          initial={{ x: 500 }}
+          animate={{ x: 0 }}
+          exit={{ x: 500 }}
+          transition={{ type: 'Tween', duration: 0.4 }}
+        >
+          <Button
+            iconType="back"
+            iconSize="35px"
+            iconFill="#4B4B4B"
+            className="hamburger__back-button"
+            onClick={toggleHamburger}
+          />
+          <ul className="hamburger__list">
+            <HamburgerMain />
+          </ul>
 
-      <hr className="hamburger__divider" />
+          <hr className="hamburger__divider" />
 
-      <ul className="hamburger__list">
-        {user ? (
-          <HamburgerUserPanel user={user} logoutHandler={logoutHandler} />
-        ) : (
-          <>
-            <HamburgerLink text="Signup" to="/signup">
-              Signup
-            </HamburgerLink>
-            <HamburgerLink text="Login" to="/login">
-              Login
-            </HamburgerLink>
-          </>
-        )}
-      </ul>
-    </nav>
+          <ul className="hamburger__list">
+            {user ? (
+              <HamburgerUserPanel user={user} logoutHandler={logoutHandler} />
+            ) : (
+              <>
+                <HamburgerLink text="Signup" to="/signup">
+                  Signup
+                </HamburgerLink>
+                <HamburgerLink text="Login" to="/login">
+                  Login
+                </HamburgerLink>
+              </>
+            )}
+          </ul>
+        </motion.nav>
+      )}
+    </AnimatePresence>
   );
 }
