@@ -1,16 +1,10 @@
-import { motion } from 'framer-motion';
 import { Subtitle } from 'components/ui';
 import './welcome-section.css';
 import { logo } from '../assets';
 
 export default function WelcomeSection() {
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      className="home__welcome-section"
-    >
+    <section className="home__welcome-section">
       <img
         src={logo}
         alt="welcome section logo"
@@ -28,6 +22,6 @@ export default function WelcomeSection() {
         pets and start your journey towards a lifetime of unconditional love and
         companionship.
       </p>
-    </motion.section>
+    </section>
   );
 }
