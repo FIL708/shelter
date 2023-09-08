@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from 'components/ui';
 import './alert.css';
 
@@ -14,12 +15,26 @@ export default function Alert({ variant, message }) {
   }
 
   return (
-    <aside className={`alert alert__${variant}`}>
-      <h4 className="alert__header">
-        <Icon type={iconSettings.glyph} fill={iconSettings.color} size="20px" />
-        {variant}!
-      </h4>
-      <strong className="alert__message">{message}</strong>
-    </aside>
+    <AnimatePresence>
+      {message && (
+        <motion.aside
+          className={`alert alert__${variant}`}
+          initial={{ x: 400 }}
+          animate={{ x: 0 }}
+          exit={{ x: 400 }}
+          transition={{ type: 'spring', stiffness: 100, duration: 0.4 }}
+        >
+          <h4 className="alert__header">
+            <Icon
+              type={iconSettings.glyph}
+              fill={iconSettings.color}
+              size="20px"
+            />
+            {variant}!
+          </h4>
+          <strong className="alert__message">{message}</strong>
+        </motion.aside>
+      )}
+    </AnimatePresence>
   );
 }

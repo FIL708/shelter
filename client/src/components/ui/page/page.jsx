@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Header, Footer } from 'components/ui';
 import { inputValidator } from 'utils';
 import './page.css';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Page({ children }) {
   const [newsletterEmail, setNewsletterEmail] = useState('');
@@ -27,7 +28,17 @@ export default function Page({ children }) {
   return (
     <>
       <Header />
-      <main className="main">{children}</main>
+      <AnimatePresence>
+        <motion.main
+          className="main"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5 }}
+        >
+          {children}
+        </motion.main>
+      </AnimatePresence>
       <Footer
         handleNewsletterInput={handleNewsletterInput}
         newsletterEmail={newsletterEmail}

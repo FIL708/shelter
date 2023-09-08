@@ -1,6 +1,6 @@
 .hamburger {
   position: fixed;
-  right: -500px;
+  right: 0;
   top: 0;
   display: flex;
   flex-direction: column;
@@ -14,10 +14,6 @@
   border-left: 10px solid var(--less-white);
   z-index: 5;
   transition: right 0.3s;
-}
-
-.hamburger.visible {
-  right: 0;
 }
 
 .hamburger__divider {
