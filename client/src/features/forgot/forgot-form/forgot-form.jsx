@@ -32,9 +32,7 @@ export default function ForgotForm({
         bottom="90px"
         left="5%"
       />
-      <Button text="Reset password" onClick={sendEmail}>
-        Reset password
-      </Button>
+      <Button onClick={sendEmail}>Reset password</Button>
     </form>
   );
 }

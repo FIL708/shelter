@@ -51,11 +51,9 @@ export default function ResetForm({
         bottom="90px"
         left="5%"
       />
-      <Button
-        text="Reset password"
-        onClick={resetPassword}
-        disabled={disableButton}
-      />
+      <Button onClick={resetPassword} disabled={disableButton}>
+        Reset password
+      </Button>
     </form>
   );
 }
