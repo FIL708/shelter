@@ -18,8 +18,6 @@ export default function Button({
     iconColor = '#868686';
   } else if (disabled) {
     iconColor = '#fff';
-  } else {
-    iconColor = '#7286d3';
   }
   const startIconComponent = (
     <Icon fill={iconColor} size="18px" type={startIcon} />

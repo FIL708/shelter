@@ -9,21 +9,37 @@ export default function Test() {
         style={{ width: '70%', display: 'flex', gap: '20px', flexWrap: 'wrap' }}
       >
         <Button>full</Button>
-        <Button>full left icon</Button>
-        <Button>full right icon</Button>
-        <Button>full two icons</Button>
-        <Button>disable full</Button>
-        <Button>disable full left icon</Button>
-        <Button>disable full right icon</Button>
-        <Button>disable full two icons</Button>
+        <Button startIcon="user">full left icon</Button>
+        <Button endIcon="user">full right icon</Button>
+        <Button startIcon="user" endIcon="user">
+          full two icons
+        </Button>
+        <Button disabled>disable full</Button>
+        <Button startIcon="user" disabled>
+          disable full left icon
+        </Button>
+        <Button endIcon="user" disabled>
+          disable full right icon
+        </Button>
+        <Button startIcon="user" endIcon="user" disabled>
+          disable full two icons
+        </Button>
         <Button>outline</Button>
-        <Button>outline left icon</Button>
-        <Button>outline right icon</Button>
-        <Button>outline two icons</Button>
-        <Button>outline</Button>
-        <Button>disable outline left icon</Button>
-        <Button>disable outline right icon</Button>
-        <Button>disable outline two icons</Button>
+        <Button startIcon="user">outline left icon</Button>
+        <Button endIcon="user">outline right icon</Button>
+        <Button startIcon="user" endIcon="user">
+          outline two icons
+        </Button>
+        <Button>outline disabled</Button>
+        <Button startIcon="user" disabled>
+          disable outline left icon
+        </Button>
+        <Button endIcon="user" disabled>
+          disable outline right icon
+        </Button>
+        <Button startIcon="user" endIcon="user" disabled>
+          disable outline two icons
+        </Button>
       </div>
     </Page>
   );
