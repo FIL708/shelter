@@ -5,28 +5,27 @@ import './button.css';
 export default function Button({
   onClick,
   className,
+  variant = 'full',
   disabled = false,
-  iconType,
-  iconFill,
-  iconSize,
+  startIcon,
+  endIcon,
   children,
 }) {
-  const styleClassName = className ? `button ${className}` : 'button';
-  const onlyIconClassName = !children && iconType ? 'only-icon' : '';
-  const buttonClassName = `${styleClassName} ${onlyIconClassName}`;
+  const buttonClassName = `button ${variant} ${className}`;
+
   let iconColor;
-  if (disabled && className === 'outline') {
+  if (disabled && variant === 'outline') {
     iconColor = '#868686';
-  } else if (disabled && onlyIconClassName === 'only-icon') {
-    iconColor = '#868686';
-  } else if (disabled && !className) {
+  } else if (disabled) {
     iconColor = '#fff';
   } else {
-    iconColor = iconFill;
+    iconColor = '#7286d3';
   }
-  const IconComponent = iconType ? (
-    <Icon fill={iconColor} size={iconSize} type={iconType} />
-  ) : null;
+  const startIconComponent = (
+    <Icon fill={iconColor} size="18px" type={startIcon} />
+  );
+  const endIconComponent = <Icon fill={iconColor} size="18px" type={endIcon} />;
+
   return (
     <button
       type="button"
@@ -34,8 +33,9 @@ export default function Button({
       onClick={onClick}
       disabled={disabled}
     >
-      {IconComponent}
+      {startIconComponent}
       {children}
+      {endIconComponent}
     </button>
   );
 }
