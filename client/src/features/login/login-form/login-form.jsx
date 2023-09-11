@@ -36,9 +36,7 @@ export default function LoginForm({
           Forgot password?
         </Link>
         <Button
-          iconType="login"
-          iconFill="#fff2f2"
-          iconSize="18px"
+          startIcon="login"
           onClick={loginRequest}
           disabled={disableButton}
         >

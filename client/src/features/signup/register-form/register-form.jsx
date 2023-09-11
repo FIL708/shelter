@@ -52,13 +52,12 @@ export default function RegisterForm({
           validation={formIsValid.confirm}
         />
         <Button
-          text="Register"
-          iconType="register"
-          iconFill="#fff2f2"
-          iconSize="18px"
+          startIcon="register"
           onClick={registrationRequest}
           disabled={disableButton}
-        />
+        >
+          Register
+        </Button>
         <FormMessage
           text={message.text}
           isValid={message.isValid}
