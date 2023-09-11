@@ -1,15 +1,16 @@
 .button {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
+  min-width: 46px;
+  min-height: 38px;
   padding: 8px 16px;
   border-radius: 8px;
   border: none;
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 2px;
-  color: var(--white);
-  background-color: var(--blue);
   transition: 0.3s;
   cursor: pointer;
 }
@@ -18,13 +19,17 @@
   background-color: var(--light-blue);
 }
 
+.button.full {
+  color: var(--white);
+  background-color: var(--blue);
+}
+
 .button:disabled {
   background-color: var(--light-grey);
   cursor: not-allowed;
 }
 
 .button.outline {
-  width: 100%;
   background-color: transparent;
   color: var(--blue);
   border: 2px solid var(--blue);

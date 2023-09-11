@@ -16,7 +16,9 @@ export default function Button({
   let iconColor;
   if (disabled && variant === 'outline') {
     iconColor = '#868686';
-  } else if (disabled) {
+  } else if (variant === 'outline') {
+    iconColor = '#7286d3';
+  } else {
     iconColor = '#fff';
   }
   const startIconComponent = (

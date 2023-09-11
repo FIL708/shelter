@@ -24,20 +24,26 @@ export default function Test() {
         <Button startIcon="user" endIcon="user" disabled>
           disable full two icons
         </Button>
-        <Button>outline</Button>
-        <Button startIcon="user">outline left icon</Button>
-        <Button endIcon="user">outline right icon</Button>
-        <Button startIcon="user" endIcon="user">
+        <Button variant="outline">outline</Button>
+        <Button variant="outline" startIcon="user">
+          outline left icon
+        </Button>
+        <Button variant="outline" endIcon="user">
+          outline right icon
+        </Button>
+        <Button variant="outline" startIcon="user" endIcon="user">
           outline two icons
         </Button>
-        <Button>outline disabled</Button>
-        <Button startIcon="user" disabled>
+        <Button variant="outline" disabled>
+          outline disabled
+        </Button>
+        <Button variant="outline" startIcon="user" disabled>
           disable outline left icon
         </Button>
-        <Button endIcon="user" disabled>
+        <Button variant="outline" endIcon="user" disabled>
           disable outline right icon
         </Button>
-        <Button startIcon="user" endIcon="user" disabled>
+        <Button variant="outline" startIcon="user" endIcon="user" disabled>
           disable outline two icons
         </Button>
       </div>
