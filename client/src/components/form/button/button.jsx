@@ -9,10 +9,10 @@ export default function Button({
   iconType,
   iconFill,
   iconSize,
-  text,
+  children,
 }) {
   const styleClassName = className ? `button ${className}` : 'button';
-  const onlyIconClassName = !text && iconType ? 'only-icon' : '';
+  const onlyIconClassName = !children && iconType ? 'only-icon' : '';
   const buttonClassName = `${styleClassName} ${onlyIconClassName}`;
   let iconColor;
   if (disabled && className === 'outline') {
@@ -35,7 +35,7 @@ export default function Button({
       disabled={disabled}
     >
       {IconComponent}
-      {text}
+      {children}
     </button>
   );
 }
