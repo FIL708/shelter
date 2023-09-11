@@ -122,10 +122,10 @@ export default function AdoptionForm({
         value={photos}
       />
 
-      <Button text="show preview" onClick={togglePreview} />
+      <Button onClick={togglePreview}>show preview</Button>
       <AdoptionFormPreview images={values.photos} visible={isPreviewOpen} />
       <FormMessage text={message.text} isValid={message.isValid} width="100%" />
-      <Button text="Confirm" onClick={onConfirm} />
+      <Button onClick={onConfirm}>Confirm</Button>
     </form>
   );
 }
