@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from 'components/form';
+import { IconButton } from 'components/form';
 
 import './textfield.css';
 
@@ -49,11 +49,9 @@ export default function Textfield({
       />
 
       {type === 'password' ? (
-        <Button
-          iconType={iconType}
-          iconSize="20px"
-          iconFill="#868686"
-          className="textfield__button"
+        <IconButton
+          type={iconType}
+          color="#868686"
           onClick={togglePasswordVisible}
         />
       ) : null}
