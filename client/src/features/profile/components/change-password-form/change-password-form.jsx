@@ -47,7 +47,7 @@ export default function ChangePasswordForm({
         />
         <div className="confirm-modal__buttons">
           <Button onClick={onConfirm}>Confirm</Button>
-          <Button className="cancel" onClick={onCancel}>
+          <Button color="red" onClick={onCancel}>
             Cancel
           </Button>
         </div>

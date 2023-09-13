@@ -85,7 +85,7 @@ export default function ProfileForm({
           <Button disabled={confirmButtonDisable} onClick={onConfirm}>
             Confirm
           </Button>
-          <Button className="cancel" onClick={onCancel}>
+          <Button color="red" onClick={onCancel}>
             Cancel
           </Button>
         </div>

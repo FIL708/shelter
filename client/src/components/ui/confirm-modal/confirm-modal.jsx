@@ -61,7 +61,7 @@ export default function ConfirmModal({
           <Button onClick={onConfirm} disabled={!isFormValid.isValid}>
             Confirm
           </Button>
-          <Button className="cancel" onClick={onCancel}>
+          <Button color="red" onClick={onCancel}>
             Cancel
           </Button>
         </div>
