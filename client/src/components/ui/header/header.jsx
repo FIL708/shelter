@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Nav, Hamburger } from 'components/ui';
-import { Button } from 'components/form';
+import { IconButton } from 'components/form';
 import { useWindowSize } from 'hooks';
 import { UserContext } from '../../..';
 
@@ -31,9 +31,9 @@ export default function Header() {
         <Nav logoutHandler={logoutHandler} user={user} />
       ) : (
         <>
-          <Button
-            iconFill="#fff2f2"
-            iconType="burger"
+          <IconButton
+            color="#fff2f2"
+            type="burger"
             iconSize="25px"
             onClick={toggleHamburger}
           />
