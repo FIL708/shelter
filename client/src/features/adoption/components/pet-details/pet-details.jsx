@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from 'components/form';
+import { IconButton } from 'components/form';
 import { Icon } from 'components/ui';
 import { getFormattedDate } from 'utils';
 import './pet-details.css';
@@ -75,11 +75,11 @@ export default function PetDetails({ data }) {
         ) : (
           false
         )}
-        <Button
+        <IconButton
           className="pet-details__button"
-          iconType={iconType}
-          iconSize="25px"
-          iconFill={iconFill}
+          type={iconType}
+          size="25px"
+          color={iconFill}
           onClick={toggleFav}
         />
       </div>

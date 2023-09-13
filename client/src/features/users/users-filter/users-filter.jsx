@@ -1,4 +1,4 @@
-import { Dropdown, Textfield, Button } from 'components/form';
+import { Dropdown, Textfield, IconButton } from 'components/form';
 import './users-filter.css';
 
 export default function UsersFilter({ changeFilter, cleanFilter, filter }) {
@@ -35,11 +35,10 @@ export default function UsersFilter({ changeFilter, cleanFilter, filter }) {
           onChange={(event) => changeFilter(event)}
           value={filter.searchBy}
         />
-        <Button
+        <IconButton
           onClick={cleanFilter}
-          iconType="clear"
-          iconSize="20px"
-          iconFill="#e5e0ff"
+          type="clear"
+          background="primary"
           className="users-filter__clear-button"
         />
       </fieldset>

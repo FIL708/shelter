@@ -1,4 +1,4 @@
-import { Button } from 'components/form';
+import { IconButton } from 'components/form';
 import './modal-wrapper.css';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -18,11 +18,11 @@ export default function ModalWrapper({
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
       >
-        <Button
+        <IconButton
           className="modal-wrapper__button"
-          iconType="exit"
-          iconSize="30px"
-          iconFill="#fff2f2"
+          type="exit"
+          size="30px"
+          color="#fff2f2"
           onClick={toggleModalVision}
         />
         {children}

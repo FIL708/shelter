@@ -1,8 +1,6 @@
 .icon-button {
   all: unset;
-  display: flex;
-  padding: 6px;
-  border-radius: 8px;
+
   transition: 0.2s;
   cursor: pointer;
 }
@@ -20,6 +18,9 @@
 }
 
 .icon-button.primary {
+  display: flex;
+  padding: 6px;
+  border-radius: 8px;
   background-color: var(--blue);
 }
 

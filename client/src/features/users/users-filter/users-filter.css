@@ -8,10 +8,3 @@
   align-items: end;
   gap: 30px;
 }
-
-.users-filter__clear-button {
-  background-color: var(--blue);
-}
-.users-filter__clear-button:hover {
-  background-color: var(--blue);
-}
