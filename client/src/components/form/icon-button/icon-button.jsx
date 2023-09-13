@@ -1,7 +1,7 @@
 import { Icon } from 'components/ui';
-import './button-icon.css';
+import './icon-button.css';
 
-export default function ButtonIcon({ onClick }) {
+export default function IconButton({ onClick }) {
   return (
     <button type="button" className="button-icon" onClick={onClick}>
       <Icon />
