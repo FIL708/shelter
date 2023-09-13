@@ -1,0 +1,20 @@
+.icon-button {
+  all: unset;
+  display: flex;
+  padding: 6px;
+  border-radius: 8px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  transform: scale(1.1);
+}
+
+.icon-button:active {
+  transform: scale(1.05);
+}
+
+.icon-button.primary {
+  background-color: var(--blue);
+}
