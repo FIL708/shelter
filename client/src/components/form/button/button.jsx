@@ -6,12 +6,13 @@ export default function Button({
   onClick,
   className,
   variant = 'full',
+  color = '',
   disabled = false,
   startIcon,
   endIcon,
   children,
 }) {
-  const buttonClassName = `button ${variant} ${className}`;
+  const buttonClassName = `button ${variant} ${color} ${className}`;
 
   let iconColor;
   if (disabled && variant === 'outline') {

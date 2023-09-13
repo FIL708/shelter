@@ -46,6 +46,12 @@ export default function Test() {
         <Button variant="outline" startIcon="user" endIcon="user" disabled>
           disable outline two icons
         </Button>
+        <Button variant="outline" color="red">
+          red outline
+        </Button>
+        <Button variant="full" color="red">
+          red full
+        </Button>
       </div>
     </Page>
   );

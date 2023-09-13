@@ -24,7 +24,15 @@
   background-color: var(--blue);
 }
 
-.button:disabled {
+.full.red {
+  background-color: var(--red);
+}
+
+.full.red:hover {
+  opacity: 0.6;
+}
+
+.button.full:disabled {
   background-color: var(--light-grey);
   cursor: not-allowed;
 }
@@ -39,6 +47,11 @@
   background-color: var(--less-white);
 }
 
+.outline.red {
+  color: var(--red);
+  border: 2px solid var(--red);
+}
+
 .button.outline:disabled {
   color: var(--light-grey);
   border: 2px solid var(--light-grey);
@@ -50,17 +63,4 @@
 
 .pagination__active-button {
   border: 1px solid var(--white);
-}
-
-.button.red {
-  color: var(--red);
-  border: 2px solid var(--red);
-}
-
-.button.cancel {
-  background-color: var(--red);
-}
-
-.button.cancel:hover {
-  opacity: 0.6;
 }
