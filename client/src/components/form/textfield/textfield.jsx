@@ -50,6 +50,7 @@ export default function Textfield({
 
       {type === 'password' ? (
         <IconButton
+          className="textfield__button"
           type={iconType}
           color="#868686"
           onClick={togglePasswordVisible}

@@ -3,12 +3,13 @@ import './icon-button.css';
 
 export default function IconButton({
   onClick,
+  className,
   type = 'heart',
   size = '20px',
   color,
   background = '',
 }) {
-  const buttonClassName = `icon-button ${background}`;
+  const buttonClassName = `icon-button ${background} ${className}`;
 
   let iconColor;
   if (color) {
