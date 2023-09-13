@@ -3,16 +3,21 @@ import './icon-button.css';
 
 export default function IconButton({
   onClick,
-  className,
+  className = '',
   type = 'heart',
   size = '20px',
   color,
   background = '',
+  disabled,
 }) {
-  const buttonClassName = `icon-button ${background} ${className}`;
+  const buttonClassName = `icon-button ${background} ${className}`.trim();
 
   let iconColor;
-  if (color) {
+  if (disabled && background) {
+    iconColor = '#fff2f2';
+  } else if (disabled) {
+    iconColor = '#868686';
+  } else if (color) {
     iconColor = color;
   } else if (background) {
     iconColor = '#fff2f2';
@@ -21,7 +26,12 @@ export default function IconButton({
   }
 
   return (
-    <button type="button" className={buttonClassName} onClick={onClick}>
+    <button
+      type="button"
+      className={buttonClassName}
+      onClick={onClick}
+      disabled={disabled}
+    >
       <Icon type={type} size={size} fill={iconColor} />
     </button>
   );

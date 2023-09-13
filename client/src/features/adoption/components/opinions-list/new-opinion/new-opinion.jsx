@@ -18,7 +18,6 @@ export default function NewOpinion({
       />
       <IconButton
         type="send"
-        colorl="#7286d3"
         size="25px"
         disabled={!newOpinion}
         onClick={() => createOpinion(newOpinion)}
