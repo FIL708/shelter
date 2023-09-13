@@ -1,4 +1,4 @@
-import { Button } from 'components/form';
+import { IconButton } from 'components/form';
 import './opinion__buttons.css';
 
 export default function OpinionButtons({
@@ -18,31 +18,26 @@ export default function OpinionButtons({
     <div className="opinion__buttons">
       {editMode ? (
         <>
-          <Button
-            iconType="confirm"
-            iconFill="#167230"
-            iconSize="18px"
+          <IconButton
+            type="confirm"
+            color="#167230"
+            size="18px"
             onClick={confirmChanges}
           />
-          <Button
-            iconType="exit"
-            iconFill="#9f3e3e"
-            iconSize="18px"
+          <IconButton
+            type="exit"
+            color="#9f3e3e"
+            size="18px"
             onClick={cancelOpinionChanges}
           />
         </>
       ) : (
         <>
-          <Button
-            iconType="edit"
-            iconFill="#7286d3"
-            iconSize="18px"
-            onClick={toggleEditMode}
-          />
-          <Button
-            iconType="delete"
-            iconFill="#9f3e3e"
-            iconSize="18px"
+          <IconButton type="edit" size="18px" onClick={toggleEditMode} />
+          <IconButton
+            type="delete"
+            color="#9f3e3e"
+            size="18px"
             onClick={deleteOpinion}
           />
         </>

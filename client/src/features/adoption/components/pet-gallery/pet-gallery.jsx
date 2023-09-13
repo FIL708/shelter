@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from 'components/form';
+import { IconButton } from 'components/form';
 import PetGalleryList from './pet-gallery__list/pet-gallery__list.jsx';
 import './pet-gallery.css';
 
@@ -33,23 +33,13 @@ export default function PetGallery({ photos }) {
   return (
     <section className="pet-gallery">
       <div className="pet-gallery__main">
-        <Button
-          iconType="arrow-left"
-          iconFill="#7286d3"
-          iconSize="35px"
-          onClick={setPreviousPhoto}
-        />
+        <IconButton type="arrow-left" size="30px" onClick={setPreviousPhoto} />
         <img
           src={mainPhoto}
           alt="pet gallery main"
           className="pet-gallery__main-photo"
         />
-        <Button
-          iconType="arrow-right"
-          iconFill="#7286d3"
-          iconSize="35px"
-          onClick={setNextPhoto}
-        />
+        <IconButton type="arrow-right" size="30px" onClick={setNextPhoto} />
       </div>
       <PetGalleryList
         gallery={photos}
