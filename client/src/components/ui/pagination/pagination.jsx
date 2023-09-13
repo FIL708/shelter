@@ -12,19 +12,21 @@ export default function Pagination({ page, pages, changePage }) {
       <ul className="pagination__list">
         <li className="pagination__list-item">
           <Button
-            text="<"
             onClick={() => {
               changePage(page - 1);
             }}
-          />
+          >
+            {'<'}
+          </Button>
         </li>
         {visiblePages.map((pageItem) => (
           <Button
-            text={pageItem.value}
             key={pageItem.value}
             className={pageItem.current ? 'pagination__active-button' : null}
             onClick={() => changePage(pageItem.value)}
-          />
+          >
+            {pageItem.value}
+          </Button>
         ))}
         <li className="pagination__list-item">
           <Button
@@ -32,7 +34,9 @@ export default function Pagination({ page, pages, changePage }) {
             onClick={() => {
               changePage(page + 1);
             }}
-          />
+          >
+            {'>'}
+          </Button>
         </li>
       </ul>
     </nav>

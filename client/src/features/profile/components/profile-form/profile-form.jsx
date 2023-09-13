@@ -82,12 +82,12 @@ export default function ProfileForm({
         </fieldset>
 
         <div className="confirm-modal__buttons">
-          <Button
-            text="Confirm"
-            disabled={confirmButtonDisable}
-            onClick={onConfirm}
-          />
-          <Button className="cancel" text="Cancel" onClick={onCancel} />
+          <Button disabled={confirmButtonDisable} onClick={onConfirm}>
+            Confirm
+          </Button>
+          <Button color="red" onClick={onCancel}>
+            Cancel
+          </Button>
         </div>
         <FormMessage
           text={message.text}

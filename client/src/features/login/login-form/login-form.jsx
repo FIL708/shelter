@@ -36,13 +36,12 @@ export default function LoginForm({
           Forgot password?
         </Link>
         <Button
-          text="Login"
-          iconType="login"
-          iconFill="#fff2f2"
-          iconSize="18px"
+          startIcon="login"
           onClick={loginRequest}
           disabled={disableButton}
-        />
+        >
+          Login
+        </Button>
         <FormMessage
           text={message.text}
           isValid={message.isValid}

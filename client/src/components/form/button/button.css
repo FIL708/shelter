@@ -1,15 +1,16 @@
 .button {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
+  min-width: 46px;
+  min-height: 38px;
   padding: 8px 16px;
   border-radius: 8px;
   border: none;
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 2px;
-  color: var(--white);
-  background-color: var(--blue);
   transition: 0.3s;
   cursor: pointer;
 }
@@ -18,13 +19,25 @@
   background-color: var(--light-blue);
 }
 
-.button:disabled {
+.button.full {
+  color: var(--white);
+  background-color: var(--blue);
+}
+
+.full.red {
+  background-color: var(--red);
+}
+
+.full.red:hover {
+  opacity: 0.6;
+}
+
+.button.full:disabled {
   background-color: var(--light-grey);
   cursor: not-allowed;
 }
 
 .button.outline {
-  width: 100%;
   background-color: transparent;
   color: var(--blue);
   border: 2px solid var(--blue);
@@ -32,6 +45,11 @@
 
 .button.outline:hover {
   background-color: var(--less-white);
+}
+
+.outline.red {
+  color: var(--red);
+  border: 2px solid var(--red);
 }
 
 .button.outline:disabled {
@@ -43,41 +61,6 @@
   background-color: transparent;
 }
 
-.only-icon {
-  padding: 8px;
-  background-color: transparent;
-}
-
-.only-icon:disabled {
-  background-color: transparent;
-}
-
-.only-icon:hover {
-  background-color: transparent;
-  transform: scale(1.2);
-}
-
-.only-icon:active {
-  transform: scale(1);
-}
-
-.button__newsletter {
-  border-radius: 0 8px 8px 0;
-}
-
 .pagination__active-button {
   border: 1px solid var(--white);
-}
-
-.button.red {
-  color: var(--red);
-  border: 2px solid var(--red);
-}
-
-.button.cancel {
-  background-color: var(--red);
-}
-
-.button.cancel:hover {
-  opacity: 0.6;
 }

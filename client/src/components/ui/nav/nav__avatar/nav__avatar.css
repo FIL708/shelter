@@ -2,19 +2,18 @@
   position: relative;
   display: flex;
   align-items: center;
+  border: 2px solid transparent;
+  transition: 0.3s;
+  border-radius: 50%;
 }
+
+.nav__avatar:hover {
+  border: 2px solid var(--white);
+}
+
 .nav__avatar__button {
   all: unset;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.nav__avatar__button:hover {
-  transform: scale(1.1);
-}
-
-.nav__avatar__button:active {
-  transform: scale(1.05);
 }
 
 .nav__avatar__avatar {

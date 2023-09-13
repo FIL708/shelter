@@ -23,21 +23,15 @@ export default function UserCardControl({
         className="user-card__control__avatar"
       />
       <span className="user-card__control__id">{userRole}</span>
-      <Button
-        text="Change password"
-        className="outline"
-        onClick={changePassword}
-      />
-      <Button
-        text="Update profile"
-        className="outline"
-        onClick={updateProfile}
-      />
-      <Button
-        text="Delete account"
-        className="outline red"
-        onClick={deleteAccount}
-      />
+      <Button variant="outline" onClick={changePassword}>
+        Change password
+      </Button>
+      <Button variant="outline" onClick={updateProfile}>
+        Update profile
+      </Button>
+      <Button variant="outline" color="red" onClick={deleteAccount}>
+        Delete account
+      </Button>
     </div>
   );
 }
