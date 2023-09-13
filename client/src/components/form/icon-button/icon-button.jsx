@@ -6,7 +6,7 @@ export default function IconButton({
   type = 'heart',
   size = '20px',
   color,
-  background,
+  background = '',
 }) {
   const buttonClassName = `icon-button ${background}`;
 
