@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from 'components/form';
+import { IconButton } from 'components/form';
 import { Icon } from 'components/ui';
 import { getFormattedDate } from 'utils';
 import PetCardPhoto from './pet-card-photo/pet-card-photo.jsx';
@@ -61,11 +61,10 @@ export default function PetCard({
           ) : (
             false
           )}
-          <Button
+          <IconButton
             className="pet-card__button"
-            iconType={favIconType}
-            iconSize="20px"
-            iconFill={favIconFill}
+            type={favIconType}
+            color={favIconFill}
             onClick={toggleFav}
           />
         </div>

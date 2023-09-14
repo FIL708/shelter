@@ -1,5 +1,5 @@
 import { ContactLink } from 'components/ui';
-import { Textfield, Button } from 'components/form';
+import { Textfield, IconButton } from 'components/form';
 import './footer__media-section.css';
 
 export default function FooterMediaSection({
@@ -20,13 +20,7 @@ export default function FooterMediaSection({
           validation={newsletterValidation}
           value={newsletterEmail}
         />
-        <Button
-          iconType="send"
-          iconSize="18px"
-          iconFill="#fff2f2"
-          className="button__newsletter"
-          onClick={sendNewsLetter}
-        />
+        <IconButton type="send" size="18px" onClick={sendNewsLetter} />
       </div>
 
       <h3 className="footer__section-title">Follow us:</h3>

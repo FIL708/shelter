@@ -1,4 +1,4 @@
-import { Button, Textarea } from 'components/form';
+import { IconButton, Textarea } from 'components/form';
 import './new-opinion.css';
 
 export default function NewOpinion({
@@ -16,10 +16,9 @@ export default function NewOpinion({
         onChange={(event) => newOpinionHandler(event)}
         value={newOpinion}
       />
-      <Button
-        iconType="send"
-        iconFill="#7286d3"
-        iconSize="25px"
+      <IconButton
+        type="send"
+        size="25px"
         disabled={!newOpinion}
         onClick={() => createOpinion(newOpinion)}
       />

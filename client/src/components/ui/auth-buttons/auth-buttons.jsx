@@ -1,4 +1,4 @@
-import { Button } from 'components/form';
+import { IconButton } from 'components/form';
 import './auth-buttons.css';
 
 export default function AuthButtons({
@@ -11,19 +11,15 @@ export default function AuthButtons({
     <div className="auth-buttons">
       <h4 className="auth-buttons__text">{text}</h4>
       <div className="auth-buttons__buttons">
-        <Button
-          iconType="round-google"
-          iconSize="35px"
-          onClick={authWithGoogle}
-        />
-        <Button
-          iconType="round-twitter"
-          iconSize="35px"
+        <IconButton type="round-google" size="35px" onClick={authWithGoogle} />
+        <IconButton
+          type="round-twitter"
+          size="35px"
           onClick={authWithTwitter}
         />
-        <Button
-          iconType="round-facebook"
-          iconSize="35px"
+        <IconButton
+          type="round-facebook"
+          size="35px"
           onClick={authWithFacebook}
         />
       </div>

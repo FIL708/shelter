@@ -1,5 +1,5 @@
 import { useScrollToggle, useWindowSize } from 'hooks';
-import { Button } from 'components/form';
+import { IconButton } from 'components/form';
 
 import './scroll-button.css';
 
@@ -16,10 +16,10 @@ export default function ScrollButton({ offset }) {
     ? 'scroll-button'
     : 'scroll-button inactive';
   return (
-    <Button
-      iconType="top-arrow"
-      iconSize="30px"
-      iconFill="#fff2f2"
+    <IconButton
+      type="top-arrow"
+      size="30px"
+      background="primary"
       className={scrollButtonClassName}
       onClick={scrollToTop}
     />

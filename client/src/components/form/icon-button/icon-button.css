@@ -1,0 +1,29 @@
+.icon-button {
+  all: unset;
+
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.icon-button:disabled {
+  cursor: not-allowed;
+}
+
+.icon-button:hover {
+  transform: scale(1.1);
+}
+
+.icon-button:active {
+  transform: scale(1.05);
+}
+
+.icon-button.primary {
+  display: flex;
+  padding: 6px;
+  border-radius: 8px;
+  background-color: var(--blue);
+}
+
+.icon-button.primary:disabled {
+  background-color: var(--light-grey);
+}
