@@ -13,16 +13,17 @@ export default function UserCard({
     <section className="user-card">
       <UserCardAvatar user={userData} />
       <UserCardData userData={userData} />
-
-      <Button variant="outline" onClick={changePassword}>
-        Change password
-      </Button>
-      <Button variant="outline" onClick={updateProfile}>
-        Update profile
-      </Button>
-      <Button variant="outline" color="red" onClick={deleteAccount}>
-        Delete account
-      </Button>
+      <div className="user-card__controls">
+        <Button variant="outline" onClick={changePassword}>
+          Change password
+        </Button>
+        <Button variant="outline" onClick={updateProfile}>
+          Update profile
+        </Button>
+        <Button variant="outline" color="red" onClick={deleteAccount}>
+          Delete account
+        </Button>
+      </div>
     </section>
   );
 }

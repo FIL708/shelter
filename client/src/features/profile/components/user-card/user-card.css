@@ -9,3 +9,10 @@
   border-radius: 8px;
   box-shadow: var(--shadow-4);
 }
+
+.user-card__controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
