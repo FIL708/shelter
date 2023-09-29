@@ -23,7 +23,7 @@ export default function UserCardAvatar({ user }) {
         alt="user avatar"
         className="user-card__avatar__photo"
       />
-      <strong className="user-card__data__name">
+      <strong className="user-card__avatar__name">
         <Icon type={iconType} size="25px" fill="#868686" />
         {userName}
       </strong>
