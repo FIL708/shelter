@@ -1,5 +1,6 @@
-import UserCardControl from './user-card___control/user-card___control.jsx';
+import { Button } from 'components/form';
 import UserCardData from './user-card__data/user-card__data.jsx';
+import UserCardAvatar from './user-card__avatar/user-card__avatar.jsx';
 import './user-card.css';
 
 export default function UserCard({
@@ -10,15 +11,19 @@ export default function UserCard({
 }) {
   return (
     <section className="user-card">
-      <UserCardControl
-        userId={userData.id}
-        avatar={userData.avatar}
-        role={userData.role}
-        deleteAccount={deleteAccount}
-        updateProfile={updateProfile}
-        changePassword={changePassword}
-      />
+      <UserCardAvatar user={userData} />
       <UserCardData userData={userData} />
+      <div className="user-card__controls">
+        <Button variant="outline" onClick={changePassword}>
+          Change password
+        </Button>
+        <Button variant="outline" onClick={updateProfile}>
+          Update profile
+        </Button>
+        <Button variant="outline" color="red" onClick={deleteAccount}>
+          Delete account
+        </Button>
+      </div>
     </section>
   );
 }

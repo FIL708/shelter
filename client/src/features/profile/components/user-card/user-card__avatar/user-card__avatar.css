@@ -1,0 +1,27 @@
+.user-card__avatar {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+.user-card__avatar__photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border: 3px solid var(--light-blue);
+  border-radius: 12px;
+}
+
+.user-card__avatar__name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  font-size: 22px;
+  font-family: 'Lato', sans-serif;
+}
+
+.user-card__avatar__id {
+  color: var(--light-grey);
+}

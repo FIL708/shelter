@@ -5,7 +5,25 @@
   display: flex;
   gap: 70px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   border-radius: 8px;
   box-shadow: var(--shadow-4);
+}
+
+.user-card__controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media (max-width: 880px) {
+  .user-card {
+    width: 95%;
+    justify-content: center;
+  }
+  .user-card__controls {
+    flex-direction: column;
+    gap: 16px;
+  }
 }

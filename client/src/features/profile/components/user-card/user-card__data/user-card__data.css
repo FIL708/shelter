@@ -1,28 +1,12 @@
-.user-card__data {
-  flex-grow: 1;
-}
-
-.user-card__data__name {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-size: 26px;
-  font-family: 'Lato', sans-serif;
-}
-
-.user-card__data__lists {
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.user-card__data__list {
+.user-card__data-list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  font-size: 22px;
+  gap: 50px;
 }
 
-.user-card__data__label {
+.user-card__data__item-label {
+  display: inline-block;
+  width: 80px;
+  margin-right: 20px;
   color: var(--blue);
 }
