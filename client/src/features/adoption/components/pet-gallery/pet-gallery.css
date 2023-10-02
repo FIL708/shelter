@@ -23,3 +23,10 @@
 .pet-gallery__button.right {
   transform: rotate(180deg);
 }
+
+@media (max-width: 800px) {
+  .pet-gallery__main-photo {
+    width: 70vw;
+    height: 55vw;
+  }
+}

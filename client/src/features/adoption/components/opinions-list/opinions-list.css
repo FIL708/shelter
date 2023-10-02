@@ -2,6 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 800px;
-  width: 80%;
+  max-width: 1000px;
+  width: 65vw;
+}
+
+@media (max-width: 800px) {
+  .opinions-list {
+    width: 80vw;
+  }
 }
