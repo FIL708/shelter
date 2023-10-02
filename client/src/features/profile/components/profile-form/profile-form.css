@@ -6,9 +6,8 @@
   padding: 30px 40px;
   max-width: 600px;
   width: 90%;
-  background-color: var(--less-white);
+  background-color: var(--white);
   border-radius: 8px;
-  box-shadow: var(--shadow-4);
 }
 
 .profile-form__fieldset {
