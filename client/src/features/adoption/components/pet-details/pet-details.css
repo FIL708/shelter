@@ -9,22 +9,20 @@
   position: relative;
 }
 
-.pet-details__data-list {
+.pet-details__name-banner {
   position: relative;
 }
-.pet-details__data-grid {
+
+.pet-details__date__data {
+  color: var(--blue);
+}
+
+.pet-details__data {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  justify-content: end;
+  width: 100%;
   gap: 10px;
-}
-
-.pet-details__list-item {
-  margin-bottom: 5px;
-}
-
-.pet-details__list-grid-item {
-  flex-basis: 40%;
 }
 
 .pet-details__list-item:last-of-type {

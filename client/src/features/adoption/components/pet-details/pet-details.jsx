@@ -30,7 +30,7 @@ export default function PetDetails({ data }) {
   const genderIconColor = data.gender === 'male' ? '#00ABD8' : '#FF80ED';
   return (
     <section className="pet-details">
-      <ul className="pet-details__data-list">
+      <ul className="pet-details__name-banner">
         <li className="pet-details__name">
           <Icon type={data.species} size="40px" fill="#7286d3" />
           {data.name}
@@ -41,7 +41,12 @@ export default function PetDetails({ data }) {
         </li>
       </ul>
 
-      <ul className="pet-details__data-grid">
+      <strong className="pet-details__date">
+        looking for a home:{' '}
+        <span className="pet-details__date__data">{formattedDate}</span>
+      </strong>
+
+      <ul className="pet-details__data">
         <li className="pet-details__list-grid-item">
           age:{' '}
           <span className="pet-details__list-item__data">{`${data.age} years`}</span>
@@ -59,10 +64,6 @@ export default function PetDetails({ data }) {
           <span className="pet-details__list-item__data">{data.likes}</span>
         </li>
       </ul>
-      <strong className="pet-details__date">
-        looking for a home:{' '}
-        <span className="pet-details__list-item__data">{formattedDate}</span>
-      </strong>
 
       <div className="pet-details__buttons">
         {user?.role === 'admin' ? (
