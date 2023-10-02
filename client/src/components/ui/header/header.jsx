@@ -6,7 +6,8 @@ import { IconButton } from 'components/form';
 import { useWindowSize } from 'hooks';
 import { UserContext } from '../../..';
 
-import logo from './assets/logo.svg';
+import desktopLogo from './assets/logo.svg';
+import mobileLogo from './assets/mobile-logo.svg';
 import './header.css';
 
 export default function Header() {
@@ -15,12 +16,15 @@ export default function Header() {
   const { width } = useWindowSize();
   const [isHamburgerVisible, setIsHamburgerVisible] = useState(false);
 
+  const logo = width > 1024 ? desktopLogo : mobileLogo;
+
   const toggleHamburger = () => {
     setIsHamburgerVisible((prev) => !prev);
   };
   const logoutHandler = () => {
     window.open(`${serverUrl}/api/auth/logout`, '_self');
   };
+
   return (
     <header className="header">
       <Link to="/">
