@@ -13,6 +13,11 @@
   position: relative;
 }
 
+.pet-details__date {
+  font-weight: 400;
+  width: auto;
+}
+
 .pet-details__date__data {
   color: var(--blue);
 }
@@ -23,14 +28,6 @@
   flex-wrap: wrap;
   width: 100%;
   gap: 10px;
-}
-
-.pet-details__list-item:last-of-type {
-  margin-top: 15px;
-}
-
-.pet-details__list-item:last-of-type .pet-details__list-item__data {
-  margin-left: 15px;
 }
 
 .pet-details__name {
@@ -59,8 +56,4 @@
   position: absolute;
   right: 0;
   top: 0;
-}
-
-.pet-details__date {
-  font-weight: 400;
 }
