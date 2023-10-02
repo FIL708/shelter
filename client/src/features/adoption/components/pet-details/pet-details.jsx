@@ -46,6 +46,8 @@ export default function PetDetails({ data }) {
         <span className="pet-details__date__data">{formattedDate}</span>
       </strong>
 
+      <hr className="pet-details__divider" />
+
       <ul className="pet-details__data">
         <li className="pet-details__list-grid-item">
           age:{' '}

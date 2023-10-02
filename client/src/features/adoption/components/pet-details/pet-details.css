@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: end;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   position: relative;
 }
 
@@ -16,6 +16,12 @@
 
 .pet-details__date__data {
   color: var(--blue);
+}
+
+.pet-details__divider {
+  width: 60%;
+  margin: auto;
+  border: 1px solid var(--light-blue);
 }
 
 .pet-details__data {
@@ -54,7 +60,11 @@
   top: 0;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 722px) {
+  .pet-details {
+    width: 80vw;
+  }
+
   .pet-details__date {
     width: 100%;
     text-align: center;
