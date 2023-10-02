@@ -31,6 +31,33 @@ export default function UserCardData({ userData }) {
           <li className="user-card__data__data">{formattedCreatedAt}</li>
         </ul>
       </div>
+
+      <ul className="user-card__data-list">
+        <li className="user-card__data__item-label">
+          <span>Email:</span>
+          {userData.email}
+        </li>
+        <li className="user-card__data__item-label">
+          <span>Phone:</span>
+          {userData.phone || '-'}
+        </li>
+        <li className="user-card__data__item-label">
+          <span>City:</span>
+          {userData.address?.city || '-'}
+        </li>
+        <li className="user-card__data__item-label">
+          <span>Country:</span>
+          {userData.address?.country || '-'}
+        </li>
+        <li className="user-card__data__item-label">
+          <span>Birthday:</span>
+          {formattedBirthday}
+        </li>
+        <li className="user-card__data__item-label">
+          <span>Created at:</span>
+          {formattedCreatedAt}
+        </li>
+      </ul>
     </div>
   );
 }
