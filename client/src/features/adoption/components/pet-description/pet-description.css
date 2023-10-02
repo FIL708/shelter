@@ -11,3 +11,9 @@
   text-indent: 35px;
   line-height: 28px;
 }
+
+@media (max-width: 800px) {
+  .pet-description {
+    width: 80vw;
+  }
+}

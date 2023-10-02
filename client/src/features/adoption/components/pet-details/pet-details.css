@@ -60,7 +60,7 @@
   top: 0;
 }
 
-@media (max-width: 722px) {
+@media (max-width: 800px) {
   .pet-details {
     width: 80vw;
   }
